@@ -1,0 +1,1150 @@
+/* Brand-Specific Discount Page Styles - Premium Design */
+
+.brand-discount-page {
+    background: var(--warm-white);
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    padding: 1rem 6%;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    background: white;
+    border-bottom: 1px solid #eee;
+}
+
+.breadcrumb a {
+    color: var(--forest);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* Quick Answer Box for Featured Snippets */
+.quick-answer {
+    padding: 3rem 6%;
+    background: linear-gradient(180deg, #f8faf8 0%, white 100%);
+}
+
+.quick-answer-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.quick-answer h2 {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 1.5rem;
+    color: var(--charcoal);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.discount-summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.discount-summary-table tr {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.discount-summary-table tr:last-child {
+    border-bottom: none;
+}
+
+.discount-summary-table th,
+.discount-summary-table td {
+    padding: 1.1rem 1.5rem;
+    text-align: left;
+}
+
+.discount-summary-table th {
+    background: var(--cream);
+    font-weight: 600;
+    color: var(--text-light);
+    width: 40%;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.discount-summary-table td {
+    font-size: 1.05rem;
+}
+
+.discount-summary-table td strong {
+    color: var(--forest);
+    font-size: 1.3rem;
+    font-family: 'SF Mono', Monaco, monospace;
+    letter-spacing: 2px;
+}
+
+.status-verified {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+    color: #166534;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.status-verified::before {
+    content: '✓';
+    font-weight: bold;
+}
+
+/* Brand Hero - Premium Design */
+.brand-hero {
+    padding: 7rem 6% 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.brand-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.5;
+}
+
+.snuuzu-hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+}
+
+.havnby-hero {
+    background: linear-gradient(135deg, #0c4a6e 0%, #0369a1 50%, #0284c7 100%);
+}
+
+.tesery-hero {
+    background: linear-gradient(135deg, #18181b 0%, #27272a 50%, #3f3f46 100%);
+}
+
+.brand-hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.brand-hero-logo {
+    max-height: 70px;
+    margin-bottom: 1.5rem;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s ease;
+}
+
+.brand-hero-logo:hover {
+    transform: scale(1.05);
+}
+
+.brand-hero-text-logo {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 6px;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.brand-hero-badge .verified {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(34, 197, 94, 0.2);
+    backdrop-filter: blur(10px);
+    color: #86efac;
+    padding: 0.6rem 1.25rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid rgba(134, 239, 172, 0.3);
+}
+
+.brand-hero-badge .verified::before {
+    content: '✓';
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    background: #22c55e;
+    color: white;
+    border-radius: 50%;
+    font-size: 0.7rem;
+}
+
+/* Discount Code Hero - Premium Design */
+.discount-code-hero {
+    background: white;
+    padding: 4rem 6%;
+    text-align: center;
+    position: relative;
+}
+
+.discount-code-hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--sage), transparent);
+}
+
+.code-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.code-hero-content h1 {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 2.75rem;
+    color: var(--charcoal);
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+}
+
+.code-hero-content h1 strong {
+    color: var(--forest);
+    background: linear-gradient(135deg, var(--sage) 0%, var(--forest-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.code-hero-subtitle {
+    color: var(--text-light);
+    font-size: 1.25rem;
+    margin-bottom: 2.5rem;
+}
+
+/* Mega Code Box - Premium Design */
+.mega-code-box {
+    background: linear-gradient(135deg, var(--forest) 0%, var(--forest-dark) 100%);
+    border-radius: 24px;
+    padding: 3rem;
+    color: white;
+    margin-bottom: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(45, 80, 65, 0.3);
+}
+
+.mega-code-box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.mega-code-box .code-label {
+    display: block;
+    font-size: 0.85rem;
+    opacity: 0.9;
+    margin-bottom: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+.mega-code {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1.75rem;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+.mega-code code {
+    font-family: 'SF Mono', Monaco, 'Courier New', monospace;
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: 8px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 1.25rem 3rem;
+    border-radius: 16px;
+    border: 2px dashed rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.mega-copy-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: white;
+    color: var(--forest);
+    border: none;
+    padding: 1.1rem 2.25rem;
+    border-radius: 14px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: inherit;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.mega-copy-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+.mega-copy-btn.copied {
+    background: #22c55e;
+    color: white;
+}
+
+.code-savings {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+.savings-badge {
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    color: white;
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.15rem;
+    box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+}
+
+/* Region Shop Buttons - Premium Design */
+.region-shop-btns {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.region-shop-btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.35rem 2.25rem;
+    border-radius: 18px;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    min-width: 240px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.region-shop-btn.eu {
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+    color: white;
+}
+
+.region-shop-btn.us {
+    background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
+    color: white;
+}
+
+.region-shop-btn.single {
+    background: linear-gradient(135deg, var(--forest) 0%, var(--forest-dark) 100%);
+    color: white;
+    justify-content: center;
+}
+
+.region-shop-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+}
+
+.region-flag {
+    font-size: 2.25rem;
+}
+
+.region-info {
+    text-align: left;
+}
+
+.region-title {
+    display: block;
+    font-weight: 700;
+    font-size: 1.15rem;
+}
+
+.region-url {
+    display: block;
+    opacity: 0.75;
+    font-size: 0.85rem;
+}
+
+/* How To Use Section - Premium Design */
+.how-to-use {
+    padding: 5rem 6%;
+    background: linear-gradient(180deg, var(--cream) 0%, #f5f3f0 100%);
+}
+
+.how-to-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.how-to-content h2 {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--charcoal);
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.step {
+    background: white;
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+.step::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--sage), var(--forest));
+    border-radius: 20px 20px 0 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.step:hover::after {
+    opacity: 1;
+}
+
+.step-number {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, var(--forest) 0%, var(--forest-dark) 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 auto 1.25rem;
+    box-shadow: 0 4px 15px rgba(45, 80, 65, 0.3);
+}
+
+.step h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+    color: var(--charcoal);
+}
+
+.step p {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+.step p a {
+    color: var(--forest);
+    font-weight: 500;
+}
+
+/* Eligible Products - Premium Design */
+.eligible-products {
+    padding: 5rem 6%;
+    background: white;
+}
+
+.products-content {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.products-content h2 {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 0.75rem;
+    color: var(--charcoal);
+}
+
+.products-intro {
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+.product-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.eligible-product {
+    background: var(--cream);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.04);
+}
+
+.eligible-product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+.eligible-product img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.eligible-product:hover img {
+    transform: scale(1.05);
+}
+
+.eligible-product-info {
+    padding: 1.75rem;
+}
+
+.eligible-product h3 {
+    font-size: 1.15rem;
+    margin-bottom: 1rem;
+    color: var(--charcoal);
+}
+
+.price-compare {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+.discount-price {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #16a34a;
+}
+
+.you-save {
+    display: inline-block;
+    font-size: 0.9rem;
+    color: #16a34a;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    background: rgba(22, 163, 74, 0.1);
+    padding: 0.35rem 0.75rem;
+    border-radius: 6px;
+}
+
+.read-review {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--forest);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: gap 0.2s ease;
+}
+
+.read-review:hover {
+    gap: 0.6rem;
+}
+
+.eligible-product.bundle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 2.5rem 2rem;
+    background: linear-gradient(135deg, var(--cream) 0%, #f0ede8 100%);
+}
+
+.bundle-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.eligible-product.bundle h3 {
+    margin-bottom: 0.75rem;
+}
+
+.eligible-product.bundle p {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+/* About Brand - Premium Design */
+.about-brand {
+    padding: 5rem 6%;
+    background: linear-gradient(180deg, var(--cream) 0%, #f5f3f0 100%);
+}
+
+.about-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-content h2 {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+    color: var(--charcoal);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.about-text p {
+    color: var(--text);
+    line-height: 1.9;
+    margin-bottom: 1.25rem;
+    font-size: 1.05rem;
+}
+
+.about-text p strong {
+    color: var(--charcoal);
+}
+
+.about-features {
+    list-style: none;
+    margin-top: 2rem;
+    background: white;
+    padding: 1.75rem 2rem;
+    border-radius: 16px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.04);
+}
+
+.about-features li {
+    padding: 0.65rem 0;
+    padding-left: 2rem;
+    position: relative;
+    color: var(--text);
+    font-size: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.about-features li:last-child {
+    border-bottom: none;
+}
+
+.about-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: white;
+    font-weight: bold;
+    font-size: 0.7rem;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.stat-box {
+    background: white;
+    padding: 1.75rem;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+
+.stat-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.stat-value {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--forest);
+    margin-bottom: 0.35rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+/* Code FAQ - Premium Design */
+.code-faq {
+    padding: 5rem 6%;
+    background: white;
+}
+
+.faq-content {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.faq-content h2 {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--charcoal);
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.faq-item-large {
+    background: linear-gradient(135deg, var(--cream) 0%, #f5f3f0 100%);
+    padding: 1.75rem 2.25rem;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+}
+
+.faq-item-large:hover {
+    border-left-color: var(--forest);
+    transform: translateX(5px);
+}
+
+.faq-item-large h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    color: var(--charcoal);
+    font-weight: 600;
+}
+
+.faq-item-large p {
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+.faq-item-large p strong {
+    color: var(--forest);
+}
+
+/* Final CTA - Premium Design */
+.final-cta {
+    padding: 5rem 6%;
+    background: linear-gradient(135deg, var(--forest-dark) 0%, var(--forest) 50%, #3d6b5a 100%);
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.final-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.final-cta-content {
+    max-width: 650px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.final-cta h2 {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 2.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.final-cta p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 2.25rem;
+}
+
+.final-cta strong {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+    font-family: 'SF Mono', Monaco, monospace;
+    letter-spacing: 2px;
+}
+
+.final-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+}
+
+.final-btn {
+    padding: 1.15rem 2.75rem;
+    border-radius: 14px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.final-btn.eu {
+    background: white;
+    color: var(--forest);
+}
+
+.final-btn.us {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.final-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.final-btn.single {
+    background: white;
+    color: var(--forest);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .mega-code code {
+        font-size: 2.25rem;
+        letter-spacing: 5px;
+        padding: 1rem 2rem;
+    }
+
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-stats {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .stat-box {
+        flex: 1;
+        min-width: 140px;
+    }
+
+    .region-shop-btns {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .region-shop-btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+
+    .final-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .final-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .discount-summary-table th,
+    .discount-summary-table td {
+        padding: 0.9rem 1.25rem;
+    }
+}
+
+/* Touch-friendly buttons */
+@media (pointer: coarse) {
+    .mega-copy-btn,
+    .region-shop-btn,
+    .final-btn,
+    .read-review {
+        min-height: 48px;
+    }
+}
+
+@media (hover: none) {
+    .region-shop-btn:hover,
+    .mega-copy-btn:hover,
+    .final-btn:hover,
+    .step:hover,
+    .eligible-product:hover,
+    .stat-box:hover {
+        transform: none;
+    }
+    .region-shop-btn:active,
+    .mega-copy-btn:active,
+    .final-btn:active {
+        transform: scale(0.98);
+    }
+}
+
+/* 640px breakpoint */
+@media (max-width: 640px) {
+    .brand-hero {
+        padding: 5.5rem 5% 3rem;
+    }
+
+    .brand-hero-text-logo {
+        font-size: 2.5rem;
+        letter-spacing: 4px;
+    }
+
+    .code-hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .mega-code-box {
+        padding: 2.25rem 1.75rem;
+    }
+
+    .how-to-use,
+    .eligible-products,
+    .about-brand,
+    .code-faq {
+        padding: 3.5rem 5%;
+    }
+
+    .how-to-content h2,
+    .products-content h2,
+    .about-content h2,
+    .faq-content h2 {
+        font-size: 1.65rem;
+    }
+
+    .discount-summary-table th,
+    .discount-summary-table td {
+        display: block;
+        width: 100%;
+        padding: 0.75rem 1.25rem;
+    }
+
+    .discount-summary-table th {
+        font-size: 0.75rem;
+        padding-bottom: 0.25rem;
+    }
+
+    .discount-summary-table td {
+        padding-top: 0.25rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+}
+
+/* 480px breakpoint */
+@media (max-width: 480px) {
+    .brand-hero-text-logo {
+        font-size: 2rem;
+        letter-spacing: 2px;
+    }
+
+    .code-hero-content h1 {
+        font-size: 1.75rem;
+    }
+
+    .mega-code code {
+        font-size: 1.85rem;
+        letter-spacing: 4px;
+        padding: 0.85rem 1.5rem;
+    }
+
+    .mega-copy-btn {
+        padding: 1rem 1.75rem;
+        font-size: 1rem;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .step {
+        padding: 2rem 1.5rem;
+    }
+
+    .step-number {
+        width: 48px;
+        height: 48px;
+        font-size: 1.25rem;
+    }
+
+    .eligible-product-info {
+        padding: 1.5rem;
+    }
+
+    .discount-price {
+        font-size: 1.5rem;
+    }
+
+    .final-cta h2 {
+        font-size: 1.75rem;
+    }
+}
+
+/* 375px breakpoint for ultra-small phones */
+@media (max-width: 375px) {
+    .brand-hero {
+        padding: 5rem 4% 2.5rem;
+    }
+
+    .brand-hero-text-logo {
+        font-size: 1.75rem;
+        letter-spacing: 1px;
+    }
+
+    .brand-hero-logo {
+        max-height: 50px;
+    }
+
+    .code-hero-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .code-hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .mega-code-box {
+        padding: 1.75rem 1.25rem;
+        border-radius: 18px;
+    }
+
+    .mega-code code {
+        font-size: 1.5rem;
+        letter-spacing: 3px;
+        padding: 0.75rem 1.25rem;
+    }
+
+    .mega-copy-btn {
+        padding: 0.9rem 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    .savings-badge {
+        font-size: 1rem;
+        padding: 0.5rem 1.25rem;
+    }
+
+    .region-shop-btn {
+        padding: 1.1rem 1.5rem;
+        min-width: auto;
+    }
+
+    .region-title {
+        font-size: 1rem;
+    }
+
+    .how-to-use,
+    .eligible-products,
+    .about-brand,
+    .code-faq {
+        padding: 3rem 4%;
+    }
+
+    .step {
+        padding: 1.5rem 1.25rem;
+    }
+
+    .step h3 {
+        font-size: 1.05rem;
+    }
+
+    .stat-box {
+        padding: 1.25rem;
+    }
+
+    .stat-value {
+        font-size: 1.6rem;
+    }
+
+    .faq-item-large {
+        padding: 1.5rem;
+    }
+
+    .final-cta {
+        padding: 3.5rem 4%;
+    }
+
+    .final-cta h2 {
+        font-size: 1.5rem;
+    }
+
+    .final-btn {
+        padding: 1rem 2rem;
+    }
+}
