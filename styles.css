@@ -88,7 +88,7 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(to bottom, rgba(26, 46, 37, 0.7), rgba(45, 74, 62, 0.85)),
+    background: linear-gradient(to bottom, rgba(20, 35, 28, 0.85), rgba(30, 50, 42, 0.92)),
                 url('images/hero-bg.jpg') center/cover no-repeat;
     min-height: 60vh;
     display: flex;
@@ -209,24 +209,26 @@ body {
 .hero-content h1 {
     font-family: 'Libre Baskerville', Georgia, serif;
     font-size: clamp(2rem, 5vw, 3.2rem);
-    color: var(--cream);
+    color: #ffffff;
     margin-bottom: 1rem;
     font-weight: 700;
     line-height: 1.2;
-    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8), 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .hero-content h1 span {
-    color: var(--copper);
+    color: #e8b84a;
     font-style: italic;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8), 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .hero-content p {
     font-size: 1.2rem;
-    color: rgba(245, 241, 232, 0.9);
+    color: #ffffff;
     margin-bottom: 2rem;
     max-width: 600px;
     line-height: 1.7;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 .hero-buttons {
