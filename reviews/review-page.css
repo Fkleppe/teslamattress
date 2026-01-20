@@ -679,23 +679,6 @@
     position: sticky;
     top: 2rem;
     align-self: start;
-    max-height: calc(100vh - 4rem);
-    overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: var(--sage) transparent;
-}
-
-.review-sidebar::-webkit-scrollbar {
-    width: 6px;
-}
-
-.review-sidebar::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.review-sidebar::-webkit-scrollbar-thumb {
-    background: var(--sage);
-    border-radius: 3px;
 }
 
 .sidebar-card {
