@@ -2,6 +2,8 @@
 
 .brand-discount-page {
     background: var(--warm-white);
+    overflow-x: hidden;
+    max-width: 100%;
 }
 
 /* Breadcrumb */
@@ -289,6 +291,8 @@
     border: 2px dashed rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(10px);
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    word-break: break-all;
+    max-width: 100%;
 }
 
 .mega-copy-btn {

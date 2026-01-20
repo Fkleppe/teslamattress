@@ -1,5 +1,11 @@
 /* Discounts Page Styles */
 
+/* Prevent horizontal overflow */
+.discounts-page {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
 /* Breadcrumb Navigation */
 .breadcrumb {
     background: var(--warm-white);
@@ -275,6 +281,8 @@
     padding: 0.75rem 2rem;
     border-radius: 12px;
     border: 2px dashed var(--sage);
+    word-break: break-all;
+    max-width: 100%;
 }
 
 .copy-btn-large {

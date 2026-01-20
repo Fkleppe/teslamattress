@@ -4,6 +4,16 @@
     box-sizing: border-box;
 }
 
+/* Prevent horizontal scroll/slide on mobile */
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     --forest: #2d4a3e;
     --forest-dark: #1a2e25;

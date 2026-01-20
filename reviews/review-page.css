@@ -1,5 +1,13 @@
 /* Review Page Specific Styles */
 
+/* Prevent horizontal overflow on mobile */
+.review-hero,
+.review-content-wrapper,
+.review-main {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
 .review-nav {
     background: var(--forest-dark);
     position: relative;
