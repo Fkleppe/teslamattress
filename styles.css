@@ -78,8 +78,9 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(165deg, var(--forest-dark) 0%, var(--forest) 50%, var(--moss) 100%);
-    min-height: 100vh;
+    background: linear-gradient(to bottom, rgba(26, 46, 37, 0.7), rgba(45, 74, 62, 0.85)),
+                url('images/hero-bg.jpg') center/cover no-repeat;
+    min-height: 60vh;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -87,12 +88,7 @@ body {
 }
 
 .hero-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    overflow: hidden;
+    display: none; /* Hidden - using real background image instead */
 }
 
 .hero-background .stars {
@@ -178,11 +174,13 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-    padding: 8rem 6% 4rem;
+    align-items: center;
+    text-align: center;
+    padding: 6rem 6% 3rem;
     position: relative;
     z-index: 10;
-    max-width: 800px;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .hero-badge {
@@ -200,12 +198,12 @@ body {
 
 .hero-content h1 {
     font-family: 'Libre Baskerville', Georgia, serif;
-    font-size: 3.8rem;
+    font-size: clamp(2rem, 5vw, 3.2rem);
     color: var(--cream);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     font-weight: 700;
-    line-height: 1.15;
-    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+    line-height: 1.2;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
 }
 
 .hero-content h1 span {
@@ -214,11 +212,11 @@ body {
 }
 
 .hero-content p {
-    font-size: 1.25rem;
-    color: rgba(245, 241, 232, 0.85);
-    margin-bottom: 2.5rem;
-    max-width: 520px;
-    line-height: 1.8;
+    font-size: 1.2rem;
+    color: rgba(245, 241, 232, 0.9);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    line-height: 1.7;
 }
 
 .hero-buttons {
@@ -262,13 +260,14 @@ body {
 .hero-stats {
     display: flex;
     gap: 3rem;
-    margin-top: 4rem;
-    padding-top: 2rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
     border-top: 1px solid rgba(255, 255, 255, 0.15);
+    justify-content: center;
 }
 
 .stat {
-    text-align: left;
+    text-align: center;
 }
 
 .stat-number {
