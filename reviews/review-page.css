@@ -1006,3 +1006,119 @@
         padding: 2rem 4%;
     }
 }
+
+/* Testimonials Section */
+.testimonials-section blockquote.testimonial {
+    background: var(--cream);
+    border-left: 4px solid var(--copper);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+}
+
+.testimonial p {
+    margin: 0 0 0.5rem 0;
+    line-height: 1.7;
+}
+
+.testimonial strong {
+    color: var(--forest-dark);
+    font-style: normal;
+}
+
+.testimonial cite {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-style: normal;
+    margin-top: 0.5rem;
+}
+
+/* Setup Steps */
+.setup-steps {
+    padding-left: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.setup-steps li {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.setup-steps li strong {
+    color: var(--forest-dark);
+}
+
+/* Comparison Table */
+.comparison-table-wrapper {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    min-width: 500px;
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+.comparison-table th {
+    background: var(--forest-dark);
+    color: white;
+    font-weight: 600;
+}
+
+.comparison-table tr:nth-child(even) {
+    background: var(--cream);
+}
+
+.comparison-table td:first-child {
+    font-weight: 500;
+}
+
+/* Who For Section - Good/Bad Items */
+.who-for-item.good {
+    background: rgba(46, 125, 50, 0.1);
+    border-left: 3px solid #2e7d32;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0 6px 6px 0;
+}
+
+.who-for-item.bad {
+    background: rgba(198, 40, 40, 0.1);
+    border-left: 3px solid #c62828;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0 6px 6px 0;
+}
+
+/* FAQ Section */
+.faq-section .faq-item {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+.faq-item h3 {
+    font-size: 1.1rem;
+    color: var(--forest-dark);
+    margin-bottom: 0.5rem;
+}
+
+.faq-item p {
+    margin: 0;
+    line-height: 1.7;
+}
