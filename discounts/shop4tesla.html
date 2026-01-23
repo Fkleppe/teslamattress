@@ -80,7 +80,15 @@
             "itemOffered": {
                 "@type": "Product",
                 "name": "Shop4Tesla Tesla Accessories",
-                "brand": "Shop4Tesla"
+                "brand": {"@type": "Brand", "name": "Shop4Tesla"},
+                "image": "https://teslamattress.com/images/og-image.jpg",
+                "offers": {
+                    "@type": "AggregateOffer",
+                    "lowPrice": "10",
+                    "highPrice": "500",
+                    "priceCurrency": "EUR",
+                    "availability": "https://schema.org/InStock"
+                }
             }
         }
     }
@@ -212,7 +220,7 @@
                 </div>
 
                 <div class="region-shop-btns">
-                    <a href="https://shop4tesla.com/discount/10" target="_blank" rel="noopener" class="region-shop-btn eu">
+                    <a href="https://shop4tesla.com/discount/10" target="_blank" rel="noopener sponsored" class="region-shop-btn eu">
                         <span class="region-flag">🇪🇺</span>
                         <div class="region-info">
                             <span class="region-title">Shop Shop4Tesla</span>
@@ -268,7 +276,7 @@
                     <div class="step">
                         <div class="step-number">2</div>
                         <h3>Shop Shop4Tesla</h3>
-                        <p>Visit <a href="https://shop4tesla.com/discount/10" target="_blank" rel="noopener">shop4tesla.com</a> and browse their huge selection. Add items to your cart.</p>
+                        <p>Visit <a href="https://shop4tesla.com/discount/10" target="_blank" rel="noopener sponsored">shop4tesla.com</a> and browse their huge selection. Add items to your cart.</p>
                     </div>
                     <div class="step">
                         <div class="step-number">3</div>
@@ -386,7 +394,7 @@
                 <h2>Ready to Save 10% at Shop4Tesla?</h2>
                 <p>Use discount code <strong>10</strong> at checkout for 10% off your entire order.</p>
                 <div class="final-buttons">
-                    <a href="https://shop4tesla.com/discount/10" target="_blank" rel="noopener" class="final-btn eu">Shop Shop4Tesla Now</a>
+                    <a href="https://shop4tesla.com/discount/10" target="_blank" rel="noopener sponsored" class="final-btn eu">Shop Shop4Tesla Now</a>
                 </div>
             </div>
         </section>
