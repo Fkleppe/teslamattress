@@ -1,5 +1,60 @@
 /* Review Page Specific Styles */
 
+/* Author Byline */
+.author-byline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1.5rem;
+    align-items: center;
+}
+
+.author-byline a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.author-byline a:hover {
+    color: var(--cream);
+    text-decoration: underline;
+}
+
+.author-name {
+    font-weight: 600;
+    color: var(--cream);
+}
+
+.author-meta {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.author-meta::before {
+    content: "\00B7";
+    margin-right: 0.25rem;
+}
+
+.author-meta span:not(:last-child)::after {
+    content: "\00B7";
+    margin-left: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .author-byline {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+
+    .author-meta::before {
+        display: none;
+    }
+}
+
 /* Prevent horizontal overflow on mobile */
 .review-hero,
 .review-content-wrapper,
