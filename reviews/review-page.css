@@ -55,6 +55,70 @@
     }
 }
 
+/* Key Findings Section (AI-optimized) */
+.key-findings {
+    background: linear-gradient(135deg, var(--cream) 0%, #f0ebe0 100%);
+    border: 1px solid rgba(45, 74, 62, 0.15);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.key-findings h2 {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 1.4rem;
+    color: var(--forest-dark);
+    margin-bottom: 0.5rem;
+}
+
+.key-findings .findings-intro {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.findings-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.finding-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.finding-card strong {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.finding-card .finding-value {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--forest-dark);
+}
+
+.finding-card .finding-basis {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    line-height: 1.4;
+}
+
+@media (max-width: 600px) {
+    .findings-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Prevent horizontal overflow on mobile */
 .review-hero,
 .review-content-wrapper,
