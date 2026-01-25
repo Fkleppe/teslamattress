@@ -1,0 +1,557 @@
+/* VS Comparison Pages Styles */
+
+/* Hub Page */
+.vs-hub-page {
+    padding-top: 100px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.vs-hub-hero {
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.vs-hub-hero h1 {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    color: var(--forest-dark);
+    margin-bottom: 1rem;
+}
+
+.vs-hub-hero p {
+    font-size: 1.15rem;
+    color: var(--text);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* VS Cards Grid */
+.vs-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+.vs-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    text-decoration: none;
+    color: var(--text);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: all 0.3s;
+    position: relative;
+    border: 2px solid transparent;
+}
+
+.vs-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    border-color: var(--copper);
+}
+
+.vs-card.featured {
+    border-color: var(--copper);
+    background: linear-gradient(135deg, #fff 0%, #faf7f0 100%);
+}
+
+.vs-card-badge {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    background: var(--copper);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.vs-card-matchup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.vs-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.vs-brand img {
+    height: 30px;
+    width: auto;
+    object-fit: contain;
+}
+
+.vs-brand-text {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--forest-dark);
+}
+
+.vs-score {
+    background: var(--forest-dark);
+    color: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.vs-divider {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--copper);
+    background: var(--cream);
+    padding: 0.5rem 1rem;
+    border-radius: 50%;
+}
+
+.vs-card h2 {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 1.3rem;
+    color: var(--forest-dark);
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.vs-card p {
+    text-align: center;
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.vs-card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+    font-size: 0.9rem;
+}
+
+.vs-card-meta span:first-child {
+    color: var(--forest-dark);
+    font-weight: 600;
+}
+
+.vs-card-meta span:last-child {
+    color: var(--copper);
+    font-weight: 500;
+}
+
+/* Quick Picks */
+.quick-picks {
+    background: var(--cream);
+    padding: 3rem;
+    border-radius: 20px;
+    margin-bottom: 4rem;
+}
+
+.quick-picks h2 {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--forest-dark);
+}
+
+.quick-picks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.quick-pick {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+}
+
+.quick-pick h3 {
+    color: var(--copper);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+}
+
+.quick-pick p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.quick-pick a {
+    color: var(--forest-dark);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.quick-pick a:hover {
+    color: var(--copper);
+}
+
+/* Individual VS Page */
+.vs-page {
+    padding-top: 100px;
+}
+
+.vs-hero {
+    background: linear-gradient(135deg, var(--forest-dark) 0%, var(--forest) 100%);
+    padding: 4rem 2rem;
+    text-align: center;
+    color: white;
+}
+
+.vs-hero-matchup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.vs-hero-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.vs-hero-brand img {
+    height: 40px;
+    filter: brightness(0) invert(1);
+}
+
+.vs-hero-brand .brand-name {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.vs-hero-brand .brand-score {
+    background: var(--copper);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.vs-hero-vs {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 2rem;
+    color: var(--copper);
+}
+
+.vs-hero h1 {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 1rem;
+}
+
+.vs-hero p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Quick Verdict Box */
+.quick-verdict {
+    max-width: 900px;
+    margin: -2rem auto 3rem;
+    padding: 0 2rem;
+}
+
+.verdict-box {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    border-left: 4px solid var(--copper);
+}
+
+.verdict-box h2 {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    color: var(--forest-dark);
+    margin-bottom: 1rem;
+}
+
+.verdict-box p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.verdict-winner {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--cream);
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.verdict-winner .winner-label {
+    color: var(--copper);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+/* Comparison Table */
+.vs-comparison {
+    max-width: 900px;
+    margin: 0 auto 3rem;
+    padding: 0 2rem;
+}
+
+.vs-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.vs-table th,
+.vs-table td {
+    padding: 1rem 1.25rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.vs-table thead th {
+    background: var(--forest-dark);
+    color: white;
+    font-weight: 600;
+}
+
+.vs-table thead th:first-child {
+    width: 30%;
+}
+
+.vs-table tbody tr:hover {
+    background: var(--cream);
+}
+
+.vs-table .winner {
+    color: var(--forest-dark);
+    font-weight: 600;
+}
+
+.vs-table .winner::after {
+    content: " *";
+    color: var(--copper);
+}
+
+/* Category Sections */
+.vs-category {
+    max-width: 900px;
+    margin: 0 auto 3rem;
+    padding: 0 2rem;
+}
+
+.vs-category h2 {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    color: var(--forest-dark);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--cream);
+}
+
+.vs-category-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.vs-category-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.vs-category-item h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    color: var(--forest-dark);
+}
+
+.vs-category-item .score-badge {
+    background: var(--forest-dark);
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    margin-left: auto;
+}
+
+.vs-category-item.winner-item {
+    border: 2px solid var(--copper);
+}
+
+.vs-category-item.winner-item::before {
+    content: "Winner";
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    background: var(--copper);
+    color: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* FAQ Section */
+.vs-faq {
+    max-width: 900px;
+    margin: 0 auto 3rem;
+    padding: 0 2rem;
+}
+
+.vs-faq h2 {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    color: var(--forest-dark);
+    margin-bottom: 1.5rem;
+}
+
+.faq-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.faq-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.faq-item h3 {
+    color: var(--forest-dark);
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+}
+
+.faq-item p {
+    line-height: 1.7;
+    color: #555;
+}
+
+/* CTA Section */
+.vs-cta {
+    background: var(--cream);
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.vs-cta h2 {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    color: var(--forest-dark);
+    margin-bottom: 1.5rem;
+}
+
+.vs-cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.vs-cta-btn {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 2.5rem;
+    background: white;
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--text);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    transition: all 0.3s;
+}
+
+.vs-cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.vs-cta-btn .btn-brand {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--forest-dark);
+}
+
+.vs-cta-btn .btn-price {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.vs-cta-btn .btn-discount {
+    background: var(--copper);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.breadcrumb a {
+    color: var(--forest-dark);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .vs-cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .vs-hero-matchup {
+        gap: 1rem;
+    }
+
+    .vs-category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .vs-table {
+        font-size: 0.9rem;
+    }
+
+    .vs-table th,
+    .vs-table td {
+        padding: 0.75rem;
+    }
+}
