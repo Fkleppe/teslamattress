@@ -88,8 +88,9 @@ body {
 
 /* Hero Section */
 .hero {
+    /* WebP: 109KB vs JPG: 450KB - 76% smaller. WebP supported by 97%+ browsers */
     background: linear-gradient(to bottom, rgba(20, 35, 28, 0.85), rgba(30, 50, 42, 0.92)),
-                url('images/hero-bg.jpg') center/cover no-repeat;
+                url('images/hero-bg.webp') center/cover no-repeat;
     min-height: 60vh;
     display: flex;
     flex-direction: column;
