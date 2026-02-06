@@ -131,7 +131,8 @@
     background: linear-gradient(135deg, #0c4a6e 0%, #0369a1 50%, #0284c7 100%);
 }
 
-.tesery-hero {
+.tesery-hero,
+.novapads-hero {
     background: linear-gradient(135deg, #18181b 0%, #27272a 50%, #3f3f46 100%);
 }
 
