@@ -542,6 +542,48 @@
     text-decoration: underline;
 }
 
+/* Full Reviews Section */
+.vs-full-reviews {
+    max-width: 900px;
+    margin: 0 auto 3rem;
+    padding: 0 2rem;
+}
+
+.vs-full-reviews h3 {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    color: var(--forest-dark);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.vs-review-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.vs-review-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.75rem 1.25rem;
+    background: white;
+    border: 2px solid var(--cream);
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--forest-dark);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.25s;
+}
+
+.vs-review-link:hover {
+    border-color: var(--copper);
+    color: var(--copper);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
     .vs-cards-grid {
