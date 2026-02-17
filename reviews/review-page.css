@@ -1288,6 +1288,37 @@
     }
 }
 
+/* Review Updated timestamp */
+.review-updated {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-top: 1rem;
+}
+
+/* Quote Highlight */
+.quote-highlight {
+    background: linear-gradient(135deg, var(--forest-dark) 0%, var(--forest) 100%);
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+}
+
+.quote-highlight blockquote {
+    margin: 0;
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.quote-highlight cite {
+    display: block;
+    margin-top: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    color: var(--copper);
+}
+
 /* FAQ Section */
 .faq-section .faq-item {
     margin-bottom: 1.5rem;
