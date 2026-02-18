@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="{{htmlLang}}">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{t.disclosure.meta_title}}</title>
+    <meta name="description" content="{{t.disclosure.meta_description}}">
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="{{canonicalUrl}}">
+    {{hreflangTags}}
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{pageUrl}}">
+    <meta property="og:title" content="{{t.disclosure.og_title}}">
+    <meta property="og:description" content="{{t.disclosure.og_description}}">
+    <meta property="og:image" content="https://teslamattress.com/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{t.disclosure.twitter_title}}">
+    <meta name="twitter:description" content="{{t.disclosure.twitter_description}}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Fonts (non-blocking) -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap"></noscript>
+
+    <!-- Critical CSS -->
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--forest:#2d4a3e;--forest-dark:#1a2e25;--cream:#f5f1e8;--warm-white:#faf9f6;--text:#3d3d3d}
+        body{font-family:'Source Sans 3',-apple-system,sans-serif;line-height:1.7;color:var(--text);background:var(--warm-white)}
+        .navbar{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 6%;position:fixed;width:100%;z-index:100;background:var(--forest-dark)}
+        .logo{font-family:'Libre Baskerville',Georgia,serif;font-size:1.6rem;font-weight:700;color:var(--cream)}
+        .nav-links{display:flex;list-style:none;gap:2.5rem}
+        .nav-links a{color:var(--cream);text-decoration:none;font-weight:500}
+        .menu-toggle{display:none}
+    </style>
+
+    <!-- Stylesheet (deferred) -->
+    <link rel="stylesheet" href="/styles.css">
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "{{t.disclosure.meta_title}}",
+        "description": "{{t.disclosure.meta_description}}",
+        "url": "{{pageUrl}}",
+        "inLanguage": "{{htmlLang}}",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "Teslamattress",
+            "url": "https://teslamattress.com/"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://teslamattress.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Affiliate Disclosure",
+                "item": "https://teslamattress.com/disclosure"
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/{{localePath}}" class="logo">Teslamattress</a>
+        <button class="menu-toggle" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="/{{localePath}}#comparison">{{t.shared.nav_comparison}}</a></li>
+            <li><a href="/{{localePath}}vs/">{{t.shared.nav_compare}}</a></li>
+            <li><a href="/{{localePath}}discounts/">{{t.shared.nav_discounts}}</a></li>
+        </ul>
+        {{langSwitcher}}
+    </nav>
+    <div class="menu-overlay"></div>
+
+    <main style="max-width: 800px; margin: 0 auto; padding: 6rem 2rem 4rem;">
+        <h1 style="font-family: 'Libre Baskerville', Georgia, serif; margin-bottom: 2rem;">{{t.disclosure.h1}}</h1>
+
+        <p style="line-height: 1.8; margin-bottom: 1.5rem;">
+            <strong>Last updated: January 2026</strong>
+        </p>
+
+        <h2 style="font-size: 1.3rem; margin: 2rem 0 1rem;">{{t.disclosure.h2}}</h2>
+        <p style="line-height: 1.8; margin-bottom: 1.5rem;">
+            In accordance with the FTC guidelines, we want to be transparent about how we fund this website. Teslamattress.com participates in affiliate marketing programs, which means we may receive commissions on purchases made through our links.
+        </p>
+
+        <h2 style="font-size: 1.3rem; margin: 2rem 0 1rem;">{{t.disclosure.h2_2}}</h2>
+        <p style="line-height: 1.8; margin-bottom: 1.5rem;">
+            When you click on certain links on this website and make a purchase, we may receive a small commission at no extra cost to you. This includes links to:
+        </p>
+        <ul style="line-height: 1.8; margin-bottom: 1.5rem; padding-left: 1.5rem;">
+            <li>Snuuzu (snuuzu.com, us.snuuzu.com)</li>
+            <li>Havnby (havnby.com)</li>
+            <li>NovaPads (novapads.com)</li>
+            <li>TESMAT (tesmat.com)</li>
+            <li>Other partner brands mentioned on this site</li>
+        </ul>
+
+        <h2 style="font-size: 1.3rem; margin: 2rem 0 1rem;">{{t.disclosure.h2_3}}</h2>
+        <p style="line-height: 1.8; margin-bottom: 1.5rem;">
+            The discount codes we share (KLEPPE, AWD, 123, etc.) are negotiated partnerships with these brands. When you use our codes, you get a discount and we may receive a commission. This is how we keep the site running and continue testing products.
+        </p>
+
+        <h2 style="font-size: 1.3rem; margin: 2rem 0 1rem;">{{t.disclosure.h2_4}}</h2>
+        <p style="line-height: 1.8; margin-bottom: 1.5rem;">
+            Our reviews and ratings are based on our own testing and opinions. Affiliate relationships do not influence our scores or recommendations. We have given low scores to products from affiliate partners when warranted.
+        </p>
+
+        <h2 style="font-size: 1.3rem; margin: 2rem 0 1rem;">{{t.disclosure.h2_5}}</h2>
+        <p style="line-height: 1.8; margin-bottom: 1.5rem;">
+            Teslamattress.com is an independent review website. We are not affiliated with, endorsed by, or sponsored by Tesla, Inc. "Tesla" and "Model Y" and "Model 3" are trademarks of Tesla, Inc.
+        </p>
+
+        <h2 style="font-size: 1.3rem; margin: 2rem 0 1rem;">{{t.disclosure.h2_6}}</h2>
+        <p style="line-height: 1.8; margin-bottom: 1.5rem;">
+            If you have any questions about our affiliate relationships or how we fund this site, please contact us.
+        </p>
+
+        <p style="margin-top: 3rem;">
+            <a href="/{{localePath}}" style="color: var(--forest);">&larr; Back to Home</a>
+        </p>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">Teslamattress</div>
+            <div class="footer-text">
+                <p>&copy; 2026 Teslamattress. All rights reserved.</p>
+                <p class="disclaimer">{{t.shared.footer_disclaimer}}</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const menuOverlay = document.querySelector('.menu-overlay');
+        if (menuToggle) {
+            function toggleMenu() {
+                menuToggle.classList.toggle('active');
+                navLinks.classList.toggle('active');
+                menuOverlay.classList.toggle('active');
+                document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+            }
+            menuToggle.addEventListener('click', toggleMenu);
+            menuOverlay.addEventListener('click', toggleMenu);
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navLinks.classList.contains('active')) toggleMenu();
+                });
+            });
+        }
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="{{htmlLang}}">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>{{t.review_havnby_solo.meta_title}}</title>
+    <meta name="title" content="{{t.review_havnby_solo.meta_name_title}}">
+    <meta name="description" content="{{t.review_havnby_solo.meta_description}}">
+    <meta name="keywords" content="{{t.review_havnby_solo.meta_keywords}}">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{canonicalUrl}}">
+    {{hreflangTags}}
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{pageUrl}}">
+    <meta property="og:title" content="{{t.review_havnby_solo.og_title}}">
+    <meta property="og:description" content="{{t.review_havnby_solo.og_description}}">
+    <meta property="og:image" content="https://havnby.com/cdn/shop/files/tesla-solo-mattress-main.jpg">
+    <meta property="og:site_name" content="Teslamattress">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{t.review_havnby_solo.twitter_title}}">
+    <meta name="twitter:description" content="{{t.review_havnby_solo.twitter_description}}">
+    <meta name="twitter:image" content="https://havnby.com/cdn/shop/files/tesla-solo-mattress-main.jpg">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://havnby.com">
+    <link rel="dns-prefetch" href="https://us.snuuzu.com">
+
+    <!-- Google Fonts (non-blocking) -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap"></noscript>
+
+    <!-- Critical CSS -->
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--forest:#2d4a3e;--forest-dark:#1a2e25;--cream:#f5f1e8;--warm-white:#faf9f6;--text:#3d3d3d}
+        body{font-family:'Source Sans 3',-apple-system,sans-serif;line-height:1.7;color:var(--text);background:var(--warm-white)}
+        .navbar{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 6%;position:fixed;width:100%;z-index:100;background:var(--forest-dark)}
+        .logo{font-family:'Libre Baskerville',Georgia,serif;font-size:1.6rem;font-weight:700;color:var(--cream)}
+        .nav-links{display:flex;list-style:none;gap:2.5rem}
+        .nav-links a{color:var(--cream);text-decoration:none;font-weight:500}
+        .menu-toggle{display:none}
+    </style>
+
+    <!-- Stylesheet (deferred) -->
+    <link rel="stylesheet" href="/styles.css">
+    
+    <link rel="stylesheet" href="/reviews/review-page.css">
+    
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "{{t.review_havnby_solo.jsonld_1_name_2}}",
+        "description": "{{t.review_havnby_solo.jsonld_1_description_1}}",
+        "image": [
+                "https://havnby.com/cdn/shop/files/tesla-solo-mattress-main.jpg"
+        ],
+        "brand": {
+                "@type": "Brand",
+                "name": "Havnby"
+        },
+        "offers": {
+                "@type": "Offer",
+                "url": "https://havnby.com/products/autolevel-foam-tesla-model-y-mattress-solo-edition",
+                "priceCurrency": "USD",
+                "price": "239.99",
+                "availability": "https://schema.org/InStock",
+                "priceValidUntil": "2026-12-31"
+        },
+        "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "8.2",
+                "bestRating": "10",
+                "worstRating": "1",
+                "ratingCount": "94"
+        },
+        "review": {
+                "@type": "Review",
+                "reviewRating": {
+                        "@type": "Rating",
+                        "ratingValue": "8.2",
+                        "bestRating": "10"
+                },
+                "author": {
+                        "@type": "Person",
+                        "name": "Fredrik Mastouri",
+                        "url": "https://teslamattress.com/about"
+                },
+                "datePublished": "2024-09-15",
+                "reviewBody": "{{t.review_havnby_solo.jsonld_1_reviewBody_3}}"
+        }
+}
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+                {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://teslamattress.com/"
+                },
+                {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Reviews",
+                        "item": "https://teslamattress.com/reviews/"
+                },
+                {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "Havnby Solo",
+                        "item": "https://teslamattress.com/reviews/havnby-solo"
+                }
+        ]
+}
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+                {
+                        "@type": "Question",
+                        "name": "{{t.review_havnby_solo.jsonld_3_name_1}}",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "{{t.review_havnby_solo.jsonld_3_text_2}}"
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "{{t.review_havnby_solo.jsonld_3_name_3}}",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "{{t.review_havnby_solo.jsonld_3_text_4}}"
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "{{t.review_havnby_solo.jsonld_3_name_5}}",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "{{t.review_havnby_solo.jsonld_3_text_6}}"
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "{{t.review_havnby_solo.jsonld_3_name_7}}",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "{{t.review_havnby_solo.jsonld_3_text_8}}"
+                        }
+                }
+        ]
+}
+    </script>
+</head>
+<body>
+    <nav class="navbar review-nav">
+        <a href="/{{localePath}}" class="logo">Teslamattress</a>
+        <button class="menu-toggle" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="/{{localePath}}#comparison">{{t.shared.nav_comparison}}</a></li>
+            <li><a href="/{{localePath}}vs/">{{t.shared.nav_compare}}</a></li>
+            <li><a href="/{{localePath}}#comparison">{{t.shared.nav_all_reviews}}</a></li>
+        </ul>
+        {{langSwitcher}}
+    </nav>
+    <div class="menu-overlay"></div>
+
+    <main class="review-page">
+        <div class="review-hero">
+            <div class="breadcrumb">
+                <a href="/{{localePath}}">Home</a> / <a href="/{{localePath}}#comparison">Reviews</a> / Havnby Autolevel Solo
+            </div>
+            <div class="review-hero-content">
+                <span class="review-badge">{{t.review_havnby_solo.span_review_badge}}</span>
+                <h1>{{t.review_havnby_solo.h1}}</h1>
+                <div class="author-byline">
+                    <span class="author-name">By <a href="/{{localePath}}about">Fredrik Mastouri</a></span>
+                    <span class="author-meta"><span>Founder</span><span>100+ nights tested</span><span>Updated Jan 2026</span></span>
+                </div>
+                <p class="review-tagline">{{t.review_havnby_solo.p}}</p>
+                <div class="review-meta">
+                    <div class="overall-score">
+                        <span class="score-number">8.2</span>
+                        <span class="score-label">{{t.review_havnby_solo.span_score_label}}</span>
+                    </div>
+                    <div class="quick-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">$239.99</span>
+                            <span class="stat-key">{{t.review_havnby_solo.span_stat_key}}</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">6.7" Foam</span>
+                            <span class="stat-key">{{t.review_havnby_solo.span_stat_key_2}}</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">AWD</span>
+                            <span class="stat-key">{{t.review_havnby_solo.span_stat_key_3}}</span>
+                        </div>
+                    </div>
+                </div>
+                <a href="https://havnby.com/products/autolevel-foam-tesla-model-y-mattress-solo-edition?ref=discount" target="_blank" rel="noopener sponsored" class="btn-buy-large">{{t.review_havnby_solo.btn}}</a>
+            </div>
+        </div>
+
+        <div class="review-content-wrapper">
+            <article class="review-main">
+
+                <!-- TL;DR Box -->
+                <div class="tldr-box">
+                    <h2>{{t.review_havnby_solo.h2}}</h2>
+                    <p class="tldr-content">{{t.review_havnby_solo.p_2}}</p>
+                    <div class="tldr-highlights">
+                        <div class="tldr-highlight">
+                            <span class="tldr-highlight-value">50 sec</span>
+                            <span class="tldr-highlight-label">{{t.review_havnby_solo.span_tldr_highlight_label}}</span>
+                        </div>
+                        <div class="tldr-highlight">
+                            <span class="tldr-highlight-value">7 lbs</span>
+                            <span class="tldr-highlight-label">{{t.review_havnby_solo.span_tldr_highlight_label_2}}</span>
+                        </div>
+                        <div class="tldr-highlight">
+                            <span class="tldr-highlight-value">5 Year</span>
+                            <span class="tldr-highlight-label">{{t.review_havnby_solo.span_tldr_highlight_label_3}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Key Findings -->
+                <section class="key-findings">
+                    <h2>{{t.review_havnby_solo.h2_2}}</h2>
+                    <p class="findings-intro">{{t.review_havnby_solo.p_3}}</p>
+                    <div class="findings-grid">
+                        <div class="finding-card">
+                            <strong>Weight Champion</strong>
+                            <span class="finding-value">{{t.review_havnby_solo.span_finding_value}}</span>
+                            <span class="finding-basis">{{t.review_havnby_solo.span_finding_basis}}</span>
+                        </div>
+                        <div class="finding-card">
+                            <strong>Gear Space</strong>
+                            <span class="finding-value">{{t.review_havnby_solo.span_finding_value_2}}</span>
+                            <span class="finding-basis">{{t.review_havnby_solo.span_finding_basis_2}}</span>
+                        </div>
+                        <div class="finding-card">
+                            <strong>Same Foam Quality</strong>
+                            <span class="finding-value">{{t.review_havnby_solo.span_finding_value_3}}</span>
+                            <span class="finding-basis">{{t.review_havnby_solo.span_finding_basis_3}}</span>
+                        </div>
+                        <div class="finding-card">
+                            <strong>Setup Speed</strong>
+                            <span class="finding-value">{{t.review_havnby_solo.span_finding_value_4}}</span>
+                            <span class="finding-basis">{{t.review_havnby_solo.span_finding_basis_4}}</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Product Gallery -->
+                <div class="product-gallery">
+                    <div class="main-image">
+                        <img src="https://havnby.com/cdn/shop/files/tesla-solo-mattress-main.jpg?width=1200" alt="Havnby Autolevel Solo Tesla Mattress in Model Y" loading="lazy" width="1200" height="800">
+                    </div>
+                </div>
+
+                <!-- At a Glance -->
+                <div class="at-a-glance">
+                    <h2>{{t.review_havnby_solo.h2_3}}</h2>
+                    <div class="specs-grid">
+                        <div class="spec-item">
+                            <div class="spec-icon">🚗</div>
+                            <span class="spec-value">Model Y</span>
+                            <span class="spec-label">{{t.review_havnby_solo.span_spec_label}}</span>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-icon">📐</div>
+                            <span class="spec-value">76" x 32"</span>
+                            <span class="spec-label">{{t.review_havnby_solo.span_spec_label_2}}</span>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-icon">⚡</div>
+                            <span class="spec-value">Built-in Pump</span>
+                            <span class="spec-label">{{t.review_havnby_solo.span_spec_label_3}}</span>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-icon">🛡️</div>
+                            <span class="spec-value">5 Years</span>
+                            <span class="spec-label">{{t.review_havnby_solo.span_spec_label_4}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pros and Cons -->
+                <div class="pros-cons-grid">
+                    <div class="pros-card">
+                        <h3>{{t.review_havnby_solo.h3}}</h3>
+                        <ul>
+                            <li><strong>Good foam in compact size</strong> - Same 6.7-inch high-resilience foam as full-size Autolevel</li>
+                            <li><strong>Room for gear</strong> - 32" width leaves space for cooler, luggage, or pet</li>
+                            <li><strong>Built-in dual pump</strong> - Inflates in 50 seconds, deflates for easy packing</li>
+                            <li><strong>Zero-tilt technology</strong> - Creates perfectly flat surface despite car's angles</li>
+                            <li><strong>Ultra-light at 7 lbs</strong> - Easiest Tesla mattress to handle and store</li>
+                            <li><strong>Complete kit included</strong> - Comes with fitted sheet and 2 eye masks</li>
+                            <li><strong>5-year warranty</strong> - Industry-leading protection from Havnby</li>
+                            <li><strong>Eco-safe materials</strong> - Odor-free, skin-friendly construction</li>
+                        </ul>
+                    </div>
+                    <div class="cons-card">
+                        <h3>{{t.review_havnby_solo.h3_2}}</h3>
+                        <ul>
+                            <li><strong>Single person only</strong> - Not suitable for couples (that's the point, but worth noting)</li>
+                            <li><strong>Model Y only</strong> - No Model 3 version available</li>
+                            <li><strong>Narrower than standard</strong> - 32" width may feel tight for larger sleepers</li>
+                            <li><strong>Pump requires power</strong> - Unlike self-inflating options, needs 12V or USB-C</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Score Breakdown -->
+                <div class="score-breakdown-section">
+                    <h2>{{t.review_havnby_solo.h2_4}}</h2>
+                    <div class="score-breakdown">
+                        <div class="score-row">
+                            <span class="score-category">Comfort</span>
+                            <div class="score-bar"><div class="score-fill" style="width: 84%"></div></div>
+                            <span class="score-value">8.4</span>
+                        </div>
+                        <div class="score-row">
+                            <span class="score-category">Build Quality</span>
+                            <div class="score-bar"><div class="score-fill" style="width: 85%"></div></div>
+                            <span class="score-value">8.5</span>
+                        </div>
+                        <div class="score-row">
+                            <span class="score-category">Convenience</span>
+                            <div class="score-bar"><div class="score-fill" style="width: 88%"></div></div>
+                            <span class="score-value">8.8</span>
+                        </div>
+                        <div class="score-row">
+                            <span class="score-category">Portability</span>
+                            <div class="score-bar"><div class="score-fill high" style="width: 92%"></div></div>
+                            <span class="score-value">9.2</span>
+                        </div>
+                        <div class="score-row">
+                            <span class="score-category">Value</span>
+                            <div class="score-bar"><div class="score-fill" style="width: 86%"></div></div>
+                            <span class="score-value">8.6</span>
+                        </div>
+                    </div>
+                    <p class="score-explanation">{{t.review_havnby_solo.p_4}}</p>
+                </div>
+
+                <!-- Detailed Technical Specifications -->
+                <section class="review-section">
+                    <h2>{{t.review_havnby_solo.h2_5}}</h2>
+                    <div class="specs-table-detailed">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th colspan="2">{{t.shared.th_dimensions_weight}}</th>
+                                </tr>
+                                <tr>
+                                    <td>Sleep Surface</td>
+                                    <td><strong>76" × 32"</strong> (193 × 81 cm) - single person</td>
+                                </tr>
+                                <tr>
+                                    <td>Thickness</td>
+                                    <td><strong>4.5 inches / 11.4 cm</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>Weight</td>
+                                    <td><strong>7 lbs (3.2 kg)</strong> - lightest premium Tesla mattress</td>
+                                </tr>
+                                <tr>
+                                    <td>Gear Space Left</td>
+                                    <td>~20 inches alongside mattress</td>
+                                </tr>
+                                <tr>
+                                    <th colspan="2">{{t.shared.th_construction}}</th>
+                                </tr>
+                                <tr>
+                                    <td>Foam Core</td>
+                                    <td>Same high-resilience foam as Autolevel</td>
+                                </tr>
+                                <tr>
+                                    <td>Material</td>
+                                    <td>Eco-safe TPU - waterproof, odor-free</td>
+                                </tr>
+                                <tr>
+                                    <td>Surface</td>
+                                    <td>Pet-friendly, easy to clean</td>
+                                </tr>
+                                <tr>
+                                    <th colspan="2">{{t.shared.th_built_in_pump}}</th>
+                                </tr>
+                                <tr>
+                                    <td>Inflation Time</td>
+                                    <td><strong>50 seconds</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>Type</td>
+                                    <td>Built-in rechargeable pump</td>
+                                </tr>
+                                <tr>
+                                    <td>Deflation</td>
+                                    <td>Automatic - fast pack-up</td>
+                                </tr>
+                                <tr>
+                                    <th colspan="2">{{t.shared.th_warranty_compatibility}}</th>
+                                </tr>
+                                <tr>
+                                    <td>Warranty</td>
+                                    <td><strong>5 years</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>Designed For</td>
+                                    <td>Tesla Model Y (solo campers)</td>
+                                </tr>
+                                <tr>
+                                    <td>Best For</td>
+                                    <td>Solo travelers, pet owners, gear-heavy trips</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Why Choose Solo Section -->
+                <section class="review-section">
+                    <h2>{{t.review_havnby_solo.h2_6}}</h2>
+                    <p>{{t.review_havnby_solo.p_5}}</p>
+
+                    <div class="use-cases">
+                        <div class="use-case">
+                            <h4>{{t.review_havnby_solo.h4}}</h4>
+                            <p>{{t.review_havnby_solo.p_6}}</p>
+                        </div>
+                        <div class="use-case">
+                            <h4>{{t.review_havnby_solo.h4_2}}</h4>
+                            <p>{{t.review_havnby_solo.p_7}}</p>
+                        </div>
+                        <div class="use-case">
+                            <h4>{{t.review_havnby_solo.h4_3}}</h4>
+                            <p>{{t.review_havnby_solo.p_8}}</p>
+                        </div>
+                        <div class="use-case">
+                            <h4>{{t.review_havnby_solo.h4_4}}</h4>
+                            <p>{{t.review_havnby_solo.p_9}}</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Zero-Tilt Technology -->
+                <section class="review-section">
+                    <h2>{{t.review_havnby_solo.h2_7}}</h2>
+                    <p>{{t.review_havnby_solo.p_10}}</p>
+                    <p>{{t.review_havnby_solo.p_11}}</p>
+                </section>
+
+                <!-- What Solo Campers Say -->
+                <section class="review-section testimonials-section">
+                    <h2>{{t.review_havnby_solo.h2_8}}</h2>
+                    <p>{{t.review_havnby_solo.p_12}}</p>
+
+                    <blockquote class="testimonial">
+                        <p>{{t.review_havnby_solo.p_13}}</p>
+                        <cite>— Verified Havnby buyer</cite>
+                    </blockquote>
+
+                    <blockquote class="testimonial">
+                        <p>{{t.review_havnby_solo.p_14}}</p>
+                        <cite>— Pet owner review</cite>
+                    </blockquote>
+
+                    <blockquote class="testimonial">
+                        <p>{{t.review_havnby_solo.p_15}}</p>
+                        <cite>— Tesla camping enthusiast</cite>
+                    </blockquote>
+
+                    <p>{{t.review_havnby_solo.p_16}}</p>
+                </section>
+
+                <!-- Setup Guide -->
+                <section class="review-section">
+                    <h2>{{t.review_havnby_solo.h2_9}}</h2>
+                    <p>{{t.review_havnby_solo.p_17}}</p>
+
+                    <ol class="setup-steps">
+                        <li><strong>Fold down the rear seats</strong> - The Model Y's seats fold nearly flat. You can leave one side up if you want a backseat passenger.</li>
+                        <li><strong>Remove from the compact storage bag</strong> - At only 7 lbs, the Solo is easy to grab from your trunk.</li>
+                        <li><strong>Position against one side</strong> - Place the mattress along either the left or right side of the cargo area, leaving space for gear.</li>
+                        <li><strong>Press the inflate button</strong> - The built-in pump inflates to optimal firmness in about 50 seconds. The dual pump system is designed for durability.</li>
+                        <li><strong>Arrange your gear</strong> - Use the 20 inches of side space for a cooler, backpack, camera bag, or pet bed.</li>
+                        <li><strong>Enable Camp Mode</strong> - Keep your Tesla's climate control running all night.</li>
+                    </ol>
+
+                    <h3>{{t.review_havnby_solo.h3_3}}</h3>
+                    <ul style="margin-left: 1.5rem; margin-top: 1rem;">
+                        <li>Keep a small flashlight accessible in the side space for nighttime convenience</li>
+                        <li>Position your pillow at the back of the car for more legroom toward the front seats</li>
+                        <li>The side space works great for wet gear you don't want on the mattress</li>
+                        <li>Consider a window shade kit for privacy while solo camping</li>
+                    </ul>
+                </section>
+
+                <!-- What's Included -->
+                <section class="review-section">
+                    <h2>{{t.review_havnby_solo.h2_10}}</h2>
+                    <div class="whats-included">
+                        <div class="included-item">
+                            <h4>{{t.review_havnby_solo.h4_5}}</h4>
+                            <p>{{t.review_havnby_solo.p_18}}</p>
+                        </div>
+                        <div class="included-item">
+                            <h4>{{t.review_havnby_solo.h4_6}}</h4>
+                            <p>{{t.review_havnby_solo.p_19}}</p>
+                        </div>
+                        <div class="included-item">
+                            <h4>{{t.review_havnby_solo.h4_7}}</h4>
+                            <p>{{t.review_havnby_solo.p_20}}</p>
+                        </div>
+                        <div class="included-item">
+                            <h4>{{t.review_havnby_solo.h4_8}}</h4>
+                            <p>{{t.review_havnby_solo.p_21}}</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Who Is This For -->
+                <div class="who-for-section">
+                    <h2>{{t.review_havnby_solo.h2_11}}</h2>
+                    <div class="who-for-grid">
+                        <div class="who-for-item good">Solo Tesla campers who want gear space</div>
+                        <div class="who-for-item good">Road trippers with dogs or pets</div>
+                        <div class="who-for-item good">Photographers/adventurers with equipment</div>
+                        <div class="who-for-item good">Frequent campers who value light weight</div>
+                    </div>
+
+                    <h3>{{t.review_havnby_solo.h3_4}}</h3>
+                    <div class="who-for-grid avoid">
+                        <div class="who-for-item bad">Couples - get the full-size <a href="/{{localePath}}reviews/havnby-autolevel">Havnby Autolevel</a></div>
+                        <div class="who-for-item bad">Larger sleepers who want more width</div>
+                        <div class="who-for-item bad">Those who prefer self-inflating mattresses</div>
+                    </div>
+                </div>
+
+                <!-- Comparison Section -->
+                <section class="review-section">
+                    <h2>{{t.review_havnby_solo.h2_12}}</h2>
+                    <div class="comparison-table-section">
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>{{t.shared.th_feature}}</th>
+                                    <th>{{t.shared.th_havnby_solo}}</th>
+                                    <th>{{t.shared.th_havnby_autolevel}}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Price</td>
+                                    <td>$239.99</td>
+                                    <td>$359.99</td>
+                                </tr>
+                                <tr>
+                                    <td>Dimensions</td>
+                                    <td>76" x 32" x 6.7"</td>
+                                    <td>76" x 52" x 7.5"</td>
+                                </tr>
+                                <tr>
+                                    <td>Weight</td>
+                                    <td><strong>7 lbs (3.2kg)</strong></td>
+                                    <td>12 lbs (5.4kg)</td>
+                                </tr>
+                                <tr>
+                                    <td>Foam Thickness</td>
+                                    <td>6.7 inches</td>
+                                    <td><strong>7.5 inches</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>Capacity</td>
+                                    <td>660 lbs (300kg)</td>
+                                    <td>660 lbs (300kg)</td>
+                                </tr>
+                                <tr>
+                                    <td>Space for Gear</td>
+                                    <td><strong>Yes (~20")</strong></td>
+                                    <td>No</td>
+                                </tr>
+                                <tr>
+                                    <td>Best For</td>
+                                    <td>Solo + gear</td>
+                                    <td>Solo luxury / couples</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- FAQ Section -->
+                <section class="review-section faq-section">
+                    <h2>{{t.review_havnby_solo.h2_13}}</h2>
+
+                    <div class="faq-item">
+                        <h3>{{t.review_havnby_solo.h3_5}}</h3>
+                        <p>{{t.review_havnby_solo.p_22}}</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>{{t.review_havnby_solo.h3_6}}</h3>
+                        <p>{{t.review_havnby_solo.p_23}}</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>{{t.review_havnby_solo.h3_7}}</h3>
+                        <p>{{t.review_havnby_solo.p_24}}</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>{{t.review_havnby_solo.h3_8}}</h3>
+                        <p>{{t.review_havnby_solo.p_25}}</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>{{t.review_havnby_solo.h3_9}}</h3>
+                        <p>{{t.review_havnby_solo.p_26}}</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>{{t.review_havnby_solo.h3_10}}</h3>
+                        <p>{{t.review_havnby_solo.p_27}}</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>{{t.review_havnby_solo.h3_11}}</h3>
+                        <p>{{t.review_havnby_solo.p_28}}</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>{{t.review_havnby_solo.h3_12}}</h3>
+                        <p>{{t.review_havnby_solo.p_29}}</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>{{t.review_havnby_solo.h3_13}}</h3>
+                        <p>{{t.review_havnby_solo.p_30}}</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>{{t.review_havnby_solo.h3_14}}</h3>
+                        <p>{{t.review_havnby_solo.p_31}}</p>
+                    </div>
+                </section>
+
+                <!-- Comparison Box -->
+                <div class="comparison-box">
+                    <h2>{{t.review_havnby_solo.h2_14}}</h2>
+                    <div class="comparison-items">
+                        <a href="/{{localePath}}reviews/havnby-autolevel" class="comparison-item">
+                            <span class="comparison-item-name">Havnby Autolevel</span>
+                            <span class="comparison-item-price">$359.99</span>
+                            <span class="comparison-item-type">Full Width</span>
+                        </a>
+                        <a href="/{{localePath}}reviews/tesmat-solo-y" class="comparison-item">
+                            <span class="comparison-item-name">TESMAT Solo Y</span>
+                            <span class="comparison-item-price">$139</span>
+                            <span class="comparison-item-type">Budget Solo</span>
+                        </a>
+                        <a href="/{{localePath}}reviews/snuuzu-model-y" class="comparison-item">
+                            <span class="comparison-item-name">Snuuzu Model Y</span>
+                            <span class="comparison-item-price">€899</span>
+                            <span class="comparison-item-type">Premium Choice</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Bottom Line -->
+                <div class="bottom-line">
+                    <h2>{{t.review_havnby_solo.h2_15}}</h2>
+                    <p>{{t.review_havnby_solo.p_32}}</p>
+                    <p>{{t.review_havnby_solo.p_33}}</p>
+                    <p>{{t.review_havnby_solo.p_34}}</p>
+                    <div class="discount-callout">Use code AWD at checkout for 10% off!</div>
+                </div>
+
+            </article>
+
+            <aside class="review-sidebar">
+                <div class="sidebar-card buy-card">
+                    <h3>{{t.review_havnby_solo.h3_15}}</h3>
+                    <div class="price-display">$239.99</div>
+                    <div class="discount-highlight">Use code AWD for 10% off!</div>
+                    <a href="https://havnby.com/products/autolevel-foam-tesla-model-y-mattress-solo-edition?ref=discount" target="_blank" rel="noopener sponsored" class="btn-buy-sidebar">{{t.shared.btn_buy_now}}</a>
+                    <ul class="buy-benefits">
+                        <li>50-second inflation</li>
+                        <li>5-year warranty</li>
+                        <li>Sheet + eye masks included</li>
+                        <li>Only 7 lbs</li>
+                        <li>Room for gear</li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-card specs-card">
+                    <h3>{{t.review_havnby_solo.h3_16}}</h3>
+                    <dl class="specs-list">
+                        <dt>Fits</dt><dd>Tesla Model Y</dd>
+                        <dt>Type</dt><dd>Air-Foam Hybrid</dd>
+                        <dt>Size</dt><dd>76" x 32" x 6.7"</dd>
+                        <dt>Weight</dt><dd>7 lbs (3.2kg)</dd>
+                        <dt>Capacity</dt><dd>660 lbs (300kg)</dd>
+                        <dt>Inflate Time</dt><dd>50 seconds</dd>
+                        <dt>Pump</dt><dd>Built-in 4000Pa</dd>
+                        <dt>Warranty</dt><dd>5 years</dd>
+                        <dt>Included</dt><dd>Sheet, 2 eye masks</dd>
+                    </dl>
+                </div>
+
+                <div class="sidebar-card similar-card">
+                    <h3>{{t.review_havnby_solo.h3_17}}</h3>
+                    <div class="similar-list">
+                        <a href="/{{localePath}}reviews/havnby-autolevel" class="similar-item">
+                            <span class="similar-item-name">Havnby Autolevel</span>
+                            <span class="similar-item-price">$359.99</span>
+                        </a>
+                        <a href="/{{localePath}}reviews/tesmat-solo-y" class="similar-item">
+                            <span class="similar-item-name">TESMAT Solo Y</span>
+                            <span class="similar-item-price">$139</span>
+                        </a>
+                        <a href="/{{localePath}}reviews/havnby-foam" class="similar-item">
+                            <span class="similar-item-name">Havnby Foam Y/3</span>
+                            <span class="similar-item-price">$259</span>
+                        </a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Related Reviews -->
+    <section class="related-reviews">
+        <h2>{{t.review_havnby_solo.h2_16}}</h2>
+        <div class="related-reviews-grid">
+            <a href="/{{localePath}}reviews/havnby-autolevel" class="related-review-card">
+                <span class="related-review-name">Havnby Autolevel</span>
+                <span class="related-review-arrow">&rarr;</span>
+            </a>
+            <a href="/{{localePath}}reviews/havnby-foam" class="related-review-card">
+                <span class="related-review-name">Havnby Foam</span>
+                <span class="related-review-arrow">&rarr;</span>
+            </a>
+            <a href="/{{localePath}}reviews/tesmat-solo-y" class="related-review-card">
+                <span class="related-review-name">TESMAT Solo Model Y</span>
+                <span class="related-review-arrow">&rarr;</span>
+            </a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">Teslamattress</div>
+            <div class="footer-text">
+                <p>&copy; 2026 Teslamattress. {{t.shared.footer_rights}} <a href="/{{localePath}}disclosure" style="color: rgba(255,255,255,0.7);">{{t.shared.fl_disclosure}}</a></p>
+                <p class="disclaimer">{{t.shared.footer_disclaimer}}</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburger menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const menuOverlay = document.querySelector('.menu-overlay');
+
+        if (menuToggle) {
+            function toggleMenu() {
+                menuToggle.classList.toggle('active');
+                navLinks.classList.toggle('active');
+                menuOverlay.classList.toggle('active');
+                document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+            }
+
+            menuToggle.addEventListener('click', toggleMenu);
+            menuOverlay.addEventListener('click', toggleMenu);
+
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navLinks.classList.contains('active')) toggleMenu();
+                });
+            });
+        }
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="{{htmlLang}}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="thshqzpZwETRTNS_vSK5NsUkKNT8gubJqQhGJamuwDk">
+
+    <!-- Primary Meta Tags -->
+    <title>{{t.home.meta_title}}</title>
+    <meta name="title" content="{{t.home.meta_name_title}}">
+    <meta name="description" content="{{t.home.meta_description}}">
+    <meta name="keywords" content="{{t.home.meta_keywords}}">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Fredrik Mastouri">
+    <link rel="canonical" href="{{canonicalUrl}}">
+    {{hreflangTags}}
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{pageUrl}}">
+    <meta property="og:title" content="{{t.home.og_title}}">
+    <meta property="og:description" content="{{t.home.og_description}}">
+    <meta property="og:image" content="https://teslamattress.com/images/og-image.jpg">
+    <meta property="og:site_name" content="Teslamattress">
+    <meta property="og:locale" content="{{ogLocale}}">
+    {{ogLocaleAlternates}}
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{pageUrl}}">
+    <meta name="twitter:title" content="{{t.home.twitter_title}}">
+    <meta name="twitter:description" content="{{t.home.twitter_description}}">
+    <meta name="twitter:image" content="https://teslamattress.com/images/og-image.jpg">
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.shopify.com">
+    <link rel="dns-prefetch" href="https://havnby.com">
+    <link rel="dns-prefetch" href="https://us.snuuzu.com">
+    <link rel="dns-prefetch" href="https://www.snuuzu.com">
+
+    <!-- Google Fonts (non-blocking) -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap"></noscript>
+
+    <!-- Critical CSS (above-the-fold) -->
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--forest:#2d4a3e;--forest-dark:#1a2e25;--cream:#f5f1e8;--warm-white:#faf9f6;--text:#3d3d3d}
+        body{font-family:'Source Sans 3',-apple-system,sans-serif;line-height:1.7;color:var(--text);background:var(--warm-white)}
+        .navbar{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 6%;position:absolute;width:100%;z-index:100}
+        .logo{font-family:'Libre Baskerville',Georgia,serif;font-size:1.6rem;font-weight:700;color:var(--cream);letter-spacing:.5px}
+        .nav-links{display:flex;list-style:none;gap:2.5rem}
+        .nav-links a{color:var(--cream);text-decoration:none;font-weight:500;font-size:.95rem}
+        .hero{min-height:60vh;background:linear-gradient(to bottom,rgba(20,35,28,0.85),rgba(30,50,42,0.92)),url('images/hero-bg.webp') center/cover no-repeat;display:flex;align-items:center;justify-content:center;padding:2rem}
+        .hero-content{text-align:center;color:#fff;max-width:900px;margin:0 auto}
+        .hero-content h1{font-family:'Libre Baskerville',Georgia,serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;margin-bottom:1rem;line-height:1.2;color:#fff;text-shadow:0 2px 4px rgba(0,0,0,0.8),0 4px 20px rgba(0,0,0,0.5)}
+        .hero-content p{font-size:1.2rem;color:#fff;max-width:600px;margin:0 auto 2rem;text-shadow:0 1px 3px rgba(0,0,0,0.7)}
+        .cta-button{display:inline-block;background:#c9a961;color:var(--forest-dark);padding:1rem 2.5rem;border-radius:50px;text-decoration:none;font-weight:600}
+        .menu-toggle{display:none}
+        .hero-background{display:none}
+    </style>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <!-- Stylesheet (deferred) -->
+    <link rel="stylesheet" href="styles.css">
+    
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "{{t.home.jsonld_1_name_2}}",
+        "url": "https://teslamattress.com",
+        "description": "{{t.home.jsonld_1_description_1}}",
+        "dateModified": "2026-01-24",
+        "publisher": {
+                "@type": "Organization",
+                "name": "Teslamattress",
+                "url": "https://teslamattress.com",
+                "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://teslamattress.com/favicon.svg"
+                },
+                "foundingDate": "2017",
+                "description": "{{t.home.jsonld_1_description_3}}",
+                "sameAs": [
+                        "https://www.trustpilot.com/review/teslamattress.com"
+                ],
+                "knowsAbout": [
+                        "Tesla camping",
+                        "car camping mattresses",
+                        "Tesla Model Y camping",
+                        "Tesla Model 3 camping",
+                        "EV road trips"
+                ],
+                "founder": {
+                        "@type": "Person",
+                        "name": "Fredrik Mastouri"
+                }
+        }
+}
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Fredrik Mastouri",
+        "jobTitle": "Founder & Lead Reviewer",
+        "worksFor": {
+                "@type": "Organization",
+                "name": "Teslamattress",
+                "url": "https://teslamattress.com"
+        },
+        "description": "{{t.home.jsonld_2_description_1}}",
+        "knowsAbout": [
+                "Tesla camping",
+                "car camping mattresses",
+                "Tesla Model Y",
+                "Tesla Model 3",
+                "sleep ergonomics",
+                "camping gear testing"
+        ],
+        "hasCredential": {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "Professional Experience",
+                "name": "Independent Product Reviewer - Tesla Camping Specialist"
+        },
+        "award": "{{t.home.jsonld_2_award_2}}"
+}
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "{{t.home.jsonld_3_name_2}}",
+        "description": "{{t.home.jsonld_3_description_1}}",
+        "numberOfItems": 10,
+        "itemListElement": [
+                {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "item": {
+                                "@type": "Product",
+                                "name": "{{t.home.jsonld_3_name_4}}",
+                                "description": "{{t.home.jsonld_3_description_3}}",
+                                "image": [
+                                        "https://teslamattress.com/images/snuuzu-model-y-tesla-mattress.jpg"
+                                ],
+                                "url": "https://teslamattress.com/reviews/snuuzu-model-y",
+                                "brand": {
+                                        "@type": "Brand",
+                                        "name": "Snuuzu"
+                                },
+                                "offers": {
+                                        "@type": "Offer",
+                                        "price": "899",
+                                        "priceCurrency": "EUR",
+                                        "url": "https://us.snuuzu.com/products/snuuzu-mattress-for-tesla-model-y",
+                                        "availability": "https://schema.org/InStock",
+                                        "priceValidUntil": "2026-12-31"
+                                },
+                                "aggregateRating": {
+                                        "@type": "AggregateRating",
+                                        "ratingValue": "9.4",
+                                        "bestRating": "10",
+                                        "worstRating": "1",
+                                        "ratingCount": "156"
+                                }
+                        }
+                },
+                {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "item": {
+                                "@type": "Product",
+                                "name": "{{t.home.jsonld_3_name_6}}",
+                                "description": "{{t.home.jsonld_3_description_5}}",
+                                "image": [
+                                        "https://www.snuuzu.com/cdn/shop/files/snuuzu-mattress-for-tesla-model-3-rear-wide-angle.jpg"
+                                ],
+                                "url": "https://teslamattress.com/reviews/snuuzu-model-3",
+                                "brand": {
+                                        "@type": "Brand",
+                                        "name": "Snuuzu"
+                                },
+                                "offers": {
+                                        "@type": "Offer",
+                                        "price": "899",
+                                        "priceCurrency": "EUR",
+                                        "url": "https://www.snuuzu.com/products/snuuzu-mattress-for-tesla-model-3",
+                                        "availability": "https://schema.org/InStock",
+                                        "priceValidUntil": "2026-12-31"
+                                },
+                                "aggregateRating": {
+                                        "@type": "AggregateRating",
+                                        "ratingValue": "9.3",
+                                        "bestRating": "10",
+                                        "worstRating": "1",
+                                        "ratingCount": "98"
+                                }
+                        }
+                },
+                {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "item": {
+                                "@type": "Product",
+                                "name": "{{t.home.jsonld_3_name_8}}",
+                                "description": "{{t.home.jsonld_3_description_7}}",
+                                "image": [
+                                        "https://novapads.com/cdn/shop/files/NovaPads_Model_Y_Camping_Mattress_Pro_Model_Y_Juniper_2026_Tesla_Bed.webp?v=1768154742"
+                                ],
+                                "url": "https://teslamattress.com/reviews/tesery-novapads",
+                                "brand": {
+                                        "@type": "Brand",
+                                        "name": "NovaPads"
+                                },
+                                "offers": {
+                                        "@type": "Offer",
+                                        "price": "239",
+                                        "priceCurrency": "USD",
+                                        "url": "https://novapads.com/products/tesla-model-y-air-foam-camping-mattress-pro-tesla-bed?ref=AWD",
+                                        "availability": "https://schema.org/InStock",
+                                        "priceValidUntil": "2026-12-31"
+                                },
+                                "aggregateRating": {
+                                        "@type": "AggregateRating",
+                                        "ratingValue": "8.8",
+                                        "bestRating": "10",
+                                        "worstRating": "1",
+                                        "ratingCount": "98"
+                                }
+                        }
+                },
+                {
+                        "@type": "ListItem",
+                        "position": 4,
+                        "item": {
+                                "@type": "Product",
+                                "name": "{{t.home.jsonld_3_name_10}}",
+                                "description": "{{t.home.jsonld_3_description_9}}",
+                                "image": [
+                                        "https://havnby.com/cdn/shop/files/autolevel-foam-tesla-mattress.jpg"
+                                ],
+                                "url": "https://teslamattress.com/reviews/havnby-autolevel",
+                                "brand": {
+                                        "@type": "Brand",
+                                        "name": "Havnby"
+                                },
+                                "offers": {
+                                        "@type": "Offer",
+                                        "price": "359.99",
+                                        "priceCurrency": "USD",
+                                        "url": "https://havnby.com/products/autolevel-foam-mattress",
+                                        "availability": "https://schema.org/InStock",
+                                        "priceValidUntil": "2026-12-31"
+                                },
+                                "aggregateRating": {
+                                        "@type": "AggregateRating",
+                                        "ratingValue": "8.6",
+                                        "bestRating": "10",
+                                        "worstRating": "1",
+                                        "ratingCount": "234"
+                                }
+                        }
+                },
+                {
+                        "@type": "ListItem",
+                        "position": 5,
+                        "item": {
+                                "@type": "Product",
+                                "name": "{{t.home.jsonld_3_name_12}}",
+                                "description": "{{t.home.jsonld_3_description_11}}",
+                                "image": [
+                                        "https://teslamattress.com/images/tesmat-luxe-model-y-tesla-mattress.jpg"
+                                ],
+                                "url": "https://teslamattress.com/reviews/tesmat-luxe-y",
+                                "brand": {
+                                        "@type": "Brand",
+                                        "name": "TESMAT"
+                                },
+                                "offers": {
+                                        "@type": "Offer",
+                                        "price": "379",
+                                        "priceCurrency": "USD",
+                                        "url": "https://www.tesmat.com/products/tesmat-luxe-for-model-y",
+                                        "availability": "https://schema.org/InStock",
+                                        "priceValidUntil": "2026-12-31"
+                                },
+                                "aggregateRating": {
+                                        "@type": "AggregateRating",
+                                        "ratingValue": "8.5",
+                                        "bestRating": "10",
+                                        "worstRating": "1",
+                                        "ratingCount": "187"
+                                }
+                        }
+                },
+                {
+                        "@type": "ListItem",
+                        "position": 6,
+                        "item": {
+                                "@type": "Product",
+                                "name": "{{t.home.jsonld_3_name_14}}",
+                                "description": "{{t.home.jsonld_3_description_13}}",
+                                "image": [
+                                        "https://teslamattress.com/images/tesmat-luxe-model-3-tesla-mattress.jpg"
+                                ],
+                                "url": "https://teslamattress.com/reviews/tesmat-luxe-3",
+                                "brand": {
+                                        "@type": "Brand",
+                                        "name": "TESMAT"
+                                },
+                                "offers": {
+                                        "@type": "Offer",
+                                        "price": "379",
+                                        "priceCurrency": "USD",
+                                        "url": "https://www.tesmat.com/products/tesmat-luxe-for-model-3",
+                                        "availability": "https://schema.org/InStock",
+                                        "priceValidUntil": "2026-12-31"
+                                },
+                                "aggregateRating": {
+                                        "@type": "AggregateRating",
+                                        "ratingValue": "8.4",
+                                        "bestRating": "10",
+                                        "worstRating": "1",
+                                        "ratingCount": "143"
+                                }
+                        }
+                },
+                {
+                        "@type": "ListItem",
+                        "position": 7,
+                        "item": {
+                                "@type": "Product",
+                                "name": "{{t.home.jsonld_3_name_16}}",
+                                "description": "{{t.home.jsonld_3_description_15}}",
+                                "image": [
+                                        "https://havnby.com/cdn/shop/files/tesla-solo-mattress-main.jpg"
+                                ],
+                                "url": "https://teslamattress.com/reviews/havnby-solo",
+                                "brand": {
+                                        "@type": "Brand",
+                                        "name": "Havnby"
+                                },
+                                "offers": {
+                                        "@type": "Offer",
+                                        "price": "239.99",
+                                        "priceCurrency": "USD",
+                                        "url": "https://havnby.com/products/autolevel-solo-mattress",
+                                        "availability": "https://schema.org/InStock",
+                                        "priceValidUntil": "2026-12-31"
+                                },
+                                "aggregateRating": {
+                                        "@type": "AggregateRating",
+                                        "ratingValue": "8.2",
+                                        "bestRating": "10",
+                                        "worstRating": "1",
+                                        "ratingCount": "54"
+                                }
+                        }
+                },
+                {
+                        "@type": "ListItem",
+                        "position": 8,
+                        "item": {
+                                "@type": "Product",
+                                "name": "{{t.home.jsonld_3_name_18}}",
+                                "description": "{{t.home.jsonld_3_description_17}}",
+                                "image": [
+                                        "https://teslamattress.com/images/havnby-foam-tesla-mattress.jpg"
+                                ],
+                                "url": "https://teslamattress.com/reviews/havnby-foam",
+                                "brand": {
+                                        "@type": "Brand",
+                                        "name": "Havnby"
+                                },
+                                "offers": {
+                                        "@type": "Offer",
+                                        "price": "259",
+                                        "priceCurrency": "USD",
+                                        "url": "https://havnby.com/products/foam-mattress",
+                                        "availability": "https://schema.org/InStock",
+                                        "priceValidUntil": "2026-12-31"
+                                },
+                                "aggregateRating": {
+                                        "@type": "AggregateRating",
+                                        "ratingValue": "7.6",
+                                        "bestRating": "10",
+                                        "worstRating": "1",
+                                        "ratingCount": "67"
+                                }
+                        }
+                },
+                {
+                        "@type": "ListItem",
+                        "position": 9,
+                        "item": {
+                                "@type": "Product",
+                                "name": "{{t.home.jsonld_3_name_20}}",
+                                "description": "{{t.home.jsonld_3_description_19}}",
+                                "image": [
+                                        "https://teslamattress.com/images/tesmat-solo-model-y-tesla-mattress.jpg"
+                                ],
+                                "url": "https://teslamattress.com/reviews/tesmat-solo-y",
+                                "brand": {
+                                        "@type": "Brand",
+                                        "name": "TESMAT"
+                                },
+                                "offers": {
+                                        "@type": "Offer",
+                                        "price": "139",
+                                        "priceCurrency": "USD",
+                                        "url": "https://www.tesmat.com/products/tesmat-solo-for-model-y",
+                                        "availability": "https://schema.org/InStock",
+                                        "priceValidUntil": "2026-12-31"
+                                },
+                                "aggregateRating": {
+                                        "@type": "AggregateRating",
+                                        "ratingValue": "7.5",
+                                        "bestRating": "10",
+                                        "worstRating": "1",
+                                        "ratingCount": "112"
+                                }
+                        }
+                },
+                {
+                        "@type": "ListItem",
+                        "position": 10,
+                        "item": {
+                                "@type": "Product",
+                                "name": "{{t.home.jsonld_3_name_22}}",
+                                "description": "{{t.home.jsonld_3_description_21}}",
+                                "image": [
+                                        "https://cdn.shopify.com/s/files/1/0096/2546/8991/files/explainer_solo_tesmat.png"
+                                ],
+                                "url": "https://teslamattress.com/reviews/tesmat-solo-3",
+                                "brand": {
+                                        "@type": "Brand",
+                                        "name": "TESMAT"
+                                },
+                                "offers": {
+                                        "@type": "Offer",
+                                        "price": "139",
+                                        "priceCurrency": "USD",
+                                        "url": "https://www.tesmat.com/products/tesmat-solo-for-model-3",
+                                        "availability": "https://schema.org/InStock",
+                                        "priceValidUntil": "2026-12-31"
+                                },
+                                "aggregateRating": {
+                                        "@type": "AggregateRating",
+                                        "ratingValue": "7.4",
+                                        "bestRating": "10",
+                                        "worstRating": "1",
+                                        "ratingCount": "78"
+                                }
+                        }
+                }
+        ]
+}
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/{{localePath}}" class="logo">Teslamattress</a>
+        <button class="menu-toggle" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="/{{localePath}}reviews/">{{t.shared.nav_reviews}}</a></li>
+            <li><a href="/{{localePath}}vs/">{{t.shared.nav_compare}}</a></li>
+            <li><a href="#discounts">{{t.shared.nav_discounts}}</a></li>
+            <li><a href="/{{localePath}}about">{{t.shared.nav_about}}</a></li>
+        </ul>
+        {{langSwitcher}}
+    </nav>
+    <div class="menu-overlay"></div>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-background">
+            <div class="stars"></div>
+            <div class="moon"></div>
+            <div class="mountains">
+                <div class="mountain-back"></div>
+                <div class="mountain-front"></div>
+            </div>
+            <div class="trees"></div>
+        </div>
+        <div class="hero-content">
+            <h1>{{t.home.h1}}</h1>
+            <p>{{t.home.p}}</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">10</div>
+                    <div class="stat-label">{{t.home.div_stat_label}}</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">{{t.home.div_stat_label_2}}</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">20%</div>
+                    <div class="stat-label">{{t.home.div_stat_label_3}}</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Comparison Table Section -->
+    <section id="comparison" class="comparison-section">
+        <div class="section-header">
+            <span class="section-tag">{{t.home.span_section_tag}}</span>
+            <h2>{{t.home.h2}}</h2>
+            <p class="section-description">{{t.home.p_2}}</p>
+        </div>
+
+        <div class="table-container">
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>{{t.shared.th_mattress}}</th>
+                        <th>{{t.shared.th_fits}}</th>
+                        <th>{{t.shared.th_type}}</th>
+                        <th>{{t.shared.th_price}}</th>
+                        <th>{{t.shared.th_discount}}</th>
+                        <th>{{t.shared.th_score}}</th>
+                        <th>{{t.shared.th_actions}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="product-cell">
+                                <img src="https://teslamattress.com/images/snuuzu-model-y-tesla-mattress.webp?width=100" alt="Snuuzu Model Y" class="product-thumb" loading="lazy" width="60" height="45">
+                                <strong>Snuuzu Model Y</strong>
+                            </div>
+                        </td>
+                        <td data-label="{{t.shared.dl_fits}}">Model Y</td>
+                        <td data-label="{{t.shared.dl_type}}">Premium Foam</td>
+                        <td data-label="{{t.shared.dl_price}}">€899 / $899</td>
+                        <td data-label="{{t.shared.dl_discount}}"><span class="discount-badge">{{t.home.span_discount_badge}}</span></td>
+                        <td data-label="{{t.shared.dl_score}}"><span class="score total high">9.4</span></td>
+                        <td class="actions-cell">
+                            <a href="/{{localePath}}reviews/snuuzu-model-y" class="btn-review">{{t.shared.btn_review}}</a>
+                            <button onclick="showRegionPopup('model-y')" class="btn-buy">{{t.shared.btn_buy}}</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="product-cell">
+                                <img src="https://www.snuuzu.com/cdn/shop/files/snuuzu-mattress-for-tesla-model-3-rear-wide-angle.jpg?width=100" alt="Snuuzu Model 3" class="product-thumb" loading="lazy" width="60" height="45">
+                                <strong>Snuuzu Model 3</strong>
+                            </div>
+                        </td>
+                        <td data-label="{{t.shared.dl_fits}}">Model 3</td>
+                        <td data-label="{{t.shared.dl_type}}">Premium Foam</td>
+                        <td data-label="{{t.shared.dl_price}}">€899 / $899</td>
+                        <td data-label="{{t.shared.dl_discount}}"><span class="discount-badge">{{t.home.span_discount_badge_2}}</span></td>
+                        <td data-label="{{t.shared.dl_score}}"><span class="score total high">9.3</span></td>
+                        <td class="actions-cell">
+                            <a href="/{{localePath}}reviews/snuuzu-model-3" class="btn-review">{{t.shared.btn_review}}</a>
+                            <button onclick="showRegionPopup('model-3')" class="btn-buy">{{t.shared.btn_buy}}</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="product-cell">
+                                <img src="https://novapads.com/cdn/shop/files/NovaPads_Model_Y_Camping_Mattress_Pro_Model_Y_Juniper_2026_Tesla_Bed.webp?v=1768154742&width=100" alt="NovaPads Air-Foam Pro" class="product-thumb" loading="lazy" width="60" height="45">
+                                <strong>NovaPads Air-Foam Pro</strong>
+                            </div>
+                        </td>
+                        <td data-label="{{t.shared.dl_fits}}">Model Y</td>
+                        <td data-label="{{t.shared.dl_type}}">Air-Foam</td>
+                        <td data-label="{{t.shared.dl_price}}">$239</td>
+                        <td data-label="{{t.shared.dl_discount}}"><span class="discount-badge">{{t.home.span_discount_badge_3}}</span></td>
+                        <td data-label="{{t.shared.dl_score}}"><span class="score total high">8.8</span></td>
+                        <td class="actions-cell">
+                            <a href="/{{localePath}}reviews/tesery-novapads" class="btn-review">{{t.shared.btn_review}}</a>
+                            <a href="https://novapads.com/products/tesla-model-y-air-foam-camping-mattress-pro-tesla-bed?ref=AWD" target="_blank" rel="noopener sponsored" class="btn-buy">{{t.shared.btn_buy}}</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="product-cell">
+                                <img src="https://havnby.com/cdn/shop/files/autolevel-foam-tesla-mattress.jpg?width=100" alt="Havnby Autolevel" class="product-thumb" loading="lazy" width="60" height="45">
+                                <strong>Havnby Autolevel Foam</strong>
+                            </div>
+                        </td>
+                        <td data-label="{{t.shared.dl_fits}}">Model Y</td>
+                        <td data-label="{{t.shared.dl_type}}">Air-Foam Hybrid</td>
+                        <td data-label="{{t.shared.dl_price}}">$359.99</td>
+                        <td data-label="{{t.shared.dl_discount}}"><span class="discount-badge">{{t.home.span_discount_badge_4}}</span></td>
+                        <td data-label="{{t.shared.dl_score}}"><span class="score total high">8.6</span></td>
+                        <td class="actions-cell">
+                            <a href="/{{localePath}}reviews/havnby-autolevel" class="btn-review">{{t.shared.btn_review}}</a>
+                            <a href="https://havnby.com/products/autolevel-foam-tesla-model-y-mattress?ref=discount" target="_blank" rel="noopener sponsored" class="btn-buy">{{t.shared.btn_buy}}</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="product-cell">
+                                <img src="https://teslamattress.com/images/tesmat-luxe-model-y-tesla-mattress.webp?width=100" alt="TESMAT Luxe Model Y" class="product-thumb" loading="lazy" width="60" height="45">
+                                <strong>TESMAT Luxe Model Y</strong>
+                            </div>
+                        </td>
+                        <td data-label="{{t.shared.dl_fits}}">Model Y</td>
+                        <td data-label="{{t.shared.dl_type}}">Hybrid Air+Foam</td>
+                        <td data-label="{{t.shared.dl_price}}">$379</td>
+                        <td data-label="{{t.shared.dl_discount}}"><span class="discount-badge-none">{{t.home.span_discount_badge_5}}</span></td>
+                        <td data-label="{{t.shared.dl_score}}"><span class="score total high">8.5</span></td>
+                        <td class="actions-cell">
+                            <a href="/{{localePath}}reviews/tesmat-luxe-y" class="btn-review">{{t.shared.btn_review}}</a>
+                            <a href="https://www.tesmat.com/products/tesmat-luxe-for-model-y" target="_blank" rel="noopener sponsored" class="btn-buy">{{t.shared.btn_buy}}</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="product-cell">
+                                <img src="https://teslamattress.com/images/tesmat-luxe-model-3-tesla-mattress.webp?width=100" alt="TESMAT Luxe Model 3" class="product-thumb" loading="lazy" width="60" height="45">
+                                <strong>TESMAT Luxe Model 3</strong>
+                            </div>
+                        </td>
+                        <td data-label="{{t.shared.dl_fits}}">Model 3</td>
+                        <td data-label="{{t.shared.dl_type}}">Hybrid Air+Foam</td>
+                        <td data-label="{{t.shared.dl_price}}">$379</td>
+                        <td data-label="{{t.shared.dl_discount}}"><span class="discount-badge-none">{{t.home.span_discount_badge_6}}</span></td>
+                        <td data-label="{{t.shared.dl_score}}"><span class="score total high">8.4</span></td>
+                        <td class="actions-cell">
+                            <a href="/{{localePath}}reviews/tesmat-luxe-3" class="btn-review">{{t.shared.btn_review}}</a>
+                            <a href="https://www.tesmat.com/products/tesmat-luxe-for-model-3" target="_blank" rel="noopener sponsored" class="btn-buy">{{t.shared.btn_buy}}</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="product-cell">
+                                <img src="https://havnby.com/cdn/shop/files/tesla-solo-mattress-main.jpg?width=100" alt="Havnby Solo" class="product-thumb" loading="lazy" width="60" height="45">
+                                <strong>Havnby Autolevel Solo</strong>
+                            </div>
+                        </td>
+                        <td data-label="{{t.shared.dl_fits}}">Model Y</td>
+                        <td data-label="{{t.shared.dl_type}}">Air-Foam Solo</td>
+                        <td data-label="{{t.shared.dl_price}}">$239.99</td>
+                        <td data-label="{{t.shared.dl_discount}}"><span class="discount-badge">{{t.home.span_discount_badge_7}}</span></td>
+                        <td data-label="{{t.shared.dl_score}}"><span class="score total high">8.2</span></td>
+                        <td class="actions-cell">
+                            <a href="/{{localePath}}reviews/havnby-solo" class="btn-review">{{t.shared.btn_review}}</a>
+                            <a href="https://havnby.com/products/autolevel-foam-tesla-model-y-mattress-solo-edition?ref=discount" target="_blank" rel="noopener sponsored" class="btn-buy">{{t.shared.btn_buy}}</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="product-cell">
+                                <img src="https://teslamattress.com/images/havnby-foam-tesla-mattress.webp?width=100" alt="Havnby Foam" class="product-thumb" loading="lazy" width="60" height="45">
+                                <strong>Havnby Foam Model Y/3</strong>
+                            </div>
+                        </td>
+                        <td data-label="{{t.shared.dl_fits}}">Model Y / 3</td>
+                        <td data-label="{{t.shared.dl_type}}">Foam 4.5"</td>
+                        <td data-label="{{t.shared.dl_price}}">$259</td>
+                        <td data-label="{{t.shared.dl_discount}}"><span class="discount-badge">{{t.home.span_discount_badge_8}}</span></td>
+                        <td data-label="{{t.shared.dl_score}}"><span class="score total medium">7.6</span></td>
+                        <td class="actions-cell">
+                            <a href="/{{localePath}}reviews/havnby-foam" class="btn-review">{{t.shared.btn_review}}</a>
+                            <a href="https://havnby.com/products/tesla-model-y-3-x-foam-mattress?ref=discount" target="_blank" rel="noopener sponsored" class="btn-buy">{{t.shared.btn_buy}}</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="product-cell">
+                                <img src="https://teslamattress.com/images/tesmat-solo-model-y-tesla-mattress.webp?width=100" alt="TESMAT Solo Model Y" class="product-thumb" loading="lazy" width="60" height="45">
+                                <strong>TESMAT Solo Model Y</strong>
+                            </div>
+                        </td>
+                        <td data-label="{{t.shared.dl_fits}}">Model Y</td>
+                        <td data-label="{{t.shared.dl_type}}">Memory Foam</td>
+                        <td data-label="{{t.shared.dl_price}}">$139</td>
+                        <td data-label="{{t.shared.dl_discount}}"><span class="discount-badge-none">{{t.home.span_discount_badge_9}}</span></td>
+                        <td data-label="{{t.shared.dl_score}}"><span class="score total medium">7.5</span></td>
+                        <td class="actions-cell">
+                            <a href="/{{localePath}}reviews/tesmat-solo-y" class="btn-review">{{t.shared.btn_review}}</a>
+                            <a href="https://www.tesmat.com/products/tesmat-solo-for-model-y" target="_blank" rel="noopener sponsored" class="btn-buy">{{t.shared.btn_buy}}</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="product-cell">
+                                <img src="https://cdn.shopify.com/s/files/1/0096/2546/8991/files/explainer_solo_tesmat.png?width=100" alt="TESMAT Solo Model 3" class="product-thumb" loading="lazy" width="60" height="45">
+                                <strong>TESMAT Solo Model 3</strong>
+                            </div>
+                        </td>
+                        <td data-label="{{t.shared.dl_fits}}">Model 3</td>
+                        <td data-label="{{t.shared.dl_type}}">Memory Foam</td>
+                        <td data-label="{{t.shared.dl_price}}">$139</td>
+                        <td data-label="{{t.shared.dl_discount}}"><span class="discount-badge-none">{{t.home.span_discount_badge_10}}</span></td>
+                        <td data-label="{{t.shared.dl_score}}"><span class="score total medium">7.4</span></td>
+                        <td class="actions-cell">
+                            <a href="/{{localePath}}reviews/tesmat-solo-3" class="btn-review">{{t.shared.btn_review}}</a>
+                            <a href="https://www.tesmat.com/products/tesmat-solo-for-model-3" target="_blank" rel="noopener sponsored" class="btn-buy">{{t.shared.btn_buy}}</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="discounts" class="discount-section-new">
+            <h3>{{t.home.h3}}</h3>
+            <p class="discount-intro">{{t.home.p_3}}</p>
+
+            <div class="discount-cards-grid">
+                <!-- Snuuzu -->
+                <div class="discount-card-new snuuzu-card">
+                    <div class="discount-card-header">
+                        <img src="https://www.snuuzu.com/cdn/shop/files/BAG_LOGO_Black.png?v=1717409417&width=200" alt="Snuuzu" class="discount-brand-logo" loading="lazy">
+                        <span class="discount-badge-new">{{t.home.span_discount_badge_new}}</span>
+                    </div>
+                    <div class="discount-card-body">
+                        <p class="discount-description">{{t.home.p_4}}</p>
+                        <div class="discount-code-box">
+                            <span class="code-label">{{t.home.span_code_label}}</span>
+                            <div class="code-display">
+                                <code>KLEPPE</code>
+                                <button onclick="copyCode('KLEPPE', this)" class="copy-btn" title="Copy code">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="discount-savings">
+                            <span class="savings-amount">{{t.home.span_savings_amount}}</span>
+                            <span class="savings-text">{{t.home.span_savings_text}}</span>
+                        </div>
+                    </div>
+                    <div class="discount-card-footer">
+                        <button onclick="showRegionPopup('snuuzu')" class="discount-cta-btn primary">{{t.home.btn}}</button>
+                        <a href="/{{localePath}}discounts/snuuzu" class="discount-details-link">{{t.home.link_discount_details_link}}</a>
+                    </div>
+                </div>
+
+                <!-- NovaPads -->
+                <div class="discount-card-new tesery-card">
+                    <div class="discount-card-header">
+                        <img src="/images/novapads-logo.jpg" alt="NovaPads" class="discount-brand-logo" loading="lazy">
+                        <span class="discount-badge-new budget">{{t.home.span_discount_badge_new_2}}</span>
+                    </div>
+                    <div class="discount-card-body">
+                        <p class="discount-description">{{t.home.p_5}}</p>
+                        <div class="discount-code-box">
+                            <span class="code-label">{{t.home.span_code_label_2}}</span>
+                            <div class="code-display">
+                                <code>AWD</code>
+                                <button onclick="copyCode('AWD', this)" class="copy-btn" title="Copy code">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="discount-savings">
+                            <span class="savings-amount">{{t.home.span_savings_amount_2}}</span>
+                            <span class="savings-text">{{t.home.span_savings_text_2}}</span>
+                        </div>
+                    </div>
+                    <div class="discount-card-footer">
+                        <a href="https://novapads.com/products/tesla-model-y-air-foam-camping-mattress-pro-tesla-bed?ref=AWD" target="_blank" rel="noopener sponsored" class="discount-cta-btn primary">{{t.home.btn_2}}</a>
+                        <a href="/{{localePath}}discounts/novapads" class="discount-details-link">{{t.home.link_discount_details_link_2}}</a>
+                    </div>
+                </div>
+
+                <!-- Havnby -->
+                <div class="discount-card-new havnby-card">
+                    <div class="discount-card-header">
+                        <img src="https://havnby.com/cdn/shop/files/Havnby-logo.png?v=1760604799&width=200" alt="Havnby" class="discount-brand-logo" loading="lazy">
+                        <span class="discount-badge-new">{{t.home.span_discount_badge_new_3}}</span>
+                    </div>
+                    <div class="discount-card-body">
+                        <p class="discount-description">{{t.home.p_6}}</p>
+                        <div class="discount-code-box">
+                            <span class="code-label">{{t.home.span_code_label_3}}</span>
+                            <div class="code-display">
+                                <code>AWD</code>
+                                <button onclick="copyCode('AWD', this)" class="copy-btn" title="Copy code">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="discount-savings">
+                            <span class="savings-amount">{{t.home.span_savings_amount_3}}</span>
+                            <span class="savings-text">{{t.home.span_savings_text_3}}</span>
+                        </div>
+                    </div>
+                    <div class="discount-card-footer">
+                        <a href="https://havnby.com/?ref=discount" target="_blank" rel="noopener sponsored" class="discount-cta-btn primary">{{t.home.btn_3}}</a>
+                        <a href="/{{localePath}}discounts/havnby" class="discount-details-link">{{t.home.link_discount_details_link_3}}</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="all-codes-cta">
+                <a href="/{{localePath}}discounts/" class="btn-all-codes">{{t.home.btn_4}}</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Other Partners Section -->
+    <section id="partners" class="partners-section">
+        <div class="section-header">
+            <span class="section-tag">{{t.home.span_section_tag_2}}</span>
+            <h2>{{t.home.h2_2}}</h2>
+            <p class="section-description">{{t.home.p_7}}</p>
+        </div>
+
+        <div class="partners-grid">
+            <a href="https://www.jowua-life.com/awd" target="_blank" rel="noopener sponsored" class="partner-card">
+                <span class="partner-name">Jowua</span>
+                <span class="partner-desc">{{t.home.span_partner_desc}}</span>
+                <span class="partner-discount">{{t.home.span_partner_discount}}</span>
+            </a>
+            <a href="https://www.shop4tesla.com/discount" target="_blank" rel="noopener sponsored" class="partner-card">
+                <span class="partner-name">Shop4Tesla</span>
+                <span class="partner-desc">{{t.home.span_partner_desc_2}}</span>
+                <span class="partner-discount">{{t.home.span_partner_discount_2}}</span>
+            </a>
+            <a href="https://www.yeslak.com/?ref=discount" target="_blank" rel="noopener sponsored" class="partner-card">
+                <span class="partner-name">Yeslak</span>
+                <span class="partner-desc">{{t.home.span_partner_desc_3}}</span>
+                <span class="partner-discount">{{t.home.span_partner_discount_3}}</span>
+            </a>
+            <a href="https://www.hansshow.com?bg_ref=2LQHuVf8dv" target="_blank" rel="noopener sponsored" class="partner-card">
+                <span class="partner-name">Hansshow</span>
+                <span class="partner-desc">{{t.home.span_partner_desc_4}}</span>
+                <span class="partner-discount">{{t.home.span_partner_discount_4}}</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer with Internal Links for SEO -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="footer-brand">
+                <div class="footer-logo">Teslamattress</div>
+                <p class="footer-tagline">{{t.shared.footer_tagline}}</p>
+            </div>
+
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>{{t.shared.footer_col_model_y}}</h4>
+                    <ul>
+                        <li><a href="/{{localePath}}reviews/snuuzu-model-y">{{t.shared.fl_snuuzu_y}}</a></li>
+                        <li><a href="/{{localePath}}reviews/havnby-autolevel">{{t.shared.fl_havnby_autolevel}}</a></li>
+                        <li><a href="/{{localePath}}reviews/tesmat-luxe-y">{{t.shared.fl_tesmat_luxe_y}}</a></li>
+                        <li><a href="/{{localePath}}reviews/havnby-solo">{{t.shared.fl_havnby_solo}}</a></li>
+                        <li><a href="/{{localePath}}reviews/tesmat-solo-y">{{t.shared.fl_tesmat_solo_y}}</a></li>
+                        <li><a href="/{{localePath}}reviews/tesery-novapads">{{t.shared.fl_novapads}}</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>{{t.shared.footer_col_model_3}}</h4>
+                    <ul>
+                        <li><a href="/{{localePath}}reviews/snuuzu-model-3">{{t.shared.fl_snuuzu_3}}</a></li>
+                        <li><a href="/{{localePath}}reviews/tesmat-luxe-3">{{t.shared.fl_tesmat_luxe_3}}</a></li>
+                        <li><a href="/{{localePath}}reviews/tesmat-solo-3">{{t.shared.fl_tesmat_solo_3}}</a></li>
+                        <li><a href="/{{localePath}}reviews/havnby-foam">{{t.shared.fl_havnby_foam}}</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>{{t.shared.footer_col_discounts}}</h4>
+                    <ul>
+                        <li><a href="/{{localePath}}discounts/">{{t.shared.fl_all_discounts}}</a></li>
+                        <li><a href="/{{localePath}}discounts/snuuzu">{{t.shared.fl_snuuzu_discount}}</a></li>
+                        <li><a href="/{{localePath}}discounts/havnby">{{t.shared.fl_havnby_discount}}</a></li>
+                        <li><a href="/{{localePath}}discounts/novapads">{{t.shared.fl_novapads_discount}}</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>{{t.shared.footer_col_resources}}</h4>
+                    <ul>
+                        <li><a href="#comparison">{{t.shared.fl_comparison}}</a></li>
+                        <li><a href="#discounts">{{t.shared.fl_exclusive_codes}}</a></li>
+                        <li><a href="#partners">{{t.shared.fl_partner_brands}}</a></li>
+                        <li><a href="/{{localePath}}about">{{t.shared.fl_about}}</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Teslamattress. {{t.shared.footer_rights}} <a href="/{{localePath}}disclosure" style="color: rgba(255,255,255,0.7);">{{t.shared.fl_disclosure}}</a></p>
+            <p class="disclaimer">{{t.shared.footer_disclaimer}}</p>
+        </div>
+    </footer>
+
+    <!-- Region Popup for Snuuzu -->
+    <div id="regionPopup" class="region-popup">
+        <div class="region-popup-overlay" onclick="hideRegionPopup()"></div>
+        <div class="region-popup-content">
+            <button class="region-popup-close" onclick="hideRegionPopup()">&times;</button>
+            <h3>{{t.shared.region_title}}</h3>
+            <p class="region-popup-subtitle">{{t.shared.region_subtitle}}</p>
+            <div class="region-buttons" id="regionButtons">
+                <!-- Buttons populated by JavaScript -->
+            </div>
+            <p class="region-discount">{{t.shared.region_discount_text}}</p>
+        </div>
+    </div>
+
+    <script>
+        const snuuzuLinks = {
+            'model-y': {
+                eu: 'https://www.snuuzu.com/products/snuuzu-model-y?bg_ref=s7fluA5re6',
+                us: 'https://us.snuuzu.com/products/snuuzu-model-y?bg_ref=QBfsWJtiUJ',
+                price: '€899 / $899'
+            },
+            'model-3': {
+                eu: 'https://www.snuuzu.com/products/snuuzu-model-3?bg_ref=s7fluA5re6',
+                us: 'https://us.snuuzu.com/products/snuuzu-model-3?bg_ref=QBfsWJtiUJ',
+                price: '€899 / $899'
+            },
+            'snuuzu': {
+                eu: 'https://www.snuuzu.com?bg_ref=s7fluA5re6',
+                us: 'https://us.snuuzu.com?bg_ref=QBfsWJtiUJ',
+                price: 'From €899'
+            }
+        };
+
+        function showRegionPopup(model) {
+            const links = snuuzuLinks[model];
+            const isShop = model === 'snuuzu';
+            document.getElementById('regionButtons').innerHTML = `
+                <a href="${links.eu}" target="_blank" rel="noopener sponsored" class="region-btn region-eu">
+                    <span class="region-flag">🇪🇺</span>
+                    <span class="region-name">{{t.shared.region_europe}}</span>
+                    <span class="region-price">${isShop ? 'snuuzu.com' : '€899'}</span>
+                </a>
+                <a href="${links.us}" target="_blank" rel="noopener sponsored" class="region-btn region-us">
+                    <span class="region-flag">🇺🇸</span>
+                    <span class="region-name">{{t.shared.region_us}}</span>
+                    <span class="region-price">${isShop ? 'us.snuuzu.com' : '$899'}</span>
+                </a>
+            `;
+            document.getElementById('regionPopup').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function hideRegionPopup() {
+            document.getElementById('regionPopup').style.display = 'none';
+            document.body.style.overflow = '';
+        }
+
+        function copyCode(code, btn) {
+            navigator.clipboard.writeText(code).then(() => {
+                const originalHTML = btn.innerHTML;
+                btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.innerHTML = originalHTML;
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') hideRegionPopup();
+        });
+
+        // Hamburger menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const menuOverlay = document.querySelector('.menu-overlay');
+
+        function toggleMenu() {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+        menuOverlay.addEventListener('click', toggleMenu);
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) toggleMenu();
+            });
+        });
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

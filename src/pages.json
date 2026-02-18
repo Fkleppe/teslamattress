@@ -1,0 +1,36 @@
+[
+  { "template": "index.html", "pageKey": "home", "output": "index.html" },
+  { "template": "about.html", "pageKey": "about", "output": "about.html" },
+  { "template": "methodology.html", "pageKey": "methodology", "output": "methodology.html" },
+  { "template": "disclosure.html", "pageKey": "disclosure", "output": "disclosure.html" },
+
+  { "template": "reviews/index.html", "pageKey": "reviews_index", "output": "reviews/index.html" },
+  { "template": "reviews/snuuzu-model-y.html", "pageKey": "review_snuuzu_model_y", "output": "reviews/snuuzu-model-y.html" },
+  { "template": "reviews/snuuzu-model-3.html", "pageKey": "review_snuuzu_model_3", "output": "reviews/snuuzu-model-3.html" },
+  { "template": "reviews/havnby-autolevel.html", "pageKey": "review_havnby_autolevel", "output": "reviews/havnby-autolevel.html" },
+  { "template": "reviews/havnby-foam.html", "pageKey": "review_havnby_foam", "output": "reviews/havnby-foam.html" },
+  { "template": "reviews/havnby-solo.html", "pageKey": "review_havnby_solo", "output": "reviews/havnby-solo.html" },
+  { "template": "reviews/tesery-novapads.html", "pageKey": "review_tesery_novapads", "output": "reviews/tesery-novapads.html" },
+  { "template": "reviews/tesmat-luxe-y.html", "pageKey": "review_tesmat_luxe_y", "output": "reviews/tesmat-luxe-y.html" },
+  { "template": "reviews/tesmat-luxe-3.html", "pageKey": "review_tesmat_luxe_3", "output": "reviews/tesmat-luxe-3.html" },
+  { "template": "reviews/tesmat-solo-y.html", "pageKey": "review_tesmat_solo_y", "output": "reviews/tesmat-solo-y.html" },
+  { "template": "reviews/tesmat-solo-3.html", "pageKey": "review_tesmat_solo_3", "output": "reviews/tesmat-solo-3.html" },
+
+  { "template": "vs/index.html", "pageKey": "vs_index", "output": "vs/index.html" },
+  { "template": "vs/snuuzu-vs-tesmat.html", "pageKey": "vs_snuuzu_vs_tesmat", "output": "vs/snuuzu-vs-tesmat.html" },
+  { "template": "vs/snuuzu-vs-havnby.html", "pageKey": "vs_snuuzu_vs_havnby", "output": "vs/snuuzu-vs-havnby.html" },
+  { "template": "vs/snuuzu-vs-dreamcase.html", "pageKey": "vs_snuuzu_vs_dreamcase", "output": "vs/snuuzu-vs-dreamcase.html" },
+  { "template": "vs/tesmat-vs-havnby.html", "pageKey": "vs_tesmat_vs_havnby", "output": "vs/tesmat-vs-havnby.html" },
+  { "template": "vs/havnby-autolevel-vs-foam.html", "pageKey": "vs_havnby_autolevel_vs_foam", "output": "vs/havnby-autolevel-vs-foam.html" },
+  { "template": "vs/model-y-vs-model-3-mattresses.html", "pageKey": "vs_model_y_vs_model_3", "output": "vs/model-y-vs-model-3-mattresses.html" },
+
+  { "template": "discounts/index.html", "pageKey": "discounts_index", "output": "discounts/index.html" },
+  { "template": "discounts/snuuzu.html", "pageKey": "discount_snuuzu", "output": "discounts/snuuzu.html" },
+  { "template": "discounts/havnby.html", "pageKey": "discount_havnby", "output": "discounts/havnby.html" },
+  { "template": "discounts/hansshow.html", "pageKey": "discount_hansshow", "output": "discounts/hansshow.html" },
+  { "template": "discounts/shop4tesla.html", "pageKey": "discount_shop4tesla", "output": "discounts/shop4tesla.html" },
+  { "template": "discounts/yeslak.html", "pageKey": "discount_yeslak", "output": "discounts/yeslak.html" },
+  { "template": "discounts/jowua.html", "pageKey": "discount_jowua", "output": "discounts/jowua.html" },
+  { "template": "discounts/novapads.html", "pageKey": "discount_novapads", "output": "discounts/novapads.html" },
+  { "template": "discounts/tesery.html", "pageKey": "discount_tesery", "output": "discounts/tesery.html" }
+]

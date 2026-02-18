@@ -1,5 +1,12 @@
 {
+  "scripts": {
+    "extract": "node scripts/extract.js",
+    "build": "node scripts/build.js",
+    "translate": "node scripts/translate.js",
+    "verify": "node scripts/verify.js"
+  },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
     "@vercel/analytics": "^1.6.1",
     "sharp": "^0.34.5"
   }

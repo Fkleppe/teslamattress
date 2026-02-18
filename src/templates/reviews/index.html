@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="{{htmlLang}}">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>{{t.reviews_index.meta_title}}</title>
+    <meta name="title" content="{{t.reviews_index.meta_name_title}}">
+    <meta name="description" content="{{t.reviews_index.meta_description}}">
+    <meta name="keywords" content="{{t.reviews_index.meta_keywords}}">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{canonicalUrl}}">
+    {{hreflangTags}}
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{pageUrl}}">
+    <meta property="og:title" content="{{t.reviews_index.og_title}}">
+    <meta property="og:description" content="{{t.reviews_index.og_description}}">
+    <meta property="og:image" content="https://teslamattress.com/images/og-image.jpg">
+    <meta property="og:site_name" content="Teslamattress">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{t.reviews_index.twitter_title}}">
+    <meta name="twitter:description" content="{{t.reviews_index.twitter_description}}">
+    <meta name="twitter:image" content="https://teslamattress.com/images/og-image.jpg">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Fonts -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+
+    <!-- Critical CSS -->
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--forest:#2d4a3e;--forest-dark:#1a2e25;--cream:#f5f1e8;--warm-white:#faf9f6;--text:#3d3d3d;--copper:#b87333;--text-light:#6b6b6b}
+        body{font-family:'Source Sans 3',-apple-system,sans-serif;line-height:1.7;color:var(--text);background:var(--warm-white)}
+        .navbar{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 6%;position:fixed;width:100%;z-index:100;background:var(--forest-dark)}
+        .logo{font-family:'Libre Baskerville',Georgia,serif;font-size:1.6rem;font-weight:700;color:var(--cream);text-decoration:none}
+        .nav-links{display:flex;list-style:none;gap:2.5rem}
+        .nav-links a{color:var(--cream);text-decoration:none;font-weight:500}
+        .menu-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:5px}
+        .menu-toggle span{width:24px;height:2px;background:var(--cream)}
+        @media(max-width:768px){.menu-toggle{display:flex}.nav-links{display:none}}
+    </style>
+
+    <link rel="stylesheet" href="/styles.css">
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "{{t.reviews_index.jsonld_1_name_2}}",
+        "description": "{{t.reviews_index.jsonld_1_description_1}}",
+        "url": "https://teslamattress.com/reviews/",
+        "mainEntity": {
+                "@type": "ItemList",
+                "name": "{{t.reviews_index.jsonld_1_name_3}}",
+                "numberOfItems": 11,
+                "itemListElement": [
+                        {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "{{t.reviews_index.jsonld_1_name_4}}",
+                                "url": "https://teslamattress.com/reviews/snuuzu-model-y"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "{{t.reviews_index.jsonld_1_name_5}}",
+                                "url": "https://teslamattress.com/reviews/snuuzu-model-3"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 3,
+                                "name": "{{t.reviews_index.jsonld_1_name_6}}",
+                                "url": "https://teslamattress.com/reviews/havnby-autolevel"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 4,
+                                "name": "{{t.reviews_index.jsonld_1_name_7}}",
+                                "url": "https://teslamattress.com/reviews/tesery-novapads"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 5,
+                                "name": "{{t.reviews_index.jsonld_1_name_8}}",
+                                "url": "https://teslamattress.com/reviews/tesmat-luxe-y"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 6,
+                                "name": "{{t.reviews_index.jsonld_1_name_9}}",
+                                "url": "https://teslamattress.com/reviews/tesmat-luxe-3"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 7,
+                                "name": "{{t.reviews_index.jsonld_1_name_10}}",
+                                "url": "https://teslamattress.com/reviews/havnby-foam"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 8,
+                                "name": "{{t.reviews_index.jsonld_1_name_11}}",
+                                "url": "https://teslamattress.com/reviews/havnby-solo"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 9,
+                                "name": "{{t.reviews_index.jsonld_1_name_12}}",
+                                "url": "https://teslamattress.com/reviews/tesmat-solo-y"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 10,
+                                "name": "{{t.reviews_index.jsonld_1_name_13}}",
+                                "url": "https://teslamattress.com/reviews/tesmat-solo-3"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 11,
+                                "name": "{{t.reviews_index.jsonld_1_name_14}}",
+                                "url": "https://teslamattress.com/reviews/tesery-novapads"
+                        }
+                ]
+        }
+}
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+                {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://teslamattress.com/"
+                },
+                {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Reviews",
+                        "item": "https://teslamattress.com/reviews/"
+                }
+        ]
+}
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/{{localePath}}" class="logo">Teslamattress</a>
+        <button class="menu-toggle" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="/{{localePath}}#comparison">{{t.shared.nav_comparison}}</a></li>
+            <li><a href="/{{localePath}}vs/">{{t.shared.nav_compare}}</a></li>
+            <li><a href="/{{localePath}}discounts/">{{t.shared.nav_discounts}}</a></li>
+            <li><a href="/{{localePath}}about">{{t.shared.nav_about}}</a></li>
+        </ul>
+        {{langSwitcher}}
+    </nav>
+    <div class="menu-overlay"></div>
+
+    <main class="reviews-hub">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/{{localePath}}">Home</a> &rsaquo;
+            <span>Reviews</span>
+        </nav>
+
+        <header class="reviews-hub-hero">
+            <h1>{{t.reviews_index.h1}}</h1>
+            <p>{{t.reviews_index.p}}</p>
+        </header>
+
+        <section class="reviews-grid">
+            <h2 class="section-label">{{t.reviews_index.h2}}</h2>
+            <div class="review-cards">
+                <a href="/{{localePath}}reviews/snuuzu-model-y" class="review-card-link featured">
+                    <div class="review-card-badge">Best Overall</div>
+                    <div class="review-card-top">
+                        <div class="review-card-brand">Snuuzu</div>
+                        <span class="review-card-score high">9.4</span>
+                    </div>
+                    <h3>{{t.reviews_index.h3}}</h3>
+                    <p class="review-card-type">{{t.reviews_index.p_2}}</p>
+                    <p class="review-card-summary">{{t.reviews_index.p_3}}</p>
+                    <div class="review-card-meta">
+                        <span class="review-card-discount">10% off: KLEPPE</span>
+                        <span class="review-card-cta">Read Review &rarr;</span>
+                    </div>
+                </a>
+
+                <a href="/{{localePath}}reviews/havnby-autolevel" class="review-card-link">
+                    <div class="review-card-badge value">Best Value</div>
+                    <div class="review-card-top">
+                        <div class="review-card-brand">Havnby</div>
+                        <span class="review-card-score high">8.6</span>
+                    </div>
+                    <h3>{{t.reviews_index.h3_2}}</h3>
+                    <p class="review-card-type">{{t.reviews_index.p_4}}</p>
+                    <p class="review-card-summary">{{t.reviews_index.p_5}}</p>
+                    <div class="review-card-meta">
+                        <span class="review-card-discount">10% off: AWD</span>
+                        <span class="review-card-cta">Read Review &rarr;</span>
+                    </div>
+                </a>
+
+                <a href="/{{localePath}}reviews/tesery-novapads" class="review-card-link">
+                    <div class="review-card-badge budget">Budget Pick</div>
+                    <div class="review-card-top">
+                        <div class="review-card-brand">NovaPads</div>
+                        <span class="review-card-score high">8.8</span>
+                    </div>
+                    <h3>{{t.reviews_index.h3_3}}</h3>
+                    <p class="review-card-type">{{t.reviews_index.p_6}}</p>
+                    <p class="review-card-summary">{{t.reviews_index.p_7}}</p>
+                    <div class="review-card-meta">
+                        <span class="review-card-discount">10% off: AWD</span>
+                        <span class="review-card-cta">Read Review &rarr;</span>
+                    </div>
+                </a>
+
+                <a href="/{{localePath}}reviews/tesmat-luxe-y" class="review-card-link">
+                    <div class="review-card-top">
+                        <div class="review-card-brand">TESMAT</div>
+                        <span class="review-card-score high">8.5</span>
+                    </div>
+                    <h3>{{t.reviews_index.h3_4}}</h3>
+                    <p class="review-card-type">{{t.reviews_index.p_8}}</p>
+                    <p class="review-card-summary">{{t.reviews_index.p_9}}</p>
+                    <div class="review-card-meta">
+                        <span class="review-card-cta">Read Review &rarr;</span>
+                    </div>
+                </a>
+
+                <a href="/{{localePath}}reviews/havnby-solo" class="review-card-link">
+                    <div class="review-card-top">
+                        <div class="review-card-brand">Havnby</div>
+                        <span class="review-card-score high">8.2</span>
+                    </div>
+                    <h3>{{t.reviews_index.h3_5}}</h3>
+                    <p class="review-card-type">{{t.reviews_index.p_10}}</p>
+                    <p class="review-card-summary">{{t.reviews_index.p_11}}</p>
+                    <div class="review-card-meta">
+                        <span class="review-card-discount">10% off: AWD</span>
+                        <span class="review-card-cta">Read Review &rarr;</span>
+                    </div>
+                </a>
+
+                <a href="/{{localePath}}reviews/tesmat-solo-y" class="review-card-link">
+                    <div class="review-card-top">
+                        <div class="review-card-brand">TESMAT</div>
+                        <span class="review-card-score medium">7.5</span>
+                    </div>
+                    <h3>{{t.reviews_index.h3_6}}</h3>
+                    <p class="review-card-type">{{t.reviews_index.p_12}}</p>
+                    <p class="review-card-summary">{{t.reviews_index.p_13}}</p>
+                    <div class="review-card-meta">
+                        <span class="review-card-cta">Read Review &rarr;</span>
+                    </div>
+                </a>
+            </div>
+
+            <h2 class="section-label">{{t.reviews_index.h2_2}}</h2>
+            <div class="review-cards">
+                <a href="/{{localePath}}reviews/snuuzu-model-3" class="review-card-link featured">
+                    <div class="review-card-badge">Best Overall</div>
+                    <div class="review-card-top">
+                        <div class="review-card-brand">Snuuzu</div>
+                        <span class="review-card-score high">9.3</span>
+                    </div>
+                    <h3>{{t.reviews_index.h3_7}}</h3>
+                    <p class="review-card-type">{{t.reviews_index.p_14}}</p>
+                    <p class="review-card-summary">{{t.reviews_index.p_15}}</p>
+                    <div class="review-card-meta">
+                        <span class="review-card-discount">10% off: KLEPPE</span>
+                        <span class="review-card-cta">Read Review &rarr;</span>
+                    </div>
+                </a>
+
+                <a href="/{{localePath}}reviews/tesmat-luxe-3" class="review-card-link">
+                    <div class="review-card-top">
+                        <div class="review-card-brand">TESMAT</div>
+                        <span class="review-card-score high">8.4</span>
+                    </div>
+                    <h3>{{t.reviews_index.h3_8}}</h3>
+                    <p class="review-card-type">{{t.reviews_index.p_16}}</p>
+                    <p class="review-card-summary">{{t.reviews_index.p_17}}</p>
+                    <div class="review-card-meta">
+                        <span class="review-card-cta">Read Review &rarr;</span>
+                    </div>
+                </a>
+
+                <a href="/{{localePath}}reviews/tesmat-solo-3" class="review-card-link">
+                    <div class="review-card-top">
+                        <div class="review-card-brand">TESMAT</div>
+                        <span class="review-card-score medium">7.4</span>
+                    </div>
+                    <h3>{{t.reviews_index.h3_9}}</h3>
+                    <p class="review-card-type">{{t.reviews_index.p_18}}</p>
+                    <p class="review-card-summary">{{t.reviews_index.p_19}}</p>
+                    <div class="review-card-meta">
+                        <span class="review-card-cta">Read Review &rarr;</span>
+                    </div>
+                </a>
+            </div>
+
+            <h2 class="section-label">{{t.reviews_index.h2_3}}</h2>
+            <div class="review-cards">
+                <a href="/{{localePath}}reviews/havnby-foam" class="review-card-link">
+                    <div class="review-card-top">
+                        <div class="review-card-brand">Havnby</div>
+                        <span class="review-card-score medium">7.6</span>
+                    </div>
+                    <h3>{{t.reviews_index.h3_10}}</h3>
+                    <p class="review-card-type">{{t.reviews_index.p_20}}</p>
+                    <p class="review-card-summary">{{t.reviews_index.p_21}}</p>
+                    <div class="review-card-meta">
+                        <span class="review-card-discount">10% off: AWD</span>
+                        <span class="review-card-cta">Read Review &rarr;</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="reviews-guide" style="max-width: 720px; margin: 3rem auto; padding: 0 1rem;">
+            <h2 style="font-family: 'Libre Baskerville', Georgia, serif; font-size: 1.5rem; margin-bottom: 1rem;">How We Pick the Best Tesla Mattresses</h2>
+            <p style="margin-bottom: 1rem;">Every mattress on this page has been personally tested over multiple camping trips. We sleep on each one for at least 5 nights in real conditions before scoring it. Our ratings weigh four factors equally: <strong>comfort</strong> (support, temperature regulation, pressure points), <strong>build quality</strong> (materials, stitching, durability after 3+ months), <strong>value for money</strong> (price vs. what you get), and <strong>setup ease</strong> (inflation time, fit in the car, storage size).</p>
+
+            <h3 style="font-size: 1.15rem; margin: 1.5rem 0 0.5rem;">What Makes a Great Tesla Camping Mattress?</h3>
+            <p style="margin-bottom: 1rem;">The cargo area in a Tesla Model Y measures roughly 190 cm x 100 cm with the seats folded, while the Model 3 is slightly narrower. A good Tesla mattress needs to fill this space without large gaps, level the slope where the seats fold, and pack down small enough to fit in your trunk alongside camping gear. Air-foam hybrids tend to score highest because they combine the leveling ability of air with the comfort of memory foam.</p>
+
+            <h3 style="font-size: 1.15rem; margin: 1.5rem 0 0.5rem;">Quick Buying Guide</h3>
+            <ul style="padding-left: 1.5rem; margin-bottom: 1rem; line-height: 1.8;">
+                <li><strong>Best overall:</strong> Snuuzu (9.4/10) — premium multi-layer foam with Lyocell cover. Worth the price if you camp regularly.</li>
+                <li><strong>Best value:</strong> Havnby Autolevel (8.6/10) — built-in pump, self-leveling, 5-year warranty. Hard to beat at $360.</li>
+                <li><strong>Best budget:</strong> NovaPads Air-Foam Pro (8.8/10) — air-foam hybrid with pump included. Great quality for the price.</li>
+                <li><strong>Most affordable:</strong> TESMAT Solo ($139) — basic gel memory foam. Good for occasional use.</li>
+            </ul>
+            <p style="margin-bottom: 1rem;">All prices shown are before discount codes. Use our <a href="/{{localePath}}discounts/" style="color: var(--forest); font-weight: 600;">verified discount codes</a> to save 10-20% on most brands.</p>
+        </section>
+
+        <section class="reviews-cta">
+            <h2>{{t.reviews_index.h2_4}}</h2>
+            <p>{{t.reviews_index.p_22}}</p>
+            <div class="reviews-cta-links">
+                <a href="/{{localePath}}vs/" class="cta-link-primary">View All Comparisons</a>
+                <a href="/{{localePath}}discounts/" class="cta-link-secondary">See All Discount Codes</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">Teslamattress</div>
+            <div class="footer-text">
+                <p>&copy; 2026 Teslamattress. <a href="/{{localePath}}disclosure" style="color: rgba(255,255,255,0.7);">{{t.shared.fl_disclosure}}</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const menuOverlay = document.querySelector('.menu-overlay');
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                menuToggle.classList.toggle('active');
+                navLinks.classList.toggle('active');
+                menuOverlay.classList.toggle('active');
+            });
+            menuOverlay.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+                menuOverlay.classList.remove('active');
+            });
+        }
+    </script>
+</body>
+</html>

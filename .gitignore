@@ -9,6 +9,9 @@ Thumbs.db
 .vscode/
 .idea/
 
+# Build output
+dist/
+
 # Node
 node_modules/
 package-lock.json
