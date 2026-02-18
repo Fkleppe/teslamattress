@@ -2177,6 +2177,15 @@ body {
     z-index: 200;
 }
 
+.lang-dropdown::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 0;
+    right: 0;
+    height: 6px;
+}
+
 .lang-switcher:hover .lang-dropdown,
 .lang-switcher:focus-within .lang-dropdown {
     display: block;
