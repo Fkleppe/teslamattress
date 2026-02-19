@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="{{htmlLang}}">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{t.guide_model_x.meta_title}}</title>
+    <meta name="title" content="{{t.guide_model_x.meta_name_title}}">
+    <meta name="description" content="{{t.guide_model_x.meta_description}}">
+    <meta name="keywords" content="{{t.guide_model_x.meta_keywords}}">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{canonicalUrl}}">
+    {{hreflangTags}}
+    <meta name="author" content="Fredrik Mastouri">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{pageUrl}}">
+    <meta property="og:title" content="{{t.guide_model_x.og_title}}">
+    <meta property="og:description" content="{{t.guide_model_x.og_description}}">
+    <meta property="og:image" content="https://teslamattress.com/images/og-image.jpg">
+    <meta property="og:site_name" content="Teslamattress">
+    <meta property="og:locale" content="{{ogLocale}}">
+    {{ogLocaleAlternates}}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{t.guide_model_x.twitter_title}}">
+    <meta name="twitter:description" content="{{t.guide_model_x.twitter_description}}">
+    <meta name="twitter:image" content="https://teslamattress.com/images/og-image.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap"></noscript>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--forest:#2d4a3e;--forest-dark:#1a2e25;--cream:#f5f1e8;--warm-white:#faf9f6;--text:#3d3d3d;--copper:#b87333;--text-light:#6b6b6b}
+        body{font-family:'Source Sans 3',-apple-system,sans-serif;line-height:1.7;color:var(--text);background:var(--warm-white)}
+        .navbar{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 6%;position:fixed;width:100%;z-index:100;background:var(--forest-dark)}
+        .logo{font-family:'Libre Baskerville',Georgia,serif;font-size:1.6rem;font-weight:700;color:var(--cream);text-decoration:none}
+        .nav-links{display:flex;list-style:none;gap:2.5rem}
+        .nav-links a{color:var(--cream);text-decoration:none;font-weight:500}
+        .menu-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:5px}
+        .menu-toggle span{width:24px;height:2px;background:var(--cream)}
+        @media(max-width:768px){.menu-toggle{display:flex}.nav-links{display:none}}
+    </style>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/guides/guides.css">
+
+    <!-- JSON-LD: Article -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "{{t.guide_model_x.jsonld_article_headline}}",
+        "description": "{{t.guide_model_x.jsonld_article_description}}",
+        "author": {
+            "@type": "Person",
+            "name": "Fredrik Mastouri",
+            "url": "https://teslamattress.com/about"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Teslamattress",
+            "url": "https://teslamattress.com"
+        },
+        "datePublished": "2025-07-01",
+        "dateModified": "2026-02-01",
+        "image": "https://teslamattress.com/images/og-image.jpg"
+    }
+    </script>
+    <!-- JSON-LD: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://teslamattress.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://teslamattress.com/guides/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Model X Mattress Guide",
+                "item": "https://teslamattress.com/guides/model-x-mattress"
+            }
+        ]
+    }
+    </script>
+    <!-- JSON-LD: FAQPage (5 questions) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "{{t.guide_model_x.faq_q1}}",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "{{t.guide_model_x.faq_a1}}"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "{{t.guide_model_x.faq_q2}}",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "{{t.guide_model_x.faq_a2}}"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "{{t.guide_model_x.faq_q3}}",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "{{t.guide_model_x.faq_a3}}"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "{{t.guide_model_x.faq_q4}}",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "{{t.guide_model_x.faq_a4}}"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "{{t.guide_model_x.faq_q5}}",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "{{t.guide_model_x.faq_a5}}"
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <nav class="navbar guide-nav">
+        <a href="/{{localePath}}" class="logo">Teslamattress</a>
+        <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        <ul class="nav-links">
+            <li><a href="/{{localePath}}reviews/">{{t.shared.nav_reviews}}</a></li>
+            <li><a href="/{{localePath}}vs/">{{t.shared.nav_compare}}</a></li>
+            <li><a href="/{{localePath}}guides/">Guides</a></li>
+            <li><a href="/{{localePath}}discounts/">{{t.shared.nav_discounts}}</a></li>
+        </ul>
+        {{langSwitcher}}
+    </nav>
+    <div class="menu-overlay"></div>
+
+    <!-- Hero -->
+    <header class="guide-hero">
+        <div class="guide-hero-content">
+            <nav class="breadcrumb" aria-label="Breadcrumb" style="color: rgba(255,255,255,0.7); margin-bottom: 1rem; font-size: 0.9rem;">
+                <a href="/{{localePath}}" style="color: rgba(255,255,255,0.8);">Home</a> &rsaquo;
+                <a href="/{{localePath}}guides/" style="color: rgba(255,255,255,0.8);">Guides</a> &rsaquo;
+                <span>{{t.guide_model_x.breadcrumb_current}}</span>
+            </nav>
+            <span class="guide-badge">{{t.guide_model_x.hero_badge}}</span>
+            <h1>{{t.guide_model_x.h1_title}}</h1>
+            <p class="guide-tagline">{{t.guide_model_x.hero_tagline}}</p>
+            <div class="guide-meta">
+                <span>By <a href="/{{localePath}}about" style="color: var(--cream);">Fredrik Mastouri</a></span>
+                <span>{{t.guide_model_x.hero_read_time}}</span>
+                <span>{{t.guide_model_x.hero_updated}}</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <div class="guide-content-wrapper">
+        <main class="guide-main">
+
+            <!-- Key Takeaway -->
+            <div class="guide-takeaway">
+                <h2>{{t.guide_model_x.takeaway_title}}</h2>
+                <p>{{t.guide_model_x.takeaway_text}}</p>
+                <ul>
+                    <li>{{t.guide_model_x.takeaway_point1}}</li>
+                    <li>{{t.guide_model_x.takeaway_point2}}</li>
+                    <li>{{t.guide_model_x.takeaway_point3}}</li>
+                </ul>
+            </div>
+
+            <!-- Section: Model X Camping Advantages -->
+            <section class="guide-section" id="advantages">
+                <h2>{{t.guide_model_x.h2_advantages}}</h2>
+                <p>{{t.guide_model_x.p_advantages_intro}}</p>
+                <p>{{t.guide_model_x.p_advantages_overview}}</p>
+
+                <h3>{{t.guide_model_x.h3_larger_cabin}}</h3>
+                <p>{{t.guide_model_x.p_larger_cabin}}</p>
+
+                <div class="guide-comparison-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>{{t.guide_model_x.th_dimension}}</th>
+                                <th>Model X</th>
+                                <th>Model Y</th>
+                                <th>Model 3</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{t.guide_model_x.td_cargo_length}}</td>
+                                <td class="winner">~77"</td>
+                                <td>~76"</td>
+                                <td>~72"</td>
+                            </tr>
+                            <tr>
+                                <td>{{t.guide_model_x.td_cargo_width}}</td>
+                                <td class="winner">~56"</td>
+                                <td>~54"</td>
+                                <td>~45"</td>
+                            </tr>
+                            <tr>
+                                <td>{{t.guide_model_x.td_cargo_height}}</td>
+                                <td class="winner">~30"</td>
+                                <td>~28"</td>
+                                <td>~24"</td>
+                            </tr>
+                            <tr>
+                                <td>{{t.guide_model_x.td_floor_flatness}}</td>
+                                <td>{{t.guide_model_x.td_flatness_x}}</td>
+                                <td>{{t.guide_model_x.td_flatness_y}}</td>
+                                <td>{{t.guide_model_x.td_flatness_3}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>{{t.guide_model_x.h3_falcon_wing_loading}}</h3>
+                <p>{{t.guide_model_x.p_falcon_wing_loading}}</p>
+                <ul>
+                    <li>{{t.guide_model_x.li_falcon_easy_access}}</li>
+                    <li>{{t.guide_model_x.li_falcon_ventilation}}</li>
+                    <li>{{t.guide_model_x.li_falcon_standing}}</li>
+                    <li>{{t.guide_model_x.li_falcon_scenic}}</li>
+                </ul>
+
+                <h3>{{t.guide_model_x.h3_third_row}}</h3>
+                <p>{{t.guide_model_x.p_third_row}}</p>
+                <p>{{t.guide_model_x.p_third_row_note}}</p>
+
+                <div class="guide-callout">
+                    <p><strong>{{t.guide_model_x.callout_battery_title}}</strong> {{t.guide_model_x.callout_battery_text}}</p>
+                </div>
+            </section>
+
+            <figure class="guide-image">
+                <img src="https://havnby.com/cdn/shop/files/TeslaModelYAutoLevelInflatableMattress-Havnby_3.jpg?v=1733913261&width=1200" alt="Havnby mattress setup in Tesla" loading="lazy" width="1200" height="800">
+                <figcaption>{{t.guide_model_x.img1_caption}}</figcaption>
+            </figure>
+
+            <!-- Section: Compatible Mattresses -->
+            <section class="guide-section" id="compatible-mattresses">
+                <h2>{{t.guide_model_x.h2_compatible}}</h2>
+                <p>{{t.guide_model_x.p_compatible_intro}}</p>
+                <p>{{t.guide_model_x.p_compatible_fit_note}}</p>
+
+                <!-- Havnby Autolevel -->
+                <div class="product-pick editors-choice">
+                    <div class="product-pick-header">
+                        <div>
+                            <span style="font-size: 0.8rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px;">{{t.guide_model_x.pick_label_best_overall}}</span>
+                            <div class="product-pick-name">Havnby Autolevel Air-Foam</div>
+                        </div>
+                        <span class="product-pick-score">8.6/10</span>
+                    </div>
+                    <div class="product-pick-meta">
+                        <span>{{t.guide_model_x.pick_type_air_foam}}</span>
+                        <span>{{t.guide_model_x.pick_thickness_7_5}}</span>
+                        <span>{{t.guide_model_x.pick_fits_y_x}}</span>
+                    </div>
+                    <p class="product-pick-desc">{{t.guide_model_x.pick_havnby_al_description}}</p>
+                    <ul class="product-pick-pros">
+                        <li>{{t.guide_model_x.pick_havnby_al_pro1}}</li>
+                        <li>{{t.guide_model_x.pick_havnby_al_pro2}}</li>
+                        <li>{{t.guide_model_x.pick_havnby_al_pro3}}</li>
+                        <li>{{t.guide_model_x.pick_havnby_al_pro4}}</li>
+                    </ul>
+                    <div class="product-pick-cta">
+                        <span class="price-tag">$359.99</span>
+                        <a href="/{{localePath}}reviews/havnby-autolevel" class="btn-review">{{t.guide_model_x.btn_read_review}}</a>
+                        <a href="#" target="_blank" rel="noopener sponsored" class="btn-buy">{{t.guide_model_x.btn_check_price}}</a>
+                    </div>
+                </div>
+
+                <!-- Havnby Foam -->
+                <div class="product-pick">
+                    <div class="product-pick-header">
+                        <div>
+                            <span style="font-size: 0.8rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px;">{{t.guide_model_x.pick_label_budget}}</span>
+                            <div class="product-pick-name">Havnby Foam Mattress</div>
+                        </div>
+                        <span class="product-pick-score">7.6/10</span>
+                    </div>
+                    <div class="product-pick-meta">
+                        <span>{{t.guide_model_x.pick_type_foam}}</span>
+                        <span>{{t.guide_model_x.pick_thickness_4_5}}</span>
+                        <span>{{t.guide_model_x.pick_fits_y_3_x}}</span>
+                    </div>
+                    <p class="product-pick-desc">{{t.guide_model_x.pick_havnby_foam_description}}</p>
+                    <ul class="product-pick-pros">
+                        <li>{{t.guide_model_x.pick_havnby_foam_pro1}}</li>
+                        <li>{{t.guide_model_x.pick_havnby_foam_pro2}}</li>
+                        <li>{{t.guide_model_x.pick_havnby_foam_pro3}}</li>
+                        <li>{{t.guide_model_x.pick_havnby_foam_pro4}}</li>
+                    </ul>
+                    <div class="product-pick-cta">
+                        <span class="price-tag">$169.99</span>
+                        <a href="/{{localePath}}reviews/havnby-foam" class="btn-review">{{t.guide_model_x.btn_read_review}}</a>
+                        <a href="#" target="_blank" rel="noopener sponsored" class="btn-buy">{{t.guide_model_x.btn_check_price}}</a>
+                    </div>
+                </div>
+
+                <!-- Snuuzu -->
+                <div class="product-pick">
+                    <div class="product-pick-header">
+                        <div>
+                            <span style="font-size: 0.8rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px;">{{t.guide_model_x.pick_label_premium}}</span>
+                            <div class="product-pick-name">Snuuzu Model Y</div>
+                        </div>
+                        <span class="product-pick-score">9.4/10</span>
+                    </div>
+                    <div class="product-pick-meta">
+                        <span>{{t.guide_model_x.pick_type_multi_layer}}</span>
+                        <span>{{t.guide_model_x.pick_thickness_7_9}}</span>
+                        <span>{{t.guide_model_x.pick_designed_for_y}}</span>
+                    </div>
+                    <p class="product-pick-desc">{{t.guide_model_x.pick_snuuzu_description}}</p>
+                    <ul class="product-pick-pros">
+                        <li>{{t.guide_model_x.pick_snuuzu_pro1}}</li>
+                        <li>{{t.guide_model_x.pick_snuuzu_pro2}}</li>
+                        <li>{{t.guide_model_x.pick_snuuzu_pro3}}</li>
+                        <li>{{t.guide_model_x.pick_snuuzu_pro4}}</li>
+                    </ul>
+                    <div class="product-pick-cta">
+                        <span class="price-tag">$899</span>
+                        <a href="/{{localePath}}reviews/snuuzu-model-y" class="btn-review">{{t.guide_model_x.btn_read_review}}</a>
+                        <a href="#" target="_blank" rel="noopener sponsored" class="btn-buy">{{t.guide_model_x.btn_check_price}}</a>
+                    </div>
+                </div>
+
+                <div class="guide-callout warning">
+                    <p><strong>{{t.guide_model_x.callout_fit_warning_title}}</strong> {{t.guide_model_x.callout_fit_warning_text}}</p>
+                </div>
+
+                <h3>{{t.guide_model_x.h3_generic_foam_options}}</h3>
+                <p>{{t.guide_model_x.p_generic_foam_intro}}</p>
+                <ul>
+                    <li><strong>{{t.guide_model_x.li_generic_trifold_title}}</strong> &mdash; {{t.guide_model_x.li_generic_trifold_desc}}</li>
+                    <li><strong>{{t.guide_model_x.li_generic_memory_title}}</strong> &mdash; {{t.guide_model_x.li_generic_memory_desc}}</li>
+                    <li><strong>{{t.guide_model_x.li_generic_camping_pad_title}}</strong> &mdash; {{t.guide_model_x.li_generic_camping_pad_desc}}</li>
+                </ul>
+            </section>
+
+            <figure class="guide-image">
+                <img src="https://www.snuuzu.com/cdn/shop/files/4eyes-240304-snuuzu-back_of_car-2000px-11.jpg?v=1710180889&width=1200" alt="Snuuzu mattress in Tesla rear cargo area" loading="lazy" width="1200" height="800">
+                <figcaption>{{t.guide_model_x.img2_caption}}</figcaption>
+            </figure>
+
+            <!-- Section: Falcon Wing Door Considerations -->
+            <section class="guide-section" id="falcon-wing-doors">
+                <h2>{{t.guide_model_x.h2_falcon_wing}}</h2>
+                <p>{{t.guide_model_x.p_falcon_wing_intro}}</p>
+
+                <h3>{{t.guide_model_x.h3_benefits_camping}}</h3>
+                <ul>
+                    <li><strong>{{t.guide_model_x.li_benefit_ventilation_title}}</strong> &mdash; {{t.guide_model_x.li_benefit_ventilation_desc}}</li>
+                    <li><strong>{{t.guide_model_x.li_benefit_access_title}}</strong> &mdash; {{t.guide_model_x.li_benefit_access_desc}}</li>
+                    <li><strong>{{t.guide_model_x.li_benefit_standing_title}}</strong> &mdash; {{t.guide_model_x.li_benefit_standing_desc}}</li>
+                    <li><strong>{{t.guide_model_x.li_benefit_rain_shelter_title}}</strong> &mdash; {{t.guide_model_x.li_benefit_rain_shelter_desc}}</li>
+                </ul>
+
+                <h3>{{t.guide_model_x.h3_considerations}}</h3>
+                <ul>
+                    <li><strong>{{t.guide_model_x.li_consider_insects_title}}</strong> &mdash; {{t.guide_model_x.li_consider_insects_desc}}</li>
+                    <li><strong>{{t.guide_model_x.li_consider_clearance_title}}</strong> &mdash; {{t.guide_model_x.li_consider_clearance_desc}}</li>
+                    <li><strong>{{t.guide_model_x.li_consider_battery_title}}</strong> &mdash; {{t.guide_model_x.li_consider_battery_desc}}</li>
+                    <li><strong>{{t.guide_model_x.li_consider_privacy_title}}</strong> &mdash; {{t.guide_model_x.li_consider_privacy_desc}}</li>
+                </ul>
+
+                <div class="guide-callout">
+                    <p><strong>{{t.guide_model_x.callout_tip_title}}</strong> {{t.guide_model_x.callout_tip_text}}</p>
+                </div>
+            </section>
+
+            <!-- Section: Camp Mode for Model X -->
+            <section class="guide-section" id="camp-mode">
+                <h2>{{t.guide_model_x.h2_camp_mode}}</h2>
+                <p>{{t.guide_model_x.p_camp_mode_intro}}</p>
+                <p>{{t.guide_model_x.p_camp_mode_what}}</p>
+
+                <h3>{{t.guide_model_x.h3_camp_mode_setup}}</h3>
+                <ol class="guide-steps">
+                    <li><strong>{{t.guide_model_x.step_camp_1_title}}</strong> &mdash; {{t.guide_model_x.step_camp_1_desc}}</li>
+                    <li><strong>{{t.guide_model_x.step_camp_2_title}}</strong> &mdash; {{t.guide_model_x.step_camp_2_desc}}</li>
+                    <li><strong>{{t.guide_model_x.step_camp_3_title}}</strong> &mdash; {{t.guide_model_x.step_camp_3_desc}}</li>
+                    <li><strong>{{t.guide_model_x.step_camp_4_title}}</strong> &mdash; {{t.guide_model_x.step_camp_4_desc}}</li>
+                </ol>
+
+                <h3>{{t.guide_model_x.h3_battery_drain}}</h3>
+                <p>{{t.guide_model_x.p_battery_drain}}</p>
+
+                <div class="guide-comparison-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>{{t.guide_model_x.th_condition}}</th>
+                                <th>{{t.guide_model_x.th_overnight_drain}}</th>
+                                <th>{{t.guide_model_x.th_range_impact}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{t.guide_model_x.td_mild_weather}}</td>
+                                <td>2-5%</td>
+                                <td>~6-15 mi</td>
+                            </tr>
+                            <tr>
+                                <td>{{t.guide_model_x.td_cold_weather}}</td>
+                                <td>8-15%</td>
+                                <td>~24-45 mi</td>
+                            </tr>
+                            <tr>
+                                <td>{{t.guide_model_x.td_extreme_cold}}</td>
+                                <td>15-25%</td>
+                                <td>~45-75 mi</td>
+                            </tr>
+                            <tr>
+                                <td>{{t.guide_model_x.td_hot_ac}}</td>
+                                <td>5-10%</td>
+                                <td>~15-30 mi</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="guide-callout">
+                    <p><strong>{{t.guide_model_x.callout_x_advantage_title}}</strong> {{t.guide_model_x.callout_x_advantage_text}}</p>
+                </div>
+            </section>
+
+            <!-- Section: Model X Setup Tips -->
+            <section class="guide-section" id="setup-tips">
+                <h2>{{t.guide_model_x.h2_setup_tips}}</h2>
+                <p>{{t.guide_model_x.p_setup_tips_intro}}</p>
+
+                <ol class="guide-steps">
+                    <li><strong>{{t.guide_model_x.step_setup_1_title}}</strong> &mdash; {{t.guide_model_x.step_setup_1_desc}}</li>
+                    <li><strong>{{t.guide_model_x.step_setup_2_title}}</strong> &mdash; {{t.guide_model_x.step_setup_2_desc}}</li>
+                    <li><strong>{{t.guide_model_x.step_setup_3_title}}</strong> &mdash; {{t.guide_model_x.step_setup_3_desc}}</li>
+                    <li><strong>{{t.guide_model_x.step_setup_4_title}}</strong> &mdash; {{t.guide_model_x.step_setup_4_desc}}</li>
+                    <li><strong>{{t.guide_model_x.step_setup_5_title}}</strong> &mdash; {{t.guide_model_x.step_setup_5_desc}}</li>
+                </ol>
+
+                <h3>{{t.guide_model_x.h3_essential_accessories}}</h3>
+                <ul>
+                    <li><strong>{{t.guide_model_x.li_acc_shades_title}}</strong> &mdash; {{t.guide_model_x.li_acc_shades_desc}}</li>
+                    <li><strong>{{t.guide_model_x.li_acc_blanket_title}}</strong> &mdash; {{t.guide_model_x.li_acc_blanket_desc}}</li>
+                    <li><strong>{{t.guide_model_x.li_acc_pillow_title}}</strong> &mdash; {{t.guide_model_x.li_acc_pillow_desc}}</li>
+                    <li><strong>{{t.guide_model_x.li_acc_bug_net_title}}</strong> &mdash; {{t.guide_model_x.li_acc_bug_net_desc}}</li>
+                </ul>
+            </section>
+
+            <figure class="guide-image">
+                <img src="https://havnby.com/cdn/shop/files/HavnbyAutoLevelInflatableMattressforTeslaModelY_1.jpg?v=1732611561&width=1200" alt="Havnby inflatable mattress for Tesla" loading="lazy" width="1200" height="800">
+                <figcaption>{{t.guide_model_x.img3_caption}}</figcaption>
+            </figure>
+
+            <!-- FAQ -->
+            <section class="guide-faq" id="faq">
+                <h2>{{t.guide_model_x.h2_faq}}</h2>
+
+                <div class="faq-item">
+                    <h3>{{t.guide_model_x.faq_q1}}</h3>
+                    <p>{{t.guide_model_x.faq_a1}}</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>{{t.guide_model_x.faq_q2}}</h3>
+                    <p>{{t.guide_model_x.faq_a2}}</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>{{t.guide_model_x.faq_q3}}</h3>
+                    <p>{{t.guide_model_x.faq_a3}}</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>{{t.guide_model_x.faq_q4}}</h3>
+                    <p>{{t.guide_model_x.faq_a4}}</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>{{t.guide_model_x.faq_q5}}</h3>
+                    <p>{{t.guide_model_x.faq_a5}}</p>
+                </div>
+            </section>
+
+            <!-- Bottom CTA -->
+            <div class="guide-bottom-cta">
+                <h2>{{t.guide_model_x.cta_title}}</h2>
+                <p>{{t.guide_model_x.cta_text}}</p>
+                <div class="cta-buttons">
+                    <a href="/{{localePath}}reviews/" class="btn-primary">{{t.guide_model_x.cta_btn_all_reviews}}</a>
+                    <a href="/{{localePath}}discounts/havnby" class="btn-secondary">{{t.guide_model_x.cta_btn_havnby_discount}}</a>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Sidebar -->
+        <aside class="guide-sidebar">
+            <div class="sidebar-card">
+                <h3>{{t.guide_model_x.sidebar_toc_title}}</h3>
+                <ul class="toc-list">
+                    <li><a href="#advantages">{{t.guide_model_x.toc_advantages}}</a></li>
+                    <li><a href="#compatible-mattresses">{{t.guide_model_x.toc_compatible}}</a></li>
+                    <li><a href="#falcon-wing-doors">{{t.guide_model_x.toc_falcon_wing}}</a></li>
+                    <li><a href="#camp-mode">{{t.guide_model_x.toc_camp_mode}}</a></li>
+                    <li><a href="#setup-tips">{{t.guide_model_x.toc_setup_tips}}</a></li>
+                    <li><a href="#faq">{{t.guide_model_x.toc_faq}}</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-card cta-card">
+                <h3>{{t.guide_model_x.sidebar_cta_title}}</h3>
+                <p>{{t.guide_model_x.sidebar_cta_text}}</p>
+                <a href="/{{localePath}}discounts/" class="btn-cta">{{t.guide_model_x.sidebar_cta_btn}}</a>
+            </div>
+
+            <div class="sidebar-card">
+                <h3>{{t.guide_model_x.sidebar_related_title}}</h3>
+                <div class="related-list">
+                    <a href="/{{localePath}}guides/buying-guide">{{t.guide_model_x.sidebar_related_buying_guide}}</a>
+                    <a href="/{{localePath}}guides/cybertruck-mattress">{{t.guide_model_x.sidebar_related_cybertruck}}</a>
+                    <a href="/{{localePath}}vs/model-y-vs-model-3-mattresses">{{t.guide_model_x.sidebar_related_y_vs_3}}</a>
+                    <a href="/{{localePath}}reviews/havnby-autolevel">{{t.guide_model_x.sidebar_related_havnby_review}}</a>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">Teslamattress</div>
+            <div class="footer-text">
+                <p>&copy; 2026 Teslamattress. {{t.shared.footer_rights}} <a href="/{{localePath}}disclosure" style="color: rgba(255,255,255,0.7);">{{t.shared.fl_disclosure}}</a></p>
+                <p class="disclaimer">{{t.shared.footer_disclaimer}}</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const menuOverlay = document.querySelector('.menu-overlay');
+        if (menuToggle) {
+            function toggleMenu() {
+                menuToggle.classList.toggle('active');
+                navLinks.classList.toggle('active');
+                menuOverlay.classList.toggle('active');
+                document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+            }
+            menuToggle.addEventListener('click', toggleMenu);
+            menuOverlay.addEventListener('click', toggleMenu);
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => { if (navLinks.classList.contains('active')) toggleMenu(); });
+            });
+        }
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

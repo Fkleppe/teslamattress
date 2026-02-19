@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="{{htmlLang}}">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{t.guide_cybertruck.meta_title}}</title>
+    <meta name="title" content="{{t.guide_cybertruck.meta_name_title}}">
+    <meta name="description" content="{{t.guide_cybertruck.meta_description}}">
+    <meta name="keywords" content="{{t.guide_cybertruck.meta_keywords}}">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{canonicalUrl}}">
+    {{hreflangTags}}
+    <meta name="author" content="Fredrik Mastouri">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{pageUrl}}">
+    <meta property="og:title" content="{{t.guide_cybertruck.og_title}}">
+    <meta property="og:description" content="{{t.guide_cybertruck.og_description}}">
+    <meta property="og:image" content="https://teslamattress.com/images/og-image.jpg">
+    <meta property="og:site_name" content="Teslamattress">
+    <meta property="og:locale" content="{{ogLocale}}">
+    {{ogLocaleAlternates}}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{t.guide_cybertruck.twitter_title}}">
+    <meta name="twitter:description" content="{{t.guide_cybertruck.twitter_description}}">
+    <meta name="twitter:image" content="https://teslamattress.com/images/og-image.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap"></noscript>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--forest:#2d4a3e;--forest-dark:#1a2e25;--cream:#f5f1e8;--warm-white:#faf9f6;--text:#3d3d3d;--copper:#b87333;--text-light:#6b6b6b}
+        body{font-family:'Source Sans 3',-apple-system,sans-serif;line-height:1.7;color:var(--text);background:var(--warm-white)}
+        .navbar{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 6%;position:fixed;width:100%;z-index:100;background:var(--forest-dark)}
+        .logo{font-family:'Libre Baskerville',Georgia,serif;font-size:1.6rem;font-weight:700;color:var(--cream);text-decoration:none}
+        .nav-links{display:flex;list-style:none;gap:2.5rem}
+        .nav-links a{color:var(--cream);text-decoration:none;font-weight:500}
+        .menu-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:5px}
+        .menu-toggle span{width:24px;height:2px;background:var(--cream)}
+        @media(max-width:768px){.menu-toggle{display:flex}.nav-links{display:none}}
+    </style>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/guides/guides.css">
+
+    <!-- JSON-LD: Article -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "{{t.guide_cybertruck.jsonld_article_headline}}",
+        "description": "{{t.guide_cybertruck.jsonld_article_description}}",
+        "author": {
+            "@type": "Person",
+            "name": "Fredrik Mastouri",
+            "url": "https://teslamattress.com/about"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Teslamattress",
+            "url": "https://teslamattress.com"
+        },
+        "datePublished": "2025-09-01",
+        "dateModified": "2026-02-01",
+        "image": "https://teslamattress.com/images/og-image.jpg"
+    }
+    </script>
+    <!-- JSON-LD: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://teslamattress.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://teslamattress.com/guides/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Cybertruck Mattress Guide",
+                "item": "https://teslamattress.com/guides/cybertruck-mattress"
+            }
+        ]
+    }
+    </script>
+    <!-- JSON-LD: FAQPage (5 questions) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "{{t.guide_cybertruck.faq_q1}}",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "{{t.guide_cybertruck.faq_a1}}"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "{{t.guide_cybertruck.faq_q2}}",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "{{t.guide_cybertruck.faq_a2}}"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "{{t.guide_cybertruck.faq_q3}}",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "{{t.guide_cybertruck.faq_a3}}"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "{{t.guide_cybertruck.faq_q4}}",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "{{t.guide_cybertruck.faq_a4}}"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "{{t.guide_cybertruck.faq_q5}}",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "{{t.guide_cybertruck.faq_a5}}"
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <nav class="navbar guide-nav">
+        <a href="/{{localePath}}" class="logo">Teslamattress</a>
+        <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        <ul class="nav-links">
+            <li><a href="/{{localePath}}reviews/">{{t.shared.nav_reviews}}</a></li>
+            <li><a href="/{{localePath}}vs/">{{t.shared.nav_compare}}</a></li>
+            <li><a href="/{{localePath}}guides/">Guides</a></li>
+            <li><a href="/{{localePath}}discounts/">{{t.shared.nav_discounts}}</a></li>
+        </ul>
+        {{langSwitcher}}
+    </nav>
+    <div class="menu-overlay"></div>
+
+    <!-- Hero -->
+    <header class="guide-hero">
+        <div class="guide-hero-content">
+            <nav class="breadcrumb" aria-label="Breadcrumb" style="color: rgba(255,255,255,0.7); margin-bottom: 1rem; font-size: 0.9rem;">
+                <a href="/{{localePath}}" style="color: rgba(255,255,255,0.8);">Home</a> &rsaquo;
+                <a href="/{{localePath}}guides/" style="color: rgba(255,255,255,0.8);">Guides</a> &rsaquo;
+                <span>{{t.guide_cybertruck.breadcrumb_current}}</span>
+            </nav>
+            <span class="guide-badge">{{t.guide_cybertruck.hero_badge}}</span>
+            <h1>{{t.guide_cybertruck.h1_title}}</h1>
+            <p class="guide-tagline">{{t.guide_cybertruck.hero_tagline}}</p>
+            <div class="guide-meta">
+                <span>By <a href="/{{localePath}}about" style="color: var(--cream);">Fredrik Mastouri</a></span>
+                <span>{{t.guide_cybertruck.hero_read_time}}</span>
+                <span>{{t.guide_cybertruck.hero_updated}}</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <div class="guide-content-wrapper">
+        <main class="guide-main">
+
+            <!-- Key Takeaway -->
+            <div class="guide-takeaway">
+                <h2>{{t.guide_cybertruck.takeaway_title}}</h2>
+                <p>{{t.guide_cybertruck.takeaway_text}}</p>
+                <ul>
+                    <li>{{t.guide_cybertruck.takeaway_point1}}</li>
+                    <li>{{t.guide_cybertruck.takeaway_point2}}</li>
+                    <li>{{t.guide_cybertruck.takeaway_point3}}</li>
+                </ul>
+            </div>
+
+            <!-- Section: Cybertruck Camping Overview -->
+            <section class="guide-section" id="overview">
+                <h2>{{t.guide_cybertruck.h2_overview}}</h2>
+                <p>{{t.guide_cybertruck.p_overview_intro}}</p>
+                <p>{{t.guide_cybertruck.p_overview_unique}}</p>
+                <p>{{t.guide_cybertruck.p_overview_challenge}}</p>
+
+                <div class="guide-callout">
+                    <p><strong>{{t.guide_cybertruck.callout_dimensions_title}}</strong> {{t.guide_cybertruck.callout_dimensions_text}}</p>
+                </div>
+            </section>
+
+            <!-- Section: Truck Bed vs Cabin -->
+            <section class="guide-section" id="bed-vs-cabin">
+                <h2>{{t.guide_cybertruck.h2_bed_vs_cabin}}</h2>
+                <p>{{t.guide_cybertruck.p_bed_vs_cabin_intro}}</p>
+
+                <div class="guide-comparison-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>{{t.guide_cybertruck.th_feature}}</th>
+                                <th>{{t.guide_cybertruck.th_truck_bed}}</th>
+                                <th>{{t.guide_cybertruck.th_rear_cabin}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{t.guide_cybertruck.td_sleep_area}}</td>
+                                <td class="winner">~72" x 54"</td>
+                                <td>~68" x 48"</td>
+                            </tr>
+                            <tr>
+                                <td>{{t.guide_cybertruck.td_headroom}}</td>
+                                <td>{{t.guide_cybertruck.td_headroom_bed}}</td>
+                                <td>{{t.guide_cybertruck.td_headroom_cabin}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{t.guide_cybertruck.td_climate_control}}</td>
+                                <td>{{t.guide_cybertruck.td_climate_bed}}</td>
+                                <td class="winner">{{t.guide_cybertruck.td_climate_cabin}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{t.guide_cybertruck.td_privacy}}</td>
+                                <td class="winner">{{t.guide_cybertruck.td_privacy_bed}}</td>
+                                <td>{{t.guide_cybertruck.td_privacy_cabin}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{t.guide_cybertruck.td_setup_effort}}</td>
+                                <td>{{t.guide_cybertruck.td_setup_bed}}</td>
+                                <td class="winner">{{t.guide_cybertruck.td_setup_cabin}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{t.guide_cybertruck.td_weather_protection}}</td>
+                                <td>{{t.guide_cybertruck.td_weather_bed}}</td>
+                                <td class="winner">{{t.guide_cybertruck.td_weather_cabin}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{t.guide_cybertruck.td_best_for}}</td>
+                                <td>{{t.guide_cybertruck.td_best_for_bed}}</td>
+                                <td>{{t.guide_cybertruck.td_best_for_cabin}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>{{t.guide_cybertruck.h3_truck_bed_setup}}</h3>
+                <p>{{t.guide_cybertruck.p_truck_bed_setup}}</p>
+                <ul>
+                    <li><strong>{{t.guide_cybertruck.li_tonneau_title}}</strong> &mdash; {{t.guide_cybertruck.li_tonneau_desc}}</li>
+                    <li><strong>{{t.guide_cybertruck.li_cybertent_title}}</strong> &mdash; {{t.guide_cybertruck.li_cybertent_desc}}</li>
+                    <li><strong>{{t.guide_cybertruck.li_bed_extender_title}}</strong> &mdash; {{t.guide_cybertruck.li_bed_extender_desc}}</li>
+                </ul>
+
+                <div class="guide-callout warning">
+                    <p><strong>{{t.guide_cybertruck.callout_tonneau_warning_title}}</strong> {{t.guide_cybertruck.callout_tonneau_warning_text}}</p>
+                </div>
+
+                <h3>{{t.guide_cybertruck.h3_rear_cabin_setup}}</h3>
+                <p>{{t.guide_cybertruck.p_rear_cabin_setup}}</p>
+
+                <ol class="guide-steps">
+                    <li><strong>{{t.guide_cybertruck.step_cabin_1_title}}</strong> &mdash; {{t.guide_cybertruck.step_cabin_1_desc}}</li>
+                    <li><strong>{{t.guide_cybertruck.step_cabin_2_title}}</strong> &mdash; {{t.guide_cybertruck.step_cabin_2_desc}}</li>
+                    <li><strong>{{t.guide_cybertruck.step_cabin_3_title}}</strong> &mdash; {{t.guide_cybertruck.step_cabin_3_desc}}</li>
+                    <li><strong>{{t.guide_cybertruck.step_cabin_4_title}}</strong> &mdash; {{t.guide_cybertruck.step_cabin_4_desc}}</li>
+                </ol>
+            </section>
+
+            <figure class="guide-image">
+                <img src="https://teslamattress.com/images/og-image.jpg" alt="Tesla camping setup at scenic location" loading="lazy" width="1200" height="630">
+                <figcaption>{{t.guide_cybertruck.img1_caption}}</figcaption>
+            </figure>
+
+            <!-- Section: Available Mattresses -->
+            <section class="guide-section" id="available-mattresses">
+                <h2>{{t.guide_cybertruck.h2_available_mattresses}}</h2>
+                <p>{{t.guide_cybertruck.p_available_intro}}</p>
+
+                <!-- Tesery Cybertruck Mattress -->
+                <div class="product-pick">
+                    <div class="product-pick-header">
+                        <div>
+                            <span style="font-size: 0.8rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px;">{{t.guide_cybertruck.pick_label_truck_bed}}</span>
+                            <div class="product-pick-name">Tesery Cybertruck Bed Mattress</div>
+                        </div>
+                        <span class="product-pick-score">N/R</span>
+                    </div>
+                    <div class="product-pick-meta">
+                        <span>{{t.guide_cybertruck.pick_type_foam}}</span>
+                        <span>{{t.guide_cybertruck.pick_fits_ct_bed}}</span>
+                    </div>
+                    <p class="product-pick-desc">{{t.guide_cybertruck.pick_tesery_ct_description}}</p>
+                    <ul class="product-pick-pros">
+                        <li>{{t.guide_cybertruck.pick_tesery_ct_pro1}}</li>
+                        <li>{{t.guide_cybertruck.pick_tesery_ct_pro2}}</li>
+                        <li>{{t.guide_cybertruck.pick_tesery_ct_pro3}}</li>
+                        <li>{{t.guide_cybertruck.pick_tesery_ct_pro4}}</li>
+                    </ul>
+                    <div class="product-pick-cta">
+                        <a href="#" target="_blank" rel="noopener sponsored" class="btn-buy">{{t.guide_cybertruck.btn_check_price}}</a>
+                        <a href="/{{localePath}}discounts/tesery" class="btn-review">{{t.guide_cybertruck.btn_view_discount}}</a>
+                    </div>
+                </div>
+
+                <h3>{{t.guide_cybertruck.h3_generic_options}}</h3>
+                <p>{{t.guide_cybertruck.p_generic_options_intro}}</p>
+                <ul>
+                    <li><strong>{{t.guide_cybertruck.li_generic_tri_fold_title}}</strong> &mdash; {{t.guide_cybertruck.li_generic_tri_fold_desc}}</li>
+                    <li><strong>{{t.guide_cybertruck.li_generic_air_title}}</strong> &mdash; {{t.guide_cybertruck.li_generic_air_desc}}</li>
+                    <li><strong>{{t.guide_cybertruck.li_generic_roll_title}}</strong> &mdash; {{t.guide_cybertruck.li_generic_roll_desc}}</li>
+                </ul>
+
+                <div class="guide-callout">
+                    <p><strong>{{t.guide_cybertruck.callout_cabin_option_title}}</strong> {{t.guide_cybertruck.callout_cabin_option_text}}</p>
+                </div>
+
+                <h3>{{t.guide_cybertruck.h3_cabin_mattress_options}}</h3>
+                <p>{{t.guide_cybertruck.p_cabin_mattress_options}}</p>
+                <p>{{t.guide_cybertruck.p_cabin_mattress_fit}}</p>
+            </section>
+
+            <!-- Section: V2L Power Advantage -->
+            <section class="guide-section" id="v2l-power">
+                <h2>{{t.guide_cybertruck.h2_v2l_power}}</h2>
+                <p>{{t.guide_cybertruck.p_v2l_intro}}</p>
+                <p>{{t.guide_cybertruck.p_v2l_what_is}}</p>
+
+                <h3>{{t.guide_cybertruck.h3_v2l_camping_uses}}</h3>
+                <ul>
+                    <li><strong>{{t.guide_cybertruck.li_v2l_heating_title}}</strong> &mdash; {{t.guide_cybertruck.li_v2l_heating_desc}}</li>
+                    <li><strong>{{t.guide_cybertruck.li_v2l_cooking_title}}</strong> &mdash; {{t.guide_cybertruck.li_v2l_cooking_desc}}</li>
+                    <li><strong>{{t.guide_cybertruck.li_v2l_lighting_title}}</strong> &mdash; {{t.guide_cybertruck.li_v2l_lighting_desc}}</li>
+                    <li><strong>{{t.guide_cybertruck.li_v2l_pump_title}}</strong> &mdash; {{t.guide_cybertruck.li_v2l_pump_desc}}</li>
+                    <li><strong>{{t.guide_cybertruck.li_v2l_fridge_title}}</strong> &mdash; {{t.guide_cybertruck.li_v2l_fridge_desc}}</li>
+                </ul>
+
+                <div class="guide-callout">
+                    <p><strong>{{t.guide_cybertruck.callout_v2l_capacity_title}}</strong> {{t.guide_cybertruck.callout_v2l_capacity_text}}</p>
+                </div>
+
+                <p>{{t.guide_cybertruck.p_v2l_battery_impact}}</p>
+            </section>
+
+            <figure class="guide-image">
+                <img src="https://www.snuuzu.com/cdn/shop/files/4eyes-240304-snuuzu-back_of_car-2000px-11.jpg?v=1710180889&width=1200" alt="Tesla camping mattress outdoor setup" loading="lazy" width="1200" height="800">
+                <figcaption>{{t.guide_cybertruck.img2_caption}}</figcaption>
+            </figure>
+
+            <!-- Section: Cybertruck Camp Mode -->
+            <section class="guide-section" id="camp-mode">
+                <h2>{{t.guide_cybertruck.h2_camp_mode}}</h2>
+                <p>{{t.guide_cybertruck.p_camp_mode_intro}}</p>
+                <p>{{t.guide_cybertruck.p_camp_mode_features}}</p>
+
+                <h3>{{t.guide_cybertruck.h3_camp_mode_how_to}}</h3>
+                <ol class="guide-steps">
+                    <li><strong>{{t.guide_cybertruck.step_camp_1_title}}</strong> &mdash; {{t.guide_cybertruck.step_camp_1_desc}}</li>
+                    <li><strong>{{t.guide_cybertruck.step_camp_2_title}}</strong> &mdash; {{t.guide_cybertruck.step_camp_2_desc}}</li>
+                    <li><strong>{{t.guide_cybertruck.step_camp_3_title}}</strong> &mdash; {{t.guide_cybertruck.step_camp_3_desc}}</li>
+                    <li><strong>{{t.guide_cybertruck.step_camp_4_title}}</strong> &mdash; {{t.guide_cybertruck.step_camp_4_desc}}</li>
+                </ol>
+
+                <h3>{{t.guide_cybertruck.h3_battery_usage}}</h3>
+                <p>{{t.guide_cybertruck.p_battery_usage}}</p>
+
+                <div class="guide-comparison-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>{{t.guide_cybertruck.th_scenario}}</th>
+                                <th>{{t.guide_cybertruck.th_estimated_drain}}</th>
+                                <th>{{t.guide_cybertruck.th_range_impact}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{t.guide_cybertruck.td_mild_night}}</td>
+                                <td>2-4%</td>
+                                <td>~6-12 mi</td>
+                            </tr>
+                            <tr>
+                                <td>{{t.guide_cybertruck.td_cold_night}}</td>
+                                <td>8-15%</td>
+                                <td>~25-45 mi</td>
+                            </tr>
+                            <tr>
+                                <td>{{t.guide_cybertruck.td_freezing_night}}</td>
+                                <td>15-25%</td>
+                                <td>~45-75 mi</td>
+                            </tr>
+                            <tr>
+                                <td>{{t.guide_cybertruck.td_hot_night_ac}}</td>
+                                <td>5-10%</td>
+                                <td>~15-30 mi</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="guide-callout">
+                    <p><strong>{{t.guide_cybertruck.callout_battery_tip_title}}</strong> {{t.guide_cybertruck.callout_battery_tip_text}}</p>
+                </div>
+            </section>
+
+            <!-- Section: Complete Setup Guide -->
+            <section class="guide-section" id="setup-guide">
+                <h2>{{t.guide_cybertruck.h2_setup_guide}}</h2>
+                <p>{{t.guide_cybertruck.p_setup_guide_intro}}</p>
+
+                <h3>{{t.guide_cybertruck.h3_essential_gear}}</h3>
+                <ul>
+                    <li><strong>{{t.guide_cybertruck.li_gear_mattress_title}}</strong> &mdash; {{t.guide_cybertruck.li_gear_mattress_desc}}</li>
+                    <li><strong>{{t.guide_cybertruck.li_gear_blankets_title}}</strong> &mdash; {{t.guide_cybertruck.li_gear_blankets_desc}}</li>
+                    <li><strong>{{t.guide_cybertruck.li_gear_window_title}}</strong> &mdash; {{t.guide_cybertruck.li_gear_window_desc}}</li>
+                    <li><strong>{{t.guide_cybertruck.li_gear_pillow_title}}</strong> &mdash; {{t.guide_cybertruck.li_gear_pillow_desc}}</li>
+                    <li><strong>{{t.guide_cybertruck.li_gear_light_title}}</strong> &mdash; {{t.guide_cybertruck.li_gear_light_desc}}</li>
+                </ul>
+
+                <h3>{{t.guide_cybertruck.h3_pro_tips}}</h3>
+                <ul>
+                    <li>{{t.guide_cybertruck.li_tip_precharge}}</li>
+                    <li>{{t.guide_cybertruck.li_tip_precool}}</li>
+                    <li>{{t.guide_cybertruck.li_tip_level_parking}}</li>
+                    <li>{{t.guide_cybertruck.li_tip_sentry_off}}</li>
+                    <li>{{t.guide_cybertruck.li_tip_bring_extension}}</li>
+                </ul>
+            </section>
+
+            <figure class="guide-image">
+                <img src="https://www.snuuzu.com/cdn/shop/files/4eyes-240304-snuuzu-back_of_car-2000px-14.jpg?v=1710180889&width=1200" alt="Mattress setup in back of Tesla vehicle" loading="lazy" width="1200" height="800">
+                <figcaption>{{t.guide_cybertruck.img3_caption}}</figcaption>
+            </figure>
+
+            <!-- FAQ -->
+            <section class="guide-faq" id="faq">
+                <h2>{{t.guide_cybertruck.h2_faq}}</h2>
+
+                <div class="faq-item">
+                    <h3>{{t.guide_cybertruck.faq_q1}}</h3>
+                    <p>{{t.guide_cybertruck.faq_a1}}</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>{{t.guide_cybertruck.faq_q2}}</h3>
+                    <p>{{t.guide_cybertruck.faq_a2}}</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>{{t.guide_cybertruck.faq_q3}}</h3>
+                    <p>{{t.guide_cybertruck.faq_a3}}</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>{{t.guide_cybertruck.faq_q4}}</h3>
+                    <p>{{t.guide_cybertruck.faq_a4}}</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>{{t.guide_cybertruck.faq_q5}}</h3>
+                    <p>{{t.guide_cybertruck.faq_a5}}</p>
+                </div>
+            </section>
+
+            <!-- Bottom CTA -->
+            <div class="guide-bottom-cta">
+                <h2>{{t.guide_cybertruck.cta_title}}</h2>
+                <p>{{t.guide_cybertruck.cta_text}}</p>
+                <div class="cta-buttons">
+                    <a href="/{{localePath}}discounts/tesery" class="btn-primary">{{t.guide_cybertruck.cta_btn_tesery_discount}}</a>
+                    <a href="/{{localePath}}guides/" class="btn-secondary">{{t.guide_cybertruck.cta_btn_all_guides}}</a>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Sidebar -->
+        <aside class="guide-sidebar">
+            <div class="sidebar-card">
+                <h3>{{t.guide_cybertruck.sidebar_toc_title}}</h3>
+                <ul class="toc-list">
+                    <li><a href="#overview">{{t.guide_cybertruck.toc_overview}}</a></li>
+                    <li><a href="#bed-vs-cabin">{{t.guide_cybertruck.toc_bed_vs_cabin}}</a></li>
+                    <li><a href="#available-mattresses">{{t.guide_cybertruck.toc_available_mattresses}}</a></li>
+                    <li><a href="#v2l-power">{{t.guide_cybertruck.toc_v2l_power}}</a></li>
+                    <li><a href="#camp-mode">{{t.guide_cybertruck.toc_camp_mode}}</a></li>
+                    <li><a href="#setup-guide">{{t.guide_cybertruck.toc_setup_guide}}</a></li>
+                    <li><a href="#faq">{{t.guide_cybertruck.toc_faq}}</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-card cta-card">
+                <h3>{{t.guide_cybertruck.sidebar_cta_title}}</h3>
+                <p>{{t.guide_cybertruck.sidebar_cta_text}}</p>
+                <a href="/{{localePath}}discounts/" class="btn-cta">{{t.guide_cybertruck.sidebar_cta_btn}}</a>
+            </div>
+
+            <div class="sidebar-card">
+                <h3>{{t.guide_cybertruck.sidebar_related_title}}</h3>
+                <div class="related-list">
+                    <a href="/{{localePath}}guides/model-x-mattress">{{t.guide_cybertruck.sidebar_related_model_x}}</a>
+                    <a href="/{{localePath}}guides/buying-guide">{{t.guide_cybertruck.sidebar_related_buying_guide}}</a>
+                    <a href="/{{localePath}}guides/budget-tesla-mattress">{{t.guide_cybertruck.sidebar_related_budget}}</a>
+                    <a href="/{{localePath}}vs/model-y-vs-model-3-mattresses">{{t.guide_cybertruck.sidebar_related_y_vs_3}}</a>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">Teslamattress</div>
+            <div class="footer-text">
+                <p>&copy; 2026 Teslamattress. {{t.shared.footer_rights}} <a href="/{{localePath}}disclosure" style="color: rgba(255,255,255,0.7);">{{t.shared.fl_disclosure}}</a></p>
+                <p class="disclaimer">{{t.shared.footer_disclaimer}}</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const menuOverlay = document.querySelector('.menu-overlay');
+        if (menuToggle) {
+            function toggleMenu() {
+                menuToggle.classList.toggle('active');
+                navLinks.classList.toggle('active');
+                menuOverlay.classList.toggle('active');
+                document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+            }
+            menuToggle.addEventListener('click', toggleMenu);
+            menuOverlay.addEventListener('click', toggleMenu);
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => { if (navLinks.classList.contains('active')) toggleMenu(); });
+            });
+        }
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="{{htmlLang}}">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>{{t.guide_dogs.meta_title}}</title>
+    <meta name="title" content="{{t.guide_dogs.meta_name_title}}">
+    <meta name="description" content="{{t.guide_dogs.meta_description}}">
+    <meta name="keywords" content="{{t.guide_dogs.meta_keywords}}">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{canonicalUrl}}">
+    {{hreflangTags}}
+    <meta name="author" content="Fredrik Mastouri">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{pageUrl}}">
+    <meta property="og:title" content="{{t.guide_dogs.og_title}}">
+    <meta property="og:description" content="{{t.guide_dogs.og_description}}">
+    <meta property="og:image" content="https://teslamattress.com/images/og-image.jpg">
+    <meta property="og:site_name" content="Teslamattress">
+    <meta property="og:locale" content="{{ogLocale}}">
+    {{ogLocaleAlternates}}
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{t.guide_dogs.twitter_title}}">
+    <meta name="twitter:description" content="{{t.guide_dogs.twitter_description}}">
+    <meta name="twitter:image" content="https://teslamattress.com/images/og-image.jpg">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Fonts (non-blocking) -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap"></noscript>
+
+    <!-- Critical CSS -->
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--forest:#2d4a3e;--forest-dark:#1a2e25;--cream:#f5f1e8;--warm-white:#faf9f6;--text:#3d3d3d;--copper:#b87333;--text-light:#6b6b6b}
+        body{font-family:'Source Sans 3',-apple-system,sans-serif;line-height:1.7;color:var(--text);background:var(--warm-white)}
+        .navbar{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 6%;position:fixed;width:100%;z-index:100;background:var(--forest-dark)}
+        .logo{font-family:'Libre Baskerville',Georgia,serif;font-size:1.6rem;font-weight:700;color:var(--cream);text-decoration:none}
+        .nav-links{display:flex;list-style:none;gap:2.5rem}
+        .nav-links a{color:var(--cream);text-decoration:none;font-weight:500}
+        .menu-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:5px}
+        .menu-toggle span{width:24px;height:2px;background:var(--cream)}
+        @media(max-width:768px){.menu-toggle{display:flex}.nav-links{display:none}}
+    </style>
+
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/guides/guides.css">
+
+    <!-- JSON-LD: Article -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "{{t.guide_dogs.jsonld_headline}}",
+        "description": "{{t.guide_dogs.jsonld_description}}",
+        "image": "https://teslamattress.com/images/og-image.jpg",
+        "author": {
+                "@type": "Person",
+                "name": "Fredrik Mastouri",
+                "url": "https://teslamattress.com/about",
+                "jobTitle": "Founder & Lead Reviewer"
+        },
+        "publisher": {
+                "@type": "Organization",
+                "name": "Teslamattress",
+                "url": "https://teslamattress.com"
+        },
+        "datePublished": "2026-02-19",
+        "dateModified": "2026-02-19",
+        "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://teslamattress.com/guides/tesla-camping-with-dogs"
+        }
+    }
+    </script>
+    <!-- JSON-LD: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+                {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://teslamattress.com/"
+                },
+                {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Guides",
+                        "item": "https://teslamattress.com/guides/"
+                },
+                {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "Tesla Camping With Dogs",
+                        "item": "https://teslamattress.com/guides/tesla-camping-with-dogs"
+                }
+        ]
+    }
+    </script>
+    <!-- JSON-LD: FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+                {
+                        "@type": "Question",
+                        "name": "{{t.guide_dogs.faq_q1}}",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "{{t.guide_dogs.faq_a1}}"
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "{{t.guide_dogs.faq_q2}}",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "{{t.guide_dogs.faq_a2}}"
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "{{t.guide_dogs.faq_q3}}",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "{{t.guide_dogs.faq_a3}}"
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "{{t.guide_dogs.faq_q4}}",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "{{t.guide_dogs.faq_a4}}"
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "{{t.guide_dogs.faq_q5}}",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "{{t.guide_dogs.faq_a5}}"
+                        }
+                }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <nav class="navbar guide-nav">
+        <a href="/{{localePath}}" class="logo">Teslamattress</a>
+        <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        <ul class="nav-links">
+            <li><a href="/{{localePath}}reviews/">{{t.shared.nav_reviews}}</a></li>
+            <li><a href="/{{localePath}}vs/">{{t.shared.nav_compare}}</a></li>
+            <li><a href="/{{localePath}}guides/">Guides</a></li>
+            <li><a href="/{{localePath}}discounts/">{{t.shared.nav_discounts}}</a></li>
+        </ul>
+        {{langSwitcher}}
+    </nav>
+    <div class="menu-overlay"></div>
+
+    <!-- Hero Section -->
+    <header class="guide-hero">
+        <div class="guide-hero-content">
+            <nav class="breadcrumb" aria-label="Breadcrumb" style="margin-bottom: 1rem; font-size: 0.9rem;">
+                <a href="/{{localePath}}" style="color: rgba(255,255,255,0.8);">Home</a> &rsaquo;
+                <a href="/{{localePath}}guides/" style="color: rgba(255,255,255,0.8);">Guides</a> &rsaquo;
+                <span>Camping With Dogs</span>
+            </nav>
+            <span class="guide-badge">{{t.guide_dogs.badge_pet_owners}}</span>
+            <h1>{{t.guide_dogs.h1}}</h1>
+            <p class="guide-tagline">{{t.guide_dogs.p_tagline}}</p>
+            <div class="guide-meta">
+                <span>By <a href="/{{localePath}}about" style="color: var(--cream);">Fredrik Mastouri</a></span>
+                <span>{{t.guide_dogs.meta_read_time}}</span>
+                <span>{{t.guide_dogs.meta_updated}}</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Content Layout -->
+    <div class="guide-content-wrapper">
+        <article class="guide-main">
+
+            <!-- Key Takeaway -->
+            <div class="guide-takeaway">
+                <h2>{{t.guide_dogs.h2_key_takeaway}}</h2>
+                <p>{{t.guide_dogs.p_key_takeaway}}</p>
+            </div>
+
+            <!-- Section 1: Why Tesla Is Perfect for Camping With Dogs -->
+            <section class="guide-section" id="why-tesla-dogs">
+                <h2>{{t.guide_dogs.h2_why_tesla_dogs}}</h2>
+                <p>{{t.guide_dogs.p_why_tesla_dogs_intro}}</p>
+                <p>{{t.guide_dogs.p_why_tesla_dogs_detail}}</p>
+
+                <h3>{{t.guide_dogs.h3_temperature_control}}</h3>
+                <p>{{t.guide_dogs.p_temperature_control}}</p>
+
+                <h3>{{t.guide_dogs.h3_quiet_cabin}}</h3>
+                <p>{{t.guide_dogs.p_quiet_cabin}}</p>
+
+                <h3>{{t.guide_dogs.h3_flat_cargo}}</h3>
+                <p>{{t.guide_dogs.p_flat_cargo}}</p>
+
+                <h3>{{t.guide_dogs.h3_no_exhaust}}</h3>
+                <p>{{t.guide_dogs.p_no_exhaust}}</p>
+
+                <figure class="guide-image">
+                    <img src="https://havnby.com/cdn/shop/files/TeslaModelYAutoLevelInflatableMattress-Havnby_3.jpg?v=1733913261&width=1200" alt="Tesla Model Y cargo area set up for camping, spacious enough for a dog" loading="lazy" width="1200" height="800">
+                    <figcaption>{{t.guide_dogs.fig_tesla_dog_space}}</figcaption>
+                </figure>
+            </section>
+
+            <!-- Section 2: Dog Mode vs Camp Mode Explained -->
+            <section class="guide-section" id="dog-mode-vs-camp-mode">
+                <h2>{{t.guide_dogs.h2_dog_vs_camp_mode}}</h2>
+                <p>{{t.guide_dogs.p_dog_vs_camp_intro}}</p>
+
+                <h3>{{t.guide_dogs.h3_what_is_dog_mode}}</h3>
+                <p>{{t.guide_dogs.p_what_is_dog_mode}}</p>
+                <ul>
+                    <li>{{t.guide_dogs.li_dog_mode_screen}}</li>
+                    <li>{{t.guide_dogs.li_dog_mode_climate}}</li>
+                    <li>{{t.guide_dogs.li_dog_mode_alert}}</li>
+                    <li>{{t.guide_dogs.li_dog_mode_designed_for}}</li>
+                </ul>
+
+                <h3>{{t.guide_dogs.h3_what_is_camp_mode}}</h3>
+                <p>{{t.guide_dogs.p_what_is_camp_mode}}</p>
+                <ul>
+                    <li>{{t.guide_dogs.li_camp_mode_climate}}</li>
+                    <li>{{t.guide_dogs.li_camp_mode_lights}}</li>
+                    <li>{{t.guide_dogs.li_camp_mode_usb}}</li>
+                    <li>{{t.guide_dogs.li_camp_mode_music}}</li>
+                    <li>{{t.guide_dogs.li_camp_mode_overnight}}</li>
+                </ul>
+
+                <div class="guide-comparison-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>{{t.guide_dogs.th_feature}}</th>
+                                <th>Dog Mode</th>
+                                <th>Camp Mode</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{t.guide_dogs.td_climate_control}}</td>
+                                <td>{{t.guide_dogs.td_dog_climate}}</td>
+                                <td>{{t.guide_dogs.td_camp_climate}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{t.guide_dogs.td_screen_display}}</td>
+                                <td>{{t.guide_dogs.td_dog_screen}}</td>
+                                <td>{{t.guide_dogs.td_camp_screen}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{t.guide_dogs.td_sentry_mode}}</td>
+                                <td>{{t.guide_dogs.td_dog_sentry}}</td>
+                                <td>{{t.guide_dogs.td_camp_sentry}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{t.guide_dogs.td_overnight_use}}</td>
+                                <td>{{t.guide_dogs.td_dog_overnight}}</td>
+                                <td class="winner">{{t.guide_dogs.td_camp_overnight}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{t.guide_dogs.td_usb_power}}</td>
+                                <td>{{t.guide_dogs.td_dog_usb}}</td>
+                                <td class="winner">{{t.guide_dogs.td_camp_usb}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{t.guide_dogs.td_best_for}}</td>
+                                <td>{{t.guide_dogs.td_dog_best_for}}</td>
+                                <td class="winner">{{t.guide_dogs.td_camp_best_for}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="guide-callout">
+                    <p><strong>{{t.guide_dogs.callout_overnight_label}}</strong> {{t.guide_dogs.callout_overnight_text}}</p>
+                </div>
+            </section>
+
+            <!-- Section 3: Mattress Considerations for Dog Owners -->
+            <section class="guide-section" id="mattress-considerations">
+                <h2>{{t.guide_dogs.h2_mattress_considerations}}</h2>
+                <p>{{t.guide_dogs.p_mattress_considerations_intro}}</p>
+
+                <h3>{{t.guide_dogs.h3_claw_resistance}}</h3>
+                <p>{{t.guide_dogs.p_claw_resistance}}</p>
+                <p>{{t.guide_dogs.p_claw_resistance_detail}}</p>
+
+                <h3>{{t.guide_dogs.h3_easy_to_clean}}</h3>
+                <p>{{t.guide_dogs.p_easy_to_clean}}</p>
+                <ul>
+                    <li>{{t.guide_dogs.li_clean_wipe}}</li>
+                    <li>{{t.guide_dogs.li_clean_removable}}</li>
+                    <li>{{t.guide_dogs.li_clean_waterproof}}</li>
+                </ul>
+
+                <h3>{{t.guide_dogs.h3_durability}}</h3>
+                <p>{{t.guide_dogs.p_durability}}</p>
+
+                <h3>{{t.guide_dogs.h3_air_vs_foam_dogs}}</h3>
+                <p>{{t.guide_dogs.p_air_vs_foam_dogs}}</p>
+                <p>{{t.guide_dogs.p_air_vs_foam_recommendation}}</p>
+
+                <div class="guide-takeaway">
+                    <h3>{{t.guide_dogs.h3_takeaway_dog_mattress}}</h3>
+                    <p>{{t.guide_dogs.p_takeaway_dog_mattress}}</p>
+                </div>
+            </section>
+
+            <!-- Section 4: Recommended Mattresses for Dog Owners -->
+            <section class="guide-section" id="recommended-mattresses">
+                <h2>{{t.guide_dogs.h2_recommended_mattresses}}</h2>
+                <p>{{t.guide_dogs.p_recommended_intro}}</p>
+
+                <!-- Havnby Foam -->
+                <div class="product-pick">
+                    <div class="product-pick-header">
+                        <div>
+                            <span class="product-pick-name">Havnby Foam</span>
+                            <span style="display: block; font-size: 0.85rem; color: var(--text-light); margin-top: 0.25rem;">{{t.guide_dogs.pick_havnby_foam_subtitle}}</span>
+                        </div>
+                        <span class="product-pick-score">8.0/10</span>
+                    </div>
+                    <div class="product-pick-meta">
+                        <span>$169.99</span>
+                        <span>{{t.guide_dogs.pick_havnby_foam_type}}</span>
+                        <span>Tesla Model Y</span>
+                    </div>
+                    <p class="product-pick-desc">{{t.guide_dogs.pick_havnby_foam_desc}}</p>
+                    <ul class="product-pick-pros">
+                        <li>{{t.guide_dogs.pick_havnby_foam_pro1}}</li>
+                        <li>{{t.guide_dogs.pick_havnby_foam_pro2}}</li>
+                        <li>{{t.guide_dogs.pick_havnby_foam_pro3}}</li>
+                        <li>{{t.guide_dogs.pick_havnby_foam_pro4}}</li>
+                    </ul>
+                    <div class="product-pick-cta">
+                        <span class="price-tag">$169.99</span>
+                        <a href="/{{localePath}}reviews/havnby-foam" class="btn-review">{{t.guide_dogs.btn_read_review}}</a>
+                        <a href="#" class="btn-buy" target="_blank" rel="noopener sponsored">{{t.guide_dogs.btn_check_price}}</a>
+                    </div>
+                </div>
+
+                <!-- Havnby Autolevel -->
+                <div class="product-pick">
+                    <div class="product-pick-header">
+                        <div>
+                            <span class="product-pick-name">Havnby Autolevel</span>
+                            <span style="display: block; font-size: 0.85rem; color: var(--text-light); margin-top: 0.25rem;">{{t.guide_dogs.pick_havnby_auto_subtitle}}</span>
+                        </div>
+                        <span class="product-pick-score">8.6/10</span>
+                    </div>
+                    <div class="product-pick-meta">
+                        <span>$359.99</span>
+                        <span>{{t.guide_dogs.pick_havnby_auto_type}}</span>
+                        <span>Tesla Model Y</span>
+                    </div>
+                    <p class="product-pick-desc">{{t.guide_dogs.pick_havnby_auto_desc}}</p>
+                    <ul class="product-pick-pros">
+                        <li>{{t.guide_dogs.pick_havnby_auto_pro1}}</li>
+                        <li>{{t.guide_dogs.pick_havnby_auto_pro2}}</li>
+                        <li>{{t.guide_dogs.pick_havnby_auto_pro3}}</li>
+                        <li>{{t.guide_dogs.pick_havnby_auto_pro4}}</li>
+                    </ul>
+                    <div class="product-pick-cta">
+                        <span class="price-tag">$359.99</span>
+                        <a href="/{{localePath}}reviews/havnby-autolevel" class="btn-review">{{t.guide_dogs.btn_read_review}}</a>
+                        <a href="#" class="btn-buy" target="_blank" rel="noopener sponsored">{{t.guide_dogs.btn_check_price}}</a>
+                    </div>
+                </div>
+
+                <!-- Snuuzu -->
+                <div class="product-pick editors-choice">
+                    <div class="product-pick-header">
+                        <div>
+                            <span class="product-pick-name">Snuuzu</span>
+                            <span style="display: block; font-size: 0.85rem; color: var(--text-light); margin-top: 0.25rem;">{{t.guide_dogs.pick_snuuzu_subtitle}}</span>
+                        </div>
+                        <span class="product-pick-score">9.4/10</span>
+                    </div>
+                    <div class="product-pick-meta">
+                        <span>$899 / &euro;899</span>
+                        <span>{{t.guide_dogs.pick_snuuzu_type}}</span>
+                        <span>Tesla Model Y</span>
+                    </div>
+                    <p class="product-pick-desc">{{t.guide_dogs.pick_snuuzu_desc}}</p>
+                    <ul class="product-pick-pros">
+                        <li>{{t.guide_dogs.pick_snuuzu_pro1}}</li>
+                        <li>{{t.guide_dogs.pick_snuuzu_pro2}}</li>
+                        <li>{{t.guide_dogs.pick_snuuzu_pro3}}</li>
+                        <li>{{t.guide_dogs.pick_snuuzu_pro4}}</li>
+                    </ul>
+                    <div class="product-pick-cta">
+                        <span class="price-tag">$899</span>
+                        <a href="/{{localePath}}reviews/snuuzu-model-y" class="btn-review">{{t.guide_dogs.btn_read_review}}</a>
+                        <a href="#" class="btn-buy" target="_blank" rel="noopener sponsored">{{t.guide_dogs.btn_check_price}}</a>
+                    </div>
+                </div>
+
+                <figure class="guide-image">
+                    <img src="https://www.snuuzu.com/cdn/shop/files/4eyes-240304-snuuzu-back_of_car-2000px-14.jpg?v=1710180889&width=1200" alt="Snuuzu mattress in Tesla Model Y showing the waterproof TPU base layer" loading="lazy" width="1200" height="800">
+                    <figcaption>{{t.guide_dogs.fig_snuuzu_waterproof}}</figcaption>
+                </figure>
+            </section>
+
+            <!-- Section 5: Setup Tips for Dog Owners -->
+            <section class="guide-section" id="setup-tips">
+                <h2>{{t.guide_dogs.h2_setup_tips}}</h2>
+                <p>{{t.guide_dogs.p_setup_tips_intro}}</p>
+
+                <h3>{{t.guide_dogs.h3_protective_blanket}}</h3>
+                <p>{{t.guide_dogs.p_protective_blanket}}</p>
+
+                <h3>{{t.guide_dogs.h3_food_water}}</h3>
+                <p>{{t.guide_dogs.p_food_water}}</p>
+                <ul>
+                    <li>{{t.guide_dogs.li_spill_proof_bowl}}</li>
+                    <li>{{t.guide_dogs.li_collapsible_bowl}}</li>
+                    <li>{{t.guide_dogs.li_place_on_floor}}</li>
+                </ul>
+
+                <h3>{{t.guide_dogs.h3_ventilation}}</h3>
+                <p>{{t.guide_dogs.p_ventilation}}</p>
+
+                <h3>{{t.guide_dogs.h3_sleeping_arrangement}}</h3>
+                <p>{{t.guide_dogs.p_sleeping_arrangement}}</p>
+
+                <h3>{{t.guide_dogs.h3_pre_trip}}</h3>
+                <p>{{t.guide_dogs.p_pre_trip}}</p>
+                <ul>
+                    <li>{{t.guide_dogs.li_exercise_before}}</li>
+                    <li>{{t.guide_dogs.li_familiar_blanket}}</li>
+                    <li>{{t.guide_dogs.li_test_run}}</li>
+                    <li>{{t.guide_dogs.li_trim_nails}}</li>
+                </ul>
+
+                <div class="guide-callout">
+                    <p><strong>{{t.guide_dogs.callout_nail_label}}</strong> {{t.guide_dogs.callout_nail_text}}</p>
+                </div>
+
+                <figure class="guide-image">
+                    <img src="https://havnby.com/cdn/shop/files/HavnbyAutoLevelInflatableMattressforTeslaModelY_1.jpg?v=1732611561&width=1200" alt="Havnby mattress with durable surface suitable for pet use" loading="lazy" width="1200" height="800">
+                    <figcaption>{{t.guide_dogs.fig_dog_setup}}</figcaption>
+                </figure>
+            </section>
+
+            <!-- Section 6: Safety Considerations -->
+            <section class="guide-section" id="safety">
+                <h2>{{t.guide_dogs.h2_safety}}</h2>
+                <p>{{t.guide_dogs.p_safety_intro}}</p>
+
+                <h3>{{t.guide_dogs.h3_temperature_monitoring}}</h3>
+                <p>{{t.guide_dogs.p_temperature_monitoring}}</p>
+
+                <h3>{{t.guide_dogs.h3_never_sentry_only}}</h3>
+                <p>{{t.guide_dogs.p_never_sentry_only}}</p>
+
+                <h3>{{t.guide_dogs.h3_battery_level}}</h3>
+                <p>{{t.guide_dogs.p_battery_level}}</p>
+
+                <h3>{{t.guide_dogs.h3_emergency_plan}}</h3>
+                <p>{{t.guide_dogs.p_emergency_plan}}</p>
+
+                <h3>{{t.guide_dogs.h3_leash_protocol}}</h3>
+                <p>{{t.guide_dogs.p_leash_protocol}}</p>
+
+                <div class="guide-callout warning">
+                    <p><strong>{{t.guide_dogs.callout_critical_label}}</strong> {{t.guide_dogs.callout_critical_text}}</p>
+                </div>
+
+                <h3>{{t.guide_dogs.h3_app_monitoring}}</h3>
+                <p>{{t.guide_dogs.p_app_monitoring}}</p>
+                <ul>
+                    <li>{{t.guide_dogs.li_cabin_temp}}</li>
+                    <li>{{t.guide_dogs.li_battery_status}}</li>
+                    <li>{{t.guide_dogs.li_climate_active}}</li>
+                    <li>{{t.guide_dogs.li_remote_adjustments}}</li>
+                </ul>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="guide-faq" id="faq">
+                <h2>{{t.guide_dogs.h2_faq}}</h2>
+
+                <div class="faq-item">
+                    <h3>{{t.guide_dogs.faq_q1}}</h3>
+                    <p>{{t.guide_dogs.faq_a1}}</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>{{t.guide_dogs.faq_q2}}</h3>
+                    <p>{{t.guide_dogs.faq_a2}}</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>{{t.guide_dogs.faq_q3}}</h3>
+                    <p>{{t.guide_dogs.faq_a3}}</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>{{t.guide_dogs.faq_q4}}</h3>
+                    <p>{{t.guide_dogs.faq_a4}}</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>{{t.guide_dogs.faq_q5}}</h3>
+                    <p>{{t.guide_dogs.faq_a5}}</p>
+                </div>
+            </section>
+
+            <!-- Bottom CTA -->
+            <div class="guide-bottom-cta">
+                <h2>{{t.guide_dogs.h2_bottom_cta}}</h2>
+                <p>{{t.guide_dogs.p_bottom_cta}}</p>
+                <div class="cta-buttons">
+                    <a href="/{{localePath}}reviews/" class="btn-primary">{{t.guide_dogs.btn_all_reviews}}</a>
+                    <a href="/{{localePath}}discounts/" class="btn-secondary">{{t.guide_dogs.btn_discount_codes}}</a>
+                </div>
+            </div>
+
+        </article>
+
+        <!-- Sidebar -->
+        <aside class="guide-sidebar">
+            <div class="sidebar-card">
+                <h3>{{t.guide_dogs.sidebar_toc_title}}</h3>
+                <ul class="toc-list">
+                    <li><a href="#why-tesla-dogs">{{t.guide_dogs.toc_why_tesla_dogs}}</a></li>
+                    <li><a href="#dog-mode-vs-camp-mode">{{t.guide_dogs.toc_dog_vs_camp}}</a></li>
+                    <li><a href="#mattress-considerations">{{t.guide_dogs.toc_mattress_considerations}}</a></li>
+                    <li><a href="#recommended-mattresses">{{t.guide_dogs.toc_recommended}}</a></li>
+                    <li><a href="#setup-tips">{{t.guide_dogs.toc_setup_tips}}</a></li>
+                    <li><a href="#safety">{{t.guide_dogs.toc_safety}}</a></li>
+                    <li><a href="#faq">{{t.guide_dogs.toc_faq}}</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-card cta-card">
+                <h3>{{t.guide_dogs.sidebar_cta_title}}</h3>
+                <p>{{t.guide_dogs.sidebar_cta_text}}</p>
+                <a href="/{{localePath}}reviews/" class="btn-cta">{{t.guide_dogs.sidebar_cta_btn}}</a>
+            </div>
+
+            <div class="sidebar-card">
+                <h3>{{t.guide_dogs.sidebar_related_title}}</h3>
+                <div class="related-list">
+                    <a href="/{{localePath}}guides/getting-started-tesla-camping">{{t.guide_dogs.related_getting_started}}</a>
+                    <a href="/{{localePath}}guides/tesla-vs-generic-mattress">{{t.guide_dogs.related_tesla_vs_generic}}</a>
+                    <a href="/{{localePath}}guides/best-tesla-mattresses">{{t.guide_dogs.related_best_mattresses}}</a>
+                    <a href="/{{localePath}}reviews/havnby-foam">Havnby Foam Review</a>
+                    <a href="/{{localePath}}reviews/snuuzu-model-y">Snuuzu Model Y Review</a>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">Teslamattress</div>
+            <div class="footer-text">
+                <p>&copy; 2026 Teslamattress. {{t.shared.footer_rights}} <a href="/{{localePath}}disclosure" style="color: rgba(255,255,255,0.7);">{{t.shared.fl_disclosure}}</a></p>
+                <p class="disclaimer">{{t.shared.footer_disclaimer}}</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const menuOverlay = document.querySelector('.menu-overlay');
+        if (menuToggle) {
+            function toggleMenu() {
+                menuToggle.classList.toggle('active');
+                navLinks.classList.toggle('active');
+                menuOverlay.classList.toggle('active');
+                document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+            }
+            menuToggle.addEventListener('click', toggleMenu);
+            menuOverlay.addEventListener('click', toggleMenu);
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => { if (navLinks.classList.contains('active')) toggleMenu(); });
+            });
+        }
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

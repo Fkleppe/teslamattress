@@ -32,5 +32,17 @@
   { "template": "discounts/yeslak.html", "pageKey": "discount_yeslak", "output": "discounts/yeslak.html" },
   { "template": "discounts/jowua.html", "pageKey": "discount_jowua", "output": "discounts/jowua.html" },
   { "template": "discounts/novapads.html", "pageKey": "discount_novapads", "output": "discounts/novapads.html" },
-  { "template": "discounts/tesery.html", "pageKey": "discount_tesery", "output": "discounts/tesery.html" }
+  { "template": "discounts/tesery.html", "pageKey": "discount_tesery", "output": "discounts/tesery.html" },
+
+  { "template": "guides/index.html", "pageKey": "guides_index", "output": "guides/index.html" },
+  { "template": "guides/best-tesla-mattresses.html", "pageKey": "guide_best_mattresses", "output": "guides/best-tesla-mattresses.html" },
+  { "template": "guides/best-model-y-mattress.html", "pageKey": "guide_best_model_y", "output": "guides/best-model-y-mattress.html" },
+  { "template": "guides/best-model-3-mattress.html", "pageKey": "guide_best_model_3", "output": "guides/best-model-3-mattress.html" },
+  { "template": "guides/budget-tesla-mattress.html", "pageKey": "guide_budget", "output": "guides/budget-tesla-mattress.html" },
+  { "template": "guides/cybertruck-mattress.html", "pageKey": "guide_cybertruck", "output": "guides/cybertruck-mattress.html" },
+  { "template": "guides/model-x-mattress.html", "pageKey": "guide_model_x", "output": "guides/model-x-mattress.html" },
+  { "template": "guides/buying-guide.html", "pageKey": "guide_buying", "output": "guides/buying-guide.html" },
+  { "template": "guides/tesla-vs-generic-mattress.html", "pageKey": "guide_tesla_vs_generic", "output": "guides/tesla-vs-generic-mattress.html" },
+  { "template": "guides/getting-started-tesla-camping.html", "pageKey": "guide_getting_started", "output": "guides/getting-started-tesla-camping.html" },
+  { "template": "guides/tesla-camping-with-dogs.html", "pageKey": "guide_dogs", "output": "guides/tesla-camping-with-dogs.html" }
 ]

@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="{{htmlLang}}">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{t.guide_budget.meta_title}}</title>
+    <meta name="title" content="{{t.guide_budget.meta_name_title}}">
+    <meta name="description" content="{{t.guide_budget.meta_description}}">
+    <meta name="keywords" content="{{t.guide_budget.meta_keywords}}">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{canonicalUrl}}">
+    {{hreflangTags}}
+    <meta name="author" content="Fredrik Mastouri">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{pageUrl}}">
+    <meta property="og:title" content="{{t.guide_budget.og_title}}">
+    <meta property="og:description" content="{{t.guide_budget.og_description}}">
+    <meta property="og:image" content="https://teslamattress.com/images/og-image.jpg">
+    <meta property="og:site_name" content="Teslamattress">
+    <meta property="og:locale" content="{{ogLocale}}">
+    {{ogLocaleAlternates}}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{t.guide_budget.twitter_title}}">
+    <meta name="twitter:description" content="{{t.guide_budget.twitter_description}}">
+    <meta name="twitter:image" content="https://teslamattress.com/images/og-image.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap"></noscript>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--forest:#2d4a3e;--forest-dark:#1a2e25;--cream:#f5f1e8;--warm-white:#faf9f6;--text:#3d3d3d;--copper:#b87333;--text-light:#6b6b6b}
+        body{font-family:'Source Sans 3',-apple-system,sans-serif;line-height:1.7;color:var(--text);background:var(--warm-white)}
+        .navbar{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 6%;position:fixed;width:100%;z-index:100;background:var(--forest-dark)}
+        .logo{font-family:'Libre Baskerville',Georgia,serif;font-size:1.6rem;font-weight:700;color:var(--cream);text-decoration:none}
+        .nav-links{display:flex;list-style:none;gap:2.5rem}
+        .nav-links a{color:var(--cream);text-decoration:none;font-weight:500}
+        .menu-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:5px}
+        .menu-toggle span{width:24px;height:2px;background:var(--cream)}
+        @media(max-width:768px){.menu-toggle{display:flex}.nav-links{display:none}}
+    </style>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/guides/guides.css">
+
+    <!-- JSON-LD: Article -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "{{t.guide_budget.jsonld_article_headline}}",
+        "description": "{{t.guide_budget.jsonld_article_description}}",
+        "author": {
+            "@type": "Person",
+            "name": "Fredrik Mastouri",
+            "url": "https://teslamattress.com/about"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Teslamattress",
+            "url": "https://teslamattress.com"
+        },
+        "datePublished": "2025-06-15",
+        "dateModified": "2026-02-01",
+        "image": "https://teslamattress.com/images/og-image.jpg"
+    }
+    </script>
+    <!-- JSON-LD: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://teslamattress.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://teslamattress.com/guides/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Budget Tesla Mattress",
+                "item": "https://teslamattress.com/guides/budget-tesla-mattress"
+            }
+        ]
+    }
+    </script>
+    <!-- JSON-LD: FAQPage (5 questions) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "{{t.guide_budget.faq_q1}}",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "{{t.guide_budget.faq_a1}}"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "{{t.guide_budget.faq_q2}}",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "{{t.guide_budget.faq_a2}}"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "{{t.guide_budget.faq_q3}}",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "{{t.guide_budget.faq_a3}}"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "{{t.guide_budget.faq_q4}}",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "{{t.guide_budget.faq_a4}}"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "{{t.guide_budget.faq_q5}}",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "{{t.guide_budget.faq_a5}}"
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <nav class="navbar guide-nav">
+        <a href="/{{localePath}}" class="logo">Teslamattress</a>
+        <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        <ul class="nav-links">
+            <li><a href="/{{localePath}}reviews/">{{t.shared.nav_reviews}}</a></li>
+            <li><a href="/{{localePath}}vs/">{{t.shared.nav_compare}}</a></li>
+            <li><a href="/{{localePath}}guides/">Guides</a></li>
+            <li><a href="/{{localePath}}discounts/">{{t.shared.nav_discounts}}</a></li>
+        </ul>
+        {{langSwitcher}}
+    </nav>
+    <div class="menu-overlay"></div>
+
+    <!-- Hero -->
+    <header class="guide-hero">
+        <div class="guide-hero-content">
+            <nav class="breadcrumb" aria-label="Breadcrumb" style="color: rgba(255,255,255,0.7); margin-bottom: 1rem; font-size: 0.9rem;">
+                <a href="/{{localePath}}" style="color: rgba(255,255,255,0.8);">Home</a> &rsaquo;
+                <a href="/{{localePath}}guides/" style="color: rgba(255,255,255,0.8);">Guides</a> &rsaquo;
+                <span>{{t.guide_budget.breadcrumb_current}}</span>
+            </nav>
+            <span class="guide-badge">{{t.guide_budget.hero_badge}}</span>
+            <h1>{{t.guide_budget.h1_title}}</h1>
+            <p class="guide-tagline">{{t.guide_budget.hero_tagline}}</p>
+            <div class="guide-meta">
+                <span>By <a href="/{{localePath}}about" style="color: var(--cream);">Fredrik Mastouri</a></span>
+                <span>{{t.guide_budget.hero_read_time}}</span>
+                <span>{{t.guide_budget.hero_updated}}</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <div class="guide-content-wrapper">
+        <main class="guide-main">
+
+            <!-- Key Takeaway -->
+            <div class="guide-takeaway">
+                <h2>{{t.guide_budget.takeaway_title}}</h2>
+                <p>{{t.guide_budget.takeaway_text}}</p>
+                <ul>
+                    <li><strong>Havnby Foam ($169.99)</strong> &mdash; {{t.guide_budget.takeaway_pick1}}</li>
+                    <li><strong>Havnby Solo ($159.99)</strong> &mdash; {{t.guide_budget.takeaway_pick2}}</li>
+                    <li><strong>NovaPads Air-Foam Pro (~$199)</strong> &mdash; {{t.guide_budget.takeaway_pick3}}</li>
+                    <li><strong>TESMAT Solo Model Y (~$249)</strong> &mdash; {{t.guide_budget.takeaway_pick4}}</li>
+                </ul>
+            </div>
+
+            <!-- Section: Why Budget? -->
+            <section class="guide-section" id="why-budget">
+                <h2>{{t.guide_budget.h2_why_budget}}</h2>
+                <p>{{t.guide_budget.p_why_budget_intro}}</p>
+                <p>{{t.guide_budget.p_why_budget_reality}}</p>
+                <p>{{t.guide_budget.p_why_budget_who}}</p>
+
+                <div class="guide-callout">
+                    <p><strong>{{t.guide_budget.callout_cost_title}}</strong> {{t.guide_budget.callout_cost_text}}</p>
+                </div>
+
+                <h3>{{t.guide_budget.h3_cost_per_use}}</h3>
+                <p>{{t.guide_budget.p_cost_per_use_intro}}</p>
+
+                <div class="guide-comparison-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>{{t.guide_budget.th_mattress}}</th>
+                                <th>{{t.guide_budget.th_price}}</th>
+                                <th>{{t.guide_budget.th_cost_10_nights}}</th>
+                                <th>{{t.guide_budget.th_cost_25_nights}}</th>
+                                <th>{{t.guide_budget.th_cost_50_nights}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Havnby Solo</td>
+                                <td>$159.99</td>
+                                <td>$16.00</td>
+                                <td>$6.40</td>
+                                <td class="winner">$3.20</td>
+                            </tr>
+                            <tr>
+                                <td>Havnby Foam</td>
+                                <td>$169.99</td>
+                                <td>$17.00</td>
+                                <td>$6.80</td>
+                                <td class="winner">$3.40</td>
+                            </tr>
+                            <tr>
+                                <td>NovaPads Air-Foam Pro</td>
+                                <td>~$199</td>
+                                <td>$19.90</td>
+                                <td>$7.96</td>
+                                <td>$3.98</td>
+                            </tr>
+                            <tr>
+                                <td>TESMAT Solo Model Y</td>
+                                <td>~$249</td>
+                                <td>$24.90</td>
+                                <td>$9.96</td>
+                                <td>$4.98</td>
+                            </tr>
+                            <tr>
+                                <td>Snuuzu Model Y</td>
+                                <td>$899</td>
+                                <td>$89.90</td>
+                                <td>$35.96</td>
+                                <td>$17.98</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p>{{t.guide_budget.p_cost_per_use_conclusion}}</p>
+            </section>
+
+            <!-- Section: Top Budget Picks -->
+            <section class="guide-section" id="top-picks">
+                <h2>{{t.guide_budget.h2_top_picks}}</h2>
+                <p>{{t.guide_budget.p_top_picks_intro}}</p>
+
+                <!-- Pick #1: Havnby Foam -->
+                <div class="product-pick editors-choice">
+                    <div class="product-pick-header">
+                        <div>
+                            <span style="font-size: 0.8rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px;">#1 {{t.guide_budget.pick_label_best_overall}}</span>
+                            <div class="product-pick-name">Havnby Foam Mattress</div>
+                        </div>
+                        <span class="product-pick-score">7.6/10</span>
+                    </div>
+                    <div class="product-pick-meta">
+                        <span>{{t.guide_budget.pick_type_foam}}</span>
+                        <span>{{t.guide_budget.pick_thickness_4_5}}</span>
+                        <span>{{t.guide_budget.pick_fits_y_3}}</span>
+                    </div>
+                    <p class="product-pick-desc">{{t.guide_budget.pick1_description}}</p>
+                    <ul class="product-pick-pros">
+                        <li>{{t.guide_budget.pick1_pro1}}</li>
+                        <li>{{t.guide_budget.pick1_pro2}}</li>
+                        <li>{{t.guide_budget.pick1_pro3}}</li>
+                        <li>{{t.guide_budget.pick1_pro4}}</li>
+                    </ul>
+                    <div class="product-pick-cta">
+                        <span class="price-tag">$169.99</span>
+                        <a href="/{{localePath}}reviews/havnby-foam" class="btn-review">{{t.guide_budget.btn_read_review}}</a>
+                        <a href="#" target="_blank" rel="noopener sponsored" class="btn-buy">{{t.guide_budget.btn_check_price}}</a>
+                    </div>
+                </div>
+
+                <figure class="guide-image">
+                    <img src="https://havnby.com/cdn/shop/files/HavnbyAutoLevelInflatableMattressforTeslaModelY_1.jpg?v=1732611561&width=1200" alt="Havnby mattress setup in Tesla Model Y" loading="lazy" width="1200" height="800">
+                    <figcaption>{{t.guide_budget.img1_caption}}</figcaption>
+                </figure>
+
+                <!-- Pick #2: Havnby Solo -->
+                <div class="product-pick">
+                    <div class="product-pick-header">
+                        <div>
+                            <span style="font-size: 0.8rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px;">#2 {{t.guide_budget.pick_label_cheapest}}</span>
+                            <div class="product-pick-name">Havnby Solo</div>
+                        </div>
+                        <span class="product-pick-score">7.4/10</span>
+                    </div>
+                    <div class="product-pick-meta">
+                        <span>{{t.guide_budget.pick_type_foam}}</span>
+                        <span>{{t.guide_budget.pick_thickness_3}}</span>
+                        <span>{{t.guide_budget.pick_fits_y}}</span>
+                    </div>
+                    <p class="product-pick-desc">{{t.guide_budget.pick2_description}}</p>
+                    <ul class="product-pick-pros">
+                        <li>{{t.guide_budget.pick2_pro1}}</li>
+                        <li>{{t.guide_budget.pick2_pro2}}</li>
+                        <li>{{t.guide_budget.pick2_pro3}}</li>
+                        <li>{{t.guide_budget.pick2_pro4}}</li>
+                    </ul>
+                    <div class="product-pick-cta">
+                        <span class="price-tag">$159.99</span>
+                        <a href="/{{localePath}}reviews/havnby-solo" class="btn-review">{{t.guide_budget.btn_read_review}}</a>
+                        <a href="#" target="_blank" rel="noopener sponsored" class="btn-buy">{{t.guide_budget.btn_check_price}}</a>
+                    </div>
+                </div>
+
+                <!-- Pick #3: NovaPads Air-Foam Pro -->
+                <div class="product-pick">
+                    <div class="product-pick-header">
+                        <div>
+                            <span style="font-size: 0.8rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px;">#3 {{t.guide_budget.pick_label_hybrid}}</span>
+                            <div class="product-pick-name">NovaPads Air-Foam Pro (Tesery)</div>
+                        </div>
+                        <span class="product-pick-score">7.0/10</span>
+                    </div>
+                    <div class="product-pick-meta">
+                        <span>{{t.guide_budget.pick_type_hybrid}}</span>
+                        <span>{{t.guide_budget.pick_thickness_5}}</span>
+                        <span>{{t.guide_budget.pick_fits_y}}</span>
+                    </div>
+                    <p class="product-pick-desc">{{t.guide_budget.pick3_description}}</p>
+                    <ul class="product-pick-pros">
+                        <li>{{t.guide_budget.pick3_pro1}}</li>
+                        <li>{{t.guide_budget.pick3_pro2}}</li>
+                        <li>{{t.guide_budget.pick3_pro3}}</li>
+                        <li>{{t.guide_budget.pick3_pro4}}</li>
+                    </ul>
+                    <div class="product-pick-cta">
+                        <span class="price-tag">~$199</span>
+                        <a href="/{{localePath}}reviews/tesery-novapads" class="btn-review">{{t.guide_budget.btn_read_review}}</a>
+                        <a href="#" target="_blank" rel="noopener sponsored" class="btn-buy">{{t.guide_budget.btn_check_price}}</a>
+                    </div>
+                </div>
+
+                <figure class="guide-image">
+                    <img src="https://havnby.com/cdn/shop/files/TeslaModelYAutoLevelInflatableMattress-Havnby_3.jpg?v=1733913261&width=1200" alt="Tesla Model Y camping mattress setup at campsite" loading="lazy" width="1200" height="800">
+                    <figcaption>{{t.guide_budget.img2_caption}}</figcaption>
+                </figure>
+
+                <!-- Pick #4: TESMAT Solo -->
+                <div class="product-pick">
+                    <div class="product-pick-header">
+                        <div>
+                            <span style="font-size: 0.8rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px;">#4 {{t.guide_budget.pick_label_near_budget}}</span>
+                            <div class="product-pick-name">TESMAT Solo Model Y</div>
+                        </div>
+                        <span class="product-pick-score">7.2/10</span>
+                    </div>
+                    <div class="product-pick-meta">
+                        <span>{{t.guide_budget.pick_type_foam}}</span>
+                        <span>{{t.guide_budget.pick_thickness_4}}</span>
+                        <span>{{t.guide_budget.pick_fits_y}}</span>
+                    </div>
+                    <p class="product-pick-desc">{{t.guide_budget.pick4_description}}</p>
+                    <ul class="product-pick-pros">
+                        <li>{{t.guide_budget.pick4_pro1}}</li>
+                        <li>{{t.guide_budget.pick4_pro2}}</li>
+                        <li>{{t.guide_budget.pick4_pro3}}</li>
+                        <li>{{t.guide_budget.pick4_pro4}}</li>
+                    </ul>
+                    <div class="product-pick-cta">
+                        <span class="price-tag">~$249</span>
+                        <a href="/{{localePath}}reviews/tesmat-solo-y" class="btn-review">{{t.guide_budget.btn_read_review}}</a>
+                        <a href="#" target="_blank" rel="noopener sponsored" class="btn-buy">{{t.guide_budget.btn_check_price}}</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Budget vs Premium Comparison -->
+            <section class="guide-section" id="budget-vs-premium">
+                <h2>{{t.guide_budget.h2_budget_vs_premium}}</h2>
+                <p>{{t.guide_budget.p_budget_vs_premium_intro}}</p>
+
+                <div class="guide-comparison-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>{{t.guide_budget.th_feature}}</th>
+                                <th>{{t.guide_budget.th_budget_under_250}}</th>
+                                <th>{{t.guide_budget.th_midrange}}</th>
+                                <th>{{t.guide_budget.th_premium}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{t.guide_budget.td_price_range}}</td>
+                                <td class="winner">$150 &ndash; $250</td>
+                                <td>$250 &ndash; $500</td>
+                                <td>$500+</td>
+                            </tr>
+                            <tr>
+                                <td>{{t.guide_budget.td_mattress_type}}</td>
+                                <td>{{t.guide_budget.td_type_budget}}</td>
+                                <td>{{t.guide_budget.td_type_midrange}}</td>
+                                <td>{{t.guide_budget.td_type_premium}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{t.guide_budget.td_thickness}}</td>
+                                <td>3" &ndash; 5"</td>
+                                <td>5" &ndash; 7"</td>
+                                <td class="winner">7" &ndash; 8"</td>
+                            </tr>
+                            <tr>
+                                <td>{{t.guide_budget.td_comfort_level}}</td>
+                                <td>{{t.guide_budget.td_comfort_budget}}</td>
+                                <td>{{t.guide_budget.td_comfort_midrange}}</td>
+                                <td class="winner">{{t.guide_budget.td_comfort_premium}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{t.guide_budget.td_durability}}</td>
+                                <td>{{t.guide_budget.td_durability_budget}}</td>
+                                <td>{{t.guide_budget.td_durability_midrange}}</td>
+                                <td class="winner">{{t.guide_budget.td_durability_premium}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{t.guide_budget.td_best_for}}</td>
+                                <td>{{t.guide_budget.td_best_for_budget}}</td>
+                                <td>{{t.guide_budget.td_best_for_midrange}}</td>
+                                <td>{{t.guide_budget.td_best_for_premium}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>{{t.guide_budget.h3_is_expensive_worth_it}}</h3>
+                <p>{{t.guide_budget.p_expensive_worth_it_1}}</p>
+                <p>{{t.guide_budget.p_expensive_worth_it_2}}</p>
+
+                <div class="guide-callout">
+                    <p><strong>{{t.guide_budget.callout_rule_title}}</strong> {{t.guide_budget.callout_rule_text}}</p>
+                </div>
+
+                <p>{{t.guide_budget.p_expensive_worth_it_3}}</p>
+            </section>
+
+            <!-- Section: Who Should Go Budget -->
+            <section class="guide-section" id="who-should-go-budget">
+                <h2>{{t.guide_budget.h2_who_should_budget}}</h2>
+                <p>{{t.guide_budget.p_who_should_budget_intro}}</p>
+
+                <h3>{{t.guide_budget.h3_budget_ideal_for}}</h3>
+                <ul>
+                    <li><strong>{{t.guide_budget.li_occasional_title}}</strong> &mdash; {{t.guide_budget.li_occasional_desc}}</li>
+                    <li><strong>{{t.guide_budget.li_first_timer_title}}</strong> &mdash; {{t.guide_budget.li_first_timer_desc}}</li>
+                    <li><strong>{{t.guide_budget.li_road_tripper_title}}</strong> &mdash; {{t.guide_budget.li_road_tripper_desc}}</li>
+                    <li><strong>{{t.guide_budget.li_young_owner_title}}</strong> &mdash; {{t.guide_budget.li_young_owner_desc}}</li>
+                    <li><strong>{{t.guide_budget.li_backup_title}}</strong> &mdash; {{t.guide_budget.li_backup_desc}}</li>
+                </ul>
+
+                <h3>{{t.guide_budget.h3_consider_upgrade}}</h3>
+                <ul>
+                    <li><strong>{{t.guide_budget.li_frequent_title}}</strong> &mdash; {{t.guide_budget.li_frequent_desc}}</li>
+                    <li><strong>{{t.guide_budget.li_back_pain_title}}</strong> &mdash; {{t.guide_budget.li_back_pain_desc}}</li>
+                    <li><strong>{{t.guide_budget.li_side_sleeper_title}}</strong> &mdash; {{t.guide_budget.li_side_sleeper_desc}}</li>
+                    <li><strong>{{t.guide_budget.li_couples_title}}</strong> &mdash; {{t.guide_budget.li_couples_desc}}</li>
+                </ul>
+
+                <div class="guide-callout">
+                    <p><strong>{{t.guide_budget.callout_tip_title}}</strong> {{t.guide_budget.callout_tip_text}}</p>
+                </div>
+            </section>
+
+            <!-- Section: Tips to Save Even More -->
+            <section class="guide-section" id="save-more">
+                <h2>{{t.guide_budget.h2_save_more}}</h2>
+                <p>{{t.guide_budget.p_save_more_intro}}</p>
+
+                <ol class="guide-steps">
+                    <li><strong>{{t.guide_budget.step1_title}}</strong> &mdash; {{t.guide_budget.step1_desc}}</li>
+                    <li><strong>{{t.guide_budget.step2_title}}</strong> &mdash; {{t.guide_budget.step2_desc}}</li>
+                    <li><strong>{{t.guide_budget.step3_title}}</strong> &mdash; {{t.guide_budget.step3_desc}}</li>
+                    <li><strong>{{t.guide_budget.step4_title}}</strong> &mdash; {{t.guide_budget.step4_desc}}</li>
+                    <li><strong>{{t.guide_budget.step5_title}}</strong> &mdash; {{t.guide_budget.step5_desc}}</li>
+                </ol>
+
+                <p>{{t.guide_budget.p_save_more_discounts}} <a href="/{{localePath}}discounts/">{{t.guide_budget.link_discount_page}}</a>.</p>
+            </section>
+
+            <figure class="guide-image">
+                <img src="https://www.snuuzu.com/cdn/shop/files/4eyes-240304-snuuzu-back_of_car-2000px-14.jpg?v=1710180889&width=1200" alt="Tesla camping mattress from back of vehicle" loading="lazy" width="1200" height="800">
+                <figcaption>{{t.guide_budget.img3_caption}}</figcaption>
+            </figure>
+
+            <!-- FAQ -->
+            <section class="guide-faq" id="faq">
+                <h2>{{t.guide_budget.h2_faq}}</h2>
+
+                <div class="faq-item">
+                    <h3>{{t.guide_budget.faq_q1}}</h3>
+                    <p>{{t.guide_budget.faq_a1}}</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>{{t.guide_budget.faq_q2}}</h3>
+                    <p>{{t.guide_budget.faq_a2}}</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>{{t.guide_budget.faq_q3}}</h3>
+                    <p>{{t.guide_budget.faq_a3}}</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>{{t.guide_budget.faq_q4}}</h3>
+                    <p>{{t.guide_budget.faq_a4}}</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>{{t.guide_budget.faq_q5}}</h3>
+                    <p>{{t.guide_budget.faq_a5}}</p>
+                </div>
+            </section>
+
+            <!-- Bottom CTA -->
+            <div class="guide-bottom-cta">
+                <h2>{{t.guide_budget.cta_title}}</h2>
+                <p>{{t.guide_budget.cta_text}}</p>
+                <div class="cta-buttons">
+                    <a href="/{{localePath}}discounts/havnby" class="btn-primary">{{t.guide_budget.cta_btn_havnby_discount}}</a>
+                    <a href="/{{localePath}}reviews/" class="btn-secondary">{{t.guide_budget.cta_btn_all_reviews}}</a>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Sidebar -->
+        <aside class="guide-sidebar">
+            <div class="sidebar-card">
+                <h3>{{t.guide_budget.sidebar_toc_title}}</h3>
+                <ul class="toc-list">
+                    <li><a href="#why-budget">{{t.guide_budget.toc_why_budget}}</a></li>
+                    <li><a href="#top-picks">{{t.guide_budget.toc_top_picks}}</a></li>
+                    <li><a href="#budget-vs-premium">{{t.guide_budget.toc_budget_vs_premium}}</a></li>
+                    <li><a href="#who-should-go-budget">{{t.guide_budget.toc_who_should_budget}}</a></li>
+                    <li><a href="#save-more">{{t.guide_budget.toc_save_more}}</a></li>
+                    <li><a href="#faq">{{t.guide_budget.toc_faq}}</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-card cta-card">
+                <h3>{{t.guide_budget.sidebar_cta_title}}</h3>
+                <p>{{t.guide_budget.sidebar_cta_text}}</p>
+                <a href="/{{localePath}}discounts/" class="btn-cta">{{t.guide_budget.sidebar_cta_btn}}</a>
+            </div>
+
+            <div class="sidebar-card">
+                <h3>{{t.guide_budget.sidebar_related_title}}</h3>
+                <div class="related-list">
+                    <a href="/{{localePath}}guides/buying-guide">{{t.guide_budget.sidebar_related_buying_guide}}</a>
+                    <a href="/{{localePath}}vs/tesmat-vs-havnby">{{t.guide_budget.sidebar_related_tesmat_vs_havnby}}</a>
+                    <a href="/{{localePath}}vs/havnby-autolevel-vs-foam">{{t.guide_budget.sidebar_related_autolevel_vs_foam}}</a>
+                    <a href="/{{localePath}}reviews/havnby-foam">{{t.guide_budget.sidebar_related_havnby_foam_review}}</a>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">Teslamattress</div>
+            <div class="footer-text">
+                <p>&copy; 2026 Teslamattress. {{t.shared.footer_rights}} <a href="/{{localePath}}disclosure" style="color: rgba(255,255,255,0.7);">{{t.shared.fl_disclosure}}</a></p>
+                <p class="disclaimer">{{t.shared.footer_disclaimer}}</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const menuOverlay = document.querySelector('.menu-overlay');
+        if (menuToggle) {
+            function toggleMenu() {
+                menuToggle.classList.toggle('active');
+                navLinks.classList.toggle('active');
+                menuOverlay.classList.toggle('active');
+                document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+            }
+            menuToggle.addEventListener('click', toggleMenu);
+            menuOverlay.addEventListener('click', toggleMenu);
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => { if (navLinks.classList.contains('active')) toggleMenu(); });
+            });
+        }
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

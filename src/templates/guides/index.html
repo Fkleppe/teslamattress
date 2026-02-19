@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="{{htmlLang}}">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>{{t.guides_index.meta_title}}</title>
+    <meta name="title" content="{{t.guides_index.meta_name_title}}">
+    <meta name="description" content="{{t.guides_index.meta_description}}">
+    <meta name="keywords" content="{{t.guides_index.meta_keywords}}">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{canonicalUrl}}">
+    {{hreflangTags}}
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{pageUrl}}">
+    <meta property="og:title" content="{{t.guides_index.og_title}}">
+    <meta property="og:description" content="{{t.guides_index.og_description}}">
+    <meta property="og:image" content="https://teslamattress.com/images/og-image.jpg">
+    <meta property="og:site_name" content="Teslamattress">
+    <meta property="og:locale" content="{{ogLocale}}">
+    {{ogLocaleAlternates}}
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{t.guides_index.twitter_title}}">
+    <meta name="twitter:description" content="{{t.guides_index.twitter_description}}">
+    <meta name="twitter:image" content="https://teslamattress.com/images/og-image.jpg">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Fonts (non-blocking) -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap"></noscript>
+
+    <!-- Critical CSS -->
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--forest:#2d4a3e;--forest-dark:#1a2e25;--cream:#f5f1e8;--warm-white:#faf9f6;--text:#3d3d3d;--copper:#b87333;--text-light:#6b6b6b}
+        body{font-family:'Source Sans 3',-apple-system,sans-serif;line-height:1.7;color:var(--text);background:var(--warm-white)}
+        .navbar{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 6%;position:fixed;width:100%;z-index:100;background:var(--forest-dark)}
+        .logo{font-family:'Libre Baskerville',Georgia,serif;font-size:1.6rem;font-weight:700;color:var(--cream);text-decoration:none}
+        .nav-links{display:flex;list-style:none;gap:2.5rem}
+        .nav-links a{color:var(--cream);text-decoration:none;font-weight:500}
+        .menu-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:5px}
+        .menu-toggle span{width:24px;height:2px;background:var(--cream)}
+        @media(max-width:768px){.menu-toggle{display:flex}.nav-links{display:none}}
+    </style>
+
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/guides/guides.css">
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "{{t.guides_index.jsonld_1_name}}",
+        "description": "{{t.guides_index.jsonld_1_description}}",
+        "url": "https://teslamattress.com/guides/",
+        "mainEntity": {
+                "@type": "ItemList",
+                "name": "{{t.guides_index.jsonld_1_list_name}}",
+                "numberOfItems": 10,
+                "itemListElement": [
+                        {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "10 Best Tesla Camping Mattresses (2026)",
+                                "url": "https://teslamattress.com/guides/best-tesla-mattresses"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Best Tesla Model Y Mattress (2025 Juniper Update)",
+                                "url": "https://teslamattress.com/guides/best-model-y-mattress"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 3,
+                                "name": "Best Tesla Model 3 Mattress: Ranked & Reviewed",
+                                "url": "https://teslamattress.com/guides/best-model-3-mattress"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 4,
+                                "name": "Foam vs Air vs Hybrid Mattresses for Tesla Camping",
+                                "url": "https://teslamattress.com/guides/foam-vs-air-vs-hybrid"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 5,
+                                "name": "Tesla Model X Camping Mattress Guide",
+                                "url": "https://teslamattress.com/guides/model-x-mattress"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 6,
+                                "name": "Cybertruck Camping Mattress Options",
+                                "url": "https://teslamattress.com/guides/cybertruck-mattress"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 7,
+                                "name": "Tesla Camping Mattress Size Guide",
+                                "url": "https://teslamattress.com/guides/size-guide"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 8,
+                                "name": "How to Use Camp Mode Effectively",
+                                "url": "https://teslamattress.com/guides/camp-mode"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 9,
+                                "name": "Tesla Camping for Beginners",
+                                "url": "https://teslamattress.com/guides/beginners-guide"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 10,
+                                "name": "Essential Tesla Camping Accessories",
+                                "url": "https://teslamattress.com/guides/camping-accessories"
+                        }
+                ]
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+                {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://teslamattress.com/"
+                },
+                {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Guides",
+                        "item": "https://teslamattress.com/guides/"
+                }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/{{localePath}}" class="logo">Teslamattress</a>
+        <button class="menu-toggle" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="/{{localePath}}reviews/">{{t.shared.nav_reviews}}</a></li>
+            <li><a href="/{{localePath}}vs/">{{t.shared.nav_compare}}</a></li>
+            <li><a href="/{{localePath}}guides/">Guides</a></li>
+            <li><a href="/{{localePath}}discounts/">{{t.shared.nav_discounts}}</a></li>
+        </ul>
+        {{langSwitcher}}
+    </nav>
+    <div class="menu-overlay"></div>
+
+    <main class="guides-hub">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/{{localePath}}">Home</a> &rsaquo;
+            <span>Guides</span>
+        </nav>
+
+        <header class="guides-hub-hero">
+            <h1>{{t.guides_index.h1}}</h1>
+            <p>{{t.guides_index.p_hero_subtitle}}</p>
+        </header>
+
+        <!-- Category: Best Mattresses -->
+        <section>
+            <h2 class="section-label" style="font-family: 'Libre Baskerville', Georgia, serif; font-size: 1.3rem; color: var(--forest-dark); margin-bottom: 1.25rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--cream);">{{t.guides_index.h2_best_mattresses}}</h2>
+            <div class="guides-grid">
+                <a href="/{{localePath}}guides/best-tesla-mattresses" class="guide-card">
+                    <div class="guide-card-image">
+                        <img src="https://teslamattress.com/images/og-image.jpg" alt="Tesla camping mattress overview" loading="lazy" width="680" height="400">
+                    </div>
+                    <div class="guide-card-body">
+                        <span class="guide-card-badge">{{t.guides_index.badge_top_10}}</span>
+                        <h2>{{t.guides_index.h2_card_best_tesla}}</h2>
+                        <p>{{t.guides_index.p_card_best_tesla}}</p>
+                        <div class="guide-card-meta">
+                            <span>{{t.guides_index.meta_read_time_15}}</span>
+                            <span>Feb 2026</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/{{localePath}}guides/best-model-y-mattress" class="guide-card">
+                    <div class="guide-card-image">
+                        <img src="https://www.snuuzu.com/cdn/shop/files/4eyes-240304-snuuzu-back_of_car-2000px-11.jpg?v=1710180889&width=1200" alt="Snuuzu mattress in Tesla Model Y" loading="lazy" width="680" height="400">
+                    </div>
+                    <div class="guide-card-body">
+                        <span class="guide-card-badge">Model Y</span>
+                        <h2>{{t.guides_index.h2_card_model_y}}</h2>
+                        <p>{{t.guides_index.p_card_model_y}}</p>
+                        <div class="guide-card-meta">
+                            <span>{{t.guides_index.meta_read_time_12}}</span>
+                            <span>Feb 2026</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/{{localePath}}guides/best-model-3-mattress" class="guide-card">
+                    <div class="guide-card-image">
+                        <img src="https://www.snuuzu.com/cdn/shop/files/4eyes-240304-snuuzu-back_of_car-2000px-14.jpg?v=1710180889&width=1200" alt="Tesla Model 3 camping mattress setup" loading="lazy" width="680" height="400">
+                    </div>
+                    <div class="guide-card-body">
+                        <span class="guide-card-badge">Model 3</span>
+                        <h2>{{t.guides_index.h2_card_model_3}}</h2>
+                        <p>{{t.guides_index.p_card_model_3}}</p>
+                        <div class="guide-card-meta">
+                            <span>{{t.guides_index.meta_read_time_10}}</span>
+                            <span>Feb 2026</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/{{localePath}}guides/foam-vs-air-vs-hybrid" class="guide-card">
+                    <div class="guide-card-image">
+                        <img src="https://havnby.com/cdn/shop/files/HavnbyAutoLevelInflatableMattressforTeslaModelY_1.jpg?v=1732611561&width=1200" alt="Different mattress types compared" loading="lazy" width="680" height="400">
+                    </div>
+                    <div class="guide-card-body">
+                        <span class="guide-card-badge">{{t.guides_index.badge_comparison}}</span>
+                        <h2>{{t.guides_index.h2_card_foam_vs_air}}</h2>
+                        <p>{{t.guides_index.p_card_foam_vs_air}}</p>
+                        <div class="guide-card-meta">
+                            <span>{{t.guides_index.meta_read_time_8}}</span>
+                            <span>Feb 2026</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Category: Other Models -->
+        <section>
+            <h2 class="section-label" style="font-family: 'Libre Baskerville', Georgia, serif; font-size: 1.3rem; color: var(--forest-dark); margin-bottom: 1.25rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--cream);">{{t.guides_index.h2_other_models}}</h2>
+            <div class="guides-grid">
+                <a href="/{{localePath}}guides/model-x-mattress" class="guide-card">
+                    <div class="guide-card-image">
+                        <img src="https://teslamattress.com/images/og-image.jpg" alt="Tesla Model X camping setup" loading="lazy" width="680" height="400">
+                    </div>
+                    <div class="guide-card-body">
+                        <span class="guide-card-badge">Model X</span>
+                        <h2>{{t.guides_index.h2_card_model_x}}</h2>
+                        <p>{{t.guides_index.p_card_model_x}}</p>
+                        <div class="guide-card-meta">
+                            <span>{{t.guides_index.meta_read_time_8}}</span>
+                            <span>Feb 2026</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/{{localePath}}guides/cybertruck-mattress" class="guide-card">
+                    <div class="guide-card-image">
+                        <img src="https://teslamattress.com/images/og-image.jpg" alt="Cybertruck camping mattress options" loading="lazy" width="680" height="400">
+                    </div>
+                    <div class="guide-card-body">
+                        <span class="guide-card-badge">Cybertruck</span>
+                        <h2>{{t.guides_index.h2_card_cybertruck}}</h2>
+                        <p>{{t.guides_index.p_card_cybertruck}}</p>
+                        <div class="guide-card-meta">
+                            <span>{{t.guides_index.meta_read_time_8}}</span>
+                            <span>Feb 2026</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Category: Buying Help -->
+        <section>
+            <h2 class="section-label" style="font-family: 'Libre Baskerville', Georgia, serif; font-size: 1.3rem; color: var(--forest-dark); margin-bottom: 1.25rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--cream);">{{t.guides_index.h2_buying_help}}</h2>
+            <div class="guides-grid">
+                <a href="/{{localePath}}guides/size-guide" class="guide-card">
+                    <div class="guide-card-image">
+                        <img src="https://havnby.com/cdn/shop/files/TeslaModelYAutoLevelInflatableMattress-Havnby_3.jpg?v=1733913261&width=1200" alt="Tesla cargo area dimensions" loading="lazy" width="680" height="400">
+                    </div>
+                    <div class="guide-card-body">
+                        <span class="guide-card-badge">{{t.guides_index.badge_dimensions}}</span>
+                        <h2>{{t.guides_index.h2_card_size_guide}}</h2>
+                        <p>{{t.guides_index.p_card_size_guide}}</p>
+                        <div class="guide-card-meta">
+                            <span>{{t.guides_index.meta_read_time_7}}</span>
+                            <span>Feb 2026</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/{{localePath}}guides/camp-mode" class="guide-card">
+                    <div class="guide-card-image">
+                        <img src="https://teslamattress.com/images/og-image.jpg" alt="Tesla Camp Mode screen" loading="lazy" width="680" height="400">
+                    </div>
+                    <div class="guide-card-body">
+                        <span class="guide-card-badge">{{t.guides_index.badge_how_to}}</span>
+                        <h2>{{t.guides_index.h2_card_camp_mode}}</h2>
+                        <p>{{t.guides_index.p_card_camp_mode}}</p>
+                        <div class="guide-card-meta">
+                            <span>{{t.guides_index.meta_read_time_6}}</span>
+                            <span>Feb 2026</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Category: Getting Started -->
+        <section>
+            <h2 class="section-label" style="font-family: 'Libre Baskerville', Georgia, serif; font-size: 1.3rem; color: var(--forest-dark); margin-bottom: 1.25rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--cream);">{{t.guides_index.h2_getting_started}}</h2>
+            <div class="guides-grid">
+                <a href="/{{localePath}}guides/beginners-guide" class="guide-card">
+                    <div class="guide-card-image">
+                        <img src="https://www.snuuzu.com/cdn/shop/files/4eyes-240304-snuuzu-back_of_car-2000px-11.jpg?v=1710180889&width=1200" alt="Tesla camping for beginners" loading="lazy" width="680" height="400">
+                    </div>
+                    <div class="guide-card-body">
+                        <span class="guide-card-badge">{{t.guides_index.badge_beginner}}</span>
+                        <h2>{{t.guides_index.h2_card_beginners}}</h2>
+                        <p>{{t.guides_index.p_card_beginners}}</p>
+                        <div class="guide-card-meta">
+                            <span>{{t.guides_index.meta_read_time_10}}</span>
+                            <span>Feb 2026</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/{{localePath}}guides/camping-accessories" class="guide-card">
+                    <div class="guide-card-image">
+                        <img src="https://havnby.com/cdn/shop/files/TeslaModelYAutoLevelInflatableMattress-Havnby_3.jpg?v=1733913261&width=1200" alt="Essential Tesla camping accessories" loading="lazy" width="680" height="400">
+                    </div>
+                    <div class="guide-card-body">
+                        <span class="guide-card-badge">{{t.guides_index.badge_essentials}}</span>
+                        <h2>{{t.guides_index.h2_card_accessories}}</h2>
+                        <p>{{t.guides_index.p_card_accessories}}</p>
+                        <div class="guide-card-meta">
+                            <span>{{t.guides_index.meta_read_time_8}}</span>
+                            <span>Feb 2026</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Bottom CTA -->
+        <section class="reviews-cta" style="text-align: center; padding: 3rem 1rem; margin-bottom: 2rem;">
+            <h2 style="font-family: 'Libre Baskerville', Georgia, serif; font-size: 1.5rem; color: var(--forest-dark); margin-bottom: 1rem;">{{t.guides_index.h2_bottom_cta}}</h2>
+            <p style="font-size: 1.05rem; color: var(--text); max-width: 600px; margin: 0 auto 1.5rem;">{{t.guides_index.p_bottom_cta}}</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="/{{localePath}}reviews/" style="display: inline-block; background: var(--forest); color: white; padding: 0.75rem 1.75rem; border-radius: 8px; text-decoration: none; font-weight: 600;">{{t.guides_index.btn_all_reviews}}</a>
+                <a href="/{{localePath}}discounts/" style="display: inline-block; background: var(--copper); color: white; padding: 0.75rem 1.75rem; border-radius: 8px; text-decoration: none; font-weight: 600;">{{t.guides_index.btn_discount_codes}}</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">Teslamattress</div>
+            <div class="footer-text">
+                <p>&copy; 2026 Teslamattress. {{t.shared.footer_rights}} <a href="/{{localePath}}disclosure" style="color: rgba(255,255,255,0.7);">{{t.shared.fl_disclosure}}</a></p>
+                <p class="disclaimer">{{t.shared.footer_disclaimer}}</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const menuOverlay = document.querySelector('.menu-overlay');
+        if (menuToggle) {
+            function toggleMenu() {
+                menuToggle.classList.toggle('active');
+                navLinks.classList.toggle('active');
+                menuOverlay.classList.toggle('active');
+                document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+            }
+            menuToggle.addEventListener('click', toggleMenu);
+            menuOverlay.addEventListener('click', toggleMenu);
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => { if (navLinks.classList.contains('active')) toggleMenu(); });
+            });
+        }
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

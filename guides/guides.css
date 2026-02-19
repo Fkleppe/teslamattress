@@ -1,0 +1,830 @@
+/* Guide/Article Page Styles */
+
+/* Guide Nav */
+.guide-nav {
+    background: var(--forest-dark);
+    position: relative;
+    padding: 1.2rem 6%;
+}
+
+.guide-nav .logo {
+    color: var(--cream);
+    text-decoration: none;
+}
+
+/* Guide Hero */
+.guide-hero {
+    background: linear-gradient(165deg, var(--forest-dark) 0%, var(--forest) 100%);
+    padding: 3rem 6% 3.5rem;
+    color: var(--cream);
+}
+
+.guide-hero-content {
+    max-width: 800px;
+}
+
+.guide-badge {
+    display: inline-block;
+    background: var(--copper);
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.guide-hero h1 {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.guide-tagline {
+    font-size: 1.15rem;
+    opacity: 0.85;
+    margin-bottom: 1.5rem;
+    max-width: 650px;
+    line-height: 1.6;
+}
+
+.guide-meta {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.9rem;
+    opacity: 0.75;
+    flex-wrap: wrap;
+}
+
+.guide-meta span::before {
+    content: "\00B7";
+    margin-right: 0.5rem;
+}
+
+.guide-meta span:first-child::before {
+    display: none;
+}
+
+/* Guide Content Layout */
+.guide-content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 3rem;
+    padding: 3rem 6%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.guide-main {
+    min-width: 0;
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+/* Guide Sections */
+.guide-section {
+    margin-bottom: 2.5rem;
+}
+
+.guide-section h2 {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 1.5rem;
+    color: var(--forest-dark);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--sage);
+}
+
+.guide-section h3 {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 1.15rem;
+    color: var(--forest-dark);
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.guide-section p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text);
+    margin-bottom: 1rem;
+}
+
+.guide-section ul,
+.guide-section ol {
+    margin: 1rem 0 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.guide-section li {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+}
+
+.guide-section li strong {
+    color: var(--forest-dark);
+}
+
+/* Guide Images */
+.guide-image {
+    margin: 2rem 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.guide-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.guide-image figcaption {
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    background: var(--cream);
+    text-align: center;
+}
+
+/* Key Takeaway Box */
+.guide-takeaway {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2rem 0;
+    border-left: 5px solid var(--copper);
+}
+
+.guide-takeaway h2,
+.guide-takeaway h3 {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 1.2rem;
+    color: var(--forest-dark);
+    margin-bottom: 0.75rem;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.guide-takeaway h2::before,
+.guide-takeaway h3::before {
+    content: '\26A1';
+    margin-right: 0.5rem;
+}
+
+.guide-takeaway p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.guide-takeaway ul {
+    margin: 0.5rem 0 0;
+    padding-left: 1.25rem;
+}
+
+.guide-takeaway li {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+/* Product Card (for recommendations) */
+.product-pick {
+    background: white;
+    border-radius: 16px;
+    padding: 1.75rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+    border: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.product-pick:hover {
+    border-color: var(--copper);
+}
+
+.product-pick.editors-choice {
+    border-color: var(--copper);
+    position: relative;
+}
+
+.product-pick.editors-choice::before {
+    content: "Editor's Choice";
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    background: var(--copper);
+    color: white;
+    padding: 0.2rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.product-pick-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.product-pick-name {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--forest-dark);
+}
+
+.product-pick-score {
+    background: var(--forest);
+    color: white;
+    padding: 0.3rem 0.7rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.product-pick-meta {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    flex-wrap: wrap;
+}
+
+.product-pick-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.product-pick-desc {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 1rem;
+}
+
+.product-pick-pros {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.25rem;
+}
+
+.product-pick-pros li {
+    font-size: 0.9rem;
+    padding-left: 1.25rem;
+    position: relative;
+    margin-bottom: 0;
+}
+
+.product-pick-pros li::before {
+    content: '\2713';
+    position: absolute;
+    left: 0;
+    color: #2e7d32;
+    font-weight: 700;
+}
+
+.product-pick-cta {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.product-pick-cta .btn-review {
+    display: inline-block;
+    background: var(--forest);
+    color: white;
+    padding: 0.6rem 1.25rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.product-pick-cta .btn-review:hover {
+    background: var(--forest-dark);
+}
+
+.product-pick-cta .btn-buy {
+    display: inline-block;
+    background: var(--copper);
+    color: white;
+    padding: 0.6rem 1.25rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.product-pick-cta .btn-buy:hover {
+    background: #a06429;
+}
+
+.product-pick-cta .price-tag {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--forest-dark);
+}
+
+/* Quick Comparison Table */
+.guide-comparison-table {
+    overflow-x: auto;
+    margin: 2rem 0;
+}
+
+.guide-comparison-table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    min-width: 500px;
+}
+
+.guide-comparison-table th,
+.guide-comparison-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.guide-comparison-table th {
+    background: var(--forest-dark);
+    color: white;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+}
+
+.guide-comparison-table tr:nth-child(even) {
+    background: var(--cream);
+}
+
+.guide-comparison-table td:first-child {
+    font-weight: 500;
+}
+
+.guide-comparison-table .winner {
+    background: rgba(46, 125, 50, 0.08);
+    font-weight: 600;
+}
+
+/* Numbered Steps */
+.guide-steps {
+    counter-reset: step-counter;
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.guide-steps li {
+    counter-increment: step-counter;
+    position: relative;
+    padding-left: 3.5rem;
+    margin-bottom: 1.5rem;
+    min-height: 2.5rem;
+}
+
+.guide-steps li::before {
+    content: counter(step-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2.25rem;
+    height: 2.25rem;
+    background: var(--forest);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+/* Info Callout */
+.guide-callout {
+    background: rgba(45, 74, 62, 0.06);
+    border: 1px solid rgba(45, 74, 62, 0.15);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.guide-callout.warning {
+    background: rgba(255, 152, 0, 0.06);
+    border-color: rgba(255, 152, 0, 0.3);
+}
+
+.guide-callout p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.guide-callout strong {
+    color: var(--forest-dark);
+}
+
+/* Sidebar - Table of Contents */
+.guide-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: sticky;
+    top: 2rem;
+    align-self: start;
+}
+
+.guide-sidebar .sidebar-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.guide-sidebar .sidebar-card h3 {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 1rem;
+    color: var(--forest-dark);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--cream);
+}
+
+.toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.toc-list li {
+    margin-bottom: 0;
+}
+
+.toc-list a {
+    display: block;
+    padding: 0.4rem 0;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.85rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    transition: color 0.2s;
+}
+
+.toc-list a:hover {
+    color: var(--copper);
+}
+
+/* Sidebar CTA Card */
+.guide-sidebar .cta-card {
+    background: linear-gradient(135deg, var(--forest) 0%, var(--forest-dark) 100%);
+    color: var(--cream);
+    text-align: center;
+}
+
+.guide-sidebar .cta-card h3 {
+    color: var(--cream);
+    border-bottom-color: rgba(255, 255, 255, 0.15);
+}
+
+.guide-sidebar .cta-card p {
+    font-size: 0.9rem;
+    opacity: 0.85;
+    margin-bottom: 1rem;
+}
+
+.guide-sidebar .cta-card .btn-cta {
+    display: block;
+    background: var(--copper);
+    color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.guide-sidebar .cta-card .btn-cta:hover {
+    background: #a06429;
+}
+
+/* Related Guides */
+.guide-sidebar .related-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.guide-sidebar .related-list a {
+    display: block;
+    padding: 0.6rem 0.75rem;
+    background: var(--cream);
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.guide-sidebar .related-list a:hover {
+    background: #e8e4da;
+    color: var(--forest-dark);
+}
+
+/* Guide Hub Page */
+.guides-hub {
+    padding-top: 100px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.guides-hub-hero {
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.guides-hub-hero h1 {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    color: var(--forest-dark);
+    margin-bottom: 1rem;
+}
+
+.guides-hub-hero p {
+    font-size: 1.15rem;
+    color: var(--text);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Guide Cards Grid */
+.guides-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+.guide-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--text);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s;
+    border: 2px solid transparent;
+}
+
+.guide-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border-color: var(--copper);
+}
+
+.guide-card-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.guide-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.guide-card:hover .guide-card-image img {
+    transform: scale(1.05);
+}
+
+.guide-card-body {
+    padding: 1.5rem;
+}
+
+.guide-card-badge {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--forest);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+}
+
+.guide-card h2 {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 1.15rem;
+    color: var(--forest-dark);
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+
+.guide-card p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+.guide-card-meta {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+/* FAQ in guides */
+.guide-faq {
+    margin: 2.5rem 0;
+}
+
+.guide-faq h2 {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 1.5rem;
+    color: var(--forest-dark);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--sage);
+}
+
+.guide-faq .faq-item {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.guide-faq .faq-item:last-child {
+    border-bottom: none;
+}
+
+.guide-faq .faq-item h3 {
+    font-size: 1.05rem;
+    color: var(--forest-dark);
+    margin-bottom: 0.5rem;
+}
+
+.guide-faq .faq-item p {
+    margin: 0;
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+/* Bottom CTA Section */
+.guide-bottom-cta {
+    background: linear-gradient(135deg, var(--forest) 0%, var(--forest-dark) 100%);
+    border-radius: 16px;
+    padding: 2.5rem;
+    margin: 2.5rem 0;
+    color: var(--cream);
+    text-align: center;
+}
+
+.guide-bottom-cta h2 {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--cream);
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.guide-bottom-cta p {
+    font-size: 1.05rem;
+    opacity: 0.85;
+    margin-bottom: 1.5rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--cream);
+}
+
+.guide-bottom-cta .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.guide-bottom-cta .btn-primary {
+    display: inline-block;
+    background: var(--copper);
+    color: white;
+    padding: 0.75rem 1.75rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.guide-bottom-cta .btn-primary:hover {
+    background: #a06429;
+    transform: translateY(-2px);
+}
+
+.guide-bottom-cta .btn-secondary {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--cream);
+    padding: 0.75rem 1.75rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s;
+}
+
+.guide-bottom-cta .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .guide-content-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .guide-sidebar {
+        position: relative;
+        top: 0;
+    }
+
+    .product-pick-pros {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .guide-hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .guide-hero {
+        padding: 2.5rem 5% 3rem;
+    }
+
+    .guide-content-wrapper {
+        padding: 2rem 4%;
+    }
+
+    .guide-meta {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .guide-meta span::before {
+        display: none;
+    }
+
+    .guides-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 375px) {
+    .guide-hero h1 {
+        font-size: 1.6rem;
+    }
+
+    .guide-takeaway {
+        padding: 1.25rem;
+    }
+
+    .product-pick {
+        padding: 1.25rem;
+    }
+
+    .guide-bottom-cta {
+        padding: 1.5rem;
+    }
+}
+
+/* Touch-friendly */
+@media (pointer: coarse) {
+    .product-pick-cta .btn-review,
+    .product-pick-cta .btn-buy,
+    .guide-bottom-cta .btn-primary,
+    .guide-bottom-cta .btn-secondary {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+    }
+}

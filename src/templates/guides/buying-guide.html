@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="{{htmlLang}}">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{t.guide_buying.meta_title}}</title>
+    <meta name="title" content="{{t.guide_buying.meta_name_title}}">
+    <meta name="description" content="{{t.guide_buying.meta_description}}">
+    <meta name="keywords" content="{{t.guide_buying.meta_keywords}}">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{canonicalUrl}}">
+    {{hreflangTags}}
+    <meta name="author" content="Fredrik Mastouri">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{pageUrl}}">
+    <meta property="og:title" content="{{t.guide_buying.og_title}}">
+    <meta property="og:description" content="{{t.guide_buying.og_description}}">
+    <meta property="og:image" content="https://teslamattress.com/images/og-image.jpg">
+    <meta property="og:site_name" content="Teslamattress">
+    <meta property="og:locale" content="{{ogLocale}}">
+    {{ogLocaleAlternates}}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{t.guide_buying.twitter_title}}">
+    <meta name="twitter:description" content="{{t.guide_buying.twitter_description}}">
+    <meta name="twitter:image" content="https://teslamattress.com/images/og-image.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap"></noscript>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--forest:#2d4a3e;--forest-dark:#1a2e25;--cream:#f5f1e8;--warm-white:#faf9f6;--text:#3d3d3d;--copper:#b87333;--text-light:#6b6b6b}
+        body{font-family:'Source Sans 3',-apple-system,sans-serif;line-height:1.7;color:var(--text);background:var(--warm-white)}
+        .navbar{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 6%;position:fixed;width:100%;z-index:100;background:var(--forest-dark)}
+        .logo{font-family:'Libre Baskerville',Georgia,serif;font-size:1.6rem;font-weight:700;color:var(--cream);text-decoration:none}
+        .nav-links{display:flex;list-style:none;gap:2.5rem}
+        .nav-links a{color:var(--cream);text-decoration:none;font-weight:500}
+        .menu-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:5px}
+        .menu-toggle span{width:24px;height:2px;background:var(--cream)}
+        @media(max-width:768px){.menu-toggle{display:flex}.nav-links{display:none}}
+    </style>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/guides/guides.css">
+
+    <!-- JSON-LD: Article -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "{{t.guide_buying.jsonld_article_headline}}",
+        "description": "{{t.guide_buying.jsonld_article_description}}",
+        "author": {
+            "@type": "Person",
+            "name": "Fredrik Mastouri",
+            "url": "https://teslamattress.com/about"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Teslamattress",
+            "url": "https://teslamattress.com"
+        },
+        "datePublished": "2025-05-01",
+        "dateModified": "2026-02-01",
+        "image": "https://teslamattress.com/images/og-image.jpg"
+    }
+    </script>
+    <!-- JSON-LD: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://teslamattress.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://teslamattress.com/guides/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Buying Guide",
+                "item": "https://teslamattress.com/guides/buying-guide"
+            }
+        ]
+    }
+    </script>
+    <!-- JSON-LD: FAQPage (5 questions) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "{{t.guide_buying.faq_q1}}",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "{{t.guide_buying.faq_a1}}"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "{{t.guide_buying.faq_q2}}",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "{{t.guide_buying.faq_a2}}"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "{{t.guide_buying.faq_q3}}",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "{{t.guide_buying.faq_a3}}"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "{{t.guide_buying.faq_q4}}",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "{{t.guide_buying.faq_a4}}"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "{{t.guide_buying.faq_q5}}",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "{{t.guide_buying.faq_a5}}"
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <nav class="navbar guide-nav">
+        <a href="/{{localePath}}" class="logo">Teslamattress</a>
+        <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        <ul class="nav-links">
+            <li><a href="/{{localePath}}reviews/">{{t.shared.nav_reviews}}</a></li>
+            <li><a href="/{{localePath}}vs/">{{t.shared.nav_compare}}</a></li>
+            <li><a href="/{{localePath}}guides/">Guides</a></li>
+            <li><a href="/{{localePath}}discounts/">{{t.shared.nav_discounts}}</a></li>
+        </ul>
+        {{langSwitcher}}
+    </nav>
+    <div class="menu-overlay"></div>
+
+    <!-- Hero -->
+    <header class="guide-hero">
+        <div class="guide-hero-content">
+            <nav class="breadcrumb" aria-label="Breadcrumb" style="color: rgba(255,255,255,0.7); margin-bottom: 1rem; font-size: 0.9rem;">
+                <a href="/{{localePath}}" style="color: rgba(255,255,255,0.8);">Home</a> &rsaquo;
+                <a href="/{{localePath}}guides/" style="color: rgba(255,255,255,0.8);">Guides</a> &rsaquo;
+                <span>{{t.guide_buying.breadcrumb_current}}</span>
+            </nav>
+            <span class="guide-badge">{{t.guide_buying.hero_badge}}</span>
+            <h1>{{t.guide_buying.h1_title}}</h1>
+            <p class="guide-tagline">{{t.guide_buying.hero_tagline}}</p>
+            <div class="guide-meta">
+                <span>By <a href="/{{localePath}}about" style="color: var(--cream);">Fredrik Mastouri</a></span>
+                <span>{{t.guide_buying.hero_read_time}}</span>
+                <span>{{t.guide_buying.hero_updated}}</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <div class="guide-content-wrapper">
+        <main class="guide-main">
+
+            <!-- Key Takeaway -->
+            <div class="guide-takeaway">
+                <h2>{{t.guide_buying.takeaway_title}}</h2>
+                <p>{{t.guide_buying.takeaway_text}}</p>
+                <ul>
+                    <li>{{t.guide_buying.takeaway_point1}}</li>
+                    <li>{{t.guide_buying.takeaway_point2}}</li>
+                    <li>{{t.guide_buying.takeaway_point3}}</li>
+                </ul>
+            </div>
+
+            <!-- Section 1: Types of Mattresses -->
+            <section class="guide-section" id="mattress-types">
+                <h2>{{t.guide_buying.h2_mattress_types}}</h2>
+                <p>{{t.guide_buying.p_types_intro}}</p>
+
+                <h3>{{t.guide_buying.h3_foam_mattresses}}</h3>
+                <p>{{t.guide_buying.p_foam_overview}}</p>
+                <ul>
+                    <li><strong>{{t.guide_buying.li_foam_pro1_title}}</strong> &mdash; {{t.guide_buying.li_foam_pro1_desc}}</li>
+                    <li><strong>{{t.guide_buying.li_foam_pro2_title}}</strong> &mdash; {{t.guide_buying.li_foam_pro2_desc}}</li>
+                    <li><strong>{{t.guide_buying.li_foam_pro3_title}}</strong> &mdash; {{t.guide_buying.li_foam_pro3_desc}}</li>
+                </ul>
+                <p>{{t.guide_buying.p_foam_cons}}</p>
+                <ul>
+                    <li><strong>{{t.guide_buying.li_foam_con1_title}}</strong> &mdash; {{t.guide_buying.li_foam_con1_desc}}</li>
+                    <li><strong>{{t.guide_buying.li_foam_con2_title}}</strong> &mdash; {{t.guide_buying.li_foam_con2_desc}}</li>
+                    <li><strong>{{t.guide_buying.li_foam_con3_title}}</strong> &mdash; {{t.guide_buying.li_foam_con3_desc}}</li>
+                </ul>
+                <p>{{t.guide_buying.p_foam_examples}}</p>
+
+                <h3>{{t.guide_buying.h3_air_mattresses}}</h3>
+                <p>{{t.guide_buying.p_air_overview}}</p>
+                <ul>
+                    <li><strong>{{t.guide_buying.li_air_pro1_title}}</strong> &mdash; {{t.guide_buying.li_air_pro1_desc}}</li>
+                    <li><strong>{{t.guide_buying.li_air_pro2_title}}</strong> &mdash; {{t.guide_buying.li_air_pro2_desc}}</li>
+                    <li><strong>{{t.guide_buying.li_air_pro3_title}}</strong> &mdash; {{t.guide_buying.li_air_pro3_desc}}</li>
+                </ul>
+                <p>{{t.guide_buying.p_air_cons}}</p>
+                <ul>
+                    <li><strong>{{t.guide_buying.li_air_con1_title}}</strong> &mdash; {{t.guide_buying.li_air_con1_desc}}</li>
+                    <li><strong>{{t.guide_buying.li_air_con2_title}}</strong> &mdash; {{t.guide_buying.li_air_con2_desc}}</li>
+                    <li><strong>{{t.guide_buying.li_air_con3_title}}</strong> &mdash; {{t.guide_buying.li_air_con3_desc}}</li>
+                </ul>
+
+                <h3>{{t.guide_buying.h3_hybrid_mattresses}}</h3>
+                <p>{{t.guide_buying.p_hybrid_overview}}</p>
+                <ul>
+                    <li><strong>{{t.guide_buying.li_hybrid_pro1_title}}</strong> &mdash; {{t.guide_buying.li_hybrid_pro1_desc}}</li>
+                    <li><strong>{{t.guide_buying.li_hybrid_pro2_title}}</strong> &mdash; {{t.guide_buying.li_hybrid_pro2_desc}}</li>
+                    <li><strong>{{t.guide_buying.li_hybrid_pro3_title}}</strong> &mdash; {{t.guide_buying.li_hybrid_pro3_desc}}</li>
+                </ul>
+                <p>{{t.guide_buying.p_hybrid_cons}}</p>
+                <ul>
+                    <li><strong>{{t.guide_buying.li_hybrid_con1_title}}</strong> &mdash; {{t.guide_buying.li_hybrid_con1_desc}}</li>
+                    <li><strong>{{t.guide_buying.li_hybrid_con2_title}}</strong> &mdash; {{t.guide_buying.li_hybrid_con2_desc}}</li>
+                </ul>
+                <p>{{t.guide_buying.p_hybrid_examples}}</p>
+
+                <!-- All types comparison table -->
+                <div class="guide-comparison-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>{{t.guide_buying.th_feature}}</th>
+                                <th>{{t.guide_buying.th_foam}}</th>
+                                <th>{{t.guide_buying.th_air}}</th>
+                                <th>{{t.guide_buying.th_hybrid}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{t.guide_buying.td_comfort}}</td>
+                                <td>{{t.guide_buying.td_comfort_foam}}</td>
+                                <td>{{t.guide_buying.td_comfort_air}}</td>
+                                <td class="winner">{{t.guide_buying.td_comfort_hybrid}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{t.guide_buying.td_price_range}}</td>
+                                <td class="winner">$150 &ndash; $300</td>
+                                <td>$80 &ndash; $200</td>
+                                <td>$200 &ndash; $900</td>
+                            </tr>
+                            <tr>
+                                <td>{{t.guide_buying.td_storage_size}}</td>
+                                <td>{{t.guide_buying.td_storage_foam}}</td>
+                                <td class="winner">{{t.guide_buying.td_storage_air}}</td>
+                                <td>{{t.guide_buying.td_storage_hybrid}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{t.guide_buying.td_setup_time}}</td>
+                                <td class="winner">{{t.guide_buying.td_setup_foam}}</td>
+                                <td>{{t.guide_buying.td_setup_air}}</td>
+                                <td>{{t.guide_buying.td_setup_hybrid}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{t.guide_buying.td_durability}}</td>
+                                <td>{{t.guide_buying.td_durability_foam}}</td>
+                                <td>{{t.guide_buying.td_durability_air}}</td>
+                                <td class="winner">{{t.guide_buying.td_durability_hybrid}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{t.guide_buying.td_adjustability}}</td>
+                                <td>{{t.guide_buying.td_adjust_foam}}</td>
+                                <td class="winner">{{t.guide_buying.td_adjust_air}}</td>
+                                <td>{{t.guide_buying.td_adjust_hybrid}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{t.guide_buying.td_weight}}</td>
+                                <td>{{t.guide_buying.td_weight_foam}}</td>
+                                <td class="winner">{{t.guide_buying.td_weight_air}}</td>
+                                <td>{{t.guide_buying.td_weight_hybrid}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{t.guide_buying.td_best_for}}</td>
+                                <td>{{t.guide_buying.td_best_foam}}</td>
+                                <td>{{t.guide_buying.td_best_air}}</td>
+                                <td>{{t.guide_buying.td_best_hybrid}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <figure class="guide-image">
+                <img src="https://www.snuuzu.com/cdn/shop/files/4eyes-240304-snuuzu-back_of_car-2000px-11.jpg?v=1710180889&width=1200" alt="Snuuzu mattress setup in Tesla Model Y" loading="lazy" width="1200" height="800">
+                <figcaption>{{t.guide_buying.img1_caption}}</figcaption>
+            </figure>
+
+            <!-- Section 2: Key Factors -->
+            <section class="guide-section" id="key-factors">
+                <h2>{{t.guide_buying.h2_key_factors}}</h2>
+                <p>{{t.guide_buying.p_factors_intro}}</p>
+
+                <h3>{{t.guide_buying.h3_factor_thickness}}</h3>
+                <p>{{t.guide_buying.p_factor_thickness}}</p>
+                <div class="guide-callout">
+                    <p><strong>{{t.guide_buying.callout_thickness_title}}</strong> {{t.guide_buying.callout_thickness_text}}</p>
+                </div>
+
+                <h3>{{t.guide_buying.h3_factor_storage}}</h3>
+                <p>{{t.guide_buying.p_factor_storage}}</p>
+                <p>{{t.guide_buying.p_factor_storage_tip}}</p>
+
+                <h3>{{t.guide_buying.h3_factor_weight}}</h3>
+                <p>{{t.guide_buying.p_factor_weight}}</p>
+
+                <h3>{{t.guide_buying.h3_factor_compatibility}}</h3>
+                <p>{{t.guide_buying.p_factor_compatibility}}</p>
+
+                <div class="guide-callout warning">
+                    <p><strong>{{t.guide_buying.callout_compatibility_title}}</strong> {{t.guide_buying.callout_compatibility_text}}</p>
+                </div>
+
+                <h3>{{t.guide_buying.h3_factor_price}}</h3>
+                <p>{{t.guide_buying.p_factor_price}}</p>
+                <ul>
+                    <li><strong>{{t.guide_buying.li_price_budget_title}}</strong> &mdash; {{t.guide_buying.li_price_budget_desc}}</li>
+                    <li><strong>{{t.guide_buying.li_price_mid_title}}</strong> &mdash; {{t.guide_buying.li_price_mid_desc}}</li>
+                    <li><strong>{{t.guide_buying.li_price_premium_title}}</strong> &mdash; {{t.guide_buying.li_price_premium_desc}}</li>
+                </ul>
+
+                <h3>{{t.guide_buying.h3_factor_materials}}</h3>
+                <p>{{t.guide_buying.p_factor_materials}}</p>
+                <ul>
+                    <li><strong>{{t.guide_buying.li_material_memory_title}}</strong> &mdash; {{t.guide_buying.li_material_memory_desc}}</li>
+                    <li><strong>{{t.guide_buying.li_material_poly_title}}</strong> &mdash; {{t.guide_buying.li_material_poly_desc}}</li>
+                    <li><strong>{{t.guide_buying.li_material_tpu_title}}</strong> &mdash; {{t.guide_buying.li_material_tpu_desc}}</li>
+                    <li><strong>{{t.guide_buying.li_material_lyocell_title}}</strong> &mdash; {{t.guide_buying.li_material_lyocell_desc}}</li>
+                </ul>
+            </section>
+
+            <!-- Section 3: Model-Specific Considerations -->
+            <section class="guide-section" id="model-specific">
+                <h2>{{t.guide_buying.h2_model_specific}}</h2>
+                <p>{{t.guide_buying.p_model_specific_intro}}</p>
+
+                <div class="guide-comparison-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>{{t.guide_buying.th_consideration}}</th>
+                                <th>Model Y</th>
+                                <th>Model 3</th>
+                                <th>Model X</th>
+                                <th>Cybertruck</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{t.guide_buying.td_sleep_area}}</td>
+                                <td class="winner">{{t.guide_buying.td_area_y}}</td>
+                                <td>{{t.guide_buying.td_area_3}}</td>
+                                <td class="winner">{{t.guide_buying.td_area_x}}</td>
+                                <td>{{t.guide_buying.td_area_ct}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{t.guide_buying.td_mattress_options}}</td>
+                                <td class="winner">{{t.guide_buying.td_options_y}}</td>
+                                <td>{{t.guide_buying.td_options_3}}</td>
+                                <td>{{t.guide_buying.td_options_x}}</td>
+                                <td>{{t.guide_buying.td_options_ct}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{t.guide_buying.td_headroom}}</td>
+                                <td>{{t.guide_buying.td_headroom_y}}</td>
+                                <td>{{t.guide_buying.td_headroom_3}}</td>
+                                <td class="winner">{{t.guide_buying.td_headroom_x}}</td>
+                                <td>{{t.guide_buying.td_headroom_ct}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{t.guide_buying.td_camp_mode}}</td>
+                                <td>{{t.guide_buying.td_camp_mode_all}}</td>
+                                <td>{{t.guide_buying.td_camp_mode_all}}</td>
+                                <td>{{t.guide_buying.td_camp_mode_all}}</td>
+                                <td>{{t.guide_buying.td_camp_mode_all}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{t.guide_buying.td_our_top_pick}}</td>
+                                <td>Snuuzu</td>
+                                <td>Snuuzu</td>
+                                <td>Havnby Autolevel</td>
+                                <td>Tesery CT</td>
+                            </tr>
+                            <tr>
+                                <td>{{t.guide_buying.td_budget_pick}}</td>
+                                <td>Havnby Foam</td>
+                                <td>Havnby Foam</td>
+                                <td>Havnby Foam</td>
+                                <td>{{t.guide_buying.td_budget_ct}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>{{t.guide_buying.h3_model_y}}</h3>
+                <p>{{t.guide_buying.p_model_y}}</p>
+                <p>{{t.guide_buying.p_model_y_picks}} <a href="/{{localePath}}reviews/">{{t.guide_buying.link_see_reviews}}</a>.</p>
+
+                <h3>{{t.guide_buying.h3_model_3}}</h3>
+                <p>{{t.guide_buying.p_model_3}}</p>
+                <p>{{t.guide_buying.p_model_3_picks}} <a href="/{{localePath}}vs/model-y-vs-model-3-mattresses">{{t.guide_buying.link_y_vs_3}}</a>.</p>
+
+                <h3>{{t.guide_buying.h3_model_x}}</h3>
+                <p>{{t.guide_buying.p_model_x}}</p>
+                <p>{{t.guide_buying.p_model_x_guide}} <a href="/{{localePath}}guides/model-x-mattress">{{t.guide_buying.link_model_x_guide}}</a>.</p>
+
+                <h3>{{t.guide_buying.h3_cybertruck}}</h3>
+                <p>{{t.guide_buying.p_cybertruck}}</p>
+                <p>{{t.guide_buying.p_cybertruck_guide}} <a href="/{{localePath}}guides/cybertruck-mattress">{{t.guide_buying.link_cybertruck_guide}}</a>.</p>
+            </section>
+
+            <figure class="guide-image">
+                <img src="https://havnby.com/cdn/shop/files/TeslaModelYAutoLevelInflatableMattress-Havnby_3.jpg?v=1733913261&width=1200" alt="Havnby auto-level mattress inflated in Tesla" loading="lazy" width="1200" height="800">
+                <figcaption>{{t.guide_buying.img2_caption}}</figcaption>
+            </figure>
+
+            <!-- Section 4: Our Testing Methodology -->
+            <section class="guide-section" id="methodology">
+                <h2>{{t.guide_buying.h2_methodology}}</h2>
+                <p>{{t.guide_buying.p_methodology_intro}}</p>
+
+                <h3>{{t.guide_buying.h3_how_we_test}}</h3>
+                <p>{{t.guide_buying.p_how_we_test}}</p>
+
+                <ol class="guide-steps">
+                    <li><strong>{{t.guide_buying.step_test_1_title}}</strong> &mdash; {{t.guide_buying.step_test_1_desc}}</li>
+                    <li><strong>{{t.guide_buying.step_test_2_title}}</strong> &mdash; {{t.guide_buying.step_test_2_desc}}</li>
+                    <li><strong>{{t.guide_buying.step_test_3_title}}</strong> &mdash; {{t.guide_buying.step_test_3_desc}}</li>
+                    <li><strong>{{t.guide_buying.step_test_4_title}}</strong> &mdash; {{t.guide_buying.step_test_4_desc}}</li>
+                    <li><strong>{{t.guide_buying.step_test_5_title}}</strong> &mdash; {{t.guide_buying.step_test_5_desc}}</li>
+                    <li><strong>{{t.guide_buying.step_test_6_title}}</strong> &mdash; {{t.guide_buying.step_test_6_desc}}</li>
+                </ol>
+
+                <h3>{{t.guide_buying.h3_scoring}}</h3>
+                <p>{{t.guide_buying.p_scoring}}</p>
+
+                <div class="guide-comparison-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>{{t.guide_buying.th_category}}</th>
+                                <th>{{t.guide_buying.th_weight_pct}}</th>
+                                <th>{{t.guide_buying.th_what_we_measure}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{t.guide_buying.td_cat_comfort}}</td>
+                                <td>30%</td>
+                                <td>{{t.guide_buying.td_measure_comfort}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{t.guide_buying.td_cat_build}}</td>
+                                <td>20%</td>
+                                <td>{{t.guide_buying.td_measure_build}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{t.guide_buying.td_cat_value}}</td>
+                                <td>20%</td>
+                                <td>{{t.guide_buying.td_measure_value}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{t.guide_buying.td_cat_setup}}</td>
+                                <td>15%</td>
+                                <td>{{t.guide_buying.td_measure_setup}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{t.guide_buying.td_cat_fit}}</td>
+                                <td>15%</td>
+                                <td>{{t.guide_buying.td_measure_fit}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p>{{t.guide_buying.p_methodology_link}} <a href="/{{localePath}}methodology">{{t.guide_buying.link_full_methodology}}</a>.</p>
+            </section>
+
+            <!-- Section 5: Quick Decision Matrix -->
+            <section class="guide-section" id="decision-matrix">
+                <h2>{{t.guide_buying.h2_decision_matrix}}</h2>
+                <p>{{t.guide_buying.p_decision_intro}}</p>
+
+                <div class="guide-takeaway">
+                    <h3>{{t.guide_buying.h3_flowchart_title}}</h3>
+                    <p>{{t.guide_buying.p_flowchart_intro}}</p>
+                    <ul>
+                        <li><strong>{{t.guide_buying.li_flow_budget_title}}</strong> &mdash; {{t.guide_buying.li_flow_budget_desc}}</li>
+                        <li><strong>{{t.guide_buying.li_flow_occasional_title}}</strong> &mdash; {{t.guide_buying.li_flow_occasional_desc}}</li>
+                        <li><strong>{{t.guide_buying.li_flow_frequent_title}}</strong> &mdash; {{t.guide_buying.li_flow_frequent_desc}}</li>
+                        <li><strong>{{t.guide_buying.li_flow_best_title}}</strong> &mdash; {{t.guide_buying.li_flow_best_desc}}</li>
+                        <li><strong>{{t.guide_buying.li_flow_couples_title}}</strong> &mdash; {{t.guide_buying.li_flow_couples_desc}}</li>
+                        <li><strong>{{t.guide_buying.li_flow_compact_title}}</strong> &mdash; {{t.guide_buying.li_flow_compact_desc}}</li>
+                    </ul>
+                </div>
+
+                <div class="guide-callout">
+                    <p><strong>{{t.guide_buying.callout_still_unsure_title}}</strong> {{t.guide_buying.callout_still_unsure_text}}</p>
+                </div>
+
+                <h3>{{t.guide_buying.h3_what_to_avoid}}</h3>
+                <p>{{t.guide_buying.p_what_to_avoid}}</p>
+                <ul>
+                    <li><strong>{{t.guide_buying.li_avoid_generic_title}}</strong> &mdash; {{t.guide_buying.li_avoid_generic_desc}}</li>
+                    <li><strong>{{t.guide_buying.li_avoid_thin_title}}</strong> &mdash; {{t.guide_buying.li_avoid_thin_desc}}</li>
+                    <li><strong>{{t.guide_buying.li_avoid_no_warranty_title}}</strong> &mdash; {{t.guide_buying.li_avoid_no_warranty_desc}}</li>
+                    <li><strong>{{t.guide_buying.li_avoid_oversized_title}}</strong> &mdash; {{t.guide_buying.li_avoid_oversized_desc}}</li>
+                </ul>
+            </section>
+
+            <figure class="guide-image">
+                <img src="https://havnby.com/cdn/shop/files/HavnbyAutoLevelInflatableMattressforTeslaModelY_1.jpg?v=1732611561&width=1200" alt="Havnby mattress product for Tesla camping" loading="lazy" width="1200" height="800">
+                <figcaption>{{t.guide_buying.img3_caption}}</figcaption>
+            </figure>
+
+            <!-- FAQ -->
+            <section class="guide-faq" id="faq">
+                <h2>{{t.guide_buying.h2_faq}}</h2>
+
+                <div class="faq-item">
+                    <h3>{{t.guide_buying.faq_q1}}</h3>
+                    <p>{{t.guide_buying.faq_a1}}</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>{{t.guide_buying.faq_q2}}</h3>
+                    <p>{{t.guide_buying.faq_a2}}</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>{{t.guide_buying.faq_q3}}</h3>
+                    <p>{{t.guide_buying.faq_a3}}</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>{{t.guide_buying.faq_q4}}</h3>
+                    <p>{{t.guide_buying.faq_a4}}</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>{{t.guide_buying.faq_q5}}</h3>
+                    <p>{{t.guide_buying.faq_a5}}</p>
+                </div>
+            </section>
+
+            <!-- Bottom CTA -->
+            <div class="guide-bottom-cta">
+                <h2>{{t.guide_buying.cta_title}}</h2>
+                <p>{{t.guide_buying.cta_text}}</p>
+                <div class="cta-buttons">
+                    <a href="/{{localePath}}reviews/" class="btn-primary">{{t.guide_buying.cta_btn_all_reviews}}</a>
+                    <a href="/{{localePath}}discounts/" class="btn-secondary">{{t.guide_buying.cta_btn_discounts}}</a>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Sidebar -->
+        <aside class="guide-sidebar">
+            <div class="sidebar-card">
+                <h3>{{t.guide_buying.sidebar_toc_title}}</h3>
+                <ul class="toc-list">
+                    <li><a href="#mattress-types">{{t.guide_buying.toc_mattress_types}}</a></li>
+                    <li><a href="#key-factors">{{t.guide_buying.toc_key_factors}}</a></li>
+                    <li><a href="#model-specific">{{t.guide_buying.toc_model_specific}}</a></li>
+                    <li><a href="#methodology">{{t.guide_buying.toc_methodology}}</a></li>
+                    <li><a href="#decision-matrix">{{t.guide_buying.toc_decision_matrix}}</a></li>
+                    <li><a href="#faq">{{t.guide_buying.toc_faq}}</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-card cta-card">
+                <h3>{{t.guide_buying.sidebar_cta_title}}</h3>
+                <p>{{t.guide_buying.sidebar_cta_text}}</p>
+                <a href="/{{localePath}}reviews/" class="btn-cta">{{t.guide_buying.sidebar_cta_btn}}</a>
+            </div>
+
+            <div class="sidebar-card">
+                <h3>{{t.guide_buying.sidebar_related_title}}</h3>
+                <div class="related-list">
+                    <a href="/{{localePath}}guides/budget-tesla-mattress">{{t.guide_buying.sidebar_related_budget}}</a>
+                    <a href="/{{localePath}}guides/model-x-mattress">{{t.guide_buying.sidebar_related_model_x}}</a>
+                    <a href="/{{localePath}}guides/cybertruck-mattress">{{t.guide_buying.sidebar_related_cybertruck}}</a>
+                    <a href="/{{localePath}}vs/snuuzu-vs-havnby">{{t.guide_buying.sidebar_related_snuuzu_vs_havnby}}</a>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">Teslamattress</div>
+            <div class="footer-text">
+                <p>&copy; 2026 Teslamattress. {{t.shared.footer_rights}} <a href="/{{localePath}}disclosure" style="color: rgba(255,255,255,0.7);">{{t.shared.fl_disclosure}}</a></p>
+                <p class="disclaimer">{{t.shared.footer_disclaimer}}</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const menuOverlay = document.querySelector('.menu-overlay');
+        if (menuToggle) {
+            function toggleMenu() {
+                menuToggle.classList.toggle('active');
+                navLinks.classList.toggle('active');
+                menuOverlay.classList.toggle('active');
+                document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+            }
+            menuToggle.addEventListener('click', toggleMenu);
+            menuOverlay.addEventListener('click', toggleMenu);
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => { if (navLinks.classList.contains('active')) toggleMenu(); });
+            });
+        }
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

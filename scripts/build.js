@@ -191,6 +191,7 @@ function copyStaticFiles() {
     'vs/vs.css',
     'discounts/discounts.css',
     'discounts/brand-page.css',
+    'guides/guides.css',
   ];
 
   for (const file of staticFiles) {

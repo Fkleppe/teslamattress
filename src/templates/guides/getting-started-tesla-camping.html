@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="{{htmlLang}}">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>{{t.guide_getting_started.meta_title}}</title>
+    <meta name="title" content="{{t.guide_getting_started.meta_name_title}}">
+    <meta name="description" content="{{t.guide_getting_started.meta_description}}">
+    <meta name="keywords" content="{{t.guide_getting_started.meta_keywords}}">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{canonicalUrl}}">
+    {{hreflangTags}}
+    <meta name="author" content="Fredrik Mastouri">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{pageUrl}}">
+    <meta property="og:title" content="{{t.guide_getting_started.og_title}}">
+    <meta property="og:description" content="{{t.guide_getting_started.og_description}}">
+    <meta property="og:image" content="https://teslamattress.com/images/og-image.jpg">
+    <meta property="og:site_name" content="Teslamattress">
+    <meta property="og:locale" content="{{ogLocale}}">
+    {{ogLocaleAlternates}}
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{t.guide_getting_started.twitter_title}}">
+    <meta name="twitter:description" content="{{t.guide_getting_started.twitter_description}}">
+    <meta name="twitter:image" content="https://teslamattress.com/images/og-image.jpg">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Fonts (non-blocking) -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap"></noscript>
+
+    <!-- Critical CSS -->
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--forest:#2d4a3e;--forest-dark:#1a2e25;--cream:#f5f1e8;--warm-white:#faf9f6;--text:#3d3d3d;--copper:#b87333;--text-light:#6b6b6b}
+        body{font-family:'Source Sans 3',-apple-system,sans-serif;line-height:1.7;color:var(--text);background:var(--warm-white)}
+        .navbar{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 6%;position:fixed;width:100%;z-index:100;background:var(--forest-dark)}
+        .logo{font-family:'Libre Baskerville',Georgia,serif;font-size:1.6rem;font-weight:700;color:var(--cream);text-decoration:none}
+        .nav-links{display:flex;list-style:none;gap:2.5rem}
+        .nav-links a{color:var(--cream);text-decoration:none;font-weight:500}
+        .menu-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:5px}
+        .menu-toggle span{width:24px;height:2px;background:var(--cream)}
+        @media(max-width:768px){.menu-toggle{display:flex}.nav-links{display:none}}
+    </style>
+
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/guides/guides.css">
+
+    <!-- JSON-LD: Article -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "{{t.guide_getting_started.jsonld_headline}}",
+        "description": "{{t.guide_getting_started.jsonld_description}}",
+        "image": "https://teslamattress.com/images/og-image.jpg",
+        "author": {
+                "@type": "Person",
+                "name": "Fredrik Mastouri",
+                "url": "https://teslamattress.com/about",
+                "jobTitle": "Founder & Lead Reviewer"
+        },
+        "publisher": {
+                "@type": "Organization",
+                "name": "Teslamattress",
+                "url": "https://teslamattress.com"
+        },
+        "datePublished": "2026-02-19",
+        "dateModified": "2026-02-19",
+        "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://teslamattress.com/guides/getting-started-tesla-camping"
+        }
+    }
+    </script>
+    <!-- JSON-LD: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+                {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://teslamattress.com/"
+                },
+                {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Guides",
+                        "item": "https://teslamattress.com/guides/"
+                },
+                {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "Getting Started With Tesla Camping",
+                        "item": "https://teslamattress.com/guides/getting-started-tesla-camping"
+                }
+        ]
+    }
+    </script>
+    <!-- JSON-LD: FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+                {
+                        "@type": "Question",
+                        "name": "{{t.guide_getting_started.faq_q1}}",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "{{t.guide_getting_started.faq_a1}}"
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "{{t.guide_getting_started.faq_q2}}",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "{{t.guide_getting_started.faq_a2}}"
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "{{t.guide_getting_started.faq_q3}}",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "{{t.guide_getting_started.faq_a3}}"
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "{{t.guide_getting_started.faq_q4}}",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "{{t.guide_getting_started.faq_a4}}"
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "{{t.guide_getting_started.faq_q5}}",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "{{t.guide_getting_started.faq_a5}}"
+                        }
+                }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <nav class="navbar guide-nav">
+        <a href="/{{localePath}}" class="logo">Teslamattress</a>
+        <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        <ul class="nav-links">
+            <li><a href="/{{localePath}}reviews/">{{t.shared.nav_reviews}}</a></li>
+            <li><a href="/{{localePath}}vs/">{{t.shared.nav_compare}}</a></li>
+            <li><a href="/{{localePath}}guides/">Guides</a></li>
+            <li><a href="/{{localePath}}discounts/">{{t.shared.nav_discounts}}</a></li>
+        </ul>
+        {{langSwitcher}}
+    </nav>
+    <div class="menu-overlay"></div>
+
+    <!-- Hero Section -->
+    <header class="guide-hero">
+        <div class="guide-hero-content">
+            <nav class="breadcrumb" aria-label="Breadcrumb" style="margin-bottom: 1rem; font-size: 0.9rem;">
+                <a href="/{{localePath}}" style="color: rgba(255,255,255,0.8);">Home</a> &rsaquo;
+                <a href="/{{localePath}}guides/" style="color: rgba(255,255,255,0.8);">Guides</a> &rsaquo;
+                <span>Getting Started</span>
+            </nav>
+            <span class="guide-badge">{{t.guide_getting_started.badge_beginner_guide}}</span>
+            <h1>{{t.guide_getting_started.h1}}</h1>
+            <p class="guide-tagline">{{t.guide_getting_started.p_tagline}}</p>
+            <div class="guide-meta">
+                <span>By <a href="/{{localePath}}about" style="color: var(--cream);">Fredrik Mastouri</a></span>
+                <span>{{t.guide_getting_started.meta_read_time}}</span>
+                <span>{{t.guide_getting_started.meta_updated}}</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Content Layout -->
+    <div class="guide-content-wrapper">
+        <article class="guide-main">
+
+            <!-- Key Takeaway -->
+            <div class="guide-takeaway">
+                <h2>{{t.guide_getting_started.h2_key_takeaway}}</h2>
+                <p>{{t.guide_getting_started.p_key_takeaway}}</p>
+            </div>
+
+            <!-- Section 1: Why Camp in a Tesla? -->
+            <section class="guide-section" id="why-tesla-camping">
+                <h2>{{t.guide_getting_started.h2_why_camp}}</h2>
+                <p>{{t.guide_getting_started.p_why_camp_intro}}</p>
+                <p>{{t.guide_getting_started.p_why_camp_detail}}</p>
+
+                <h3>{{t.guide_getting_started.h3_camp_mode}}</h3>
+                <p>{{t.guide_getting_started.p_camp_mode_brief}}</p>
+
+                <h3>{{t.guide_getting_started.h3_no_engine}}</h3>
+                <p>{{t.guide_getting_started.p_no_engine}}</p>
+
+                <h3>{{t.guide_getting_started.h3_quiet_comfort}}</h3>
+                <p>{{t.guide_getting_started.p_quiet_comfort}}</p>
+
+                <h3>{{t.guide_getting_started.h3_climate_controlled}}</h3>
+                <p>{{t.guide_getting_started.p_climate_controlled}}</p>
+
+                <figure class="guide-image">
+                    <img src="https://teslamattress.com/images/og-image.jpg" alt="Tesla Model Y set up for camping with mattress visible through open trunk" loading="lazy" width="1200" height="630">
+                    <figcaption>{{t.guide_getting_started.fig_tesla_camping}}</figcaption>
+                </figure>
+            </section>
+
+            <!-- Section 2: What is Camp Mode? -->
+            <section class="guide-section" id="camp-mode">
+                <h2>{{t.guide_getting_started.h2_camp_mode_explained}}</h2>
+                <p>{{t.guide_getting_started.p_camp_mode_intro}}</p>
+                <p>{{t.guide_getting_started.p_camp_mode_what_it_does}}</p>
+
+                <h3>{{t.guide_getting_started.h3_activate_camp_mode}}</h3>
+                <p>{{t.guide_getting_started.p_activate_camp_mode}}</p>
+                <ol class="guide-steps">
+                    <li><strong>{{t.guide_getting_started.step_camp_1_title}}</strong> {{t.guide_getting_started.step_camp_1_desc}}</li>
+                    <li><strong>{{t.guide_getting_started.step_camp_2_title}}</strong> {{t.guide_getting_started.step_camp_2_desc}}</li>
+                    <li><strong>{{t.guide_getting_started.step_camp_3_title}}</strong> {{t.guide_getting_started.step_camp_3_desc}}</li>
+                    <li><strong>{{t.guide_getting_started.step_camp_4_title}}</strong> {{t.guide_getting_started.step_camp_4_desc}}</li>
+                </ol>
+
+                <h3>{{t.guide_getting_started.h3_battery_usage}}</h3>
+                <p>{{t.guide_getting_started.p_battery_usage}}</p>
+
+                <div class="guide-callout">
+                    <p><strong>{{t.guide_getting_started.callout_battery_label}}</strong> {{t.guide_getting_started.callout_battery_text}}</p>
+                </div>
+
+                <h3>{{t.guide_getting_started.h3_camp_mode_keeps_on}}</h3>
+                <p>{{t.guide_getting_started.p_camp_mode_keeps_on}}</p>
+                <ul>
+                    <li>{{t.guide_getting_started.li_hvac}}</li>
+                    <li>{{t.guide_getting_started.li_interior_lights}}</li>
+                    <li>{{t.guide_getting_started.li_usb_ports}}</li>
+                    <li>{{t.guide_getting_started.li_touchscreen}}</li>
+                    <li>{{t.guide_getting_started.li_music}}</li>
+                </ul>
+            </section>
+
+            <!-- Section 3: Essential Gear Checklist -->
+            <section class="guide-section" id="gear-checklist">
+                <h2>{{t.guide_getting_started.h2_gear_checklist}}</h2>
+                <p>{{t.guide_getting_started.p_gear_checklist_intro}}</p>
+
+                <h3>{{t.guide_getting_started.h3_must_have}}</h3>
+                <ul>
+                    <li><strong>{{t.guide_getting_started.li_mattress_label}}</strong> - {{t.guide_getting_started.li_mattress_desc}}</li>
+                    <li><strong>{{t.guide_getting_started.li_window_shades_label}}</strong> - {{t.guide_getting_started.li_window_shades_desc}}</li>
+                    <li><strong>{{t.guide_getting_started.li_bedding_label}}</strong> - {{t.guide_getting_started.li_bedding_desc}}</li>
+                    <li><strong>{{t.guide_getting_started.li_pillow_label}}</strong> - {{t.guide_getting_started.li_pillow_desc}}</li>
+                </ul>
+
+                <h3>{{t.guide_getting_started.h3_nice_to_have}}</h3>
+                <ul>
+                    <li><strong>{{t.guide_getting_started.li_usb_fan_label}}</strong> - {{t.guide_getting_started.li_usb_fan_desc}}</li>
+                    <li><strong>{{t.guide_getting_started.li_organizer_label}}</strong> - {{t.guide_getting_started.li_organizer_desc}}</li>
+                    <li><strong>{{t.guide_getting_started.li_headlamp_label}}</strong> - {{t.guide_getting_started.li_headlamp_desc}}</li>
+                    <li><strong>{{t.guide_getting_started.li_portable_charger_label}}</strong> - {{t.guide_getting_started.li_portable_charger_desc}}</li>
+                    <li><strong>{{t.guide_getting_started.li_cooler_label}}</strong> - {{t.guide_getting_started.li_cooler_desc}}</li>
+                </ul>
+
+                <div class="guide-takeaway">
+                    <h3>{{t.guide_getting_started.h3_minimum_spend}}</h3>
+                    <p>{{t.guide_getting_started.p_minimum_spend}}</p>
+                </div>
+            </section>
+
+            <!-- Section 4: Step-by-Step Setup Guide -->
+            <section class="guide-section" id="setup-guide">
+                <h2>{{t.guide_getting_started.h2_setup_guide}}</h2>
+                <p>{{t.guide_getting_started.p_setup_guide_intro}}</p>
+
+                <ol class="guide-steps">
+                    <li>
+                        <strong>{{t.guide_getting_started.step_1_title}}</strong>
+                        <p>{{t.guide_getting_started.step_1_desc}}</p>
+                    </li>
+                    <li>
+                        <strong>{{t.guide_getting_started.step_2_title}}</strong>
+                        <p>{{t.guide_getting_started.step_2_desc}}</p>
+                    </li>
+                    <li>
+                        <strong>{{t.guide_getting_started.step_3_title}}</strong>
+                        <p>{{t.guide_getting_started.step_3_desc}}</p>
+                    </li>
+                    <li>
+                        <strong>{{t.guide_getting_started.step_4_title}}</strong>
+                        <p>{{t.guide_getting_started.step_4_desc}}</p>
+                    </li>
+                    <li>
+                        <strong>{{t.guide_getting_started.step_5_title}}</strong>
+                        <p>{{t.guide_getting_started.step_5_desc}}</p>
+                    </li>
+                    <li>
+                        <strong>{{t.guide_getting_started.step_6_title}}</strong>
+                        <p>{{t.guide_getting_started.step_6_desc}}</p>
+                    </li>
+                    <li>
+                        <strong>{{t.guide_getting_started.step_7_title}}</strong>
+                        <p>{{t.guide_getting_started.step_7_desc}}</p>
+                    </li>
+                </ol>
+
+                <figure class="guide-image">
+                    <img src="https://www.snuuzu.com/cdn/shop/files/4eyes-240304-snuuzu-back_of_car-2000px-11.jpg?v=1710180889&width=1200" alt="Mattress laid flat in Tesla Model Y with rear seats folded down" loading="lazy" width="1200" height="800">
+                    <figcaption>{{t.guide_getting_started.fig_setup}}</figcaption>
+                </figure>
+            </section>
+
+            <!-- Section 5: Morning Routine -->
+            <section class="guide-section" id="morning-routine">
+                <h2>{{t.guide_getting_started.h2_morning_routine}}</h2>
+                <p>{{t.guide_getting_started.p_morning_routine_intro}}</p>
+                <ol>
+                    <li><strong>{{t.guide_getting_started.morning_1_title}}</strong> - {{t.guide_getting_started.morning_1_desc}}</li>
+                    <li><strong>{{t.guide_getting_started.morning_2_title}}</strong> - {{t.guide_getting_started.morning_2_desc}}</li>
+                    <li><strong>{{t.guide_getting_started.morning_3_title}}</strong> - {{t.guide_getting_started.morning_3_desc}}</li>
+                    <li><strong>{{t.guide_getting_started.morning_4_title}}</strong> - {{t.guide_getting_started.morning_4_desc}}</li>
+                    <li><strong>{{t.guide_getting_started.morning_5_title}}</strong> - {{t.guide_getting_started.morning_5_desc}}</li>
+                </ol>
+
+                <div class="guide-callout">
+                    <p><strong>{{t.guide_getting_started.callout_charger_label}}</strong> {{t.guide_getting_started.callout_charger_text}}</p>
+                </div>
+            </section>
+
+            <!-- Section 6: Mattress Recommendations for Beginners -->
+            <section class="guide-section" id="mattress-recommendations">
+                <h2>{{t.guide_getting_started.h2_mattress_recs}}</h2>
+                <p>{{t.guide_getting_started.p_mattress_recs_intro}}</p>
+
+                <!-- Havnby Foam -->
+                <div class="product-pick">
+                    <div class="product-pick-header">
+                        <div>
+                            <span class="product-pick-name">Havnby Foam</span>
+                            <span style="display: block; font-size: 0.85rem; color: var(--text-light); margin-top: 0.25rem;">{{t.guide_getting_started.pick_havnby_subtitle}}</span>
+                        </div>
+                        <span class="product-pick-score">8.0/10</span>
+                    </div>
+                    <div class="product-pick-meta">
+                        <span>$169.99</span>
+                        <span>{{t.guide_getting_started.pick_havnby_type}}</span>
+                        <span>Tesla Model Y</span>
+                    </div>
+                    <p class="product-pick-desc">{{t.guide_getting_started.pick_havnby_desc}}</p>
+                    <ul class="product-pick-pros">
+                        <li>{{t.guide_getting_started.pick_havnby_pro1}}</li>
+                        <li>{{t.guide_getting_started.pick_havnby_pro2}}</li>
+                        <li>{{t.guide_getting_started.pick_havnby_pro3}}</li>
+                        <li>{{t.guide_getting_started.pick_havnby_pro4}}</li>
+                    </ul>
+                    <div class="product-pick-cta">
+                        <span class="price-tag">$169.99</span>
+                        <a href="/{{localePath}}reviews/havnby-foam" class="btn-review">{{t.guide_getting_started.btn_read_review}}</a>
+                        <a href="#" class="btn-buy" target="_blank" rel="noopener sponsored">{{t.guide_getting_started.btn_check_price}}</a>
+                    </div>
+                </div>
+
+                <!-- Havnby Autolevel -->
+                <div class="product-pick">
+                    <div class="product-pick-header">
+                        <div>
+                            <span class="product-pick-name">Havnby Autolevel</span>
+                            <span style="display: block; font-size: 0.85rem; color: var(--text-light); margin-top: 0.25rem;">{{t.guide_getting_started.pick_autolevel_subtitle}}</span>
+                        </div>
+                        <span class="product-pick-score">8.6/10</span>
+                    </div>
+                    <div class="product-pick-meta">
+                        <span>$359.99</span>
+                        <span>{{t.guide_getting_started.pick_autolevel_type}}</span>
+                        <span>Tesla Model Y</span>
+                    </div>
+                    <p class="product-pick-desc">{{t.guide_getting_started.pick_autolevel_desc}}</p>
+                    <ul class="product-pick-pros">
+                        <li>{{t.guide_getting_started.pick_autolevel_pro1}}</li>
+                        <li>{{t.guide_getting_started.pick_autolevel_pro2}}</li>
+                        <li>{{t.guide_getting_started.pick_autolevel_pro3}}</li>
+                        <li>{{t.guide_getting_started.pick_autolevel_pro4}}</li>
+                    </ul>
+                    <div class="product-pick-cta">
+                        <span class="price-tag">$359.99</span>
+                        <a href="/{{localePath}}reviews/havnby-autolevel" class="btn-review">{{t.guide_getting_started.btn_read_review}}</a>
+                        <a href="#" class="btn-buy" target="_blank" rel="noopener sponsored">{{t.guide_getting_started.btn_check_price}}</a>
+                    </div>
+                </div>
+
+                <!-- Snuuzu -->
+                <div class="product-pick editors-choice">
+                    <div class="product-pick-header">
+                        <div>
+                            <span class="product-pick-name">Snuuzu</span>
+                            <span style="display: block; font-size: 0.85rem; color: var(--text-light); margin-top: 0.25rem;">{{t.guide_getting_started.pick_snuuzu_subtitle}}</span>
+                        </div>
+                        <span class="product-pick-score">9.4/10</span>
+                    </div>
+                    <div class="product-pick-meta">
+                        <span>$899 / &euro;899</span>
+                        <span>{{t.guide_getting_started.pick_snuuzu_type}}</span>
+                        <span>Tesla Model Y</span>
+                    </div>
+                    <p class="product-pick-desc">{{t.guide_getting_started.pick_snuuzu_desc}}</p>
+                    <ul class="product-pick-pros">
+                        <li>{{t.guide_getting_started.pick_snuuzu_pro1}}</li>
+                        <li>{{t.guide_getting_started.pick_snuuzu_pro2}}</li>
+                        <li>{{t.guide_getting_started.pick_snuuzu_pro3}}</li>
+                        <li>{{t.guide_getting_started.pick_snuuzu_pro4}}</li>
+                    </ul>
+                    <div class="product-pick-cta">
+                        <span class="price-tag">$899</span>
+                        <a href="/{{localePath}}reviews/snuuzu-model-y" class="btn-review">{{t.guide_getting_started.btn_read_review}}</a>
+                        <a href="#" class="btn-buy" target="_blank" rel="noopener sponsored">{{t.guide_getting_started.btn_check_price}}</a>
+                    </div>
+                </div>
+
+                <p>{{t.guide_getting_started.p_see_all_reviews}} <a href="/{{localePath}}reviews/" style="color: var(--copper); font-weight: 600;">{{t.guide_getting_started.link_all_reviews}}</a></p>
+            </section>
+
+            <!-- Section 7: Common Mistakes to Avoid -->
+            <section class="guide-section" id="common-mistakes">
+                <h2>{{t.guide_getting_started.h2_common_mistakes}}</h2>
+                <p>{{t.guide_getting_started.p_common_mistakes_intro}}</p>
+
+                <h3>{{t.guide_getting_started.h3_mistake_1}}</h3>
+                <p>{{t.guide_getting_started.p_mistake_1}}</p>
+
+                <h3>{{t.guide_getting_started.h3_mistake_2}}</h3>
+                <p>{{t.guide_getting_started.p_mistake_2}}</p>
+
+                <h3>{{t.guide_getting_started.h3_mistake_3}}</h3>
+                <p>{{t.guide_getting_started.p_mistake_3}}</p>
+
+                <h3>{{t.guide_getting_started.h3_mistake_4}}</h3>
+                <p>{{t.guide_getting_started.p_mistake_4}}</p>
+
+                <h3>{{t.guide_getting_started.h3_mistake_5}}</h3>
+                <p>{{t.guide_getting_started.p_mistake_5}}</p>
+
+                <h3>{{t.guide_getting_started.h3_mistake_6}}</h3>
+                <p>{{t.guide_getting_started.p_mistake_6}}</p>
+
+                <h3>{{t.guide_getting_started.h3_mistake_7}}</h3>
+                <p>{{t.guide_getting_started.p_mistake_7}}</p>
+
+                <div class="guide-callout warning">
+                    <p><strong>{{t.guide_getting_started.callout_safety_label}}</strong> {{t.guide_getting_started.callout_safety_text}}</p>
+                </div>
+
+                <figure class="guide-image">
+                    <img src="https://havnby.com/cdn/shop/files/HavnbyAutoLevelInflatableMattressforTeslaModelY_1.jpg?v=1732611561&width=1200" alt="Properly set up Tesla camping mattress with window shades installed" loading="lazy" width="1200" height="800">
+                    <figcaption>{{t.guide_getting_started.fig_proper_setup}}</figcaption>
+                </figure>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="guide-faq" id="faq">
+                <h2>{{t.guide_getting_started.h2_faq}}</h2>
+
+                <div class="faq-item">
+                    <h3>{{t.guide_getting_started.faq_q1}}</h3>
+                    <p>{{t.guide_getting_started.faq_a1}}</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>{{t.guide_getting_started.faq_q2}}</h3>
+                    <p>{{t.guide_getting_started.faq_a2}}</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>{{t.guide_getting_started.faq_q3}}</h3>
+                    <p>{{t.guide_getting_started.faq_a3}}</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>{{t.guide_getting_started.faq_q4}}</h3>
+                    <p>{{t.guide_getting_started.faq_a4}}</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>{{t.guide_getting_started.faq_q5}}</h3>
+                    <p>{{t.guide_getting_started.faq_a5}}</p>
+                </div>
+            </section>
+
+            <!-- Bottom CTA -->
+            <div class="guide-bottom-cta">
+                <h2>{{t.guide_getting_started.h2_bottom_cta}}</h2>
+                <p>{{t.guide_getting_started.p_bottom_cta}}</p>
+                <div class="cta-buttons">
+                    <a href="/{{localePath}}reviews/" class="btn-primary">{{t.guide_getting_started.btn_browse_mattresses}}</a>
+                    <a href="/{{localePath}}discounts/" class="btn-secondary">{{t.guide_getting_started.btn_get_discounts}}</a>
+                </div>
+            </div>
+
+        </article>
+
+        <!-- Sidebar -->
+        <aside class="guide-sidebar">
+            <div class="sidebar-card">
+                <h3>{{t.guide_getting_started.sidebar_toc_title}}</h3>
+                <ul class="toc-list">
+                    <li><a href="#why-tesla-camping">{{t.guide_getting_started.toc_why_camp}}</a></li>
+                    <li><a href="#camp-mode">{{t.guide_getting_started.toc_camp_mode}}</a></li>
+                    <li><a href="#gear-checklist">{{t.guide_getting_started.toc_gear_checklist}}</a></li>
+                    <li><a href="#setup-guide">{{t.guide_getting_started.toc_setup_guide}}</a></li>
+                    <li><a href="#morning-routine">{{t.guide_getting_started.toc_morning_routine}}</a></li>
+                    <li><a href="#mattress-recommendations">{{t.guide_getting_started.toc_mattress_recs}}</a></li>
+                    <li><a href="#common-mistakes">{{t.guide_getting_started.toc_common_mistakes}}</a></li>
+                    <li><a href="#faq">{{t.guide_getting_started.toc_faq}}</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-card cta-card">
+                <h3>{{t.guide_getting_started.sidebar_cta_title}}</h3>
+                <p>{{t.guide_getting_started.sidebar_cta_text}}</p>
+                <a href="/{{localePath}}reviews/" class="btn-cta">{{t.guide_getting_started.sidebar_cta_btn}}</a>
+            </div>
+
+            <div class="sidebar-card">
+                <h3>{{t.guide_getting_started.sidebar_related_title}}</h3>
+                <div class="related-list">
+                    <a href="/{{localePath}}guides/tesla-vs-generic-mattress">{{t.guide_getting_started.related_tesla_vs_generic}}</a>
+                    <a href="/{{localePath}}guides/tesla-camping-with-dogs">{{t.guide_getting_started.related_camping_dogs}}</a>
+                    <a href="/{{localePath}}guides/best-tesla-mattresses">{{t.guide_getting_started.related_best_mattresses}}</a>
+                    <a href="/{{localePath}}guides/camp-mode">{{t.guide_getting_started.related_camp_mode}}</a>
+                    <a href="/{{localePath}}guides/foam-vs-air-vs-hybrid">{{t.guide_getting_started.related_foam_vs_air}}</a>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">Teslamattress</div>
+            <div class="footer-text">
+                <p>&copy; 2026 Teslamattress. {{t.shared.footer_rights}} <a href="/{{localePath}}disclosure" style="color: rgba(255,255,255,0.7);">{{t.shared.fl_disclosure}}</a></p>
+                <p class="disclaimer">{{t.shared.footer_disclaimer}}</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const menuOverlay = document.querySelector('.menu-overlay');
+        if (menuToggle) {
+            function toggleMenu() {
+                menuToggle.classList.toggle('active');
+                navLinks.classList.toggle('active');
+                menuOverlay.classList.toggle('active');
+                document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+            }
+            menuToggle.addEventListener('click', toggleMenu);
+            menuOverlay.addEventListener('click', toggleMenu);
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => { if (navLinks.classList.contains('active')) toggleMenu(); });
+            });
+        }
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
