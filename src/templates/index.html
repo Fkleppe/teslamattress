@@ -33,12 +33,15 @@
     <meta name="twitter:image" content="https://teslamattress.com/images/og-image.jpg">
 
     <!-- Preconnect for performance -->
+    <link rel="preload" as="image" href="/images/hero-bg.webp">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdn.shopify.com">
     <link rel="dns-prefetch" href="https://havnby.com">
     <link rel="dns-prefetch" href="https://us.snuuzu.com">
     <link rel="dns-prefetch" href="https://www.snuuzu.com">
+    <link rel="dns-prefetch" href="https://novapads.com">
 
     <!-- Google Fonts (non-blocking) -->
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap">
@@ -471,6 +474,54 @@
         ]
 }
     </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "{{t.home.faq_q1}}",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "{{t.home.faq_a1}}"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "{{t.home.faq_q2}}",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "{{t.home.faq_a2}}"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "{{t.home.faq_q3}}",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "{{t.home.faq_a3}}"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "{{t.home.faq_q4}}",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "{{t.home.faq_a4}}"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "{{t.home.faq_q5}}",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "{{t.home.faq_a5}}"
+                }
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -724,7 +775,7 @@
                 <!-- Snuuzu -->
                 <div class="discount-card-new snuuzu-card">
                     <div class="discount-card-header">
-                        <img src="https://www.snuuzu.com/cdn/shop/files/BAG_LOGO_Black.png?v=1717409417&width=200&format=webp" alt="Snuuzu" class="discount-brand-logo" loading="lazy">
+                        <img src="https://www.snuuzu.com/cdn/shop/files/BAG_LOGO_Black.png?v=1717409417&width=200&format=webp" alt="Snuuzu" class="discount-brand-logo" loading="lazy" width="200" height="60">
                         <span class="discount-badge-new">{{t.home.span_discount_badge_new}}</span>
                     </div>
                     <div class="discount-card-body">
@@ -752,7 +803,7 @@
                 <!-- NovaPads -->
                 <div class="discount-card-new tesery-card">
                     <div class="discount-card-header">
-                        <img src="/images/novapads-logo.jpg" alt="NovaPads" class="discount-brand-logo" loading="lazy">
+                        <img src="/images/novapads-logo.jpg" alt="NovaPads" class="discount-brand-logo" loading="lazy" width="200" height="60">
                         <span class="discount-badge-new budget">{{t.home.span_discount_badge_new_2}}</span>
                     </div>
                     <div class="discount-card-body">
@@ -780,7 +831,7 @@
                 <!-- Havnby -->
                 <div class="discount-card-new havnby-card">
                     <div class="discount-card-header">
-                        <img src="https://havnby.com/cdn/shop/files/Havnby-logo.png?v=1760604799&width=200&format=webp" alt="Havnby" class="discount-brand-logo" loading="lazy">
+                        <img src="https://havnby.com/cdn/shop/files/Havnby-logo.png?v=1760604799&width=200&format=webp" alt="Havnby" class="discount-brand-logo" loading="lazy" width="200" height="60">
                         <span class="discount-badge-new">{{t.home.span_discount_badge_new_3}}</span>
                     </div>
                     <div class="discount-card-body">
