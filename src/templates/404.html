@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | Teslamattress</title>
+    <meta name="robots" content="noindex">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap"></noscript>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--forest:#2d4a3e;--forest-dark:#1a2e25;--cream:#f5f1e8;--warm-white:#faf9f6;--text:#3d3d3d;--copper:#b87333}
+        body{font-family:'Source Sans 3',-apple-system,sans-serif;line-height:1.7;color:var(--text);background:var(--warm-white);min-height:100vh;display:flex;flex-direction:column}
+        .navbar{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 6%;background:var(--forest-dark)}
+        .logo{font-family:'Libre Baskerville',Georgia,serif;font-size:1.6rem;font-weight:700;color:var(--cream);text-decoration:none}
+        .nav-links{display:flex;list-style:none;gap:2.5rem}
+        .nav-links a{color:var(--cream);text-decoration:none;font-weight:500}
+        .error-content{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem}
+        .error-box h1{font-family:'Libre Baskerville',Georgia,serif;font-size:4rem;color:var(--forest);margin-bottom:0.5rem}
+        .error-box p{font-size:1.2rem;color:#666;margin-bottom:2rem;max-width:500px}
+        .error-links{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+        .error-links a{display:inline-block;padding:0.75rem 1.5rem;background:var(--forest);color:var(--cream);text-decoration:none;border-radius:6px;font-weight:600;transition:background 0.2s}
+        .error-links a:hover{background:var(--forest-dark)}
+        .error-links a.secondary{background:transparent;color:var(--forest);border:2px solid var(--forest)}
+        .error-links a.secondary:hover{background:var(--forest);color:var(--cream)}
+        footer{background:var(--forest-dark);color:var(--cream);text-align:center;padding:2rem;font-size:0.9rem}
+        footer a{color:var(--copper);text-decoration:none}
+        @media(max-width:768px){.nav-links{display:none}.error-box h1{font-size:3rem}}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/" class="logo">Teslamattress</a>
+        <ul class="nav-links">
+            <li><a href="/reviews">Reviews</a></li>
+            <li><a href="/guides">Guides</a></li>
+            <li><a href="/vs">Compare</a></li>
+            <li><a href="/discounts">Discounts</a></li>
+        </ul>
+    </nav>
+
+    <main class="error-content">
+        <div class="error-box">
+            <h1>404</h1>
+            <p>This page doesn't exist. It might have been moved or removed.</p>
+            <div class="error-links">
+                <a href="/">Homepage</a>
+                <a href="/reviews" class="secondary">All Reviews</a>
+                <a href="/guides" class="secondary">Guides</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024-2026 Teslamattress. <a href="/about">About</a> &middot; <a href="/methodology">How We Test</a> &middot; <a href="/disclosure">Disclosure</a></p>
+    </footer>
+</body>
+</html>

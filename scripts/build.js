@@ -135,12 +135,16 @@ function buildPage(page, locale, localeData) {
   fs.writeFileSync(outputPath, html, 'utf8');
 }
 
+// Pages to exclude from sitemap (noindex)
+const NOINDEX_PAGES = new Set(['disclosure', 'discount_tesery']);
+
 // Generate sitemap.xml
 function generateSitemap(locales) {
   let urls = '';
   const today = new Date().toISOString().split('T')[0];
 
   for (const page of PAGES) {
+    if (NOINDEX_PAGES.has(page.pageKey)) continue;
     const pagePath = page.output.replace(/index\.html$/, '').replace(/\.html$/, '').replace(/\/$/, '');
 
     for (const loc of Object.keys(locales)) {
@@ -211,6 +215,12 @@ function copyStaticFiles() {
       fs.mkdirSync(path.dirname(dest), { recursive: true });
       fs.copyFileSync(src, dest);
     }
+  }
+
+  // Copy 404 page
+  const src404 = path.join(ROOT, 'src', 'templates', '404.html');
+  if (fs.existsSync(src404)) {
+    fs.copyFileSync(src404, path.join(DIST_DIR, '404.html'));
   }
 
   // Copy images directory
