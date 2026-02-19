@@ -52,11 +52,13 @@ function loadLocales() {
 function generateHreflangTags(pagePath) {
   const tags = ALL_LOCALES.map(loc => {
     const cfg = LOCALE_CONFIG[loc];
-    const url = `${BASE_URL}/${cfg.locale_path}${pagePath}`;
+    const fp = `${cfg.locale_path}${pagePath}`.replace(/\/$/, '');
+    const url = fp ? `${BASE_URL}/${fp}` : `${BASE_URL}/`;
     return `<link rel="alternate" hreflang="${cfg.hreflang}" href="${url}">`;
   });
   // x-default → English
-  tags.push(`<link rel="alternate" hreflang="x-default" href="${BASE_URL}/${pagePath}">`);
+  const xdef = pagePath ? `${BASE_URL}/${pagePath}` : `${BASE_URL}/`;
+  tags.push(`<link rel="alternate" hreflang="x-default" href="${xdef}">`);
   return tags.join('\n    ');
 }
 
@@ -109,14 +111,17 @@ function buildPage(page, locale, localeData) {
 
   let html = fs.readFileSync(templatePath, 'utf8');
   const cfg = LOCALE_CONFIG[locale];
-  const pagePath = page.output.replace(/index\.html$/, '').replace(/\.html$/, '');
+  const pagePath = page.output.replace(/index\.html$/, '').replace(/\.html$/, '').replace(/\/$/, '');
 
   // 1. Structural placeholders
   html = html.replace(/\{\{htmlLang\}\}/g, cfg.html_lang);
   html = html.replace(/\{\{ogLocale\}\}/g, cfg.og_locale);
   html = html.replace(/\{\{localePath\}\}/g, cfg.locale_path);
-  html = html.replace(/\{\{canonicalUrl\}\}/g, `${BASE_URL}/${cfg.locale_path}${pagePath}`);
-  html = html.replace(/\{\{pageUrl\}\}/g, `${BASE_URL}/${cfg.locale_path}${pagePath}`);
+  // Build full URL and strip trailing slash (except for root /)
+  const fullPath = `${cfg.locale_path}${pagePath}`.replace(/\/$/, '');
+  const fullUrl = fullPath ? `${BASE_URL}/${fullPath}` : `${BASE_URL}/`;
+  html = html.replace(/\{\{canonicalUrl\}\}/g, fullUrl);
+  html = html.replace(/\{\{pageUrl\}\}/g, fullUrl);
   html = html.replace(/\{\{hreflangTags\}\}/g, generateHreflangTags(pagePath));
   html = html.replace(/\{\{ogLocaleAlternates\}\}/g, generateOgLocaleAlternates(locale));
   html = html.replace(/\{\{langSwitcher\}\}/g, generateLangSwitcher(pagePath, locale));
@@ -136,11 +141,13 @@ function generateSitemap(locales) {
   const today = new Date().toISOString().split('T')[0];
 
   for (const page of PAGES) {
-    const pagePath = page.output.replace(/index\.html$/, '').replace(/\.html$/, '');
+    const pagePath = page.output.replace(/index\.html$/, '').replace(/\.html$/, '').replace(/\/$/, '');
 
     for (const loc of Object.keys(locales)) {
       const cfg = LOCALE_CONFIG[loc];
-      const url = `${BASE_URL}/${cfg.locale_path}${pagePath}`;
+      // Build URL, strip trailing slash (except root /)
+      const fp = `${cfg.locale_path}${pagePath}`.replace(/\/$/, '');
+      const url = fp ? `${BASE_URL}/${fp}` : `${BASE_URL}/`;
 
       // Priority: home=1.0, index pages=0.8, others=0.6
       let priority = '0.6';
@@ -156,10 +163,13 @@ function generateSitemap(locales) {
       // Hreflang xhtml:link entries
       const hreflangs = ALL_LOCALES.map(l => {
         const lCfg = LOCALE_CONFIG[l];
-        return `      <xhtml:link rel="alternate" hreflang="${lCfg.hreflang}" href="${BASE_URL}/${lCfg.locale_path}${pagePath}"/>`;
+        const lfp = `${lCfg.locale_path}${pagePath}`.replace(/\/$/, '');
+        const lurl = lfp ? `${BASE_URL}/${lfp}` : `${BASE_URL}/`;
+        return `      <xhtml:link rel="alternate" hreflang="${lCfg.hreflang}" href="${lurl}"/>`;
       }).join('\n');
 
-      const xdefault = `      <xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}/${pagePath}"/>`;
+      const xdefFp = pagePath || '';
+      const xdefault = `      <xhtml:link rel="alternate" hreflang="x-default" href="${xdefFp ? `${BASE_URL}/${xdefFp}` : `${BASE_URL}/`}"/>`;
 
       urls += `  <url>
     <loc>${url}</loc>
