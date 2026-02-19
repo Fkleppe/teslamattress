@@ -2591,13 +2591,13 @@
         "h2_how_we_test": "How We Test",
         "p_how_we_test_1": "Every mattress on this list has been personally tested across multiple camping trips. I don't rely on spec sheets or press releases. I sleep on each mattress for at least three consecutive nights to assess comfort consistency, check for pressure points, and evaluate real-world durability.",
         "p_how_we_test_2": "Testing happens in various conditions including summer heat, cold shoulder-season nights, and everything in between. Here are the four scoring categories and what they measure.",
-        "li_test_comfort_label": "Comfort (40%)",
+        "li_test_comfort_label": "Comfort (30%)",
         "li_test_comfort_text": "Sleep quality, pressure point relief, temperature regulation, and overall feel across multiple nights.",
         "li_test_build_label": "Build Quality (25%)",
         "li_test_build_text": "Materials, stitching, zipper quality, cover durability, and how the mattress holds up after repeated use and packing.",
-        "li_test_value_label": "Value (20%)",
+        "li_test_value_label": "Value (10%)",
         "li_test_value_text": "Price relative to comfort and durability. Includes what's in the box and whether you need to buy additional accessories.",
-        "li_test_setup_label": "Setup & Storage (15%)",
+        "li_test_setup_label": "Ease of Setup (15%)",
         "li_test_setup_text": "How quickly you can go from parked to sleeping, and how much space the mattress takes up when stored in the trunk.",
         "h2_faq": "Frequently Asked Questions",
         "faq_q1": "What is the best Tesla camping mattress in 2026?",
@@ -2624,7 +2624,9 @@
         "sidebar_cta_btn": "Read Full Review",
         "sidebar_related_title": "Related Guides",
         "related_model_y": "Best Model Y Mattress",
-        "related_model_3": "Best Model 3 Mattress"
+        "related_model_3": "Best Model 3 Mattress",
+        "li_test_fit_label": "Fit & Finish (20%)",
+        "li_test_fit_text": "How well the mattress fits the specific Tesla model, edge coverage, and gap filling around wheel wells."
     },
     "guide_best_model_y": {
         "meta_title": "Best Tesla Model Y Mattress (2025 Juniper Update)",

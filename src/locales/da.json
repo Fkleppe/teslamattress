@@ -2591,7 +2591,7 @@
         "h2_how_we_test": "Sådan Tester Vi",
         "p_how_we_test_1": "Hver madras på denne liste er personligt testet over flere campingture. Jeg stoler ikke på datablade eller pressemeddelelser. Jeg sover på hver madras i mindst tre sammenhængende nætter for at vurdere komfort-konsistens, tjekke for trykpunkter og evaluere holdbarhed i virkeligheden.",
         "p_how_we_test_2": "Test foregår under forskellige forhold, inklusiv sommervarme, kolde skulder-sæson nætter og alt derimellem. Her er de fire scoringskategorier og hvad de måler.",
-        "li_test_comfort_label": "Komfort (40%)",
+        "li_test_comfort_label": "Komfort (30%)",
         "li_test_comfort_text": "Søvnkvalitet, trykpunktsaflastning, temperaturregulering og overordnet følelse over flere nætter.",
         "li_test_build_label": "Byggekvalitet (25%)",
         "li_test_build_text": "Materialer, syning, lynlåskvalitet, betræks holdbarhed og hvordan madrassen holder efter gentagen brug og pakning.",
@@ -2624,7 +2624,9 @@
         "sidebar_cta_btn": "Læs Fuld Anmeldelse",
         "sidebar_related_title": "Relaterede Guides",
         "related_model_y": "Bedste Model Y Madras",
-        "related_model_3": "Bedste Model 3 Madras"
+        "related_model_3": "Bedste Model 3 Madras",
+        "li_test_fit_label": "Pasform & Finish (20%)",
+        "li_test_fit_text": "Hvor godt madrassen passer i den specifikke Tesla-model, kantdaekning og udfyldning af mellemrum omkring hjulbroendene."
     },
     "guide_best_model_y": {
         "meta_title": "Bedste Tesla Model Y Madras (2025 Juniper)",

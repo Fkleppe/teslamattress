@@ -21,6 +21,8 @@
     <meta property="og:description" content="{{t.about.og_description}}">
     <meta property="og:image" content="https://teslamattress.com/images/og-image.jpg">
     <meta property="og:site_name" content="Teslamattress">
+    <meta property="og:locale" content="{{ogLocale}}">
+    {{ogLocaleAlternates}}
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
@@ -132,13 +134,13 @@
                         "@type": "ListItem",
                         "position": 1,
                         "name": "Home",
-                        "item": "https://teslamattress.com/"
+                        "item": "https://teslamattress.com/{{localePath}}"
                 },
                 {
                         "@type": "ListItem",
                         "position": 2,
                         "name": "About",
-                        "item": "https://teslamattress.com/about"
+                        "item": "https://teslamattress.com/{{localePath}}about"
                 }
         ]
 }

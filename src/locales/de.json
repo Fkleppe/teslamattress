@@ -2591,11 +2591,11 @@
         "h2_how_we_test": "So testen wir",
         "p_how_we_test_1": "Jede Matratze auf dieser Liste wurde persönlich über mehrere Campingtrips getestet. Ich verlasse mich nicht auf Datenblätter oder Pressemitteilungen. Ich schlafe auf jeder Matratze mindestens drei aufeinanderfolgende Nächte, um die Komfortkonsistenz zu bewerten, Druckpunkte zu prüfen und die Alltagstauglichkeit einzuschätzen.",
         "p_how_we_test_2": "Die Tests finden unter verschiedenen Bedingungen statt – von Sommerhitze über kalte Übergangsnächte bis hin zu allem dazwischen. Hier sind die vier Bewertungskategorien und was sie messen.",
-        "li_test_comfort_label": "Komfort (40%)",
+        "li_test_comfort_label": "Komfort (30%)",
         "li_test_comfort_text": "Schlafqualität, Druckpunktentlastung, Temperaturregulierung und Gesamtgefühl über mehrere Nächte.",
         "li_test_build_label": "Verarbeitung (25%)",
         "li_test_build_text": "Materialien, Nähte, Reißverschlussqualität, Bezughaltbarkeit und wie die Matratze nach wiederholtem Gebrauch und Verpacken standhält.",
-        "li_test_value_label": "Preis-Leistung (20%)",
+        "li_test_value_label": "Preis-Leistung (10%)",
         "li_test_value_text": "Preis im Verhältnis zu Komfort und Haltbarkeit. Berücksichtigt den Lieferumfang und ob zusätzliches Zubehör nötig ist.",
         "li_test_setup_label": "Aufbau & Stauraum (15%)",
         "li_test_setup_text": "Wie schnell du vom Parken zum Schlafen kommst und wie viel Platz die Matratze im Kofferraum einnimmt.",
@@ -2624,7 +2624,9 @@
         "sidebar_cta_btn": "Vollständigen Test lesen",
         "sidebar_related_title": "Verwandte Guides",
         "related_model_y": "Beste Model Y Matratze",
-        "related_model_3": "Beste Model 3 Matratze"
+        "related_model_3": "Beste Model 3 Matratze",
+        "li_test_fit_label": "Passform & Verarbeitung (20%)",
+        "li_test_fit_text": "Wie gut die Matratze in das spezifische Tesla-Modell passt, Randabdeckung und Spaltfuellung um die Radkaesten."
     },
     "guide_best_model_y": {
         "meta_title": "Beste Tesla Model Y Matratze (2025 Juniper Update)",

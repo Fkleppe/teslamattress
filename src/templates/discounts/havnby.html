@@ -22,6 +22,8 @@
     <meta property="og:description" content="{{t.discount_havnby.og_description}}">
     <meta property="og:image" content="https://havnby.com/cdn/shop/files/autolevel-foam-tesla-mattress.jpg">
     <meta property="og:site_name" content="Teslamattress">
+    <meta property="og:locale" content="{{ogLocale}}">
+    {{ogLocaleAlternates}}
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
@@ -74,7 +76,7 @@
                 "name": "Havnby 10% Discount Code",
                 "description": "{{t.discount_havnby.jsonld_1_description_3}}",
                 "discountCode": "AWD",
-                "discountPercentage": "10",
+                "discountPercentage": 10,
                 "validFrom": "2024-01-01",
                 "validThrough": "2026-12-31",
                 "seller": {
@@ -179,19 +181,19 @@
                         "@type": "ListItem",
                         "position": 1,
                         "name": "Home",
-                        "item": "https://teslamattress.com/"
+                        "item": "https://teslamattress.com/{{localePath}}"
                 },
                 {
                         "@type": "ListItem",
                         "position": 2,
                         "name": "Discount Codes",
-                        "item": "https://teslamattress.com/discounts"
+                        "item": "https://teslamattress.com/{{localePath}}discounts"
                 },
                 {
                         "@type": "ListItem",
                         "position": 3,
                         "name": "Havnby Discount Code",
-                        "item": "https://teslamattress.com/discounts/havnby"
+                        "item": "https://teslamattress.com/{{localePath}}discounts/havnby"
                 }
         ]
 }

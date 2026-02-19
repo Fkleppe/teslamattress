@@ -2624,7 +2624,9 @@
         "sidebar_cta_btn": "Lire l'avis complet",
         "sidebar_related_title": "Guides associés",
         "related_model_y": "Meilleur matelas Model Y",
-        "related_model_3": "Meilleur matelas Model 3"
+        "related_model_3": "Meilleur matelas Model 3",
+        "li_test_fit_label": "Ajustement & Finition (20%)",
+        "li_test_fit_text": "La qualite de l'ajustement du matelas au modele Tesla specifique, la couverture des bords et le remplissage des espaces."
     },
     "guide_best_model_y": {
         "meta_title": "Meilleur matelas Tesla Model Y (Juniper 2025)",

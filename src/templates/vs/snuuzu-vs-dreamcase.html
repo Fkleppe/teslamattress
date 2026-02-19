@@ -21,6 +21,10 @@
     <meta property="og:description" content="{{t.vs_snuuzu_vs_dreamcase.og_description}}">
     <meta property="og:image" content="https://teslamattress.com/images/snuuzu-model-y-tesla-mattress.jpg">
     <meta property="og:site_name" content="Teslamattress">
+    <meta property="og:locale" content="{{ogLocale}}">
+    {{ogLocaleAlternates}}
+    <meta property="article:published_time" content="2026-01-25">
+    <meta property="article:modified_time" content="2026-01-25">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
@@ -84,19 +88,19 @@
                         "@type": "ListItem",
                         "position": 1,
                         "name": "Home",
-                        "item": "https://teslamattress.com/"
+                        "item": "https://teslamattress.com/{{localePath}}"
                 },
                 {
                         "@type": "ListItem",
                         "position": 2,
                         "name": "Comparisons",
-                        "item": "https://teslamattress.com/vs"
+                        "item": "https://teslamattress.com/{{localePath}}vs"
                 },
                 {
                         "@type": "ListItem",
                         "position": 3,
                         "name": "Snuuzu vs Dreamcase",
-                        "item": "https://teslamattress.com/vs/snuuzu-vs-dreamcase"
+                        "item": "https://teslamattress.com/{{localePath}}vs/snuuzu-vs-dreamcase"
                 }
         ]
 }
@@ -119,12 +123,19 @@
                                         "@type": "Brand",
                                         "name": "Snuuzu"
                                 },
-                                "aggregateRating": {
-                                        "@type": "AggregateRating",
-                                        "ratingValue": 9.4,
-                                        "bestRating": 10,
-										"worstRating": 1,
-										"ratingCount": 1
+                                "review": {
+                                        "@type": "Review",
+                                        "reviewRating": {
+                                                "@type": "Rating",
+                                                "ratingValue": 9.4,
+                                                "bestRating": 10,
+                                                "worstRating": 1
+                                        },
+                                        "author": {
+                                                "@type": "Person",
+                                                "@id": "https://teslamattress.com/#person",
+                                                "name": "Fredrik Mastouri"
+                                        }
                                 }
                         }
                 },
@@ -138,12 +149,19 @@
                                         "@type": "Brand",
                                         "name": "Dreamcase"
                                 },
-                                "aggregateRating": {
-                                        "@type": "AggregateRating",
-                                        "ratingValue": 8.2,
-                                        "bestRating": 10,
-										"worstRating": 1,
-										"ratingCount": 1
+                                "review": {
+                                        "@type": "Review",
+                                        "reviewRating": {
+                                                "@type": "Rating",
+                                                "ratingValue": 8.2,
+                                                "bestRating": 10,
+                                                "worstRating": 1
+                                        },
+                                        "author": {
+                                                "@type": "Person",
+                                                "@id": "https://teslamattress.com/#person",
+                                                "name": "Fredrik Mastouri"
+                                        }
                                 }
                         }
                 }

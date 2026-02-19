@@ -2591,11 +2591,11 @@
         "h2_how_we_test": "Slik tester vi",
         "p_how_we_test_1": "Hver madrass på denne listen har blitt personlig testet over flere campingturer. Jeg stoler ikke på spesifikasjonsark eller pressemeldinger. Jeg sover på hver madrass i minst tre sammenhengende netter for å vurdere komfortkonsistens, sjekke for trykkpunkter og evaluere holdbarhet i praksis.",
         "p_how_we_test_2": "Testing skjer under varierte forhold, inkludert sommervarme, kalde netter i skuldersesong og alt i mellom. Her er de fire poengs-kategoriene og hva de måler.",
-        "li_test_comfort_label": "Komfort (40%)",
+        "li_test_comfort_label": "Komfort (30%)",
         "li_test_comfort_text": "Søvnkvalitet, trykkpunktlindring, temperaturregulering og generell følelse over flere netter.",
         "li_test_build_label": "Byggekvalitet (25%)",
         "li_test_build_text": "Materialer, sømmer, glidelåskvalitet, trekkets holdbarhet og hvordan madrassen holder seg etter gjentatt bruk og pakking.",
-        "li_test_value_label": "Verdi (20%)",
+        "li_test_value_label": "Verdi (10%)",
         "li_test_value_text": "Pris i forhold til komfort og holdbarhet. Inkluderer hva som er i esken og om du trenger å kjøpe ekstra tilbehør.",
         "li_test_setup_label": "Oppsett og oppbevaring (15%)",
         "li_test_setup_text": "Hvor raskt du kan gå fra parkert til sovende, og hvor mye plass madrassen tar opp når den er lagret i bagasjerommet.",
@@ -2624,7 +2624,9 @@
         "sidebar_cta_btn": "Les full anmeldelse",
         "sidebar_related_title": "Relaterte guider",
         "related_model_y": "Beste Model Y-madrass",
-        "related_model_3": "Beste Model 3-madrass"
+        "related_model_3": "Beste Model 3-madrass",
+        "li_test_fit_label": "Passform & Finish (20%)",
+        "li_test_fit_text": "Hvor godt madrassen passer i den spesifikke Tesla-modellen, kantdekning og fylling av gap rundt hjulbronnene."
     },
     "guide_best_model_y": {
         "meta_title": "Beste Tesla Model Y-madrass (2025 Juniper)",

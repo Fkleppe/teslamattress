@@ -21,6 +21,8 @@
     <meta property="og:description" content="{{t.methodology.og_description}}">
     <meta property="og:image" content="https://teslamattress.com/images/og-image.jpg">
     <meta property="og:site_name" content="Teslamattress">
+    <meta property="og:locale" content="{{ogLocale}}">
+    {{ogLocaleAlternates}}
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
@@ -73,9 +75,9 @@
                 "name": "Teslamattress",
                 "logo": {
                         "@type": "ImageObject",
-                        "url": "https://teslamattress.com/images/og-image.jpg",
-                        "width": 1200,
-                        "height": 630
+                        "url": "https://teslamattress.com/images/logo.png",
+                        "width": 600,
+                        "height": 60
                 }
         },
         "mainEntity": {
@@ -121,13 +123,13 @@
                         "@type": "ListItem",
                         "position": 1,
                         "name": "Home",
-                        "item": "https://teslamattress.com/"
+                        "item": "https://teslamattress.com/{{localePath}}"
                 },
                 {
                         "@type": "ListItem",
                         "position": 2,
                         "name": "Methodology",
-                        "item": "https://teslamattress.com/methodology"
+                        "item": "https://teslamattress.com/{{localePath}}methodology"
                 }
         ]
 }
