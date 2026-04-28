@@ -2,15 +2,18 @@
 <html lang="{{htmlLang}}">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2d4a3e">
 
     <!-- Primary Meta Tags -->
     <title>{{t.reviews_index.meta_title}}</title>
     <meta name="title" content="{{t.reviews_index.meta_name_title}}">
-    <meta name="description" content="{{t.reviews_index.meta_description}}">
-    <meta name="keywords" content="{{t.reviews_index.meta_keywords}}">
-    <meta name="robots" content="index, follow">
+    <meta name="description" content="{{t.reviews_index.meta_description}}">    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="author" content="Fredrik Mastouri">
     <link rel="canonical" href="{{canonicalUrl}}">
     {{hreflangTags}}
 
@@ -52,16 +55,18 @@
         @media(max-width:768px){.menu-toggle{display:flex}.nav-links{display:none}}
     </style>
 
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/styles.css"></noscript>
 
     <!-- JSON-LD -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
+        "inLanguage": "{{htmlLang}}",
         "name": "{{t.reviews_index.jsonld_1_name_2}}",
         "description": "{{t.reviews_index.jsonld_1_description_1}}",
-        "url": "https://teslamattress.com/reviews",
+        "url": "https://teslamattress.com/{{localePath}}reviews",
         "mainEntity": {
                 "@type": "ItemList",
                 "name": "{{t.reviews_index.jsonld_1_name_3}}",
@@ -71,61 +76,61 @@
                                 "@type": "ListItem",
                                 "position": 1,
                                 "name": "{{t.reviews_index.jsonld_1_name_4}}",
-                                "url": "https://teslamattress.com/reviews/snuuzu-model-y"
+                                "url": "https://teslamattress.com/{{localePath}}reviews/snuuzu-model-y"
                         },
                         {
                                 "@type": "ListItem",
                                 "position": 2,
                                 "name": "{{t.reviews_index.jsonld_1_name_5}}",
-                                "url": "https://teslamattress.com/reviews/snuuzu-model-3"
+                                "url": "https://teslamattress.com/{{localePath}}reviews/snuuzu-model-3"
                         },
                         {
                                 "@type": "ListItem",
                                 "position": 3,
                                 "name": "{{t.reviews_index.jsonld_1_name_6}}",
-                                "url": "https://teslamattress.com/reviews/havnby-autolevel"
+                                "url": "https://teslamattress.com/{{localePath}}reviews/havnby-autolevel"
                         },
                         {
                                 "@type": "ListItem",
                                 "position": 4,
                                 "name": "{{t.reviews_index.jsonld_1_name_7}}",
-                                "url": "https://teslamattress.com/reviews/tesery-novapads"
+                                "url": "https://teslamattress.com/{{localePath}}reviews/tesery-novapads"
                         },
                         {
                                 "@type": "ListItem",
                                 "position": 5,
                                 "name": "{{t.reviews_index.jsonld_1_name_8}}",
-                                "url": "https://teslamattress.com/reviews/tesmat-luxe-y"
+                                "url": "https://teslamattress.com/{{localePath}}reviews/tesmat-luxe-y"
                         },
                         {
                                 "@type": "ListItem",
                                 "position": 6,
                                 "name": "{{t.reviews_index.jsonld_1_name_9}}",
-                                "url": "https://teslamattress.com/reviews/tesmat-luxe-3"
+                                "url": "https://teslamattress.com/{{localePath}}reviews/tesmat-luxe-3"
                         },
                         {
                                 "@type": "ListItem",
                                 "position": 7,
                                 "name": "{{t.reviews_index.jsonld_1_name_10}}",
-                                "url": "https://teslamattress.com/reviews/havnby-foam"
+                                "url": "https://teslamattress.com/{{localePath}}reviews/havnby-foam"
                         },
                         {
                                 "@type": "ListItem",
                                 "position": 8,
                                 "name": "{{t.reviews_index.jsonld_1_name_11}}",
-                                "url": "https://teslamattress.com/reviews/havnby-solo"
+                                "url": "https://teslamattress.com/{{localePath}}reviews/havnby-solo"
                         },
                         {
                                 "@type": "ListItem",
                                 "position": 9,
                                 "name": "{{t.reviews_index.jsonld_1_name_12}}",
-                                "url": "https://teslamattress.com/reviews/tesmat-solo-y"
+                                "url": "https://teslamattress.com/{{localePath}}reviews/tesmat-solo-y"
                         },
                         {
                                 "@type": "ListItem",
                                 "position": 10,
                                 "name": "{{t.reviews_index.jsonld_1_name_13}}",
-                                "url": "https://teslamattress.com/reviews/tesmat-solo-3"
+                                "url": "https://teslamattress.com/{{localePath}}reviews/tesmat-solo-3"
                         }
                 ]
         }
@@ -139,13 +144,13 @@
                 {
                         "@type": "ListItem",
                         "position": 1,
-                        "name": "Home",
+                        "name": "{{t.shared.bc_home}}",
                         "item": "https://teslamattress.com/{{localePath}}"
                 },
                 {
                         "@type": "ListItem",
                         "position": 2,
-                        "name": "Reviews",
+                        "name": "{{t.shared.bc_reviews}}",
                         "item": "https://teslamattress.com/{{localePath}}reviews"
                 }
         ]
@@ -154,14 +159,16 @@
 </head>
 <body>
     <nav class="navbar">
-        <a href="/{{localePath}}" class="logo">Teslamattress</a>
+        <a href="{{localeHome}}" class="logo">Teslamattress</a>
         <button class="menu-toggle" aria-label="Toggle menu">
             <span></span><span></span><span></span>
         </button>
         <ul class="nav-links">
-            <li><a href="/{{localePath}}#comparison">{{t.shared.nav_comparison}}</a></li>
-            <li><a href="/{{localePath}}vs/">{{t.shared.nav_compare}}</a></li>
-            <li><a href="/{{localePath}}discounts/">{{t.shared.nav_discounts}}</a></li>
+            <li><a href="/{{localePath}}reviews">{{t.shared.nav_reviews}}</a></li>
+            <li><a href="/{{localePath}}vs">{{t.shared.nav_compare}}</a></li>
+            <li><a href="/{{localePath}}guides">{{t.shared.nav_guides}}</a></li>
+            <li><a href="/{{localePath}}faq">FAQ</a></li>
+            <li><a href="/{{localePath}}discounts">{{t.shared.nav_discounts}}</a></li>
             <li><a href="/{{localePath}}about">{{t.shared.nav_about}}</a></li>
         </ul>
         {{langSwitcher}}
@@ -177,6 +184,7 @@
         <header class="reviews-hub-hero">
             <h1>{{t.reviews_index.h1}}</h1>
             <p>{{t.reviews_index.p}}</p>
+            <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 0.5rem;">By <a href="/{{localePath}}about" style="color: var(--copper);">Fredrik Mastouri</a> · Tesla camping gear reviewer</p>
         </header>
 
         <section class="reviews-grid">
@@ -344,15 +352,15 @@
                 <li><strong>Best budget:</strong> NovaPads Air-Foam Pro (8.8/10) — air-foam hybrid with pump included. Great quality for the price.</li>
                 <li><strong>Most affordable:</strong> TESMAT Solo ($139) — basic gel memory foam. Good for occasional use.</li>
             </ul>
-            <p style="margin-bottom: 1rem;">All prices shown are before discount codes. Use our <a href="/{{localePath}}discounts/" style="color: var(--forest); font-weight: 600;">verified discount codes</a> to save 10-20% on most brands.</p>
+            <p style="margin-bottom: 1rem;">All prices shown are before discount codes. Use our <a href="/{{localePath}}discounts" style="color: var(--forest); font-weight: 600;">verified discount codes</a> to save 10-20% on most brands.</p>
         </section>
 
         <section class="reviews-cta">
             <h2>{{t.reviews_index.h2_4}}</h2>
             <p>{{t.reviews_index.p_22}}</p>
             <div class="reviews-cta-links">
-                <a href="/{{localePath}}vs/" class="cta-link-primary">View All Comparisons</a>
-                <a href="/{{localePath}}discounts/" class="cta-link-secondary">See All Discount Codes</a>
+                <a href="/{{localePath}}vs" class="cta-link-primary">View All Comparisons</a>
+                <a href="/{{localePath}}discounts" class="cta-link-secondary">See All Discount Codes</a>
             </div>
         </section>
     </main>
@@ -360,6 +368,13 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-logo">Teslamattress</div>
+            <nav class="footer-hub-links" aria-label="Site sections">
+                <a href="/{{localePath}}reviews">{{t.shared.nav_reviews}}</a>
+                <a href="/{{localePath}}vs">{{t.shared.nav_compare}}</a>
+                <a href="/{{localePath}}guides">{{t.shared.nav_guides}}</a>
+                <a href="/{{localePath}}discounts">{{t.shared.nav_discounts}}</a>
+                <a href="/{{localePath}}about">{{t.shared.nav_about}}</a>
+            </nav>
             <div class="footer-text">
                 <p>&copy; 2026 Teslamattress. <a href="/{{localePath}}methodology" style="color: rgba(255,255,255,0.7);">{{t.shared.nav_methodology}}</a> | <a href="/{{localePath}}disclosure" style="color: rgba(255,255,255,0.7);">{{t.shared.fl_disclosure}}</a></p>
             </div>

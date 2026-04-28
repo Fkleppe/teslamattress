@@ -2,13 +2,15 @@
 <html lang="{{htmlLang}}">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2d4a3e">
     <title>{{t.guide_model_x.meta_title}}</title>
     <meta name="title" content="{{t.guide_model_x.meta_name_title}}">
-    <meta name="description" content="{{t.guide_model_x.meta_description}}">
-    <meta name="keywords" content="{{t.guide_model_x.meta_keywords}}">
-    <meta name="robots" content="index, follow">
+    <meta name="description" content="{{t.guide_model_x.meta_description}}">    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="{{canonicalUrl}}">
     {{hreflangTags}}
     <meta name="author" content="Fredrik Mastouri">
@@ -18,8 +20,8 @@
     <meta property="og:description" content="{{t.guide_model_x.og_description}}">
     <meta property="og:image" content="https://teslamattress.com/images/og-image.jpg">
     <meta property="og:site_name" content="Teslamattress">
-    <meta property="article:published_time" content="2025-07-01">
-    <meta property="article:modified_time" content="2026-02-01">
+    <meta property="article:published_time" content="2026-02-19">
+    <meta property="article:modified_time" content="2026-02-19">
     <meta property="og:locale" content="{{ogLocale}}">
     {{ogLocaleAlternates}}
     <meta name="twitter:card" content="summary_large_image">
@@ -46,14 +48,17 @@
         .menu-toggle span{width:24px;height:2px;background:var(--cream)}
         @media(max-width:768px){.menu-toggle{display:flex}.nav-links{display:none}}
     </style>
-    <link rel="stylesheet" href="/styles.css">
-    <link rel="stylesheet" href="/guides/guides.css">
+    <link rel="stylesheet" href="/styles.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/styles.css"></noscript>
+    <link rel="stylesheet" href="/guides/guides.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/guides/guides.css"></noscript>
 
     <!-- JSON-LD: Article -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Article",
+        "inLanguage": "{{htmlLang}}",
         "headline": "{{t.guide_model_x.jsonld_article_headline}}",
         "description": "{{t.guide_model_x.jsonld_article_description}}",
         "author": {
@@ -65,11 +70,12 @@
         },
         "publisher": {
             "@type": "Organization",
+            "@id": "https://teslamattress.com/#organization",
             "name": "Teslamattress",
             "url": "https://teslamattress.com"
         },
         "datePublished": "2025-07-01",
-        "dateModified": "2026-02-01",
+        "dateModified": "{{buildDate}}",
         "image": "https://teslamattress.com/images/og-image.jpg"
     }
     </script>
@@ -82,13 +88,13 @@
             {
                 "@type": "ListItem",
                 "position": 1,
-                "name": "Home",
+                "name": "{{t.shared.bc_home}}",
                 "item": "https://teslamattress.com/{{localePath}}"
             },
             {
                 "@type": "ListItem",
                 "position": 2,
-                "name": "Guides",
+                "name": "{{t.shared.bc_guides}}",
                 "item": "https://teslamattress.com/{{localePath}}guides"
             },
             {
@@ -100,65 +106,66 @@
         ]
     }
     </script>
-    <!-- JSON-LD: FAQPage (5 questions) -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "{{t.guide_model_x.faq_q1}}",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "{{t.guide_model_x.faq_a1}}"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "{{t.guide_model_x.faq_q2}}",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "{{t.guide_model_x.faq_a2}}"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "{{t.guide_model_x.faq_q3}}",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "{{t.guide_model_x.faq_a3}}"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "{{t.guide_model_x.faq_q4}}",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "{{t.guide_model_x.faq_a4}}"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "{{t.guide_model_x.faq_q5}}",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "{{t.guide_model_x.faq_a5}}"
-                }
+        {
+            "@type": "Question",
+            "name": "{{t.guide_model_x.faq_q1}}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{t.guide_model_x.faq_a1}}"
             }
+        },
+        {
+            "@type": "Question",
+            "name": "{{t.guide_model_x.faq_q2}}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{t.guide_model_x.faq_a2}}"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "{{t.guide_model_x.faq_q3}}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{t.guide_model_x.faq_a3}}"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "{{t.guide_model_x.faq_q4}}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{t.guide_model_x.faq_a4}}"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "{{t.guide_model_x.faq_q5}}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{t.guide_model_x.faq_a5}}"
+            }
+        }
         ]
     }
     </script>
 </head>
 <body>
     <nav class="navbar guide-nav">
-        <a href="/{{localePath}}" class="logo">Teslamattress</a>
+        <a href="{{localeHome}}" class="logo">Teslamattress</a>
         <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
         <ul class="nav-links">
-            <li><a href="/{{localePath}}reviews/">{{t.shared.nav_reviews}}</a></li>
-            <li><a href="/{{localePath}}vs/">{{t.shared.nav_compare}}</a></li>
-            <li><a href="/{{localePath}}guides/">Guides</a></li>
-            <li><a href="/{{localePath}}discounts/">{{t.shared.nav_discounts}}</a></li>
+            <li><a href="/{{localePath}}reviews">{{t.shared.nav_reviews}}</a></li>
+            <li><a href="/{{localePath}}vs">{{t.shared.nav_compare}}</a></li>
+            <li><a href="/{{localePath}}guides">{{t.shared.nav_guides}}</a></li>
+            <li><a href="/{{localePath}}faq">FAQ</a></li>
+            <li><a href="/{{localePath}}discounts">{{t.shared.nav_discounts}}</a></li>
+            <li><a href="/{{localePath}}about">{{t.shared.nav_about}}</a></li>
         </ul>
         {{langSwitcher}}
     </nav>
@@ -169,7 +176,7 @@
         <div class="guide-hero-content">
             <nav class="breadcrumb" aria-label="Breadcrumb" style="color: rgba(255,255,255,0.7); margin-bottom: 1rem; font-size: 0.9rem;">
                 <a href="/{{localePath}}" style="color: rgba(255,255,255,0.8);">Home</a> &rsaquo;
-                <a href="/{{localePath}}guides/" style="color: rgba(255,255,255,0.8);">Guides</a> &rsaquo;
+                <a href="/{{localePath}}guides" style="color: rgba(255,255,255,0.8);">Guides</a> &rsaquo;
                 <span>{{t.guide_model_x.breadcrumb_current}}</span>
             </nav>
             <span class="guide-badge">{{t.guide_model_x.hero_badge}}</span>
@@ -265,7 +272,7 @@
             </section>
 
             <figure class="guide-image">
-                <img src="https://havnby.com/cdn/shop/files/TeslaModelYAutoLevelInflatableMattress-Havnby_3.jpg?v=1733913261&width=1200&format=webp" alt="Havnby mattress setup in Tesla" loading="eager" fetchpriority="high" width="1200" height="800">
+                <img src="https://havnby.com/cdn/shop/files/tesla-solo-mattress-main.jpg?v=1733913261&width=1200&format=webp" alt="Havnby mattress setup in Tesla" loading="eager" fetchpriority="high" width="1200" height="800">
                 <figcaption>{{t.guide_model_x.img1_caption}}</figcaption>
             </figure>
 
@@ -298,8 +305,9 @@
                     </ul>
                     <div class="product-pick-cta">
                         <span class="price-tag">$359.99</span>
+                        <span class="discount-code-tag">{{t.shared.discount_percent_off}} <code>AWD</code></span>
                         <a href="/{{localePath}}reviews/havnby-autolevel" class="btn-review">{{t.guide_model_x.btn_read_review}}</a>
-                        <a href="#" target="_blank" rel="noopener sponsored" class="btn-buy">{{t.guide_model_x.btn_check_price}}</a>
+                        <a href="https://havnby.com/products/autolevel-foam-tesla-model-y-mattress?ref=discount" target="_blank" rel="noopener sponsored" class="btn-buy">{{t.guide_model_x.btn_check_price}}</a>
                     </div>
                 </div>
 
@@ -325,9 +333,10 @@
                         <li>{{t.guide_model_x.pick_havnby_foam_pro4}}</li>
                     </ul>
                     <div class="product-pick-cta">
-                        <span class="price-tag">$169.99</span>
+                        <span class="price-tag">$259</span>
+                        <span class="discount-code-tag">{{t.shared.discount_percent_off}} <code>AWD</code></span>
                         <a href="/{{localePath}}reviews/havnby-foam" class="btn-review">{{t.guide_model_x.btn_read_review}}</a>
-                        <a href="#" target="_blank" rel="noopener sponsored" class="btn-buy">{{t.guide_model_x.btn_check_price}}</a>
+                        <a href="https://havnby.com/products/tesla-model-y-3-x-foam-mattress?ref=discount" target="_blank" rel="noopener sponsored" class="btn-buy">{{t.guide_model_x.btn_check_price}}</a>
                     </div>
                 </div>
 
@@ -354,8 +363,9 @@
                     </ul>
                     <div class="product-pick-cta">
                         <span class="price-tag">$899</span>
+                        <span class="discount-code-tag">{{t.shared.discount_percent_off}} <code>KLEPPE</code></span>
                         <a href="/{{localePath}}reviews/snuuzu-model-y" class="btn-review">{{t.guide_model_x.btn_read_review}}</a>
-                        <a href="#" target="_blank" rel="noopener sponsored" class="btn-buy">{{t.guide_model_x.btn_check_price}}</a>
+                        <a href="https://www.snuuzu.com/products/snuuzu-model-y?bg_ref=s7fluA5re6" target="_blank" rel="noopener sponsored" class="btn-buy">{{t.guide_model_x.btn_check_price}}</a>
                     </div>
                 </div>
 
@@ -373,7 +383,7 @@
             </section>
 
             <figure class="guide-image">
-                <img src="https://www.snuuzu.com/cdn/shop/files/4eyes-240304-snuuzu-back_of_car-2000px-11.jpg?v=1710180889&width=1200&format=webp" alt="Snuuzu mattress in Tesla rear cargo area" loading="lazy" width="1200" height="800">
+                <img src="/images/snuuzu-model-y-tesla-mattress.webp" alt="Snuuzu mattress in Tesla rear cargo area" loading="lazy" width="1200" height="800">
                 <figcaption>{{t.guide_model_x.img2_caption}}</figcaption>
             </figure>
 
@@ -482,7 +492,7 @@
             </section>
 
             <figure class="guide-image">
-                <img src="https://havnby.com/cdn/shop/files/HavnbyAutoLevelInflatableMattressforTeslaModelY_1.jpg?v=1732611561&width=1200&format=webp" alt="Havnby inflatable mattress for Tesla" loading="lazy" width="1200" height="800">
+                <img src="https://havnby.com/cdn/shop/files/autolevel-foam-tesla-mattress.jpg?v=1732611561&width=1200&format=webp" alt="Havnby inflatable mattress for Tesla" loading="lazy" width="1200" height="800">
                 <figcaption>{{t.guide_model_x.img3_caption}}</figcaption>
             </figure>
 
@@ -521,7 +531,7 @@
                 <h2>{{t.guide_model_x.cta_title}}</h2>
                 <p>{{t.guide_model_x.cta_text}}</p>
                 <div class="cta-buttons">
-                    <a href="/{{localePath}}reviews/" class="btn-primary">{{t.guide_model_x.cta_btn_all_reviews}}</a>
+                    <a href="/{{localePath}}reviews" class="btn-primary">{{t.guide_model_x.cta_btn_all_reviews}}</a>
                     <a href="/{{localePath}}discounts/havnby" class="btn-secondary">{{t.guide_model_x.cta_btn_havnby_discount}}</a>
                 </div>
             </div>
@@ -545,13 +555,13 @@
             <div class="sidebar-card cta-card">
                 <h3>{{t.guide_model_x.sidebar_cta_title}}</h3>
                 <p>{{t.guide_model_x.sidebar_cta_text}}</p>
-                <a href="/{{localePath}}discounts/" class="btn-cta">{{t.guide_model_x.sidebar_cta_btn}}</a>
+                <a href="/{{localePath}}discounts" class="btn-cta">{{t.guide_model_x.sidebar_cta_btn}}</a>
             </div>
 
             <div class="sidebar-card">
                 <h3>{{t.guide_model_x.sidebar_related_title}}</h3>
                 <div class="related-list">
-                    <a href="/{{localePath}}guides/buying-guide">{{t.guide_model_x.sidebar_related_buying_guide}}</a>
+                    <a href="/{{localePath}}guides/tesla-mattress-buying-guide">{{t.guide_model_x.sidebar_related_buying_guide}}</a>
                     <a href="/{{localePath}}guides/cybertruck-mattress">{{t.guide_model_x.sidebar_related_cybertruck}}</a>
                     <a href="/{{localePath}}vs/model-y-vs-model-3-mattresses">{{t.guide_model_x.sidebar_related_y_vs_3}}</a>
                     <a href="/{{localePath}}reviews/havnby-autolevel">{{t.guide_model_x.sidebar_related_havnby_review}}</a>
@@ -563,6 +573,13 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-logo">Teslamattress</div>
+            <nav class="footer-hub-links" aria-label="Site sections">
+                <a href="/{{localePath}}reviews">{{t.shared.nav_reviews}}</a>
+                <a href="/{{localePath}}vs">{{t.shared.nav_compare}}</a>
+                <a href="/{{localePath}}guides">{{t.shared.nav_guides}}</a>
+                <a href="/{{localePath}}discounts">{{t.shared.nav_discounts}}</a>
+                <a href="/{{localePath}}about">{{t.shared.nav_about}}</a>
+            </nav>
             <div class="footer-text">
                 <p>&copy; 2026 Teslamattress. {{t.shared.footer_rights}} <a href="/{{localePath}}methodology" style="color: rgba(255,255,255,0.7);">{{t.shared.nav_methodology}}</a> | <a href="/{{localePath}}disclosure" style="color: rgba(255,255,255,0.7);">{{t.shared.fl_disclosure}}</a></p>
                 <p class="disclaimer">{{t.shared.footer_disclaimer}}</p>

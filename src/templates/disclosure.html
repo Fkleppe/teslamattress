@@ -2,11 +2,16 @@
 <html lang="{{htmlLang}}">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2d4a3e">
     <title>{{t.disclosure.meta_title}}</title>
     <meta name="description" content="{{t.disclosure.meta_description}}">
     <meta name="robots" content="noindex, follow">
+    <meta name="author" content="Fredrik Mastouri">
     <link rel="canonical" href="{{canonicalUrl}}">
     {{hreflangTags}}
 
@@ -43,7 +48,8 @@
     </style>
 
     <!-- Stylesheet (deferred) -->
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/styles.css"></noscript>
 
     <!-- JSON-LD -->
     <script type="application/ld+json">
@@ -69,7 +75,7 @@
             {
                 "@type": "ListItem",
                 "position": 1,
-                "name": "Home",
+                "name": "{{t.shared.bc_home}}",
                 "item": "https://teslamattress.com/{{localePath}}"
             },
             {
@@ -84,14 +90,17 @@
 </head>
 <body>
     <nav class="navbar">
-        <a href="/{{localePath}}" class="logo">Teslamattress</a>
+        <a href="{{localeHome}}" class="logo">Teslamattress</a>
         <button class="menu-toggle" aria-label="Toggle menu">
             <span></span><span></span><span></span>
         </button>
         <ul class="nav-links">
-            <li><a href="/{{localePath}}#comparison">{{t.shared.nav_comparison}}</a></li>
-            <li><a href="/{{localePath}}vs/">{{t.shared.nav_compare}}</a></li>
-            <li><a href="/{{localePath}}discounts/">{{t.shared.nav_discounts}}</a></li>
+            <li><a href="/{{localePath}}reviews">{{t.shared.nav_reviews}}</a></li>
+            <li><a href="/{{localePath}}vs">{{t.shared.nav_compare}}</a></li>
+            <li><a href="/{{localePath}}guides">{{t.shared.nav_guides}}</a></li>
+            <li><a href="/{{localePath}}faq">FAQ</a></li>
+            <li><a href="/{{localePath}}discounts">{{t.shared.nav_discounts}}</a></li>
+            <li><a href="/{{localePath}}about">{{t.shared.nav_about}}</a></li>
         </ul>
         {{langSwitcher}}
     </nav>
@@ -149,6 +158,13 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-logo">Teslamattress</div>
+            <nav class="footer-hub-links" aria-label="Site sections">
+                <a href="/{{localePath}}reviews">{{t.shared.nav_reviews}}</a>
+                <a href="/{{localePath}}vs">{{t.shared.nav_compare}}</a>
+                <a href="/{{localePath}}guides">{{t.shared.nav_guides}}</a>
+                <a href="/{{localePath}}discounts">{{t.shared.nav_discounts}}</a>
+                <a href="/{{localePath}}about">{{t.shared.nav_about}}</a>
+            </nav>
             <div class="footer-text">
                 <p>&copy; 2026 Teslamattress. All rights reserved.</p>
                 <p class="disclaimer">{{t.shared.footer_disclaimer}}</p>

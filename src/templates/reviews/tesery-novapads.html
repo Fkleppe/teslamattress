@@ -2,15 +2,17 @@
 <html lang="{{htmlLang}}">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2d4a3e">
 
     <!-- Primary Meta Tags -->
     <title>{{t.review_tesery_novapads.meta_title}}</title>
     <meta name="title" content="{{t.review_tesery_novapads.meta_name_title}}">
-    <meta name="description" content="{{t.review_tesery_novapads.meta_description}}">
-    <meta name="keywords" content="{{t.review_tesery_novapads.meta_keywords}}">
-    <meta name="robots" content="index, follow">
+    <meta name="description" content="{{t.review_tesery_novapads.meta_description}}">    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="{{canonicalUrl}}">
     {{hreflangTags}}
     <meta name="author" content="Fredrik Mastouri">
@@ -25,8 +27,7 @@
     <meta property="og:locale" content="{{ogLocale}}">
     {{ogLocaleAlternates}}
     <meta property="article:published_time" content="2025-01-10">
-    <meta property="article:modified_time" content="2026-02-01">
-
+    <meta property="article:modified_time" content="2026-02-19">
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{t.review_tesery_novapads.twitter_title}}">
@@ -36,10 +37,12 @@
     <!-- Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://novapads.com" crossorigin>
     <link rel="dns-prefetch" href="https://novapads.com">
     <link rel="dns-prefetch" href="https://havnby.com">
     <link rel="dns-prefetch" href="https://us.snuuzu.com">
     <link rel="dns-prefetch" href="https://www.snuuzu.com">
+    <link rel="preload" as="image" href="https://novapads.com/cdn/shop/files/NovaPads_Model_Y_Camping_Mattress_Pro_Model_Y_Juniper_2026_Tesla_Bed.webp?v=1768154742" fetchpriority="high">
 
     <!-- Google Fonts (non-blocking) -->
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap">
@@ -59,16 +62,17 @@
     </style>
 
     <!-- Stylesheet (deferred) -->
-    <link rel="stylesheet" href="/styles.css">
-
-    <link rel="stylesheet" href="/reviews/review-page.css">
-
+    <link rel="stylesheet" href="/styles.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/styles.css"></noscript>
+    <link rel="stylesheet" href="/reviews/review-page.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/reviews/review-page.css"></noscript>
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Product",
+        "inLanguage": "{{htmlLang}}",
         "name": "{{t.review_tesery_novapads.jsonld_1_name_2}}",
         "description": "{{t.review_tesery_novapads.jsonld_1_description_1}}",
         "image": [
@@ -114,7 +118,7 @@
                         "jobTitle": "Founder & Lead Reviewer"
                 },
                 "datePublished": "2025-01-10",
-                "dateModified": "2026-02-01",
+                "dateModified": "{{buildDate}}",
                 "reviewBody": "{{t.review_tesery_novapads.jsonld_1_reviewBody_3}}"
         }
 }
@@ -127,13 +131,13 @@
                 {
                         "@type": "ListItem",
                         "position": 1,
-                        "name": "Home",
+                        "name": "{{t.shared.bc_home}}",
                         "item": "https://teslamattress.com/{{localePath}}"
                 },
                 {
                         "@type": "ListItem",
                         "position": 2,
-                        "name": "Reviews",
+                        "name": "{{t.shared.bc_reviews}}",
                         "item": "https://teslamattress.com/{{localePath}}reviews"
                 },
                 {
@@ -150,68 +154,111 @@
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-                {
-                        "@type": "Question",
-                        "name": "{{t.review_tesery_novapads.jsonld_3_name_1}}",
-                        "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": "{{t.review_tesery_novapads.jsonld_3_text_2}}"
-                        }
-                },
-                {
-                        "@type": "Question",
-                        "name": "{{t.review_tesery_novapads.jsonld_3_name_3}}",
-                        "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": "{{t.review_tesery_novapads.jsonld_3_text_4}}"
-                        }
-                },
-                {
-                        "@type": "Question",
-                        "name": "{{t.review_tesery_novapads.jsonld_3_name_5}}",
-                        "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": "{{t.review_tesery_novapads.jsonld_3_text_6}}"
-                        }
-                },
-                {
-                        "@type": "Question",
-                        "name": "{{t.review_tesery_novapads.jsonld_3_name_7}}",
-                        "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": "{{t.review_tesery_novapads.jsonld_3_text_8}}"
-                        }
-                },
-                {
-                        "@type": "Question",
-                        "name": "{{t.review_tesery_novapads.jsonld_3_name_9}}",
-                        "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": "{{t.review_tesery_novapads.jsonld_3_text_10}}"
-                        }
-                },
-                {
-                        "@type": "Question",
-                        "name": "{{t.review_tesery_novapads.jsonld_3_name_11}}",
-                        "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": "{{t.review_tesery_novapads.jsonld_3_text_12}}"
-                        }
-                }
+        {
+            "@type": "Question",
+            "name": "{{t.review_tesery_novapads.h3_9}}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{t.review_tesery_novapads.p_18}}"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "{{t.review_tesery_novapads.h3_10}}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{t.review_tesery_novapads.p_19}}"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "{{t.review_tesery_novapads.h3_11}}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{t.review_tesery_novapads.p_20}}"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "{{t.review_tesery_novapads.h3_12}}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{t.review_tesery_novapads.p_21}}"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "{{t.review_tesery_novapads.h3_13}}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{t.review_tesery_novapads.p_22}}"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "{{t.review_tesery_novapads.h3_14}}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{t.review_tesery_novapads.p_23}}"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "{{t.review_tesery_novapads.h3_15}}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{t.review_tesery_novapads.p_24}}"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "{{t.review_tesery_novapads.h3_16}}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{t.review_tesery_novapads.p_25}}"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "{{t.review_tesery_novapads.h3_17}}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{t.review_tesery_novapads.p_26}}"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "{{t.review_tesery_novapads.h3_18}}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{t.review_tesery_novapads.p_27}}"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "{{t.review_tesery_novapads.h3_19}}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{t.review_tesery_novapads.p_28}}"
+            }
+        }
         ]
-}
+    }
     </script>
 </head>
 <body>
     <nav class="navbar review-nav">
-        <a href="/{{localePath}}" class="logo">Teslamattress</a>
+        <a href="{{localeHome}}" class="logo">Teslamattress</a>
         <button class="menu-toggle" aria-label="Toggle menu">
             <span></span><span></span><span></span>
         </button>
         <ul class="nav-links">
-            <li><a href="/{{localePath}}#comparison">{{t.shared.nav_comparison}}</a></li>
-            <li><a href="/{{localePath}}vs/">{{t.shared.nav_compare}}</a></li>
-            <li><a href="/{{localePath}}#comparison">{{t.shared.nav_all_reviews}}</a></li>
+            <li><a href="/{{localePath}}reviews">{{t.shared.nav_reviews}}</a></li>
+            <li><a href="/{{localePath}}vs">{{t.shared.nav_compare}}</a></li>
+            <li><a href="/{{localePath}}guides">{{t.shared.nav_guides}}</a></li>
+            <li><a href="/{{localePath}}faq">FAQ</a></li>
+            <li><a href="/{{localePath}}discounts">{{t.shared.nav_discounts}}</a></li>
+            <li><a href="/{{localePath}}about">{{t.shared.nav_about}}</a></li>
         </ul>
         {{langSwitcher}}
     </nav>
@@ -220,7 +267,7 @@
     <main class="review-page">
         <div class="review-hero">
             <div class="breadcrumb">
-                <a href="/{{localePath}}">Home</a> / <a href="/{{localePath}}#comparison">Reviews</a> / NovaPads Air-Foam Pro
+                <a href="/{{localePath}}">Home</a> / <a href="/{{localePath}}reviews">Reviews</a> / NovaPads Air-Foam Pro
             </div>
             <div class="review-hero-content">
                 <span class="review-badge">{{t.review_tesery_novapads.span_review_badge}}</span>
@@ -408,6 +455,7 @@
                             <span class="score-value">8.6</span>
                         </div>
                     </div>
+                    <p class="score-methodology"><a href="/{{localePath}}methodology">{{t.shared.nav_methodology}}</a> — {{t.shared.methodology_tagline}}</p>
                 </div>
 
                 <!-- Air-Foam Technology -->
@@ -829,6 +877,13 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-logo">Teslamattress</div>
+            <nav class="footer-hub-links" aria-label="Site sections">
+                <a href="/{{localePath}}reviews">{{t.shared.nav_reviews}}</a>
+                <a href="/{{localePath}}vs">{{t.shared.nav_compare}}</a>
+                <a href="/{{localePath}}guides">{{t.shared.nav_guides}}</a>
+                <a href="/{{localePath}}discounts">{{t.shared.nav_discounts}}</a>
+                <a href="/{{localePath}}about">{{t.shared.nav_about}}</a>
+            </nav>
             <div class="footer-text">
                 <p>&copy; 2026 Teslamattress. {{t.shared.footer_rights}} <a href="/{{localePath}}methodology" style="color: rgba(255,255,255,0.7);">{{t.shared.nav_methodology}}</a> | <a href="/{{localePath}}disclosure" style="color: rgba(255,255,255,0.7);">{{t.shared.fl_disclosure}}</a></p>
                 <p class="disclaimer">{{t.shared.footer_disclaimer}}</p>

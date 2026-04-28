@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="{{htmlLang}}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2d4a3e">
+
+    <title>{{t.PAGEKEY.meta_title}}</title>
+    <meta name="description" content="{{t.PAGEKEY.meta_description}}">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <meta name="author" content="Fredrik Mastouri">
+    <link rel="canonical" href="{{canonicalUrl}}">
+    {{hreflangTags}}
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{pageUrl}}">
+    <meta property="og:title" content="{{t.PAGEKEY.og_title}}">
+    <meta property="og:description" content="{{t.PAGEKEY.og_description}}">
+    <meta property="og:image" content="https://teslamattress.com/images/og-image.jpg">
+    <meta property="og:site_name" content="Teslamattress">
+    <meta property="og:locale" content="{{ogLocale}}">
+    {{ogLocaleAlternates}}
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{t.PAGEKEY.og_title}}">
+    <meta name="twitter:description" content="{{t.PAGEKEY.og_description}}">
+
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap"></noscript>
+
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--forest:#2d4a3e;--forest-dark:#1a2e25;--cream:#f5f1e8;--warm-white:#faf9f6;--text:#3d3d3d;--copper:#b87333;--text-light:#6b6b6b}
+        body{font-family:'Source Sans 3',-apple-system,sans-serif;line-height:1.7;color:var(--text);background:var(--warm-white)}
+        .navbar{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 6%;background:var(--forest-dark)}
+        .logo{font-family:'Libre Baskerville',Georgia,serif;font-size:1.6rem;font-weight:700;color:var(--cream);text-decoration:none}
+        .nav-links{display:flex;list-style:none;gap:2rem}
+        .nav-links a{color:var(--cream);text-decoration:none;font-weight:500;font-size:.95rem}
+        .menu-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer}
+        .menu-toggle span{width:24px;height:2px;background:var(--cream)}
+        @media(max-width:768px){.menu-toggle{display:flex}.nav-links{display:none}}
+        .discount-hero{background:linear-gradient(135deg,var(--forest) 0%,var(--forest-dark) 100%);color:#fff;padding:4rem 6% 3rem;text-align:center}
+        .discount-hero h1{font-family:'Libre Baskerville',Georgia,serif;font-size:clamp(1.8rem,4.5vw,2.6rem);max-width:800px;margin:0 auto 1rem;line-height:1.25}
+        .breadcrumb{max-width:800px;margin:0 auto 1rem;font-size:.85rem;color:rgba(255,255,255,0.8);text-align:left}
+        .breadcrumb a{color:rgba(255,255,255,0.85);text-decoration:none}
+        .code-display{display:inline-block;background:rgba(255,255,255,0.1);border:2px dashed rgba(255,255,255,0.4);padding:.75rem 2rem;border-radius:8px;font-family:Menlo,monospace;font-size:1.6rem;font-weight:700;color:#c9a961;letter-spacing:2px;margin:1rem 0}
+        .savings-pill{display:inline-block;background:var(--copper);color:#fff;padding:.4rem .9rem;border-radius:50px;font-weight:700;margin:0 .5rem .5rem 0}
+        .discount-cta{display:inline-block;background:#c9a961;color:var(--forest-dark);padding:.85rem 2rem;border-radius:50px;text-decoration:none;font-weight:600;margin-top:1rem}
+        .discount-meta{margin-top:1rem;font-size:.9rem;color:rgba(255,255,255,0.85)}
+        .discount-meta a{color:var(--cream)}
+        .discount-main{max-width:760px;margin:3rem auto;padding:0 6%}
+        .discount-main h2{font-family:'Libre Baskerville',Georgia,serif;font-size:1.5rem;color:var(--forest-dark);margin:2rem 0 1rem}
+        .discount-main h3{font-family:'Libre Baskerville',Georgia,serif;font-size:1.15rem;color:var(--forest-dark);margin:1.5rem 0 .5rem}
+        .discount-main p{margin-bottom:1.25rem}
+        .discount-main ul, .discount-main ol{margin:1rem 0 1.5rem 1.5rem}
+        .discount-main li{margin-bottom:.5rem}
+        .discount-main a{color:var(--forest);text-decoration:underline;text-underline-offset:3px}
+        .discount-main table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.95rem}
+        .discount-main th{background:var(--cream);padding:.7rem;text-align:left;border-bottom:2px solid var(--forest-dark)}
+        .discount-main td{padding:.6rem .7rem;border-bottom:1px solid #e5e0d3}
+        .skip-callout{background:#fff7ed;border-left:4px solid #c9803d;padding:1.25rem 1.5rem;border-radius:8px;margin:2rem 0}
+        .skip-callout h3{color:#9c5419;margin:0 0 .5rem;font-family:'Libre Baskerville',serif}
+        .verified-badge{background:#e8f3ec;border-left:4px solid #16704a;padding:1rem 1.25rem;border-radius:6px;margin:1.5rem 0;font-size:.95rem}
+        .verified-badge strong{color:#0d4d33}
+        .related-grid{background:#fff;border:1px solid #e5e0d3;border-radius:10px;padding:1.5rem 1.75rem;margin:2.5rem 0}
+        .related-grid h3{margin-bottom:1rem;font-family:'Libre Baskerville',serif;color:var(--forest-dark)}
+        .related-grid ul{list-style:none;margin:0}
+        .related-grid li{margin-bottom:.5rem}
+        footer{background:var(--forest-dark);color:rgba(255,255,255,0.7);padding:2rem 6%;font-size:.85rem;text-align:center;margin-top:3rem}
+        footer a{color:var(--cream)}
+    </style>
+
+    <link rel="stylesheet" href="/styles.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/styles.css"></noscript>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "inLanguage": "{{htmlLang}}",
+        "headline": "{{t.PAGEKEY.h1}}",
+        "description": "{{t.PAGEKEY.meta_description}}",
+        "author": { "@type": "Person", "name": "Fredrik Mastouri", "url": "https://teslamattress.com/about" },
+        "publisher": { "@type": "Organization", "name": "Teslamattress", "url": "https://teslamattress.com" },
+        "datePublished": "2025-08-01",
+        "dateModified": "{{buildDate}}",
+        "mainEntityOfPage": "{{canonicalUrl}}"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://teslamattress.com/{{localePath}}" },
+            { "@type": "ListItem", "position": 2, "name": "Discount Codes", "item": "https://teslamattress.com/{{localePath}}discounts" },
+            { "@type": "ListItem", "position": 3, "name": "{{t.PAGEKEY.brand_name}}", "item": "{{canonicalUrl}}" }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="{{localeHome}}" class="logo">Teslamattress</a>
+        <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        <ul class="nav-links">
+            <li><a href="/{{localePath}}reviews">{{t.shared.nav_reviews}}</a></li>
+            <li><a href="/{{localePath}}vs">{{t.shared.nav_compare}}</a></li>
+            <li><a href="/{{localePath}}guides">{{t.shared.nav_guides}}</a></li>
+            <li><a href="/{{localePath}}faq">FAQ</a></li>
+            <li><a href="/{{localePath}}discounts">{{t.shared.nav_discounts}}</a></li>
+        </ul>
+        {{langSwitcher}}
+    </nav>
+
+    <header class="discount-hero">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/{{localePath}}">Home</a> &rsaquo;
+            <a href="/{{localePath}}discounts">Discount Codes</a> &rsaquo;
+            <span>{{t.PAGEKEY.brand_name}}</span>
+        </nav>
+        <h1>{{t.PAGEKEY.h1}}</h1>
+        <div class="code-display">{{t.PAGEKEY.code}}</div>
+        <p><span class="savings-pill">{{t.PAGEKEY.savings}}</span></p>
+        <a href="{{t.PAGEKEY.affiliate_url}}" rel="sponsored noopener" class="discount-cta">{{t.PAGEKEY.cta_text}} →</a>
+        <div class="discount-meta">
+            By <a href="/{{localePath}}about">Fredrik Mastouri</a> &middot; Verified {{buildDate}}
+        </div>
+    </header>
+
+    <main class="discount-main">
+        <div class="verified-badge">
+            <strong>Code verified active:</strong> {{t.PAGEKEY.verification_note}}
+        </div>
+
+        {{t.PAGEKEY.body_html}}
+
+        <div class="related-grid">
+            <h3>Other Tesla mattress discount codes</h3>
+            <ul>
+                <li><a href="/{{localePath}}discounts/snuuzu">Snuuzu — 10% off with KLEPPE</a></li>
+                <li><a href="/{{localePath}}discounts/havnby">Havnby — 10% off with AWD</a></li>
+                <li><a href="/{{localePath}}discounts/novapads">NovaPads — 10% off with AWD</a></li>
+                <li><a href="/{{localePath}}discounts/shop4tesla">Shop4Tesla (TESMAT) — 10% off with code 10</a></li>
+                <li><a href="/{{localePath}}discounts/yeslak">Yeslak accessories — 20% off with DISCOUNT</a></li>
+                <li><a href="/{{localePath}}discounts/jowua">Jowua accessories — 5% off with AWD</a></li>
+                <li><a href="/{{localePath}}discounts/hansshow">Hansshow accessories — 20% off with FREDRIK</a></li>
+            </ul>
+        </div>
+
+        <p style="margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid #e5e0d3;font-size:.9rem;color:var(--text-light);font-style:italic">
+            All discount codes verified personally. We earn commission on qualifying orders at no cost to you. See our <a href="/{{localePath}}disclosure">affiliate disclosure</a>.
+            Codes verified as of {{buildDate}}.
+        </p>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Teslamattress. <a href="/{{localePath}}disclosure">Affiliate disclosure</a> &middot; <a href="/{{localePath}}about">About</a> &middot; <a href="/{{localePath}}methodology">How we test</a></p>
+    </footer>
+</body>
+</html>

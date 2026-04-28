@@ -2,16 +2,18 @@
 <html lang="{{htmlLang}}">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2d4a3e">
 
     <!-- Primary Meta Tags - Optimized for "NovaPads discount code" searches -->
     <title>{{t.discount_novapads.meta_title}}</title>
     <meta name="title" content="{{t.discount_novapads.meta_name_title}}">
-    <meta name="description" content="{{t.discount_novapads.meta_description}}">
-    <meta name="keywords" content="{{t.discount_novapads.meta_keywords}}">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="Teslamattress">
+    <meta name="description" content="{{t.discount_novapads.meta_description}}">    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="author" content="Fredrik Mastouri">
     <link rel="canonical" href="{{canonicalUrl}}">
     {{hreflangTags}}
 
@@ -56,18 +58,21 @@
     </style>
 
     <!-- Stylesheet (deferred) -->
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/styles.css"></noscript>
 
-    <link rel="stylesheet" href="/discounts/discounts.css">
+    <link rel="stylesheet" href="/discounts/discounts.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/discounts/discounts.css"></noscript>
 
-    <link rel="stylesheet" href="/discounts/brand-page.css">
-
+    <link rel="stylesheet" href="/discounts/brand-page.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/discounts/brand-page.css"></noscript>
 
     <!-- JSON-LD Structured Data for Featured Snippets -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebPage",
+        "inLanguage": "{{htmlLang}}",
         "name": "{{t.discount_novapads.jsonld_1_name_2}}",
         "description": "{{t.discount_novapads.jsonld_1_description_1}}",
         "url": "https://teslamattress.com/discounts/novapads",
@@ -75,8 +80,6 @@
                 "@type": "Offer",
                 "name": "NovaPads 10% Discount Code",
                 "description": "{{t.discount_novapads.jsonld_1_description_3}}",
-                "discountCode": "AWD",
-                "discountPercentage": 10,
                 "validFrom": "2024-01-01",
                 "validThrough": "2026-12-31",
                 "seller": {
@@ -102,73 +105,9 @@
                                 "availability": "https://schema.org/InStock",
                                 "priceValidUntil": "2026-12-31",
                                 "url": "https://novapads.com/products/tesla-model-y-air-foam-camping-mattress-pro-tesla-bed?ref=AWD"
-                        },
-                        "aggregateRating": {
-                                "@type": "AggregateRating",
-                                "ratingValue": 4.1,
-                                "bestRating": 5,
-                                "worstRating": 1,
-                                "ratingCount": 12,
-                                "reviewCount": 12
                         }
                 }
         }
-}
-    </script>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-                {
-                        "@type": "Question",
-                        "name": "{{t.discount_novapads.jsonld_2_name_1}}",
-                        "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": "{{t.discount_novapads.jsonld_2_text_2}}"
-                        }
-                },
-                {
-                        "@type": "Question",
-                        "name": "{{t.discount_novapads.jsonld_2_name_3}}",
-                        "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": "{{t.discount_novapads.jsonld_2_text_4}}"
-                        }
-                },
-                {
-                        "@type": "Question",
-                        "name": "{{t.discount_novapads.jsonld_2_name_5}}",
-                        "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": "{{t.discount_novapads.jsonld_2_text_6}}"
-                        }
-                },
-                {
-                        "@type": "Question",
-                        "name": "{{t.discount_novapads.jsonld_2_name_7}}",
-                        "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": "{{t.discount_novapads.jsonld_2_text_8}}"
-                        }
-                },
-                {
-                        "@type": "Question",
-                        "name": "{{t.discount_novapads.jsonld_2_name_9}}",
-                        "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": "{{t.discount_novapads.jsonld_2_text_10}}"
-                        }
-                },
-                {
-                        "@type": "Question",
-                        "name": "{{t.discount_novapads.jsonld_2_name_11}}",
-                        "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": "{{t.discount_novapads.jsonld_2_text_12}}"
-                        }
-                }
-        ]
 }
     </script>
     <script type="application/ld+json">
@@ -179,13 +118,13 @@
                 {
                         "@type": "ListItem",
                         "position": 1,
-                        "name": "Home",
+                        "name": "{{t.shared.bc_home}}",
                         "item": "https://teslamattress.com/{{localePath}}"
                 },
                 {
                         "@type": "ListItem",
                         "position": 2,
-                        "name": "Discount Codes",
+                        "name": "{{t.shared.bc_discounts}}",
                         "item": "https://teslamattress.com/{{localePath}}discounts"
                 },
                 {
@@ -197,42 +136,20 @@
         ]
 }
     </script>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "HowTo",
-        "name": "{{t.discount_novapads.jsonld_4_name_2}}",
-        "description": "{{t.discount_novapads.jsonld_4_description_1}}",
-        "step": [
-                {
-                        "@type": "HowToStep",
-                        "name": "{{t.discount_novapads.jsonld_4_name_3}}",
-                        "text": "{{t.discount_novapads.jsonld_4_text_4}}"
-                },
-                {
-                        "@type": "HowToStep",
-                        "name": "{{t.discount_novapads.jsonld_4_name_5}}",
-                        "text": "{{t.discount_novapads.jsonld_4_text_6}}"
-                },
-                {
-                        "@type": "HowToStep",
-                        "name": "{{t.discount_novapads.jsonld_4_name_7}}",
-                        "text": "{{t.discount_novapads.jsonld_4_text_8}}"
-                }
-        ]
-}
-    </script>
 </head>
 <body>
     <nav class="navbar discount-nav">
-        <a href="/{{localePath}}" class="logo">Teslamattress</a>
+        <a href="{{localeHome}}" class="logo">Teslamattress</a>
         <button class="menu-toggle" aria-label="Toggle menu">
             <span></span><span></span><span></span>
         </button>
         <ul class="nav-links">
-            <li><a href="/{{localePath}}#comparison">{{t.shared.nav_comparison}}</a></li>
-            <li><a href="/{{localePath}}vs/">{{t.shared.nav_compare}}</a></li>
+            <li><a href="/{{localePath}}reviews">{{t.shared.nav_reviews}}</a></li>
+            <li><a href="/{{localePath}}vs">{{t.shared.nav_compare}}</a></li>
+            <li><a href="/{{localePath}}guides">{{t.shared.nav_guides}}</a></li>
+            <li><a href="/{{localePath}}faq">FAQ</a></li>
             <li><a href="/{{localePath}}discounts">{{t.shared.nav_discounts}}</a></li>
+            <li><a href="/{{localePath}}about">{{t.shared.nav_about}}</a></li>
         </ul>
         {{langSwitcher}}
     </nav>
@@ -453,6 +370,13 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-logo">Teslamattress</div>
+            <nav class="footer-hub-links" aria-label="Site sections">
+                <a href="/{{localePath}}reviews">{{t.shared.nav_reviews}}</a>
+                <a href="/{{localePath}}vs">{{t.shared.nav_compare}}</a>
+                <a href="/{{localePath}}guides">{{t.shared.nav_guides}}</a>
+                <a href="/{{localePath}}discounts">{{t.shared.nav_discounts}}</a>
+                <a href="/{{localePath}}about">{{t.shared.nav_about}}</a>
+            </nav>
             <div class="footer-text">
                 <p>&copy; 2026 Teslamattress. {{t.shared.footer_rights}} <a href="/{{localePath}}methodology" style="color: rgba(255,255,255,0.7);">{{t.shared.nav_methodology}}</a> | <a href="/{{localePath}}disclosure" style="color: rgba(255,255,255,0.7);">{{t.shared.fl_disclosure}}</a></p>
                 <p class="disclaimer">{{t.shared.footer_disclaimer}}</p>

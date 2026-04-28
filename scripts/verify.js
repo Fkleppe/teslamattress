@@ -229,7 +229,7 @@ function checkInternalLinks() {
         const href = link.match(/"([^"]+)"/)[1];
         // Skip anchors, static assets
         if (href.includes('#')) continue;
-        if (/\.(css|js|svg|png|jpg|webp|json|xml|txt|ico)$/.test(href)) continue;
+        if (/\.(css|js|svg|png|jpg|webp|json|xml|txt|ico|webmanifest)$/.test(href)) continue;
         if (href.startsWith('/_vercel')) continue;
 
         // Check if the file exists

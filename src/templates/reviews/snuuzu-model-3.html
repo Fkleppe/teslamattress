@@ -2,15 +2,18 @@
 <html lang="{{htmlLang}}">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2d4a3e">
 
     <!-- Primary Meta Tags -->
     <title>{{t.review_snuuzu_model_3.meta_title}}</title>
     <meta name="title" content="{{t.review_snuuzu_model_3.meta_name_title}}">
-    <meta name="description" content="{{t.review_snuuzu_model_3.meta_description}}">
-    <meta name="keywords" content="{{t.review_snuuzu_model_3.meta_keywords}}">
-    <meta name="robots" content="index, follow">
+    <meta name="description" content="{{t.review_snuuzu_model_3.meta_description}}">    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="author" content="Fredrik Mastouri">
     <link rel="canonical" href="{{canonicalUrl}}">
     {{hreflangTags}}
 
@@ -19,25 +22,26 @@
     <meta property="og:url" content="{{pageUrl}}">
     <meta property="og:title" content="{{t.review_snuuzu_model_3.og_title}}">
     <meta property="og:description" content="{{t.review_snuuzu_model_3.og_description}}">
-    <meta property="og:image" content="https://www.snuuzu.com/cdn/shop/files/snuuzu-mattress-for-tesla-model-3-rear-wide-angle.jpg">
+    <meta property="og:image" content="https://teslamattress.com/images/tesmat-luxe-model-3-tesla-mattress.jpg">
     <meta property="og:site_name" content="Teslamattress">
     <meta property="og:locale" content="{{ogLocale}}">
     {{ogLocaleAlternates}}
     <meta property="article:published_time" content="2024-08-15">
-    <meta property="article:modified_time" content="2026-01-24">
-
+    <meta property="article:modified_time" content="2026-02-19">
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{t.review_snuuzu_model_3.twitter_title}}">
     <meta name="twitter:description" content="{{t.review_snuuzu_model_3.twitter_description}}">
-    <meta name="twitter:image" content="https://www.snuuzu.com/cdn/shop/files/snuuzu-mattress-for-tesla-model-3-rear-wide-angle.jpg">
+    <meta name="twitter:image" content="https://teslamattress.com/images/tesmat-luxe-model-3-tesla-mattress.jpg">
 
     <!-- Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://www.snuuzu.com" crossorigin>
     <link rel="dns-prefetch" href="https://havnby.com">
     <link rel="dns-prefetch" href="https://us.snuuzu.com">
     <link rel="dns-prefetch" href="https://www.snuuzu.com">
+    <link rel="preload" as="image" href="/images/tesmat-luxe-model-3-tesla-mattress.webp" fetchpriority="high">
 
     <!-- Google Fonts (non-blocking) -->
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap">
@@ -57,9 +61,10 @@
     </style>
 
     <!-- Stylesheet (deferred) -->
-    <link rel="stylesheet" href="/styles.css">
-    
-    <link rel="stylesheet" href="/reviews/review-page.css">
+    <link rel="stylesheet" href="/styles.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/styles.css"></noscript>
+    <link rel="stylesheet" href="/reviews/review-page.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/reviews/review-page.css"></noscript>
     
 
     <!-- JSON-LD Structured Data -->
@@ -67,10 +72,11 @@
     {
         "@context": "https://schema.org",
         "@type": "Product",
+        "inLanguage": "{{htmlLang}}",
         "name": "{{t.review_snuuzu_model_3.jsonld_1_name_2}}",
         "description": "{{t.review_snuuzu_model_3.jsonld_1_description_1}}",
         "image": [
-                "https://www.snuuzu.com/cdn/shop/files/snuuzu-mattress-for-tesla-model-3-rear-wide-angle.jpg"
+                "https://teslamattress.com/images/tesmat-luxe-model-3-tesla-mattress.jpg"
         ],
         "brand": {
                 "@type": "Brand",
@@ -106,7 +112,7 @@
                         "url": "https://teslamattress.com/about"
                 },
                 "datePublished": "2024-08-15",
-                "dateModified": "2026-01-24",
+                "dateModified": "{{buildDate}}",
                 "reviewBody": "{{t.review_snuuzu_model_3.jsonld_1_reviewBody_3}}"
         }
 }
@@ -119,13 +125,13 @@
                 {
                         "@type": "ListItem",
                         "position": 1,
-                        "name": "Home",
+                        "name": "{{t.shared.bc_home}}",
                         "item": "https://teslamattress.com/{{localePath}}"
                 },
                 {
                         "@type": "ListItem",
                         "position": 2,
-                        "name": "Reviews",
+                        "name": "{{t.shared.bc_reviews}}",
                         "item": "https://teslamattress.com/{{localePath}}reviews"
                 },
                 {
@@ -142,68 +148,103 @@
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-                {
-                        "@type": "Question",
-                        "name": "{{t.review_snuuzu_model_3.jsonld_3_name_1}}",
-                        "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": "{{t.review_snuuzu_model_3.jsonld_3_text_2}}"
-                        }
-                },
-                {
-                        "@type": "Question",
-                        "name": "{{t.review_snuuzu_model_3.jsonld_3_name_3}}",
-                        "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": "{{t.review_snuuzu_model_3.jsonld_3_text_4}}"
-                        }
-                },
-                {
-                        "@type": "Question",
-                        "name": "{{t.review_snuuzu_model_3.jsonld_3_name_5}}",
-                        "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": "{{t.review_snuuzu_model_3.jsonld_3_text_6}}"
-                        }
-                },
-                {
-                        "@type": "Question",
-                        "name": "{{t.review_snuuzu_model_3.jsonld_3_name_7}}",
-                        "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": "{{t.review_snuuzu_model_3.jsonld_3_text_8}}"
-                        }
-                },
-                {
-                        "@type": "Question",
-                        "name": "{{t.review_snuuzu_model_3.jsonld_3_name_9}}",
-                        "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": "{{t.review_snuuzu_model_3.jsonld_3_text_10}}"
-                        }
-                },
-                {
-                        "@type": "Question",
-                        "name": "{{t.review_snuuzu_model_3.jsonld_3_name_11}}",
-                        "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": "{{t.review_snuuzu_model_3.jsonld_3_text_12}}"
-                        }
-                }
+        {
+            "@type": "Question",
+            "name": "{{t.review_snuuzu_model_3.h3_5}}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{t.review_snuuzu_model_3.p_17}}"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "{{t.review_snuuzu_model_3.h3_6}}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{t.review_snuuzu_model_3.p_18}}"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "{{t.review_snuuzu_model_3.h3_7}}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{t.review_snuuzu_model_3.p_19}}"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "{{t.review_snuuzu_model_3.h3_8}}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{t.review_snuuzu_model_3.p_20}}"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "{{t.review_snuuzu_model_3.h3_9}}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{t.review_snuuzu_model_3.p_21}}"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "{{t.review_snuuzu_model_3.h3_10}}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{t.review_snuuzu_model_3.p_22}}"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "{{t.review_snuuzu_model_3.h3_11}}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{t.review_snuuzu_model_3.p_23}}"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "{{t.review_snuuzu_model_3.h3_12}}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{t.review_snuuzu_model_3.p_24}}"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "{{t.review_snuuzu_model_3.h3_13}}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{t.review_snuuzu_model_3.p_25}}"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "{{t.review_snuuzu_model_3.h3_14}}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{t.review_snuuzu_model_3.p_26}}"
+            }
+        }
         ]
-}
+    }
     </script>
 </head>
 <body>
     <nav class="navbar review-nav">
-        <a href="/{{localePath}}" class="logo">Teslamattress</a>
+        <a href="{{localeHome}}" class="logo">Teslamattress</a>
         <button class="menu-toggle" aria-label="Toggle menu">
             <span></span><span></span><span></span>
         </button>
         <ul class="nav-links">
-            <li><a href="/{{localePath}}#comparison">{{t.shared.nav_comparison}}</a></li>
-            <li><a href="/{{localePath}}vs/">{{t.shared.nav_compare}}</a></li>
-            <li><a href="/{{localePath}}#comparison">{{t.shared.nav_all_reviews}}</a></li>
+            <li><a href="/{{localePath}}reviews">{{t.shared.nav_reviews}}</a></li>
+            <li><a href="/{{localePath}}vs">{{t.shared.nav_compare}}</a></li>
+            <li><a href="/{{localePath}}guides">{{t.shared.nav_guides}}</a></li>
+            <li><a href="/{{localePath}}faq">FAQ</a></li>
+            <li><a href="/{{localePath}}discounts">{{t.shared.nav_discounts}}</a></li>
+            <li><a href="/{{localePath}}about">{{t.shared.nav_about}}</a></li>
         </ul>
         {{langSwitcher}}
     </nav>
@@ -212,7 +253,7 @@
     <main class="review-page">
         <div class="review-hero">
             <div class="breadcrumb">
-                <a href="/{{localePath}}">Home</a> / <a href="/{{localePath}}#comparison">Reviews</a> / Snuuzu Model 3
+                <a href="/{{localePath}}">Home</a> / <a href="/{{localePath}}reviews">Reviews</a> / Snuuzu Model 3
             </div>
             <div class="review-hero-content">
                 <span class="review-badge">{{t.review_snuuzu_model_3.span_review_badge}}</span>
@@ -302,7 +343,7 @@
                 <!-- Product Gallery -->
                 <div class="product-gallery">
                     <div class="main-image">
-                        <img src="https://www.snuuzu.com/cdn/shop/files/snuuzu-mattress-for-tesla-model-3-rear-wide-angle.jpg?v=1720512453&width=1200&format=webp" alt="Snuuzu Tesla Model 3 Mattress installed in car" loading="eager" fetchpriority="high" width="1200" height="800">
+                        <img src="/images/tesmat-luxe-model-3-tesla-mattress.webp" alt="Snuuzu Tesla Model 3 Mattress installed in car" loading="eager" fetchpriority="high" width="1200" height="800">
                     </div>
                 </div>
 
@@ -388,6 +429,7 @@
                         </div>
                     </div>
                     <p class="score-explanation">{{t.review_snuuzu_model_3.p_4}}</p>
+                    <p class="score-methodology"><a href="/{{localePath}}methodology">{{t.shared.nav_methodology}}</a> — {{t.shared.methodology_tagline}}</p>
                 </div>
 
                 <!-- 4-Layer Technology Section -->
@@ -818,6 +860,13 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-logo">Teslamattress</div>
+            <nav class="footer-hub-links" aria-label="Site sections">
+                <a href="/{{localePath}}reviews">{{t.shared.nav_reviews}}</a>
+                <a href="/{{localePath}}vs">{{t.shared.nav_compare}}</a>
+                <a href="/{{localePath}}guides">{{t.shared.nav_guides}}</a>
+                <a href="/{{localePath}}discounts">{{t.shared.nav_discounts}}</a>
+                <a href="/{{localePath}}about">{{t.shared.nav_about}}</a>
+            </nav>
             <div class="footer-text">
                 <p>&copy; 2026 Teslamattress. {{t.shared.footer_rights}} <a href="/{{localePath}}methodology" style="color: rgba(255,255,255,0.7);">{{t.shared.nav_methodology}}</a> | <a href="/{{localePath}}disclosure" style="color: rgba(255,255,255,0.7);">{{t.shared.fl_disclosure}}</a></p>
                 <p class="disclaimer">{{t.shared.footer_disclaimer}}</p>
@@ -847,123 +896,6 @@
             <p class="region-discount">{{t.shared.region_discount_text}}</p>
         </div>
     </div>
-
-    <style>
-        .region-popup {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .region-popup-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(4px);
-        }
-        .region-popup-content {
-            position: relative;
-            background: white;
-            padding: 2.5rem;
-            border-radius: 20px;
-            max-width: 450px;
-            width: 90%;
-            text-align: center;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            animation: popupIn 0.3s ease-out;
-        }
-        @keyframes popupIn {
-            from { opacity: 0; transform: scale(0.9) translateY(20px); }
-            to { opacity: 1; transform: scale(1) translateY(0); }
-        }
-        .region-popup-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: none;
-            border: none;
-            font-size: 1.8rem;
-            cursor: pointer;
-            color: #999;
-            line-height: 1;
-            padding: 0.25rem;
-        }
-        .region-popup-close:hover {
-            color: #333;
-        }
-        .region-popup-content h3 {
-            font-family: 'Libre Baskerville', Georgia, serif;
-            font-size: 1.6rem;
-            color: var(--forest-dark);
-            margin-bottom: 0.5rem;
-        }
-        .region-popup-content > p {
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-        }
-        .region-buttons {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        .region-btn {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 1.5rem 1rem;
-            border-radius: 12px;
-            text-decoration: none;
-            transition: all 0.3s;
-            border: 2px solid #e0e0e0;
-        }
-        .region-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-        }
-        .region-eu {
-            background: linear-gradient(135deg, #003399 0%, #004499 100%);
-            color: white;
-            border-color: #003399;
-        }
-        .region-us {
-            background: linear-gradient(135deg, #bf0a30 0%, #002868 100%);
-            color: white;
-            border-color: #bf0a30;
-        }
-        .region-flag {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-        .region-name {
-            font-weight: 600;
-            font-size: 1rem;
-            margin-bottom: 0.25rem;
-        }
-        .region-price {
-            font-family: 'Libre Baskerville', Georgia, serif;
-            font-size: 1.3rem;
-            font-weight: 700;
-        }
-        .region-discount {
-            background: var(--cream);
-            padding: 0.75rem 1rem;
-            border-radius: 8px;
-            font-size: 0.95rem;
-            color: var(--text);
-        }
-        .region-discount strong {
-            color: var(--copper);
-        }
-    </style>
 
     <script>
         function showRegionPopup() {

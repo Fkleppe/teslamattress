@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2d4a3e">
     <meta name="google-site-verification" content="thshqzpZwETRTNS_vSK5NsUkKNT8gubJqQhGJamuwDk">
 
     <!-- Primary Meta Tags -->
     <title>{{t.home.meta_title}}</title>
     <meta name="title" content="{{t.home.meta_name_title}}">
-    <meta name="description" content="{{t.home.meta_description}}">
-    <meta name="keywords" content="{{t.home.meta_keywords}}">
-    <meta name="robots" content="index, follow">
+    <meta name="description" content="{{t.home.meta_description}}">    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="author" content="Fredrik Mastouri">
     <link rel="canonical" href="{{canonicalUrl}}">
     {{hreflangTags}}
@@ -57,32 +56,40 @@
         .logo{font-family:'Libre Baskerville',Georgia,serif;font-size:1.6rem;font-weight:700;color:var(--cream);letter-spacing:.5px}
         .nav-links{display:flex;list-style:none;gap:2.5rem}
         .nav-links a{color:var(--cream);text-decoration:none;font-weight:500;font-size:.95rem}
-        .hero{min-height:60vh;background:linear-gradient(to bottom,rgba(20,35,28,0.85),rgba(30,50,42,0.92)),url('images/hero-bg.webp') center/cover no-repeat;display:flex;align-items:center;justify-content:center;padding:2rem}
+        .hero{min-height:60vh;background:linear-gradient(to bottom,rgba(20,35,28,0.85),rgba(30,50,42,0.92)),url('/images/hero-bg.webp') center/cover no-repeat;display:flex;align-items:center;justify-content:center;padding:2rem}
         .hero-content{text-align:center;color:#fff;max-width:900px;margin:0 auto}
         .hero-content h1{font-family:'Libre Baskerville',Georgia,serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;margin-bottom:1rem;line-height:1.2;color:#fff;text-shadow:0 2px 4px rgba(0,0,0,0.8),0 4px 20px rgba(0,0,0,0.5)}
         .hero-content p{font-size:1.2rem;color:#fff;max-width:600px;margin:0 auto 2rem;text-shadow:0 1px 3px rgba(0,0,0,0.7)}
         .cta-button{display:inline-block;background:#c9a961;color:var(--forest-dark);padding:1rem 2.5rem;border-radius:50px;text-decoration:none;font-weight:600}
         .menu-toggle{display:none}
-        .hero-background{display:none}
     </style>
 
     <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
 
-    <!-- Stylesheet (deferred) -->
-    <link rel="stylesheet" href="styles.css">
-    
+    <!-- Stylesheet (non-blocking, critical CSS is inlined above) -->
+    <link rel="stylesheet" href="/styles.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/styles.css"></noscript>
+
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
+        "inLanguage": "{{htmlLang}}",
         "name": "{{t.home.jsonld_1_name_2}}",
         "url": "https://teslamattress.com",
         "description": "{{t.home.jsonld_1_description_1}}",
-        "dateModified": "2026-01-24",
+        "dateModified": "{{buildDate}}",
+        "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://teslamattress.com/?s={search_term_string}",
+                "query-input": "required name=search_term_string"
+        },
         "publisher": {
                 "@type": "Organization",
                 "@id": "https://teslamattress.com/#organization",
@@ -170,7 +177,7 @@
                                         "@type": "Offer",
                                         "price": 899,
                                         "priceCurrency": "EUR",
-                                        "url": "https://us.snuuzu.com/products/snuuzu-mattress-for-tesla-model-y",
+                                        "url": "https://us.snuuzu.com/products/snuuzu-model-y",
                                         "availability": "https://schema.org/InStock",
                                         "priceValidUntil": "2026-12-31"
                                 },
@@ -191,7 +198,7 @@
                                 "name": "{{t.home.jsonld_3_name_6}}",
                                 "description": "{{t.home.jsonld_3_description_5}}",
                                 "image": [
-                                        "https://www.snuuzu.com/cdn/shop/files/snuuzu-mattress-for-tesla-model-3-rear-wide-angle.jpg"
+                                        "https://teslamattress.com/images/tesmat-luxe-model-3-tesla-mattress.jpg"
                                 ],
                                 "url": "https://teslamattress.com/reviews/snuuzu-model-3",
                                 "brand": {
@@ -202,7 +209,7 @@
                                         "@type": "Offer",
                                         "price": 899,
                                         "priceCurrency": "EUR",
-                                        "url": "https://www.snuuzu.com/products/snuuzu-mattress-for-tesla-model-3",
+                                        "url": "https://www.snuuzu.com/products/snuuzu-model-3",
                                         "availability": "https://schema.org/InStock",
                                         "priceValidUntil": "2026-12-31"
                                 },
@@ -477,63 +484,30 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "{{t.home.faq_q1}}",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "{{t.home.faq_a1}}"
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+                {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "{{canonicalUrl}}"
                 }
-            },
-            {
-                "@type": "Question",
-                "name": "{{t.home.faq_q2}}",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "{{t.home.faq_a2}}"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "{{t.home.faq_q3}}",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "{{t.home.faq_a3}}"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "{{t.home.faq_q4}}",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "{{t.home.faq_a4}}"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "{{t.home.faq_q5}}",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "{{t.home.faq_a5}}"
-                }
-            }
         ]
     }
     </script>
 </head>
 <body>
     <nav class="navbar">
-        <a href="/{{localePath}}" class="logo">Teslamattress</a>
+        <a href="{{localeHome}}" class="logo">Teslamattress</a>
         <button class="menu-toggle" aria-label="Toggle menu">
             <span></span><span></span><span></span>
         </button>
         <ul class="nav-links">
-            <li><a href="/{{localePath}}reviews/">{{t.shared.nav_reviews}}</a></li>
-            <li><a href="/{{localePath}}vs/">{{t.shared.nav_compare}}</a></li>
-            <li><a href="#discounts">{{t.shared.nav_discounts}}</a></li>
-            <li><a href="/{{localePath}}guides/">{{t.shared.nav_guides}}</a></li>
+            <li><a href="/{{localePath}}reviews">{{t.shared.nav_reviews}}</a></li>
+            <li><a href="/{{localePath}}vs">{{t.shared.nav_compare}}</a></li>
+            <li><a href="/{{localePath}}guides">{{t.shared.nav_guides}}</a></li>
+            <li><a href="/{{localePath}}faq">FAQ</a></li>
+            <li><a href="/{{localePath}}discounts">{{t.shared.nav_discounts}}</a></li>
             <li><a href="/{{localePath}}about">{{t.shared.nav_about}}</a></li>
         </ul>
         {{langSwitcher}}
@@ -542,15 +516,6 @@
 
     <!-- Hero Section -->
     <header class="hero">
-        <div class="hero-background">
-            <div class="stars"></div>
-            <div class="moon"></div>
-            <div class="mountains">
-                <div class="mountain-back"></div>
-                <div class="mountain-front"></div>
-            </div>
-            <div class="trees"></div>
-        </div>
         <div class="hero-content">
             <h1>{{t.home.h1}}</h1>
             <p>{{t.home.p}}</p>
@@ -564,10 +529,11 @@
                     <div class="stat-label">{{t.home.div_stat_label_2}}</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-number">20%</div>
+                    <div class="stat-number">10%</div>
                     <div class="stat-label">{{t.home.div_stat_label_3}}</div>
                 </div>
             </div>
+            <a href="#comparison" class="cta-button">{{t.shared.btn_compare_mattresses}}</a>
         </div>
     </header>
 
@@ -596,7 +562,7 @@
                     <tr>
                         <td>
                             <div class="product-cell">
-                                <img src="https://teslamattress.com/images/snuuzu-model-y-tesla-mattress.webp?width=100" alt="Snuuzu Model Y" class="product-thumb" loading="lazy" width="60" height="45">
+                                <img src="/images/snuuzu-model-y-tesla-mattress-thumb.webp" alt="Snuuzu Model Y" class="product-thumb" loading="lazy" width="60" height="45">
                                 <strong>Snuuzu Model Y</strong>
                             </div>
                         </td>
@@ -613,7 +579,7 @@
                     <tr>
                         <td>
                             <div class="product-cell">
-                                <img src="https://www.snuuzu.com/cdn/shop/files/snuuzu-mattress-for-tesla-model-3-rear-wide-angle.jpg?width=100&format=webp" alt="Snuuzu Model 3" class="product-thumb" loading="lazy" width="60" height="45">
+                                <img src="/images/tesmat-luxe-model-3-tesla-mattress.webp" alt="Snuuzu Model 3" class="product-thumb" loading="lazy" width="60" height="45">
                                 <strong>Snuuzu Model 3</strong>
                             </div>
                         </td>
@@ -664,7 +630,7 @@
                     <tr>
                         <td>
                             <div class="product-cell">
-                                <img src="https://teslamattress.com/images/tesmat-luxe-model-y-tesla-mattress.webp?width=100" alt="TESMAT Luxe Model Y" class="product-thumb" loading="lazy" width="60" height="45">
+                                <img src="/images/tesmat-luxe-model-y-tesla-mattress-thumb.webp" alt="TESMAT Luxe Model Y" class="product-thumb" loading="lazy" width="60" height="45">
                                 <strong>TESMAT Luxe Model Y</strong>
                             </div>
                         </td>
@@ -681,7 +647,7 @@
                     <tr>
                         <td>
                             <div class="product-cell">
-                                <img src="https://teslamattress.com/images/tesmat-luxe-model-3-tesla-mattress.webp?width=100" alt="TESMAT Luxe Model 3" class="product-thumb" loading="lazy" width="60" height="45">
+                                <img src="/images/tesmat-luxe-model-3-tesla-mattress-thumb.webp" alt="TESMAT Luxe Model 3" class="product-thumb" loading="lazy" width="60" height="45">
                                 <strong>TESMAT Luxe Model 3</strong>
                             </div>
                         </td>
@@ -715,7 +681,7 @@
                     <tr>
                         <td>
                             <div class="product-cell">
-                                <img src="https://teslamattress.com/images/havnby-foam-tesla-mattress.webp?width=100" alt="Havnby Foam" class="product-thumb" loading="lazy" width="60" height="45">
+                                <img src="/images/havnby-foam-tesla-mattress-thumb.webp" alt="Havnby Foam" class="product-thumb" loading="lazy" width="60" height="45">
                                 <strong>Havnby Foam Model Y/3</strong>
                             </div>
                         </td>
@@ -732,7 +698,7 @@
                     <tr>
                         <td>
                             <div class="product-cell">
-                                <img src="https://teslamattress.com/images/tesmat-solo-model-y-tesla-mattress.webp?width=100" alt="TESMAT Solo Model Y" class="product-thumb" loading="lazy" width="60" height="45">
+                                <img src="/images/tesmat-solo-model-y-tesla-mattress-thumb.webp" alt="TESMAT Solo Model Y" class="product-thumb" loading="lazy" width="60" height="45">
                                 <strong>TESMAT Solo Model Y</strong>
                             </div>
                         </td>
@@ -803,7 +769,7 @@
                 <!-- NovaPads -->
                 <div class="discount-card-new tesery-card">
                     <div class="discount-card-header">
-                        <img src="/images/novapads-logo.jpg" alt="NovaPads" class="discount-brand-logo" loading="lazy" width="200" height="60">
+                        <img src="/images/novapads-logo.webp" alt="NovaPads" class="discount-brand-logo" loading="lazy" width="200" height="60">
                         <span class="discount-badge-new budget">{{t.home.span_discount_badge_new_2}}</span>
                     </div>
                     <div class="discount-card-body">
@@ -858,7 +824,7 @@
             </div>
 
             <div class="all-codes-cta">
-                <a href="/{{localePath}}discounts/" class="btn-all-codes">{{t.home.btn_4}}</a>
+                <a href="/{{localePath}}discounts" class="btn-all-codes">{{t.home.btn_4}}</a>
             </div>
         </div>
     </section>
@@ -929,7 +895,7 @@
                 <div class="footer-column">
                     <h4>{{t.shared.footer_col_discounts}}</h4>
                     <ul>
-                        <li><a href="/{{localePath}}discounts/">{{t.shared.fl_all_discounts}}</a></li>
+                        <li><a href="/{{localePath}}discounts">{{t.shared.fl_all_discounts}}</a></li>
                         <li><a href="/{{localePath}}discounts/snuuzu">{{t.shared.fl_snuuzu_discount}}</a></li>
                         <li><a href="/{{localePath}}discounts/havnby">{{t.shared.fl_havnby_discount}}</a></li>
                         <li><a href="/{{localePath}}discounts/novapads">{{t.shared.fl_novapads_discount}}</a></li>
@@ -939,9 +905,10 @@
                 <div class="footer-column">
                     <h4>{{t.shared.footer_col_resources}}</h4>
                     <ul>
-                        <li><a href="#comparison">{{t.shared.fl_comparison}}</a></li>
-                        <li><a href="#discounts">{{t.shared.fl_exclusive_codes}}</a></li>
-                        <li><a href="#partners">{{t.shared.fl_partner_brands}}</a></li>
+                        <li><a href="/{{localePath}}reviews">{{t.shared.nav_reviews}}</a></li>
+                        <li><a href="/{{localePath}}guides">{{t.shared.nav_guides}}</a></li>
+            <li><a href="/{{localePath}}faq">FAQ</a></li>
+                        <li><a href="/{{localePath}}vs">{{t.shared.nav_compare}}</a></li>
                         <li><a href="/{{localePath}}about">{{t.shared.fl_about}}</a></li>
                     </ul>
                 </div>

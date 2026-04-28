@@ -340,6 +340,84 @@
     color: var(--forest-dark);
 }
 
+.discount-code-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: linear-gradient(135deg, #065f46, #047857);
+    padding: 0.4rem 0.9rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: white;
+    white-space: nowrap;
+}
+
+.discount-code-tag code {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+}
+
+.table-discount-code {
+    display: inline-block;
+    background: linear-gradient(135deg, #065f46, #047857);
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.table-discount-code code {
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.1rem 0.3rem;
+    border-radius: 3px;
+}
+
+.table-no-code {
+    color: var(--text-light);
+    font-size: 0.8rem;
+}
+
+.table-product-link {
+    color: var(--forest-dark);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.table-product-link:hover {
+    border-bottom-color: var(--copper);
+    color: var(--copper);
+}
+
+.table-buy-btn {
+    display: inline-block;
+    background: var(--copper);
+    color: white;
+    padding: 0.3rem 0.75rem;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.2s;
+}
+
+.table-buy-btn:hover {
+    background: #a06429;
+}
+
+.table-cta-cell {
+    text-align: center;
+}
+
 /* Quick Comparison Table */
 .guide-comparison-table {
     overflow-x: auto;

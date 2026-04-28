@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="{{htmlLang}}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2d4a3e">
+
+    <title>{{t.PAGEKEY.meta_title}}</title>
+    <meta name="description" content="{{t.PAGEKEY.meta_description}}">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <meta name="author" content="Fredrik Mastouri">
+    <link rel="canonical" href="{{canonicalUrl}}">
+    {{hreflangTags}}
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{pageUrl}}">
+    <meta property="og:title" content="{{t.PAGEKEY.og_title}}">
+    <meta property="og:description" content="{{t.PAGEKEY.og_description}}">
+    <meta property="og:image" content="https://teslamattress.com/images/og-image.jpg">
+    <meta property="og:site_name" content="Teslamattress">
+    <meta property="og:locale" content="{{ogLocale}}">
+    {{ogLocaleAlternates}}
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{t.PAGEKEY.og_title}}">
+    <meta name="twitter:description" content="{{t.PAGEKEY.og_description}}">
+    <meta name="twitter:image" content="https://teslamattress.com/images/og-image.jpg">
+
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap"></noscript>
+
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--forest:#2d4a3e;--forest-dark:#1a2e25;--cream:#f5f1e8;--warm-white:#faf9f6;--text:#3d3d3d;--copper:#b87333;--text-light:#6b6b6b}
+        body{font-family:'Source Sans 3',-apple-system,sans-serif;line-height:1.7;color:var(--text);background:var(--warm-white)}
+        .navbar{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 6%;background:var(--forest-dark)}
+        .logo{font-family:'Libre Baskerville',Georgia,serif;font-size:1.6rem;font-weight:700;color:var(--cream);text-decoration:none}
+        .nav-links{display:flex;list-style:none;gap:2rem}
+        .nav-links a{color:var(--cream);text-decoration:none;font-weight:500;font-size:.95rem}
+        .menu-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer}
+        .menu-toggle span{width:24px;height:2px;background:var(--cream)}
+        @media(max-width:768px){.menu-toggle{display:flex}.nav-links{display:none}}
+        .faq-hero{background:linear-gradient(135deg,var(--forest) 0%,var(--forest-dark) 100%);color:#fff;padding:4rem 6% 3rem}
+        .faq-hero h1{font-family:'Libre Baskerville',Georgia,serif;font-size:clamp(1.7rem,4vw,2.5rem);max-width:900px;margin:0 auto;line-height:1.25}
+        .breadcrumb{max-width:900px;margin:0 auto 1rem;font-size:.85rem;color:rgba(255,255,255,0.8)}
+        .breadcrumb a{color:rgba(255,255,255,0.85);text-decoration:none}
+        .faq-meta{max-width:900px;margin:1rem auto 0;font-size:.9rem;color:rgba(255,255,255,0.75)}
+        .faq-meta a{color:var(--cream)}
+        .faq-main{max-width:760px;margin:3rem auto;padding:0 6%}
+        .faq-tldr{background:var(--cream);border-left:4px solid var(--copper);padding:1.25rem 1.5rem;border-radius:8px;margin-bottom:2rem;font-size:1.1rem}
+        .faq-tldr strong{color:var(--forest-dark)}
+        .faq-main h2{font-family:'Libre Baskerville',Georgia,serif;font-size:1.5rem;color:var(--forest-dark);margin:2rem 0 1rem}
+        .faq-main p{margin-bottom:1.25rem}
+        .faq-related{background:#fff;border:1px solid #e5e0d3;border-radius:10px;padding:1.5rem 1.75rem;margin:2.5rem 0}
+        .faq-related h3{font-family:'Libre Baskerville',Georgia,serif;font-size:1.15rem;color:var(--forest-dark);margin-bottom:1rem}
+        .faq-related ul{list-style:none}
+        .faq-related li{margin-bottom:.5rem}
+        .faq-related a{color:var(--forest);text-decoration:underline;text-underline-offset:3px}
+        .faq-cta{background:var(--forest-dark);color:#fff;padding:1.75rem 1.5rem;border-radius:10px;margin-top:2.5rem;text-align:center}
+        .faq-cta a{display:inline-block;background:#c9a961;color:var(--forest-dark);padding:.85rem 1.75rem;border-radius:50px;text-decoration:none;font-weight:600;margin-top:.5rem}
+        footer{background:var(--forest-dark);color:rgba(255,255,255,0.7);padding:2rem 6%;font-size:.85rem;text-align:center;margin-top:3rem}
+        footer a{color:var(--cream)}
+    </style>
+
+    <link rel="stylesheet" href="/styles.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/styles.css"></noscript>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "QAPage",
+        "inLanguage": "{{htmlLang}}",
+        "mainEntity": {
+            "@type": "Question",
+            "name": "{{t.PAGEKEY.question}}",
+            "answerCount": 1,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{t.PAGEKEY.answer_short}}",
+                "author": {
+                    "@type": "Person",
+                    "name": "Fredrik Mastouri",
+                    "url": "https://teslamattress.com/about"
+                }
+            }
+        },
+        "datePublished": "{{buildDate}}",
+        "dateModified": "{{buildDate}}"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://teslamattress.com/{{localePath}}" },
+            { "@type": "ListItem", "position": 2, "name": "FAQ", "item": "https://teslamattress.com/{{localePath}}faq" },
+            { "@type": "ListItem", "position": 3, "name": "{{t.PAGEKEY.question}}", "item": "{{canonicalUrl}}" }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="{{localeHome}}" class="logo">Teslamattress</a>
+        <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        <ul class="nav-links">
+            <li><a href="/{{localePath}}reviews">{{t.shared.nav_reviews}}</a></li>
+            <li><a href="/{{localePath}}vs">{{t.shared.nav_compare}}</a></li>
+            <li><a href="/{{localePath}}guides">{{t.shared.nav_guides}}</a></li>
+            <li><a href="/{{localePath}}faq">FAQ</a></li>
+            <li><a href="/{{localePath}}discounts">{{t.shared.nav_discounts}}</a></li>
+            <li><a href="/{{localePath}}about">{{t.shared.nav_about}}</a></li>
+        </ul>
+        {{langSwitcher}}
+    </nav>
+
+    <header class="faq-hero">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/{{localePath}}">Home</a> &rsaquo;
+            <a href="/{{localePath}}faq">FAQ</a> &rsaquo;
+            <span>{{t.PAGEKEY.breadcrumb}}</span>
+        </nav>
+        <h1>{{t.PAGEKEY.h1}}</h1>
+        <div class="faq-meta">
+            By <a href="/{{localePath}}about">Fredrik Mastouri</a> &middot; Updated {{buildDate}}
+        </div>
+    </header>
+
+    <main class="faq-main">
+        <div class="faq-tldr"><strong>Short answer:</strong> {{t.PAGEKEY.answer_short}}</div>
+
+        {{t.PAGEKEY.body_html}}
+
+        <div class="faq-related">
+            <h3>Related guides &amp; reviews</h3>
+            <ul>
+                <li><a href="/{{localePath}}guides/best-tesla-mattresses">10 Best Tesla Camping Mattresses (2026)</a></li>
+                <li><a href="/{{localePath}}guides/getting-started-tesla-camping">Getting Started With Tesla Camping</a></li>
+                <li><a href="/{{localePath}}guides/tesla-mattress-buying-guide">Tesla Mattress Buying Guide</a></li>
+                <li><a href="/{{localePath}}reviews">All Tesla mattress reviews</a></li>
+            </ul>
+        </div>
+
+        <div class="faq-cta">
+            <p>Ready to upgrade your Tesla camping setup?</p>
+            <a href="/{{localePath}}guides/best-tesla-mattresses">See our top 10 picks &rarr;</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Teslamattress. <a href="/{{localePath}}disclosure">Affiliate disclosure</a> &middot; <a href="/{{localePath}}about">About</a> &middot; <a href="/{{localePath}}methodology">How we test</a></p>
+    </footer>
+</body>
+</html>

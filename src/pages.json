@@ -1,48 +1,327 @@
 [
-  { "template": "index.html", "pageKey": "home", "output": "index.html" },
-  { "template": "about.html", "pageKey": "about", "output": "about.html" },
-  { "template": "methodology.html", "pageKey": "methodology", "output": "methodology.html" },
-  { "template": "disclosure.html", "pageKey": "disclosure", "output": "disclosure.html" },
-
-  { "template": "reviews/index.html", "pageKey": "reviews_index", "output": "reviews/index.html" },
-  { "template": "reviews/snuuzu-model-y.html", "pageKey": "review_snuuzu_model_y", "output": "reviews/snuuzu-model-y.html" },
-  { "template": "reviews/snuuzu-model-3.html", "pageKey": "review_snuuzu_model_3", "output": "reviews/snuuzu-model-3.html" },
-  { "template": "reviews/havnby-autolevel.html", "pageKey": "review_havnby_autolevel", "output": "reviews/havnby-autolevel.html" },
-  { "template": "reviews/havnby-foam.html", "pageKey": "review_havnby_foam", "output": "reviews/havnby-foam.html" },
-  { "template": "reviews/havnby-solo.html", "pageKey": "review_havnby_solo", "output": "reviews/havnby-solo.html" },
-  { "template": "reviews/tesery-novapads.html", "pageKey": "review_tesery_novapads", "output": "reviews/tesery-novapads.html" },
-  { "template": "reviews/tesmat-luxe-y.html", "pageKey": "review_tesmat_luxe_y", "output": "reviews/tesmat-luxe-y.html" },
-  { "template": "reviews/tesmat-luxe-3.html", "pageKey": "review_tesmat_luxe_3", "output": "reviews/tesmat-luxe-3.html" },
-  { "template": "reviews/tesmat-solo-y.html", "pageKey": "review_tesmat_solo_y", "output": "reviews/tesmat-solo-y.html" },
-  { "template": "reviews/tesmat-solo-3.html", "pageKey": "review_tesmat_solo_3", "output": "reviews/tesmat-solo-3.html" },
-
-  { "template": "vs/index.html", "pageKey": "vs_index", "output": "vs/index.html" },
-  { "template": "vs/snuuzu-vs-tesmat.html", "pageKey": "vs_snuuzu_vs_tesmat", "output": "vs/snuuzu-vs-tesmat.html" },
-  { "template": "vs/snuuzu-vs-havnby.html", "pageKey": "vs_snuuzu_vs_havnby", "output": "vs/snuuzu-vs-havnby.html" },
-  { "template": "vs/snuuzu-vs-dreamcase.html", "pageKey": "vs_snuuzu_vs_dreamcase", "output": "vs/snuuzu-vs-dreamcase.html" },
-  { "template": "vs/tesmat-vs-havnby.html", "pageKey": "vs_tesmat_vs_havnby", "output": "vs/tesmat-vs-havnby.html" },
-  { "template": "vs/havnby-autolevel-vs-foam.html", "pageKey": "vs_havnby_autolevel_vs_foam", "output": "vs/havnby-autolevel-vs-foam.html" },
-  { "template": "vs/model-y-vs-model-3-mattresses.html", "pageKey": "vs_model_y_vs_model_3", "output": "vs/model-y-vs-model-3-mattresses.html" },
-
-  { "template": "discounts/index.html", "pageKey": "discounts_index", "output": "discounts/index.html" },
-  { "template": "discounts/snuuzu.html", "pageKey": "discount_snuuzu", "output": "discounts/snuuzu.html" },
-  { "template": "discounts/havnby.html", "pageKey": "discount_havnby", "output": "discounts/havnby.html" },
-  { "template": "discounts/hansshow.html", "pageKey": "discount_hansshow", "output": "discounts/hansshow.html" },
-  { "template": "discounts/shop4tesla.html", "pageKey": "discount_shop4tesla", "output": "discounts/shop4tesla.html" },
-  { "template": "discounts/yeslak.html", "pageKey": "discount_yeslak", "output": "discounts/yeslak.html" },
-  { "template": "discounts/jowua.html", "pageKey": "discount_jowua", "output": "discounts/jowua.html" },
-  { "template": "discounts/novapads.html", "pageKey": "discount_novapads", "output": "discounts/novapads.html" },
-  { "template": "discounts/tesery.html", "pageKey": "discount_tesery", "output": "discounts/tesery.html" },
-
-  { "template": "guides/index.html", "pageKey": "guides_index", "output": "guides/index.html" },
-  { "template": "guides/best-tesla-mattresses.html", "pageKey": "guide_best_mattresses", "output": "guides/best-tesla-mattresses.html" },
-  { "template": "guides/best-model-y-mattress.html", "pageKey": "guide_best_model_y", "output": "guides/best-model-y-mattress.html" },
-  { "template": "guides/best-model-3-mattress.html", "pageKey": "guide_best_model_3", "output": "guides/best-model-3-mattress.html" },
-  { "template": "guides/budget-tesla-mattress.html", "pageKey": "guide_budget", "output": "guides/budget-tesla-mattress.html" },
-  { "template": "guides/cybertruck-mattress.html", "pageKey": "guide_cybertruck", "output": "guides/cybertruck-mattress.html" },
-  { "template": "guides/model-x-mattress.html", "pageKey": "guide_model_x", "output": "guides/model-x-mattress.html" },
-  { "template": "guides/buying-guide.html", "pageKey": "guide_buying", "output": "guides/buying-guide.html" },
-  { "template": "guides/tesla-vs-generic-mattress.html", "pageKey": "guide_tesla_vs_generic", "output": "guides/tesla-vs-generic-mattress.html" },
-  { "template": "guides/getting-started-tesla-camping.html", "pageKey": "guide_getting_started", "output": "guides/getting-started-tesla-camping.html" },
-  { "template": "guides/tesla-camping-with-dogs.html", "pageKey": "guide_dogs", "output": "guides/tesla-camping-with-dogs.html" }
+  {
+    "template": "index.html",
+    "pageKey": "home",
+    "output": "index.html"
+  },
+  {
+    "template": "about.html",
+    "pageKey": "about",
+    "output": "about.html"
+  },
+  {
+    "template": "methodology.html",
+    "pageKey": "methodology",
+    "output": "methodology.html"
+  },
+  {
+    "template": "disclosure.html",
+    "pageKey": "disclosure",
+    "output": "disclosure.html"
+  },
+  {
+    "template": "reviews/index.html",
+    "pageKey": "reviews_index",
+    "output": "reviews/index.html"
+  },
+  {
+    "template": "reviews/_seoqs_review.html",
+    "pageKey": "review_snuuzu_model_y",
+    "output": "reviews/snuuzu-model-y.html"
+  },
+  {
+    "template": "reviews/_seoqs_review.html",
+    "pageKey": "review_snuuzu_model_3",
+    "output": "reviews/snuuzu-model-3.html"
+  },
+  {
+    "template": "reviews/_seoqs_review.html",
+    "pageKey": "review_havnby_autolevel",
+    "output": "reviews/havnby-autolevel.html"
+  },
+  {
+    "template": "reviews/_seoqs_review.html",
+    "pageKey": "review_havnby_foam",
+    "output": "reviews/havnby-foam.html"
+  },
+  {
+    "template": "reviews/_seoqs_review.html",
+    "pageKey": "review_havnby_solo",
+    "output": "reviews/havnby-solo.html"
+  },
+  {
+    "template": "reviews/_seoqs_review.html",
+    "pageKey": "review_tesery_novapads",
+    "output": "reviews/tesery-novapads.html"
+  },
+  {
+    "template": "reviews/_seoqs_review.html",
+    "pageKey": "review_tesmat_luxe_y",
+    "output": "reviews/tesmat-luxe-y.html"
+  },
+  {
+    "template": "reviews/_seoqs_review.html",
+    "pageKey": "review_tesmat_luxe_3",
+    "output": "reviews/tesmat-luxe-3.html"
+  },
+  {
+    "template": "reviews/_seoqs_review.html",
+    "pageKey": "review_tesmat_solo_y",
+    "output": "reviews/tesmat-solo-y.html"
+  },
+  {
+    "template": "reviews/_seoqs_review.html",
+    "pageKey": "review_tesmat_solo_3",
+    "output": "reviews/tesmat-solo-3.html"
+  },
+  {
+    "template": "vs/index.html",
+    "pageKey": "vs_index",
+    "output": "vs/index.html"
+  },
+  {
+    "template": "vs/snuuzu-vs-tesmat.html",
+    "pageKey": "vs_snuuzu_vs_tesmat",
+    "output": "vs/snuuzu-vs-tesmat.html"
+  },
+  {
+    "template": "vs/snuuzu-vs-havnby.html",
+    "pageKey": "vs_snuuzu_vs_havnby",
+    "output": "vs/snuuzu-vs-havnby.html"
+  },
+  {
+    "template": "vs/snuuzu-vs-dreamcase.html",
+    "pageKey": "vs_snuuzu_vs_dreamcase",
+    "output": "vs/snuuzu-vs-dreamcase.html"
+  },
+  {
+    "template": "vs/tesmat-vs-havnby.html",
+    "pageKey": "vs_tesmat_vs_havnby",
+    "output": "vs/tesmat-vs-havnby.html"
+  },
+  {
+    "template": "vs/havnby-autolevel-vs-foam.html",
+    "pageKey": "vs_havnby_autolevel_vs_foam",
+    "output": "vs/havnby-autolevel-vs-foam.html"
+  },
+  {
+    "template": "vs/model-y-vs-model-3-mattresses.html",
+    "pageKey": "vs_model_y_vs_model_3",
+    "output": "vs/model-y-vs-model-3-mattresses.html"
+  },
+  {
+    "template": "discounts/index.html",
+    "pageKey": "discounts_index",
+    "output": "discounts/index.html"
+  },
+  {
+    "template": "discounts/_seoqs_discount.html",
+    "pageKey": "discount_snuuzu",
+    "output": "discounts/snuuzu.html"
+  },
+  {
+    "template": "discounts/_seoqs_discount.html",
+    "pageKey": "discount_havnby",
+    "output": "discounts/havnby.html"
+  },
+  {
+    "template": "discounts/_seoqs_discount.html",
+    "pageKey": "discount_hansshow",
+    "output": "discounts/hansshow.html"
+  },
+  {
+    "template": "discounts/_seoqs_discount.html",
+    "pageKey": "discount_shop4tesla",
+    "output": "discounts/shop4tesla.html"
+  },
+  {
+    "template": "discounts/_seoqs_discount.html",
+    "pageKey": "discount_yeslak",
+    "output": "discounts/yeslak.html"
+  },
+  {
+    "template": "discounts/_seoqs_discount.html",
+    "pageKey": "discount_jowua",
+    "output": "discounts/jowua.html"
+  },
+  {
+    "template": "discounts/_seoqs_discount.html",
+    "pageKey": "discount_novapads",
+    "output": "discounts/novapads.html"
+  },
+  {
+    "template": "discounts/_seoqs_discount.html",
+    "pageKey": "discount_tesery",
+    "output": "discounts/tesery.html"
+  },
+  {
+    "template": "guides/index.html",
+    "pageKey": "guides_index",
+    "output": "guides/index.html"
+  },
+  {
+    "template": "guides/best-tesla-mattresses.html",
+    "pageKey": "guide_best_mattresses",
+    "output": "guides/best-tesla-mattresses.html"
+  },
+  {
+    "template": "guides/best-model-y-mattress.html",
+    "pageKey": "guide_best_model_y",
+    "output": "guides/best-model-y-mattress.html"
+  },
+  {
+    "template": "guides/best-model-3-mattress.html",
+    "pageKey": "guide_best_model_3",
+    "output": "guides/best-model-3-mattress.html"
+  },
+  {
+    "template": "guides/budget-tesla-mattress.html",
+    "pageKey": "guide_budget",
+    "output": "guides/budget-tesla-mattress.html"
+  },
+  {
+    "template": "guides/cybertruck-mattress.html",
+    "pageKey": "guide_cybertruck",
+    "output": "guides/cybertruck-mattress.html"
+  },
+  {
+    "template": "guides/model-x-mattress.html",
+    "pageKey": "guide_model_x",
+    "output": "guides/model-x-mattress.html"
+  },
+  {
+    "template": "guides/tesla-mattress-buying-guide.html",
+    "pageKey": "guide_buying",
+    "output": "guides/tesla-mattress-buying-guide.html"
+  },
+  {
+    "template": "guides/tesla-vs-generic-mattress.html",
+    "pageKey": "guide_tesla_vs_generic",
+    "output": "guides/tesla-vs-generic-mattress.html"
+  },
+  {
+    "template": "guides/getting-started-tesla-camping.html",
+    "pageKey": "guide_getting_started",
+    "output": "guides/getting-started-tesla-camping.html"
+  },
+  {
+    "template": "guides/tesla-camping-with-dogs.html",
+    "pageKey": "guide_dogs",
+    "output": "guides/tesla-camping-with-dogs.html"
+  },
+  {
+    "template": "faq/index.html",
+    "pageKey": "faq_index",
+    "output": "faq/index.html"
+  },
+  {
+    "template": "faq/_paa.html",
+    "pageKey": "paa_sleep_in_tesla_overnight",
+    "output": "faq/can-you-sleep-in-a-tesla-overnight.html"
+  },
+  {
+    "template": "faq/_paa.html",
+    "pageKey": "paa_tesla_camp_mode_safe",
+    "output": "faq/is-tesla-camp-mode-safe.html"
+  },
+  {
+    "template": "faq/_paa.html",
+    "pageKey": "paa_battery_camping",
+    "output": "faq/how-much-battery-does-tesla-camping-use.html"
+  },
+  {
+    "template": "faq/_paa.html",
+    "pageKey": "paa_need_mattress",
+    "output": "faq/do-you-need-a-mattress-for-tesla-camping.html"
+  },
+  {
+    "template": "faq/_paa.html",
+    "pageKey": "paa_winter_camping",
+    "output": "faq/can-you-camp-in-a-tesla-in-winter.html"
+  },
+  {
+    "template": "faq/_paa.html",
+    "pageKey": "paa_what_size_mattress_y",
+    "output": "faq/what-size-mattress-fits-a-tesla-model-y.html"
+  },
+  {
+    "template": "faq/_paa.html",
+    "pageKey": "paa_camping_legal",
+    "output": "faq/is-camping-in-a-tesla-legal.html"
+  },
+  {
+    "template": "faq/_paa.html",
+    "pageKey": "paa_couples_camping",
+    "output": "faq/can-two-people-sleep-in-a-tesla-model-y.html"
+  },
+  {
+    "template": "faq/_paa.html",
+    "pageKey": "paa_kid_friendly",
+    "output": "faq/is-tesla-camping-good-for-families-with-kids.html"
+  },
+  {
+    "template": "faq/_paa.html",
+    "pageKey": "paa_pump_required",
+    "output": "faq/do-tesla-camping-mattresses-need-a-pump.html"
+  },
+  {
+    "template": "faq/_paa.html",
+    "pageKey": "ck_couples_mattress",
+    "output": "guides/best-tesla-mattress-for-couples.html"
+  },
+  {
+    "template": "faq/_paa.html",
+    "pageKey": "ck_tall_mattress",
+    "output": "guides/best-tesla-mattress-for-tall-people.html"
+  },
+  {
+    "template": "faq/_paa.html",
+    "pageKey": "ck_winter_mattress",
+    "output": "guides/best-tesla-mattress-for-cold-weather.html"
+  },
+  {
+    "template": "faq/_paa.html",
+    "pageKey": "ck_side_sleepers",
+    "output": "guides/best-tesla-mattress-for-side-sleepers.html"
+  },
+  {
+    "template": "faq/_paa.html",
+    "pageKey": "ck_with_pump",
+    "output": "guides/best-tesla-mattress-with-built-in-pump.html"
+  },
+  {
+    "template": "faq/_paa.html",
+    "pageKey": "ck_quietest",
+    "output": "guides/quietest-tesla-mattress.html"
+  },
+  {
+    "template": "faq/_paa.html",
+    "pageKey": "ck_lightest",
+    "output": "guides/lightest-tesla-mattress.html"
+  },
+  {
+    "template": "faq/_paa.html",
+    "pageKey": "ck_under_300",
+    "output": "guides/best-tesla-mattress-under-300.html"
+  },
+  {
+    "template": "faq/_paa.html",
+    "pageKey": "vs_tesmat_vs_novapads",
+    "output": "vs/tesmat-vs-novapads.html"
+  },
+  {
+    "template": "faq/_paa.html",
+    "pageKey": "vs_havnby_vs_novapads",
+    "output": "vs/havnby-vs-novapads.html"
+  },
+  {
+    "template": "faq/_paa.html",
+    "pageKey": "vs_tesla_vs_air_mattress",
+    "output": "vs/tesla-mattress-vs-air-mattress.html"
+  },
+  {
+    "template": "faq/_paa.html",
+    "pageKey": "vs_tesla_vs_sleeping_bag",
+    "output": "vs/tesla-mattress-vs-sleeping-bag.html"
+  }
 ]

@@ -2,15 +2,18 @@
 <html lang="{{htmlLang}}">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2d4a3e">
 
     <!-- Primary Meta Tags -->
     <title>{{t.review_tesmat_solo_3.meta_title}}</title>
     <meta name="title" content="{{t.review_tesmat_solo_3.meta_name_title}}">
-    <meta name="description" content="{{t.review_tesmat_solo_3.meta_description}}">
-    <meta name="keywords" content="{{t.review_tesmat_solo_3.meta_keywords}}">
-    <meta name="robots" content="index, follow">
+    <meta name="description" content="{{t.review_tesmat_solo_3.meta_description}}">    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="author" content="Fredrik Mastouri">
     <link rel="canonical" href="{{canonicalUrl}}">
     {{hreflangTags}}
 
@@ -24,8 +27,7 @@
     <meta property="og:locale" content="{{ogLocale}}">
     {{ogLocaleAlternates}}
     <meta property="article:published_time" content="2024-08-01">
-    <meta property="article:modified_time" content="2026-01-24">
-
+    <meta property="article:modified_time" content="2026-02-19">
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{t.review_tesmat_solo_3.twitter_title}}">
@@ -35,9 +37,11 @@
     <!-- Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
     <link rel="dns-prefetch" href="https://havnby.com">
     <link rel="dns-prefetch" href="https://us.snuuzu.com">
     <link rel="dns-prefetch" href="https://www.snuuzu.com">
+    <link rel="preload" as="image" href="https://cdn.shopify.com/s/files/1/0096/2546/8991/files/explainer_solo_tesmat.png?width=1200&format=webp" fetchpriority="high">
 
     <!-- Google Fonts (non-blocking) -->
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap">
@@ -57,9 +61,10 @@
     </style>
 
     <!-- Stylesheet (deferred) -->
-    <link rel="stylesheet" href="/styles.css">
-    
-    <link rel="stylesheet" href="/reviews/review-page.css">
+    <link rel="stylesheet" href="/styles.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/styles.css"></noscript>
+    <link rel="stylesheet" href="/reviews/review-page.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/reviews/review-page.css"></noscript>
     
 
     <!-- JSON-LD Structured Data -->
@@ -67,6 +72,7 @@
     {
         "@context": "https://schema.org",
         "@type": "Product",
+        "inLanguage": "{{htmlLang}}",
         "name": "{{t.review_tesmat_solo_3.jsonld_1_name_2}}",
         "description": "{{t.review_tesmat_solo_3.jsonld_1_description_1}}",
         "image": [
@@ -106,7 +112,7 @@
                         "url": "https://teslamattress.com/about"
                 },
                 "datePublished": "2024-08-01",
-                "dateModified": "2026-01-24",
+                "dateModified": "{{buildDate}}",
                 "reviewBody": "{{t.review_tesmat_solo_3.jsonld_1_reviewBody_3}}"
         }
 }
@@ -119,13 +125,13 @@
                 {
                         "@type": "ListItem",
                         "position": 1,
-                        "name": "Home",
+                        "name": "{{t.shared.bc_home}}",
                         "item": "https://teslamattress.com/{{localePath}}"
                 },
                 {
                         "@type": "ListItem",
                         "position": 2,
-                        "name": "Reviews",
+                        "name": "{{t.shared.bc_reviews}}",
                         "item": "https://teslamattress.com/{{localePath}}reviews"
                 },
                 {
@@ -142,84 +148,87 @@
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-                {
-                        "@type": "Question",
-                        "name": "{{t.review_tesmat_solo_3.jsonld_3_name_1}}",
-                        "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": "{{t.review_tesmat_solo_3.jsonld_3_text_2}}"
-                        }
-                },
-                {
-                        "@type": "Question",
-                        "name": "{{t.review_tesmat_solo_3.jsonld_3_name_3}}",
-                        "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": "{{t.review_tesmat_solo_3.jsonld_3_text_4}}"
-                        }
-                },
-                {
-                        "@type": "Question",
-                        "name": "{{t.review_tesmat_solo_3.jsonld_3_name_5}}",
-                        "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": "{{t.review_tesmat_solo_3.jsonld_3_text_6}}"
-                        }
-                },
-                {
-                        "@type": "Question",
-                        "name": "{{t.review_tesmat_solo_3.jsonld_3_name_7}}",
-                        "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": "{{t.review_tesmat_solo_3.jsonld_3_text_8}}"
-                        }
-                },
-                {
-                        "@type": "Question",
-                        "name": "{{t.review_tesmat_solo_3.jsonld_3_name_9}}",
-                        "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": "{{t.review_tesmat_solo_3.jsonld_3_text_10}}"
-                        }
-                },
-                {
-                        "@type": "Question",
-                        "name": "{{t.review_tesmat_solo_3.jsonld_3_name_11}}",
-                        "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": "{{t.review_tesmat_solo_3.jsonld_3_text_12}}"
-                        }
-                },
-                {
-                        "@type": "Question",
-                        "name": "{{t.review_tesmat_solo_3.jsonld_3_name_13}}",
-                        "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": "{{t.review_tesmat_solo_3.jsonld_3_text_14}}"
-                        }
-                },
-                {
-                        "@type": "Question",
-                        "name": "{{t.review_tesmat_solo_3.jsonld_3_name_15}}",
-                        "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": "{{t.review_tesmat_solo_3.jsonld_3_text_16}}"
-                        }
-                }
+        {
+            "@type": "Question",
+            "name": "{{t.review_tesmat_solo_3.h3_5}}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{t.review_tesmat_solo_3.p_18}}"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "{{t.review_tesmat_solo_3.h3_6}}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{t.review_tesmat_solo_3.p_19}}"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "{{t.review_tesmat_solo_3.h3_7}}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{t.review_tesmat_solo_3.p_20}}"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "{{t.review_tesmat_solo_3.h3_8}}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{t.review_tesmat_solo_3.p_21}}"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "{{t.review_tesmat_solo_3.h3_9}}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{t.review_tesmat_solo_3.p_22}}"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "{{t.review_tesmat_solo_3.h3_10}}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{t.review_tesmat_solo_3.p_23}}"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "{{t.review_tesmat_solo_3.h3_11}}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{t.review_tesmat_solo_3.p_24}}"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "{{t.review_tesmat_solo_3.h3_12}}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{t.review_tesmat_solo_3.p_25}}"
+            }
+        }
         ]
-}
+    }
     </script>
 </head>
 <body>
     <nav class="navbar review-nav">
-        <a href="/{{localePath}}" class="logo">Teslamattress</a>
+        <a href="{{localeHome}}" class="logo">Teslamattress</a>
         <button class="menu-toggle" aria-label="Toggle menu">
             <span></span><span></span><span></span>
         </button>
         <ul class="nav-links">
-            <li><a href="/{{localePath}}#comparison">{{t.shared.nav_comparison}}</a></li>
-            <li><a href="/{{localePath}}vs/">{{t.shared.nav_compare}}</a></li>
-            <li><a href="/{{localePath}}#comparison">{{t.shared.nav_all_reviews}}</a></li>
+            <li><a href="/{{localePath}}reviews">{{t.shared.nav_reviews}}</a></li>
+            <li><a href="/{{localePath}}vs">{{t.shared.nav_compare}}</a></li>
+            <li><a href="/{{localePath}}guides">{{t.shared.nav_guides}}</a></li>
+            <li><a href="/{{localePath}}faq">FAQ</a></li>
+            <li><a href="/{{localePath}}discounts">{{t.shared.nav_discounts}}</a></li>
+            <li><a href="/{{localePath}}about">{{t.shared.nav_about}}</a></li>
         </ul>
         {{langSwitcher}}
     </nav>
@@ -228,7 +237,7 @@
     <main class="review-page">
         <div class="review-hero">
             <div class="breadcrumb">
-                <a href="/{{localePath}}">Home</a> / <a href="/{{localePath}}#comparison">Reviews</a> / TESMAT Solo Model 3
+                <a href="/{{localePath}}">Home</a> / <a href="/{{localePath}}reviews">Reviews</a> / TESMAT Solo Model 3
             </div>
             <div class="review-hero-content">
                 <span class="review-badge">{{t.review_tesmat_solo_3.span_review_badge}}</span>
@@ -403,6 +412,7 @@
                         </div>
                     </div>
                     <p class="score-explanation">{{t.review_tesmat_solo_3.p_4}}</p>
+                    <p class="score-methodology"><a href="/{{localePath}}methodology">{{t.shared.nav_methodology}}</a> — {{t.shared.methodology_tagline}}</p>
                 </div>
 
                 <!-- Detailed Technical Specifications -->
@@ -617,7 +627,7 @@
                                 <tr>
                                     <td>Our Rating</td>
                                     <td>7.4/10</td>
-                                    <td>8.0/10</td>
+                                    <td>8.4/10</td>
                                     <td>9.3/10</td>
                                 </tr>
                             </tbody>
@@ -792,6 +802,13 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-logo">Teslamattress</div>
+            <nav class="footer-hub-links" aria-label="Site sections">
+                <a href="/{{localePath}}reviews">{{t.shared.nav_reviews}}</a>
+                <a href="/{{localePath}}vs">{{t.shared.nav_compare}}</a>
+                <a href="/{{localePath}}guides">{{t.shared.nav_guides}}</a>
+                <a href="/{{localePath}}discounts">{{t.shared.nav_discounts}}</a>
+                <a href="/{{localePath}}about">{{t.shared.nav_about}}</a>
+            </nav>
             <div class="footer-text">
                 <p>&copy; 2026 Teslamattress. {{t.shared.footer_rights}} <a href="/{{localePath}}methodology" style="color: rgba(255,255,255,0.7);">{{t.shared.nav_methodology}}</a> | <a href="/{{localePath}}disclosure" style="color: rgba(255,255,255,0.7);">{{t.shared.fl_disclosure}}</a></p>
                 <p class="disclaimer">{{t.shared.footer_disclaimer}}</p>

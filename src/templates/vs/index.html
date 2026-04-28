@@ -2,15 +2,18 @@
 <html lang="{{htmlLang}}">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2d4a3e">
 
     <!-- Primary Meta Tags -->
     <title>{{t.vs_index.meta_title}}</title>
     <meta name="title" content="{{t.vs_index.meta_name_title}}">
-    <meta name="description" content="{{t.vs_index.meta_description}}">
-    <meta name="keywords" content="{{t.vs_index.meta_keywords}}">
-    <meta name="robots" content="index, follow">
+    <meta name="description" content="{{t.vs_index.meta_description}}">    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="author" content="Fredrik Mastouri">
     <link rel="canonical" href="{{canonicalUrl}}">
     {{hreflangTags}}
 
@@ -30,6 +33,7 @@
     <!-- Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
 
     <!-- Google Fonts -->
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap">
@@ -49,17 +53,20 @@
         @media(max-width:768px){.menu-toggle{display:flex}.nav-links{display:none}}
     </style>
 
-    <link rel="stylesheet" href="/styles.css">
-    <link rel="stylesheet" href="/vs/vs.css">
+    <link rel="stylesheet" href="/styles.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/styles.css"></noscript>
+    <link rel="stylesheet" href="/vs/vs.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/vs/vs.css"></noscript>
 
     <!-- JSON-LD -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
+        "inLanguage": "{{htmlLang}}",
         "name": "{{t.vs_index.jsonld_1_name_2}}",
         "description": "{{t.vs_index.jsonld_1_description_1}}",
-        "url": "https://teslamattress.com/vs",
+        "url": "https://teslamattress.com/{{localePath}}vs",
         "mainEntity": {
                 "@type": "ItemList",
                 "name": "{{t.vs_index.jsonld_1_name_3}}",
@@ -68,41 +75,63 @@
                                 "@type": "ListItem",
                                 "position": 1,
                                 "name": "{{t.vs_index.jsonld_1_name_4}}",
-                                "url": "https://teslamattress.com/vs/snuuzu-vs-tesmat"
+                                "url": "https://teslamattress.com/{{localePath}}vs/snuuzu-vs-tesmat"
                         },
                         {
                                 "@type": "ListItem",
                                 "position": 2,
                                 "name": "{{t.vs_index.jsonld_1_name_5}}",
-                                "url": "https://teslamattress.com/vs/snuuzu-vs-havnby"
+                                "url": "https://teslamattress.com/{{localePath}}vs/snuuzu-vs-havnby"
                         },
                         {
                                 "@type": "ListItem",
                                 "position": 3,
                                 "name": "{{t.vs_index.jsonld_1_name_6}}",
-                                "url": "https://teslamattress.com/vs/tesmat-vs-havnby"
+                                "url": "https://teslamattress.com/{{localePath}}vs/tesmat-vs-havnby"
                         },
                         {
                                 "@type": "ListItem",
                                 "position": 4,
                                 "name": "{{t.vs_index.jsonld_1_name_7}}",
-                                "url": "https://teslamattress.com/vs/havnby-autolevel-vs-foam"
+                                "url": "https://teslamattress.com/{{localePath}}vs/havnby-autolevel-vs-foam"
                         }
                 ]
         }
 }
     </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+                {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "{{t.shared.bc_home}}",
+                        "item": "https://teslamattress.com/{{localePath}}"
+                },
+                {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "{{t.shared.nav_compare}}",
+                        "item": "https://teslamattress.com/{{localePath}}vs"
+                }
+        ]
+    }
+    </script>
 </head>
 <body>
     <nav class="navbar">
-        <a href="/{{localePath}}" class="logo">Teslamattress</a>
+        <a href="{{localeHome}}" class="logo">Teslamattress</a>
         <button class="menu-toggle" aria-label="Toggle menu">
             <span></span><span></span><span></span>
         </button>
         <ul class="nav-links">
-            <li><a href="/{{localePath}}#comparison">{{t.shared.nav_comparison}}</a></li>
-            <li><a href="/{{localePath}}vs/">{{t.shared.nav_compare}}</a></li>
-            <li><a href="/{{localePath}}discounts/">{{t.shared.nav_discounts}}</a></li>
+            <li><a href="/{{localePath}}reviews">{{t.shared.nav_reviews}}</a></li>
+            <li><a href="/{{localePath}}vs">{{t.shared.nav_compare}}</a></li>
+            <li><a href="/{{localePath}}guides">{{t.shared.nav_guides}}</a></li>
+            <li><a href="/{{localePath}}faq">FAQ</a></li>
+            <li><a href="/{{localePath}}discounts">{{t.shared.nav_discounts}}</a></li>
             <li><a href="/{{localePath}}about">{{t.shared.nav_about}}</a></li>
         </ul>
         {{langSwitcher}}
@@ -118,6 +147,7 @@
         <header class="vs-hub-hero">
             <h1>{{t.vs_index.h1}}</h1>
             <p>{{t.vs_index.p}}</p>
+            <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 0.5rem;">By <a href="/{{localePath}}about" style="color: var(--copper);">Fredrik Mastouri</a> · Tesla camping gear reviewer</p>
         </header>
 
         <section class="vs-cards-grid">
@@ -125,7 +155,7 @@
                 <div class="vs-card-badge">Most Popular</div>
                 <div class="vs-card-matchup">
                     <div class="vs-brand">
-                        <img src="https://www.snuuzu.com/cdn/shop/files/BAG_LOGO_Black.png?width=150&format=webp" alt="Snuuzu" loading="lazy">
+                        <img src="https://www.snuuzu.com/cdn/shop/files/BAG_LOGO_Black.png?width=150&format=webp" alt="Snuuzu" loading="lazy" width="120" height="40">
                         <span class="vs-score">9.4</span>
                     </div>
                     <span class="vs-divider">VS</span>
@@ -145,12 +175,12 @@
             <a href="/{{localePath}}vs/snuuzu-vs-havnby" class="vs-card">
                 <div class="vs-card-matchup">
                     <div class="vs-brand">
-                        <img src="https://www.snuuzu.com/cdn/shop/files/BAG_LOGO_Black.png?width=150&format=webp" alt="Snuuzu" loading="lazy">
+                        <img src="https://www.snuuzu.com/cdn/shop/files/BAG_LOGO_Black.png?width=150&format=webp" alt="Snuuzu" loading="lazy" width="120" height="40">
                         <span class="vs-score">9.4</span>
                     </div>
                     <span class="vs-divider">VS</span>
                     <div class="vs-brand">
-                        <img src="https://havnby.com/cdn/shop/files/Havnby-logo.png?width=150&format=webp" alt="Havnby" loading="lazy">
+                        <img src="https://havnby.com/cdn/shop/files/Havnby-logo.png?width=150&format=webp" alt="Havnby" loading="lazy" width="120" height="40">
                         <span class="vs-score">8.6</span>
                     </div>
                 </div>
@@ -170,7 +200,7 @@
                     </div>
                     <span class="vs-divider">VS</span>
                     <div class="vs-brand">
-                        <img src="https://havnby.com/cdn/shop/files/Havnby-logo.png?width=150&format=webp" alt="Havnby" loading="lazy">
+                        <img src="https://havnby.com/cdn/shop/files/Havnby-logo.png?width=150&format=webp" alt="Havnby" loading="lazy" width="120" height="40">
                         <span class="vs-score">8.6</span>
                     </div>
                 </div>
@@ -205,7 +235,7 @@
             <a href="/{{localePath}}vs/snuuzu-vs-dreamcase" class="vs-card">
                 <div class="vs-card-matchup">
                     <div class="vs-brand">
-                        <img src="https://www.snuuzu.com/cdn/shop/files/BAG_LOGO_Black.png?width=150&format=webp" alt="Snuuzu" loading="lazy">
+                        <img src="https://www.snuuzu.com/cdn/shop/files/BAG_LOGO_Black.png?width=150&format=webp" alt="Snuuzu" loading="lazy" width="120" height="40">
                         <span class="vs-score">9.4</span>
                     </div>
                     <span class="vs-divider">VS</span>
@@ -281,6 +311,13 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-logo">Teslamattress</div>
+            <nav class="footer-hub-links" aria-label="Site sections">
+                <a href="/{{localePath}}reviews">{{t.shared.nav_reviews}}</a>
+                <a href="/{{localePath}}vs">{{t.shared.nav_compare}}</a>
+                <a href="/{{localePath}}guides">{{t.shared.nav_guides}}</a>
+                <a href="/{{localePath}}discounts">{{t.shared.nav_discounts}}</a>
+                <a href="/{{localePath}}about">{{t.shared.nav_about}}</a>
+            </nav>
             <div class="footer-text">
                 <p>&copy; 2026 Teslamattress. <a href="/{{localePath}}methodology" style="color: rgba(255,255,255,0.7);">{{t.shared.nav_methodology}}</a> | <a href="/{{localePath}}disclosure" style="color: rgba(255,255,255,0.7);">{{t.shared.fl_disclosure}}</a></p>
             </div>
@@ -304,5 +341,6 @@
             });
         }
     </script>
+    <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

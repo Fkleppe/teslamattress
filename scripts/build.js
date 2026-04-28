@@ -11,6 +11,7 @@ const LOCALE_DIR = path.join(ROOT, 'src', 'locales');
 const DIST_DIR = path.join(ROOT, 'dist');
 const PAGES = JSON.parse(fs.readFileSync(path.join(ROOT, 'src', 'pages.json'), 'utf8'));
 const BASE_URL = 'https://teslamattress.com';
+const BUILD_DATE = new Date().toISOString().slice(0, 10);
 
 // Parse CLI args
 const args = process.argv.slice(2);
@@ -75,7 +76,7 @@ function generateLangSwitcher(pagePath, currentLocale) {
   const cfg = LOCALE_CONFIG[currentLocale];
   const links = ALL_LOCALES.map(loc => {
     const lCfg = LOCALE_CONFIG[loc];
-    const url = `/${lCfg.locale_path}${pagePath}`;
+    const url = `/${lCfg.locale_path}${pagePath}`.replace(/\/$/, '') || '/';
     const active = loc === currentLocale ? ' class="lang-active"' : '';
     return `<li><a href="${url}"${active}>${lCfg.flag} ${lCfg.name}</a></li>`;
   }).join('\n            ');
@@ -89,20 +90,21 @@ function generateLangSwitcher(pagePath, currentLocale) {
 }
 
 // Replace all {{t.section.key}} placeholders
-function replaceTranslations(html, localeData, pageKey) {
+function replaceTranslations(html, localeData, pageKey, fallbackData) {
   return html.replace(/\{\{t\.([a-zA-Z0-9_]+)\.([a-zA-Z0-9_&+'"(). -]+)\}\}/g, (match, section, key) => {
-    // Look up in locale data
     if (localeData[section] && localeData[section][key] !== undefined) {
       return localeData[section][key];
     }
-    // Fallback: leave placeholder (verify.js will catch this)
+    if (fallbackData && fallbackData[section] && fallbackData[section][key] !== undefined) {
+      return fallbackData[section][key];
+    }
     console.warn(`    Missing: ${section}.${key}`);
     return match;
   });
 }
 
 // Build a single page for a single locale
-function buildPage(page, locale, localeData) {
+function buildPage(page, locale, localeData, fallbackData) {
   const templatePath = path.join(TEMPLATE_DIR, page.template);
   if (!fs.existsSync(templatePath)) {
     console.warn(`  Template not found: ${page.template}`);
@@ -114,9 +116,12 @@ function buildPage(page, locale, localeData) {
   const pagePath = page.output.replace(/index\.html$/, '').replace(/\.html$/, '').replace(/\/$/, '');
 
   // 1. Structural placeholders
+  html = html.replace(/\{\{buildDate\}\}/g, BUILD_DATE);
   html = html.replace(/\{\{htmlLang\}\}/g, cfg.html_lang);
   html = html.replace(/\{\{ogLocale\}\}/g, cfg.og_locale);
   html = html.replace(/\{\{localePath\}\}/g, cfg.locale_path);
+  const localeHome = cfg.locale_path ? `/${cfg.locale_path.replace(/\/$/, '')}` : '/';
+  html = html.replace(/\{\{localeHome\}\}/g, localeHome);
   // Build full URL and strip trailing slash (except for root /)
   const fullPath = `${cfg.locale_path}${pagePath}`.replace(/\/$/, '');
   const fullUrl = fullPath ? `${BASE_URL}/${fullPath}` : `${BASE_URL}/`;
@@ -126,8 +131,11 @@ function buildPage(page, locale, localeData) {
   html = html.replace(/\{\{ogLocaleAlternates\}\}/g, generateOgLocaleAlternates(locale));
   html = html.replace(/\{\{langSwitcher\}\}/g, generateLangSwitcher(pagePath, locale));
 
+  // Allow shared templates to use t.PAGEKEY.* — substitute literal token before translation pass
+  html = html.replace(/\bt\.PAGEKEY\./g, `t.${page.pageKey}.`);
+
   // 2. Translation placeholders
-  html = replaceTranslations(html, localeData, page.pageKey);
+  html = replaceTranslations(html, localeData, page.pageKey, fallbackData);
 
   // 3. Write output
   const outputPath = path.join(DIST_DIR, cfg.locale_path, page.output);
@@ -200,7 +208,11 @@ function copyStaticFiles() {
     'styles.css',
     'robots.txt',
     'favicon.svg',
+    'favicon.ico',
     'apple-touch-icon.png',
+    'icon-192.png',
+    'icon-512.png',
+    'site.webmanifest',
     'reviews/review-page.css',
     'vs/vs.css',
     'discounts/discounts.css',
@@ -213,7 +225,19 @@ function copyStaticFiles() {
     const dest = path.join(DIST_DIR, file);
     if (fs.existsSync(src)) {
       fs.mkdirSync(path.dirname(dest), { recursive: true });
-      fs.copyFileSync(src, dest);
+      if (file.endsWith('.css')) {
+        // Minify CSS: remove comments, extra whitespace, newlines
+        let css = fs.readFileSync(src, 'utf-8');
+        css = css
+          .replace(/\/\*[\s\S]*?\*\//g, '')     // remove comments
+          .replace(/\s+/g, ' ')                   // collapse whitespace
+          .replace(/\s*([{}:;,>~+])\s*/g, '$1')  // remove space around selectors
+          .replace(/;}/g, '}')                    // remove last semicolon
+          .trim();
+        fs.writeFileSync(dest, css);
+      } else {
+        fs.copyFileSync(src, dest);
+      }
     }
   }
 
@@ -256,7 +280,7 @@ let pageCount = 0;
 for (const locale of localeKeys) {
   console.log(`\n  Building ${locale}...`);
   for (const page of PAGES) {
-    buildPage(page, locale, locales[locale]);
+    buildPage(page, locale, locales[locale], locale === 'en' ? null : locales.en);
     pageCount++;
   }
 }

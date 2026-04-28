@@ -593,6 +593,16 @@
     gap: 1rem;
 }
 
+.score-methodology {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-top: 0.5rem;
+}
+
+.score-methodology a {
+    color: var(--copper);
+}
+
 .score-row {
     display: grid;
     grid-template-columns: 140px 1fr 50px;

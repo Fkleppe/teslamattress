@@ -98,87 +98,6 @@ body {
     overflow: hidden;
 }
 
-.hero-background {
-    display: none; /* Hidden - using real background image instead */
-}
-
-.hero-background .stars {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 60%;
-    background-image:
-        radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.8), transparent),
-        radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.6), transparent),
-        radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.9), transparent),
-        radial-gradient(2px 2px at 130px 80px, rgba(255,255,255,0.5), transparent),
-        radial-gradient(1px 1px at 160px 20px, rgba(255,255,255,0.7), transparent),
-        radial-gradient(2px 2px at 200px 50px, rgba(255,255,255,0.6), transparent),
-        radial-gradient(1px 1px at 250px 90px, rgba(255,255,255,0.8), transparent),
-        radial-gradient(2px 2px at 300px 30px, rgba(255,255,255,0.5), transparent),
-        radial-gradient(1px 1px at 350px 70px, rgba(255,255,255,0.7), transparent),
-        radial-gradient(2px 2px at 400px 45px, rgba(255,255,255,0.6), transparent);
-    background-size: 450px 120px;
-    animation: twinkle 8s ease-in-out infinite alternate;
-}
-
-@keyframes twinkle {
-    0% { opacity: 0.7; }
-    100% { opacity: 1; }
-}
-
-.hero-background .mountains {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 35%;
-}
-
-.hero-background .mountain-back {
-    position: absolute;
-    bottom: 0;
-    left: -5%;
-    width: 60%;
-    height: 100%;
-    background: var(--forest);
-    clip-path: polygon(0% 100%, 25% 40%, 45% 70%, 70% 25%, 100% 100%);
-    opacity: 0.6;
-}
-
-.hero-background .mountain-front {
-    position: absolute;
-    bottom: 0;
-    right: -10%;
-    width: 70%;
-    height: 85%;
-    background: linear-gradient(180deg, var(--forest-dark) 0%, #243b31 100%);
-    clip-path: polygon(0% 100%, 30% 50%, 50% 75%, 75% 20%, 100% 60%, 100% 100%);
-}
-
-.hero-background .trees {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 15%;
-    background:
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 60'%3E%3Cpath d='M50 5 L58 25 L54 25 L60 40 L55 40 L62 55 L38 55 L45 40 L40 40 L46 25 L42 25 Z' fill='%231a2e25'/%3E%3C/svg%3E") repeat-x;
-    background-size: 80px 100%;
-    background-position: bottom;
-}
-
-.moon {
-    position: absolute;
-    top: 15%;
-    right: 12%;
-    width: 80px;
-    height: 80px;
-    background: radial-gradient(circle at 30% 30%, #fffef0, #f0e68c);
-    border-radius: 50%;
-    box-shadow: 0 0 40px rgba(255, 254, 240, 0.4), 0 0 80px rgba(255, 254, 240, 0.2);
-}
 
 .hero-content {
     flex: 1;
@@ -714,6 +633,23 @@ body {
     padding: 2rem 0;
 }
 
+.footer-hub-links {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.footer-hub-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.footer-hub-links a:hover {
+    color: #fff;
+}
+
 .footer-text {
     text-align: right;
 }
@@ -733,12 +669,6 @@ body {
         gap: 2rem;
     }
 
-    .moon {
-        width: 50px;
-        height: 50px;
-        top: 12%;
-        right: 8%;
-    }
 }
 
 @media (max-width: 1024px) {
@@ -827,6 +757,10 @@ body {
     .footer-content {
         flex-direction: column;
         text-align: center;
+    }
+
+    .footer-hub-links {
+        justify-content: center;
     }
 
     .footer-text {
