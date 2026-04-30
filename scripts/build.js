@@ -207,6 +207,7 @@ function copyStaticFiles() {
   const staticFiles = [
     'styles.css',
     'robots.txt',
+    'llms.txt',
     'favicon.svg',
     'favicon.ico',
     'apple-touch-icon.png',
