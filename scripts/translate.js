@@ -73,12 +73,26 @@ async function translateSection(client, sectionKey, sectionData, targetLocale) {
 
   const userPrompt = `Translate this JSON section ("${sectionKey}") to ${localeInfo.name}. Return ONLY the translated JSON object, no markdown fences:\n\n${JSON.stringify(sectionData, null, 2)}`;
 
-  const response = await client.messages.create({
-    model: 'claude-sonnet-4-20250514',
-    max_tokens: 8192,
-    system: systemPrompt,
-    messages: [{ role: 'user', content: userPrompt }],
-  });
+  // Retry on connection errors (up to 3 times) - use streaming for long responses
+  let response;
+  let lastErr;
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    try {
+      const stream = client.messages.stream({
+        model: 'claude-sonnet-4-6',
+        max_tokens: 32768,
+        system: systemPrompt,
+        messages: [{ role: 'user', content: userPrompt }],
+      });
+      response = await stream.finalMessage();
+      break;
+    } catch (err) {
+      lastErr = err;
+      console.log(`\n      Attempt ${attempt} failed: ${err.message?.slice(0,80)}`);
+      if (attempt < 3) await new Promise(r => setTimeout(r, 2000 * attempt));
+    }
+  }
+  if (!response) throw lastErr;
 
   const text = response.content[0].text.trim();
 
@@ -159,7 +173,14 @@ async function main() {
 
       process.stdout.write(`    ${section}: translating ${Object.keys(en[section]).length} keys...`);
 
-      const result = await translateSection(client, section, en[section], locale);
+      let result = null;
+      try {
+        result = await translateSection(client, section, en[section], locale);
+      } catch (err) {
+        console.log(` FAILED (${err.message?.slice(0,60)})`);
+        failed++;
+        continue;
+      }
 
       if (result) {
         localeData[section] = result;
@@ -167,7 +188,7 @@ async function main() {
         console.log(` done`);
       } else {
         failed++;
-        console.log(` FAILED`);
+        console.log(` FAILED (parse)`);
       }
 
       // Save after each section (crash recovery)
