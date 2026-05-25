@@ -30,7 +30,7 @@ const LOCALE_CONFIG = {
   da: { locale_path: 'da/', og_locale: 'da_DK', html_lang: 'da', hreflang: 'da', flag: '🇩🇰', name: 'Dansk' },
   sv: { locale_path: 'sv/', og_locale: 'sv_SE', html_lang: 'sv', hreflang: 'sv', flag: '🇸🇪', name: 'Svenska' },
 };
-const ALL_LOCALES = Object.keys(LOCALE_CONFIG);
+const ALL_LOCALES = Object.keys(LOCALE_CONFIG).filter(l => l === "en"); // English-only (other locales kept in config but not built)
 
 // Load locale files
 function loadLocales() {

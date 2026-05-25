@@ -15,7 +15,7 @@ const cliArgs = process.argv.slice(2);
 const localesIdx = cliArgs.indexOf('--locales');
 const LOCALES = (localesIdx !== -1 && cliArgs[localesIdx + 1])
   ? cliArgs[localesIdx + 1].split(',')
-  : ['en', 'de', 'fr', 'no', 'da', 'sv'];
+  : ['en']; // English-only
 const LOCALE_PATHS = { en: '', de: 'de/', fr: 'fr/', no: 'no/', da: 'da/', sv: 'sv/' };
 const HTML_LANGS = { en: 'en', de: 'de', fr: 'fr', no: 'nb', da: 'da', sv: 'sv' };
 
@@ -157,8 +157,8 @@ function checkHreflang() {
       const hreflangValues = hreflangs.map(h => h.match(/"([^"]+)"/)[1]);
 
       // Should have en, de, fr, nb, da, sv, x-default = 7
-      if (hreflangValues.length < 7) {
-        error(`${LOCALE_PATHS[loc]}${page.output}: only ${hreflangValues.length}/7 hreflang tags`);
+      if (hreflangValues.length < LOCALES.length + 1) {
+        error(`${LOCALE_PATHS[loc]}${page.output}: only ${hreflangValues.length}/${LOCALES.length + 1} hreflang tags`);
         issues++;
       } else if (!hreflangValues.includes('x-default')) {
         error(`${LOCALE_PATHS[loc]}${page.output}: missing x-default hreflang`);
