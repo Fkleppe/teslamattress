@@ -155,6 +155,11 @@
     "output": "discounts/tesery.html"
   },
   {
+    "template": "discounts/_seoqs_discount.html",
+    "pageKey": "discount_tesmag",
+    "output": "discounts/tesmag.html"
+  },
+  {
     "template": "guides/index.html",
     "pageKey": "guides_index",
     "output": "guides/index.html"
