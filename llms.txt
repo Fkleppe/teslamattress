@@ -2,6 +2,8 @@
 
 Independent Tesla camping mattress reviews and discount codes since 2017. We test every mattress for at least 6 nights in real camping conditions across Norway and Sweden.
 
+Full structured reference (scores, prices, all codes): https://teslamattress.com/llms-full.txt
+
 ## Author
 
 Fredrik Mastouri — Founder & Lead Reviewer

@@ -126,6 +126,22 @@ function generateFaqSchema(bodyHtml) {
   return `<script type="application/ld+json">\n${JSON.stringify(schema, null, 2)}\n</script>`;
 }
 
+// Build the "other discount codes" list for a discount page, excluding the current
+// brand and noindex/redirect pages. Returns '' for non-discount pages.
+function generateRelatedDiscounts(currentPageKey, localeData, localePath) {
+  if (!currentPageKey || !currentPageKey.startsWith('discount_') || currentPageKey === 'discounts_index') return '';
+  const skip = new Set([currentPageKey, 'discounts_index', 'discount_tesery']);
+  const items = [];
+  for (const key of Object.keys(localeData)) {
+    if (!key.startsWith('discount_') || skip.has(key)) continue;
+    const e = localeData[key];
+    if (!e || !e.brand_name || !e.code) continue;
+    const slug = key.replace(/^discount_/, '');
+    items.push(`<li><a href="/${localePath}discounts/${slug}">${e.brand_name} — ${e.savings || ''} with ${e.code}</a></li>`);
+  }
+  return items.join('\n                ');
+}
+
 // Build a single page for a single locale
 function buildPage(page, locale, localeData, fallbackData) {
   const templatePath = path.join(TEMPLATE_DIR, page.template);
@@ -158,6 +174,9 @@ function buildPage(page, locale, localeData, fallbackData) {
   const pageBody = localeData[page.pageKey] && localeData[page.pageKey].body_html;
   const fbBody = fallbackData && fallbackData[page.pageKey] && fallbackData[page.pageKey].body_html;
   html = html.replace(/\{\{faqSchema\}\}/g, generateFaqSchema(pageBody || fbBody));
+
+  // Related discount codes list (discount pages only)
+  html = html.replace(/\{\{relatedDiscounts\}\}/g, generateRelatedDiscounts(page.pageKey, localeData, cfg.locale_path));
 
   // Allow shared templates to use t.PAGEKEY.* — substitute literal token before translation pass
   html = html.replace(/\bt\.PAGEKEY\./g, `t.${page.pageKey}.`);
@@ -236,6 +255,7 @@ function copyStaticFiles() {
     'styles.css',
     'robots.txt',
     'llms.txt',
+    'llms-full.txt',
     'favicon.svg',
     'favicon.ico',
     'apple-touch-icon.png',
