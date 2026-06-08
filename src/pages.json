@@ -165,6 +165,11 @@
     "output": "discounts/hamphi.html"
   },
   {
+    "template": "discounts/_seoqs_discount.html",
+    "output": "discounts/rockbrook.html",
+    "pageKey": "discount_rockbrook"
+  },
+  {
     "template": "guides/index.html",
     "pageKey": "guides_index",
     "output": "guides/index.html"

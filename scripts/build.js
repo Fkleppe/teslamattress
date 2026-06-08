@@ -103,6 +103,29 @@ function replaceTranslations(html, localeData, pageKey, fallbackData) {
   });
 }
 
+// Decode the small set of HTML entities used in body copy
+function decodeEntities(s) {
+  const map = { '&amp;': '&', '&lt;': '<', '&gt;': '>', '&quot;': '"', '&#39;': "'", '&apos;': "'", '&mdash;': '—', '&ndash;': '–', '&hellip;': '…', '&rsquo;': '’', '&nbsp;': ' ' };
+  return s.replace(/&[a-z#0-9]+;/gi, m => map[m] !== undefined ? map[m] : m);
+}
+
+// Build FAQPage JSON-LD from <h3>Question?</h3><p>Answer</p> pairs in body copy.
+// Returns '' when no question/answer pairs are found.
+function generateFaqSchema(bodyHtml) {
+  if (!bodyHtml) return '';
+  const faqs = [];
+  const re = /<h3[^>]*>([^<]*\?)\s*<\/h3>\s*<p>([\s\S]*?)<\/p>/gi;
+  let m;
+  while ((m = re.exec(bodyHtml)) !== null) {
+    const q = decodeEntities(m[1].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim());
+    const a = decodeEntities(m[2].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim());
+    if (q && a) faqs.push({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } });
+  }
+  if (!faqs.length) return '';
+  const schema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs };
+  return `<script type="application/ld+json">\n${JSON.stringify(schema, null, 2)}\n</script>`;
+}
+
 // Build a single page for a single locale
 function buildPage(page, locale, localeData, fallbackData) {
   const templatePath = path.join(TEMPLATE_DIR, page.template);
@@ -130,6 +153,11 @@ function buildPage(page, locale, localeData, fallbackData) {
   html = html.replace(/\{\{hreflangTags\}\}/g, generateHreflangTags(pagePath));
   html = html.replace(/\{\{ogLocaleAlternates\}\}/g, generateOgLocaleAlternates(locale));
   html = html.replace(/\{\{langSwitcher\}\}/g, generateLangSwitcher(pagePath, locale));
+
+  // FAQPage schema, generated from the page's body_html FAQ section (empty string if none)
+  const pageBody = localeData[page.pageKey] && localeData[page.pageKey].body_html;
+  const fbBody = fallbackData && fallbackData[page.pageKey] && fallbackData[page.pageKey].body_html;
+  html = html.replace(/\{\{faqSchema\}\}/g, generateFaqSchema(pageBody || fbBody));
 
   // Allow shared templates to use t.PAGEKEY.* — substitute literal token before translation pass
   html = html.replace(/\bt\.PAGEKEY\./g, `t.${page.pageKey}.`);
