@@ -5,14 +5,25 @@
 User-agent: *
 Allow: /
 
-# Explicitly allow AI crawlers
+# Explicitly allow AI crawlers (training + answer/search bots)
+# OpenAI
 User-agent: GPTBot
 Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
 
-User-agent: Google-Extended
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic (current names)
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
 Allow: /
 
 User-agent: Claude-Web
@@ -21,10 +32,27 @@ Allow: /
 User-agent: Anthropic-AI
 Allow: /
 
-User-agent: CCBot
+# Google / Gemini
+User-agent: Google-Extended
 Allow: /
 
+# Perplexity
 User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot-Extended
+Allow: /
+
+# Meta AI
+User-agent: meta-externalagent
+Allow: /
+
+# Common Crawl (feeds many LLMs)
+User-agent: CCBot
 Allow: /
 
 User-agent: Bytespider
