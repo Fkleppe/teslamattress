@@ -89,18 +89,35 @@ function generateLangSwitcher(pagePath, currentLocale) {
     </div>`;
 }
 
-// Replace all {{t.section.key}} placeholders
-function replaceTranslations(html, localeData, pageKey, fallbackData) {
+// Replace all {{t.section.key}} placeholders.
+// When escapeJson is true, values are JSON-string-escaped so they remain
+// valid inside a <script type="application/ld+json"> block (e.g. inch marks
+// like 7.5" or codes like "10" would otherwise break the JSON).
+function replaceTranslations(html, localeData, pageKey, fallbackData, escapeJson = false) {
+  const out = (value) => (escapeJson ? JSON.stringify(value).slice(1, -1) : value);
   return html.replace(/\{\{t\.([a-zA-Z0-9_]+)\.([a-zA-Z0-9_&+'"(). -]+)\}\}/g, (match, section, key) => {
     if (localeData[section] && localeData[section][key] !== undefined) {
-      return localeData[section][key];
+      return out(localeData[section][key]);
     }
     if (fallbackData && fallbackData[section] && fallbackData[section][key] !== undefined) {
-      return fallbackData[section][key];
+      return out(fallbackData[section][key]);
     }
     console.warn(`    Missing: ${section}.${key}`);
     return match;
   });
+}
+
+// Run translation substitution, JSON-escaping values inside ld+json blocks
+// and substituting raw everywhere else.
+function replaceTranslationsContextAware(html, localeData, pageKey, fallbackData) {
+  // First pass: escape values inside JSON-LD script blocks.
+  html = html.replace(
+    /(<script type="application\/ld\+json">)([\s\S]*?)(<\/script>)/g,
+    (full, open, body, close) =>
+      open + replaceTranslations(body, localeData, pageKey, fallbackData, true) + close
+  );
+  // Second pass: substitute remaining placeholders (outside ld+json) raw.
+  return replaceTranslations(html, localeData, pageKey, fallbackData, false);
 }
 
 // Build a single page for a single locale
@@ -134,8 +151,8 @@ function buildPage(page, locale, localeData, fallbackData) {
   // Allow shared templates to use t.PAGEKEY.* — substitute literal token before translation pass
   html = html.replace(/\bt\.PAGEKEY\./g, `t.${page.pageKey}.`);
 
-  // 2. Translation placeholders
-  html = replaceTranslations(html, localeData, page.pageKey, fallbackData);
+  // 2. Translation placeholders (JSON-escaped inside ld+json blocks)
+  html = replaceTranslationsContextAware(html, localeData, page.pageKey, fallbackData);
 
   // 3. Write output
   const outputPath = path.join(DIST_DIR, cfg.locale_path, page.output);
