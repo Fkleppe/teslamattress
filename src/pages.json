@@ -150,11 +150,6 @@
     "output": "discounts/novapads.html"
   },
   {
-    "template": "discounts/_seoqs_discount.html",
-    "pageKey": "discount_tesery",
-    "output": "discounts/tesery.html"
-  },
-  {
     "template": "guides/index.html",
     "pageKey": "guides_index",
     "output": "guides/index.html"

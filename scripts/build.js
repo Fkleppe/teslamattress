@@ -161,7 +161,7 @@ function buildPage(page, locale, localeData, fallbackData) {
 }
 
 // Pages to exclude from sitemap (noindex)
-const NOINDEX_PAGES = new Set(['disclosure', 'discount_tesery']);
+const NOINDEX_PAGES = new Set(['disclosure']);
 
 // Generate sitemap.xml
 function generateSitemap(locales) {
