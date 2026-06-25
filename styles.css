@@ -47,6 +47,26 @@ body {
     z-index: 100;
 }
 
+/* The .navbar is position:absolute (~90px tall) and overlays the top of every
+   hero. Heroes whose first child is a breadcrumb need extra top clearance so it
+   isn't tucked under the navbar. `body .x` specificity (0,1,1) wins over the
+   per-template inline `.x-hero{padding:4rem...}` (0,1,0). about/methodology
+   already reserve clearance via <main style="padding-top:100px">. */
+body .review-hero,
+body .discount-hero,
+body .discount-code-hero,
+body .brand-hero,
+body .faq-hero,
+body .hub-hero,
+body .guide-hero,
+body .guides-hub-hero,
+body .vs-hero,
+body .vs-hub-hero,
+body .reviews-hub-hero,
+body .discounts-hero {
+    padding-top: 6rem;
+}
+
 .logo {
     font-family: 'Libre Baskerville', Georgia, serif;
     font-size: 1.6rem;

@@ -89,18 +89,37 @@ function generateLangSwitcher(pagePath, currentLocale) {
     </div>`;
 }
 
+// Fields whose values are rendered into HTML attributes (meta content="...",
+// <title>, etc.) — never inside ld+json. A raw " or & in these breaks the
+// attribute (e.g. inch marks 6'2" or a code "10" truncate the meta tag), so
+// they must be HTML-escaped in the non-JSON pass.
+const HTML_ATTR_FIELDS = new Set([
+  'meta_title', 'meta_name_title', 'meta_description', 'meta_keywords',
+  'og_title', 'og_description', 'twitter_title', 'twitter_description',
+]);
+
+function escapeHtmlAttr(value) {
+  return String(value)
+    .replace(/&(?![a-zA-Z#0-9]+;)/g, '&amp;') // bare & only (don't double-encode entities)
+    .replace(/"/g, '&quot;');
+}
+
 // Replace all {{t.section.key}} placeholders.
 // When escapeJson is true, values are JSON-string-escaped so they remain
 // valid inside a <script type="application/ld+json"> block (e.g. inch marks
 // like 7.5" or codes like "10" would otherwise break the JSON).
 function replaceTranslations(html, localeData, pageKey, fallbackData, escapeJson = false) {
-  const out = (value) => (escapeJson ? JSON.stringify(value).slice(1, -1) : value);
+  const out = (value, key) => {
+    if (escapeJson) return JSON.stringify(value).slice(1, -1);
+    if (HTML_ATTR_FIELDS.has(key)) return escapeHtmlAttr(value);
+    return value;
+  };
   return html.replace(/\{\{t\.([a-zA-Z0-9_]+)\.([a-zA-Z0-9_&+'"(). -]+)\}\}/g, (match, section, key) => {
     if (localeData[section] && localeData[section][key] !== undefined) {
-      return out(localeData[section][key]);
+      return out(localeData[section][key], key);
     }
     if (fallbackData && fallbackData[section] && fallbackData[section][key] !== undefined) {
-      return out(fallbackData[section][key]);
+      return out(fallbackData[section][key], key);
     }
     console.warn(`    Missing: ${section}.${key}`);
     return match;
