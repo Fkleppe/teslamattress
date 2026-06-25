@@ -259,10 +259,12 @@ function copyStaticFiles() {
     }
   }
 
-  // Copy 404 page
+  // Copy 404 page (root, English) — resolve placeholders so no raw {{...}} ships
   const src404 = path.join(ROOT, 'src', 'templates', '404.html');
   if (fs.existsSync(src404)) {
-    fs.copyFileSync(src404, path.join(DIST_DIR, '404.html'));
+    let html404 = fs.readFileSync(src404, 'utf8');
+    html404 = html404.replace(/\{\{localeHome\}\}/g, '/');
+    fs.writeFileSync(path.join(DIST_DIR, '404.html'), html404);
   }
 
   // Copy images directory
