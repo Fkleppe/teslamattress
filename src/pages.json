@@ -146,6 +146,21 @@
   },
   {
     "template": "discounts/_seoqs_discount.html",
+    "pageKey": "discount_rockbrook",
+    "output": "discounts/rockbrook.html"
+  },
+  {
+    "template": "discounts/_seoqs_discount.html",
+    "pageKey": "discount_hamphi",
+    "output": "discounts/hamphi.html"
+  },
+  {
+    "template": "discounts/_seoqs_discount.html",
+    "pageKey": "discount_tesmag",
+    "output": "discounts/tesmag.html"
+  },
+  {
+    "template": "discounts/_seoqs_discount.html",
     "pageKey": "discount_novapads",
     "output": "discounts/novapads.html"
   },
