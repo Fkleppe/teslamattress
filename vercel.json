@@ -17,12 +17,22 @@
     },
     {
       "source": "/:locale(de|fr|no|da|sv)/discounts/tesery",
-      "destination": "/:locale/discounts/novapads",
+      "destination": "/discounts/novapads",
       "permanent": true
     },
     {
       "source": "/guides/buying-guide",
       "destination": "/guides/tesla-mattress-buying-guide",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(de|fr|no|da|sv)/:path*",
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(de|fr|no|da|sv)",
+      "destination": "/",
       "permanent": true
     }
   ],

@@ -30,7 +30,7 @@ const LOCALE_CONFIG = {
   da: { locale_path: 'da/', og_locale: 'da_DK', html_lang: 'da', hreflang: 'da', flag: '🇩🇰', name: 'Dansk' },
   sv: { locale_path: 'sv/', og_locale: 'sv_SE', html_lang: 'sv', hreflang: 'sv', flag: '🇸🇪', name: 'Svenska' },
 };
-const ALL_LOCALES = Object.keys(LOCALE_CONFIG);
+const ALL_LOCALES = Object.keys(LOCALE_CONFIG).filter(l => l === 'en'); // English-only (other locales kept in config but not built; old locale URLs 301 → English via vercel.json)
 
 // Load locale files
 function loadLocales() {
@@ -51,6 +51,8 @@ function loadLocales() {
 
 // Generate hreflang link tags for a page
 function generateHreflangTags(pagePath) {
+  // Single-language site: hreflang is meaningless, omit it entirely.
+  if (ALL_LOCALES.length <= 1) return '';
   const tags = ALL_LOCALES.map(loc => {
     const cfg = LOCALE_CONFIG[loc];
     const fp = `${cfg.locale_path}${pagePath}`.replace(/\/$/, '');
@@ -73,6 +75,8 @@ function generateOgLocaleAlternates(currentLocale) {
 
 // Generate language switcher HTML
 function generateLangSwitcher(pagePath, currentLocale) {
+  // Single-language site: no switcher.
+  if (ALL_LOCALES.length <= 1) return '';
   const cfg = LOCALE_CONFIG[currentLocale];
   const links = ALL_LOCALES.map(loc => {
     const lCfg = LOCALE_CONFIG[loc];
