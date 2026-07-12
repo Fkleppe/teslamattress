@@ -78,7 +78,6 @@
                         "height": 60
                 },
                 "description": "{{t.about.jsonld_1_description_1}}",
-                "foundingDate": "2017",
                 "knowsAbout": [
                         "Tesla camping",
                         "car camping mattresses",
@@ -88,13 +87,10 @@
                         "sleep ergonomics"
                 ],
                 "slogan": "{{t.about.jsonld_1_slogan_2}}",
-                "sameAs": [
-                        "https://www.trustpilot.com/review/teslamattress.com"
-                ],
                 "founder": {
                         "@type": "Person",
                         "name": "Fredrik Mastouri",
-                        "jobTitle": "Founder & Lead Reviewer",
+                        "jobTitle": "Editor",
                         "description": "{{t.about.jsonld_1_description_3}}"
                 }
         }
@@ -106,7 +102,7 @@
         "@type": "Person",
         "@id": "https://teslamattress.com/#person",
         "name": "Fredrik Mastouri",
-        "jobTitle": "Founder & Lead Reviewer",
+        "jobTitle": "Editor",
         "url": "https://teslamattress.com/about",
         "worksFor": {
                 "@type": "Organization",
@@ -120,21 +116,7 @@
                 "Tesla Model Y",
                 "Tesla Model 3",
                 "sleep ergonomics",
-                "camping gear testing",
                 "product reviews"
-        ],
-        "hasCredential": {
-                "@type": "EducationalOccupationalCredential",
-                "credentialCategory": "Professional Experience",
-                "name": "Independent Product Reviewer - Tesla Camping Specialist"
-        },
-        "award": "{{t.about.jsonld_2_award_2}}",
-        "sameAs": [
-                "https://teslamotorsclub.com/tmc/members/fredrik-mastouri.999999/",
-                "https://www.linkedin.com/in/fredrik-mastouri",
-                "https://twitter.com/teslamattresscom",
-                "https://www.youtube.com/@teslamattress",
-                "https://www.reddit.com/user/teslamattress_review"
         ]
 }
     </script>
@@ -196,11 +178,11 @@
                 <h2 style="font-family: 'Libre Baskerville', Georgia, serif; font-size: 1.5rem; color: var(--forest-dark); margin-bottom: 1rem;">{{t.about.h2_2}}</h2>
                 <p style="margin-bottom: 1rem;">{{t.about.p_3}}</p>
                 <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
-                    <li><strong>Multi-night testing:</strong> Minimum 5 nights of actual use before publishing</li>
-                    <li><strong>Real conditions:</strong> Testing in various temperatures, locations, and scenarios</li>
-                    <li><strong>Long-term evaluation:</strong> Updates after 3+ months of use</li>
-                    <li><strong>Comparison testing:</strong> Side-by-side comparisons when possible</li>
-                    <li><strong>User feedback integration:</strong> We monitor real owner reviews on Trustpilot, Reddit, and forums</li>
+                    <li><strong>Spec verification:</strong> Every dimension, material, and weight is checked against the manufacturer's published data</li>
+                    <li><strong>Fitment analysis:</strong> Dimensions are compared against each Tesla model's cargo measurements, hinge gaps, and slope</li>
+                    <li><strong>Owner-review synthesis:</strong> We cross-reference owner reports on Trustpilot, Reddit, and Tesla forums, weighting recurring themes over one-off anecdotes</li>
+                    <li><strong>Price and code checks:</strong> Prices and discount codes are re-verified before each page update</li>
+                    <li><strong>Ongoing updates:</strong> Reviews are revised when specs, pricing, or owner sentiment change</li>
                 </ul>
                 <p>{{t.about.p_4}}</p>
             </section>
@@ -220,10 +202,10 @@
                 <p style="margin-bottom: 1rem;">{{t.about.p_11}}</p>
                 <p>{{t.about.p_12}}</p>
                 <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
-                    <li>Tested <strong>10+ different Tesla mattresses</strong></li>
-                    <li>Spent <strong>100+ nights</strong> sleeping in our Teslas</li>
-                    <li>Driven <strong>50,000+ km</strong> on camping road trips</li>
-                    <li>Helped thousands of Tesla owners find the right mattress</li>
+                    <li>Reviewed <strong>10+ Tesla-specific mattresses</strong> in depth</li>
+                    <li>Analyzed <strong>hundreds of owner reviews</strong> across Trustpilot, Reddit, and Tesla forums</li>
+                    <li>Verified specs, fitment, and pricing for <strong>every product we cover</strong></li>
+                    <li>Maintain <strong>10 verified discount codes</strong>, re-checked before each update</li>
                 </ul>
             </section>
 
@@ -243,10 +225,10 @@
             <section style="margin-bottom: 3rem;">
                 <h2 style="font-family: 'Libre Baskerville', Georgia, serif; font-size: 1.5rem; color: var(--forest-dark); margin-bottom: 1rem;">Explore Our Content</h2>
                 <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
-                    <li style="margin-bottom: 0.5rem;"><a href="/{{localePath}}reviews" style="color: var(--copper); font-weight: 600;">All Mattress Reviews</a> — In-depth reviews of every Tesla mattress we've tested</li>
+                    <li style="margin-bottom: 0.5rem;"><a href="/{{localePath}}reviews" style="color: var(--copper); font-weight: 600;">All Mattress Reviews</a> — In-depth reviews of every Tesla mattress we cover</li>
                     <li style="margin-bottom: 0.5rem;"><a href="/{{localePath}}guides" style="color: var(--copper); font-weight: 600;">Camping Guides</a> — Tips and buying advice for Tesla camping</li>
                     <li style="margin-bottom: 0.5rem;"><a href="/{{localePath}}vs" style="color: var(--copper); font-weight: 600;">Mattress Comparisons</a> — Side-by-side brand comparisons</li>
-                    <li style="margin-bottom: 0.5rem;"><a href="/{{localePath}}methodology" style="color: var(--copper); font-weight: 600;">Our Methodology</a> — How we test and score every mattress</li>
+                    <li style="margin-bottom: 0.5rem;"><a href="/{{localePath}}methodology" style="color: var(--copper); font-weight: 600;">Our Methodology</a> — How we research and score every mattress</li>
                 </ul>
             </section>
 
@@ -269,7 +251,7 @@
                 <a href="/{{localePath}}about">{{t.shared.nav_about}}</a>
             </nav>
             <div class="footer-text">
-                <p>&copy; 2026 Teslamattress. All rights reserved. <a href="/{{localePath}}methodology" style="color: rgba(255,255,255,0.7);">How We Test</a> | <a href="/{{localePath}}disclosure" style="color: rgba(255,255,255,0.7);">Affiliate Disclosure</a></p>
+                <p>&copy; 2026 Teslamattress. All rights reserved. <a href="/{{localePath}}methodology" style="color: rgba(255,255,255,0.7);">How We Review</a> | <a href="/{{localePath}}disclosure" style="color: rgba(255,255,255,0.7);">Affiliate Disclosure</a></p>
                 <p class="disclaimer">We earn commissions from affiliate links. Not affiliated with Tesla, Inc.</p>
             </div>
         </div>

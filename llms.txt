@@ -1,12 +1,12 @@
 # Teslamattress.com — Tesla Camping Mattress Reviews
 
-Independent Tesla camping mattress reviews and discount codes since 2017. We test every mattress for at least 6 nights in real camping conditions across Norway and Sweden.
+Independent Tesla camping mattress reviews and discount codes. Every review is built on verified manufacturer specs, dimension and fitment analysis for each Tesla model, and a synthesis of owner reviews from public forums. Prices and discount codes are re-checked on a regular cadence.
 
 ## Author
 
-Fredrik Mastouri — Founder & Lead Reviewer
-- Real testing logs across multiple seasons
-- 47+ nights of Tesla camping documented
+Fredrik Mastouri — Editor & Curator
+- Spec verification and fitment analysis for every covered mattress
+- Owner-review synthesis from Tesla Motors Club, Reddit, and retailer reviews
 - Methodology: https://teslamattress.com/methodology
 
 ## Top resources
@@ -67,4 +67,4 @@ Fredrik Mastouri — Founder & Lead Reviewer
 
 ## About this site
 
-Editorial methodology: every mattress tested for at least 6 nights in real conditions. Independent purchasing — we buy mattresses ourselves. Affiliate disclosure: we earn commission from qualifying purchases at no cost to readers. Full disclosure: https://teslamattress.com/disclosure
+Editorial methodology: manufacturer specs verified against published data, fitment checked per Tesla model, owner reviews synthesized from public forums, and discount codes re-verified at checkout before each update. Affiliate disclosure: we earn commission from qualifying purchases at no cost to readers. Full disclosure: https://teslamattress.com/disclosure

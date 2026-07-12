@@ -1,0 +1,270 @@
+{
+  "en:about": {
+    "hash": "d672e95c8bd95f5c8bb14463b1e84f45ff141122",
+    "date": "2026-07-12"
+  },
+  "en:ck_couples_mattress": {
+    "hash": "7dc4e08ab7bf1c86f43651603874f249c21fcebd",
+    "date": "2026-07-12"
+  },
+  "en:ck_lightest": {
+    "hash": "3cb3544a7ac155bf31553e1b4c021bfe791258e0",
+    "date": "2026-07-12"
+  },
+  "en:ck_quietest": {
+    "hash": "b0499aaeb6aaf1670ee36c5292fe2e075414a30d",
+    "date": "2026-07-12"
+  },
+  "en:ck_side_sleepers": {
+    "hash": "983ea2a1cc3f86d8bcae9517e64af4369bd5c282",
+    "date": "2026-07-12"
+  },
+  "en:ck_tall_mattress": {
+    "hash": "5fa80033fd326a4741970b3d7c6797b1808106fa",
+    "date": "2026-07-12"
+  },
+  "en:ck_under_300": {
+    "hash": "e0377c940144980b22c3e80ce5a875d62f6a026b",
+    "date": "2026-07-12"
+  },
+  "en:ck_winter_mattress": {
+    "hash": "8109a571d82dd48cb29d9e1cf81b227ddaff4a7d",
+    "date": "2026-07-12"
+  },
+  "en:ck_with_pump": {
+    "hash": "39f7d2399865f2e84dff64add433b440e237c25a",
+    "date": "2026-07-12"
+  },
+  "en:disclosure": {
+    "hash": "a5f4d269cfce31aa3ca0578f8770f8bd449c2a3b",
+    "date": "2026-07-02"
+  },
+  "en:discount_hamphi": {
+    "hash": "dd3e06faf3590ae53b1b7dcca02322006b06b0ea",
+    "date": "2026-07-12"
+  },
+  "en:discount_hansshow": {
+    "hash": "369387a9624696e320b828d5eb47526af34fd330",
+    "date": "2026-07-12"
+  },
+  "en:discount_havnby": {
+    "hash": "fe42e6a4a07d3d40a9a37e255f81dad7a0796c8d",
+    "date": "2026-07-12"
+  },
+  "en:discount_jowua": {
+    "hash": "23f4f92c8498213fffcd88d185228c73188ac46b",
+    "date": "2026-07-12"
+  },
+  "en:discount_novapads": {
+    "hash": "aa21f4f448c5a3e22276fabf50ae33a5fa8946c8",
+    "date": "2026-07-12"
+  },
+  "en:discount_rockbrook": {
+    "hash": "abefaa96da56153c5614b8df19e1cee52525999e",
+    "date": "2026-07-12"
+  },
+  "en:discount_shop4tesla": {
+    "hash": "825da7a2417e24039b6fb602bfe009fcab7a6c61",
+    "date": "2026-07-12"
+  },
+  "en:discount_snuuzu": {
+    "hash": "9263dea20981835c951108ef219d4c1e27e09479",
+    "date": "2026-07-12"
+  },
+  "en:discount_tesmag": {
+    "hash": "871e2d925850c0cbf4a3481976013999113eeea3",
+    "date": "2026-07-12"
+  },
+  "en:discount_yeslak": {
+    "hash": "c67c4d1c89541a2c3eef2c709c504081a92c1840",
+    "date": "2026-07-12"
+  },
+  "en:discounts_index": {
+    "hash": "f4a63ae42bc1049dca351ce2669e8ac147468227",
+    "date": "2026-07-12"
+  },
+  "en:faq_index": {
+    "hash": "8c56ba4d06c8f8ec09683816d5680185feb8b575",
+    "date": "2026-07-12"
+  },
+  "en:guide_best_mattresses": {
+    "hash": "8943f10847ec8c7743bd4b7c5b1f880d3aa6e910",
+    "date": "2026-07-12"
+  },
+  "en:guide_best_model_3": {
+    "hash": "36c900f3bd8cee6b6920e1a8760dc3dfb69c30c7",
+    "date": "2026-07-12"
+  },
+  "en:guide_best_model_y": {
+    "hash": "7512b0d0bb69b10972d908d0f5ebf5292a375134",
+    "date": "2026-07-12"
+  },
+  "en:guide_budget": {
+    "hash": "8f79ada7087e62fb8287188e8436e8f46d110719",
+    "date": "2026-07-12"
+  },
+  "en:guide_buying": {
+    "hash": "dcc2c59eda2d8fad27ae7a82c76405a06648e406",
+    "date": "2026-07-12"
+  },
+  "en:guide_cybertruck": {
+    "hash": "d26668ce5ad4fa3ffdc34ed2117a8f0b7bd1c7e8",
+    "date": "2026-07-12"
+  },
+  "en:guide_dogs": {
+    "hash": "fb7d083ad1faa3ca611344a606b150a3874b5046",
+    "date": "2026-07-12"
+  },
+  "en:guide_getting_started": {
+    "hash": "cff5864740dd754b952fc9e0488033d02dde6f05",
+    "date": "2026-07-12"
+  },
+  "en:guide_model_x": {
+    "hash": "ad036c5329fd602a1dc10b7e3094d0dbf37822a6",
+    "date": "2026-07-12"
+  },
+  "en:guide_tesla_vs_generic": {
+    "hash": "1262618bc852bf6cab115889ffa823c55b47e8be",
+    "date": "2026-07-12"
+  },
+  "en:guides_index": {
+    "hash": "65004e359bef6dd8dbca1cae8ee40c9bd1bdd543",
+    "date": "2026-07-12"
+  },
+  "en:home": {
+    "hash": "f6072787ba7c5899b9a6b02870982bff1ce909c2",
+    "date": "2026-07-12"
+  },
+  "en:methodology": {
+    "hash": "e0dd62fe8b9b61d27c94fc2ce15e4a7613ecc003",
+    "date": "2026-07-12"
+  },
+  "en:paa_battery_camping": {
+    "hash": "c4d004225b7401c629dfee57f3b03c6bc223be27",
+    "date": "2026-07-12"
+  },
+  "en:paa_camping_legal": {
+    "hash": "a451a8166be948b232d42f5790a70245b9088835",
+    "date": "2026-07-12"
+  },
+  "en:paa_couples_camping": {
+    "hash": "2a1b20c62d4c6de2012f6a45c9b72454b1634917",
+    "date": "2026-07-12"
+  },
+  "en:paa_kid_friendly": {
+    "hash": "58b8c7fc1ee824d20b7acb22d8ba6edf158cb6f8",
+    "date": "2026-07-12"
+  },
+  "en:paa_need_mattress": {
+    "hash": "6cf49ceaa71861b2437f0a01d3fc0ad82441d9a9",
+    "date": "2026-07-12"
+  },
+  "en:paa_pump_required": {
+    "hash": "279f95f200ef762a6be1329be14ef0a5193c8c7d",
+    "date": "2026-07-12"
+  },
+  "en:paa_sleep_in_tesla_overnight": {
+    "hash": "3fe1a78af9abe9eee855017608869e99d7e8b7a6",
+    "date": "2026-07-12"
+  },
+  "en:paa_tesla_camp_mode_safe": {
+    "hash": "07e65f2331651c9bf71e3069f8bfd4a3640fd14d",
+    "date": "2026-07-12"
+  },
+  "en:paa_what_size_mattress_y": {
+    "hash": "97214e3eceea00e3548bcd18d8067c8696965440",
+    "date": "2026-07-12"
+  },
+  "en:paa_winter_camping": {
+    "hash": "b41e71e2826508b3cca5fa70fa6b679ae06fb32d",
+    "date": "2026-07-12"
+  },
+  "en:review_havnby_autolevel": {
+    "hash": "9679467662d31639137990ee85f0e86e3a3e0015",
+    "date": "2026-07-12"
+  },
+  "en:review_havnby_foam": {
+    "hash": "3cea02a453140d701a63b9715838ad3584afec44",
+    "date": "2026-07-12"
+  },
+  "en:review_havnby_solo": {
+    "hash": "e36c1083f1ce6de30e5f31cd2d8fa9a3eba2baec",
+    "date": "2026-07-12"
+  },
+  "en:review_snuuzu_model_3": {
+    "hash": "45b82a1908df2af7b040a64e1e91602b5729bbc5",
+    "date": "2026-07-12"
+  },
+  "en:review_snuuzu_model_y": {
+    "hash": "25c24b04750fd7c9ec3aa1cdec7ce4f7bac0fb75",
+    "date": "2026-07-12"
+  },
+  "en:review_tesery_novapads": {
+    "hash": "3b515cbe9f7a4b21e1ff2f31016a46f8c59a150f",
+    "date": "2026-07-12"
+  },
+  "en:review_tesmat_luxe_3": {
+    "hash": "197c9b84e78bd3b66f88da5ef417bc20c2ffdd95",
+    "date": "2026-07-12"
+  },
+  "en:review_tesmat_luxe_y": {
+    "hash": "548796cc57fa370ef596820815c34a6b0b8b1579",
+    "date": "2026-07-12"
+  },
+  "en:review_tesmat_solo_3": {
+    "hash": "a4b19432fe94476dad190631792cb33978542482",
+    "date": "2026-07-12"
+  },
+  "en:review_tesmat_solo_y": {
+    "hash": "44e1c348db51833235d3d530e92b32348b8efb89",
+    "date": "2026-07-12"
+  },
+  "en:reviews_index": {
+    "hash": "88fb61bff31e664c77b84107c6ccf6e8ebe75532",
+    "date": "2026-07-12"
+  },
+  "en:vs_havnby_autolevel_vs_foam": {
+    "hash": "c0e7f98df8e23715bc45aafe682715d115b20697",
+    "date": "2026-07-12"
+  },
+  "en:vs_havnby_vs_novapads": {
+    "hash": "1e0fa02fc64f05034762e0ac411b6502510987af",
+    "date": "2026-07-12"
+  },
+  "en:vs_index": {
+    "hash": "0e1a98f93e6ba623d5dcb55072eabebbd6a941cc",
+    "date": "2026-07-12"
+  },
+  "en:vs_model_y_vs_model_3": {
+    "hash": "1417cb3b1b0baaef30e38d00388a7309ec99e49d",
+    "date": "2026-07-12"
+  },
+  "en:vs_snuuzu_vs_dreamcase": {
+    "hash": "1b070d1dd931c8d658d396bfc58bf8d6ea006cbd",
+    "date": "2026-07-12"
+  },
+  "en:vs_snuuzu_vs_havnby": {
+    "hash": "84d3907be6da30265727af596e7d1aaf1248a89e",
+    "date": "2026-07-12"
+  },
+  "en:vs_snuuzu_vs_tesmat": {
+    "hash": "24c1622e1dddf42103b82f3aa61547d80aac19b8",
+    "date": "2026-07-12"
+  },
+  "en:vs_tesla_vs_air_mattress": {
+    "hash": "1fe99f5e19b402c362308807955194e42714406a",
+    "date": "2026-07-12"
+  },
+  "en:vs_tesla_vs_sleeping_bag": {
+    "hash": "7582210e87228e6a9956e6cce8a7ba35e3bea1a2",
+    "date": "2026-07-12"
+  },
+  "en:vs_tesmat_vs_havnby": {
+    "hash": "bc9b9fac71a98780219a869a47099ec02c3002b4",
+    "date": "2026-07-12"
+  },
+  "en:vs_tesmat_vs_novapads": {
+    "hash": "17dc8b336216d39ed97d284b1dfc44c0dc659b69",
+    "date": "2026-07-12"
+  }
+}

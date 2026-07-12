@@ -26,6 +26,16 @@
       "permanent": true
     },
     {
+      "source": "/:lang(de|fr|no|da|sv)/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(de|fr|no|da|sv)/:path*/",
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
       "source": "/:lang(de|fr|no|da|sv)/:path*",
       "destination": "/:path*",
       "permanent": true

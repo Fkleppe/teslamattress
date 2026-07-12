@@ -92,7 +92,7 @@
                 }
             }
         },
-        "datePublished": "{{buildDate}}",
+        "datePublished": "{{t.PAGEKEY.date_published}}",
         "dateModified": "{{buildDate}}"
     }
     </script>
@@ -102,7 +102,7 @@
         "@type": "BreadcrumbList",
         "itemListElement": [
             { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://teslamattress.com/{{localePath}}" },
-            { "@type": "ListItem", "position": 2, "name": "FAQ", "item": "https://teslamattress.com/{{localePath}}faq" },
+            { "@type": "ListItem", "position": 2, "name": "{{t.PAGEKEY.bc_parent_name}}", "item": "https://teslamattress.com/{{localePath}}{{t.PAGEKEY.bc_parent_path}}" },
             { "@type": "ListItem", "position": 3, "name": "{{t.PAGEKEY.question}}", "item": "{{canonicalUrl}}" }
         ]
     }
@@ -126,7 +126,7 @@
     <header class="faq-hero">
         <nav class="breadcrumb" aria-label="Breadcrumb">
             <a href="/{{localePath}}">Home</a> &rsaquo;
-            <a href="/{{localePath}}faq">FAQ</a> &rsaquo;
+            <a href="/{{localePath}}{{t.PAGEKEY.bc_parent_path}}">{{t.PAGEKEY.bc_parent_name}}</a> &rsaquo;
             <span>{{t.PAGEKEY.breadcrumb}}</span>
         </nav>
         <h1>{{t.PAGEKEY.h1}}</h1>
@@ -154,9 +154,9 @@
             <h3>Active Tesla mattress discount codes (verified April 2026)</h3>
             <ul>
                 <li><a href="/{{localePath}}discounts/snuuzu">Snuuzu — code KLEPPE (10% off Model Y/3)</a></li>
-                <li><a href="/{{localePath}}discounts/havnby">Havnby — code AWD (10% off Autolevel/Foam/Solo)</a></li>
+                <li><a href="/{{localePath}}discounts/havnby">Havnby — code AWD (10% off the FlatCore line)</a></li>
                 <li><a href="/{{localePath}}discounts/novapads">NovaPads — code AWD (10% off Air-Foam Pro)</a></li>
-                <li><a href="/{{localePath}}discounts/shop4tesla">Shop4Tesla / TESMAT — code 10 (10% off)</a></li>
+                <li><a href="/{{localePath}}discounts/shop4tesla">Shop4Tesla — code 10 (10% off Tesla accessories)</a></li>
                 <li><a href="/{{localePath}}discounts/yeslak">Yeslak — code DISCOUNT (20% off accessories)</a></li>
                 <li><a href="/{{localePath}}discounts/hansshow">Hansshow — code FREDRIK (20% off)</a></li>
                 <li><a href="/{{localePath}}discounts/jowua">Jowua — code AWD (5% off)</a></li>
@@ -170,7 +170,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Teslamattress. <a href="/{{localePath}}disclosure">Affiliate disclosure</a> &middot; <a href="/{{localePath}}about">About</a> &middot; <a href="/{{localePath}}methodology">How we test</a></p>
+        <p>&copy; 2026 Teslamattress. <a href="/{{localePath}}disclosure">Affiliate disclosure</a> &middot; <a href="/{{localePath}}about">About</a> &middot; <a href="/{{localePath}}methodology">How we review</a></p>
     </footer>
 </body>
 </html>

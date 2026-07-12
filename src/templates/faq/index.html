@@ -66,7 +66,33 @@
         "inLanguage": "{{htmlLang}}",
         "name": "{{t.faq_index.h1}}",
         "description": "{{t.faq_index.meta_description}}",
-        "url": "{{canonicalUrl}}"
+        "url": "{{canonicalUrl}}",
+        "mainEntity": {
+                "@type": "ItemList",
+                "numberOfItems": 10,
+                "itemListElement": [
+                        { "@type": "ListItem", "position": 1, "name": "Can You Sleep in a Tesla Overnight?", "url": "https://teslamattress.com/{{localePath}}faq/can-you-sleep-in-a-tesla-overnight" },
+                        { "@type": "ListItem", "position": 2, "name": "Can Two People Sleep in a Tesla Model Y?", "url": "https://teslamattress.com/{{localePath}}faq/can-two-people-sleep-in-a-tesla-model-y" },
+                        { "@type": "ListItem", "position": 3, "name": "What Size Mattress Fits a Tesla Model Y?", "url": "https://teslamattress.com/{{localePath}}faq/what-size-mattress-fits-a-tesla-model-y" },
+                        { "@type": "ListItem", "position": 4, "name": "How Much Battery Does Tesla Camping Use?", "url": "https://teslamattress.com/{{localePath}}faq/how-much-battery-does-tesla-camping-use" },
+                        { "@type": "ListItem", "position": 5, "name": "Is Tesla Camp Mode Safe?", "url": "https://teslamattress.com/{{localePath}}faq/is-tesla-camp-mode-safe" },
+                        { "@type": "ListItem", "position": 6, "name": "Can You Camp in a Tesla in Winter?", "url": "https://teslamattress.com/{{localePath}}faq/can-you-camp-in-a-tesla-in-winter" },
+                        { "@type": "ListItem", "position": 7, "name": "Is Camping in a Tesla Legal?", "url": "https://teslamattress.com/{{localePath}}faq/is-camping-in-a-tesla-legal" },
+                        { "@type": "ListItem", "position": 8, "name": "Do You Need a Mattress for Tesla Camping?", "url": "https://teslamattress.com/{{localePath}}faq/do-you-need-a-mattress-for-tesla-camping" },
+                        { "@type": "ListItem", "position": 9, "name": "Do Tesla Camping Mattresses Need a Pump?", "url": "https://teslamattress.com/{{localePath}}faq/do-tesla-camping-mattresses-need-a-pump" },
+                        { "@type": "ListItem", "position": 10, "name": "Is Tesla Camping Good for Families with Kids?", "url": "https://teslamattress.com/{{localePath}}faq/is-tesla-camping-good-for-families-with-kids" }
+                ]
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://teslamattress.com/{{localePath}}" },
+            { "@type": "ListItem", "position": 2, "name": "FAQ", "item": "https://teslamattress.com/{{localePath}}faq" }
+        ]
     }
     </script>
 </head>
@@ -133,7 +159,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 Teslamattress. <a href="/{{localePath}}disclosure">Affiliate disclosure</a> &middot; <a href="/{{localePath}}about">About</a> &middot; <a href="/{{localePath}}methodology">How we test</a></p>
+        <p>&copy; 2026 Teslamattress. <a href="/{{localePath}}disclosure">Affiliate disclosure</a> &middot; <a href="/{{localePath}}about">About</a> &middot; <a href="/{{localePath}}methodology">How we review</a></p>
     </footer>
 </body>
 </html>

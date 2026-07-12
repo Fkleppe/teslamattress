@@ -87,9 +87,16 @@
         "inLanguage": "{{htmlLang}}",
         "headline": "{{t.PAGEKEY.h1}}",
         "description": "{{t.PAGEKEY.meta_description}}",
+        "image": "https://teslamattress.com/images/og-image.jpg",
         "author": { "@type": "Person", "name": "Fredrik Mastouri", "url": "https://teslamattress.com/about" },
-        "publisher": { "@type": "Organization", "name": "Teslamattress", "url": "https://teslamattress.com" },
-        "datePublished": "2025-08-01",
+        "publisher": {
+                "@type": "Organization",
+                "@id": "https://teslamattress.com/#organization",
+                "name": "Teslamattress",
+                "url": "https://teslamattress.com",
+                "logo": { "@type": "ImageObject", "url": "https://teslamattress.com/images/logo.png", "width": 600, "height": 60 }
+        },
+        "datePublished": "{{t.PAGEKEY.date_published}}",
         "dateModified": "{{buildDate}}",
         "mainEntityOfPage": "{{canonicalUrl}}"
     }
@@ -133,6 +140,9 @@
         <div class="discount-meta">
             By <a href="/{{localePath}}about">Fredrik Mastouri</a> &middot; Verified {{buildDate}}
         </div>
+        <div class="discount-meta" style="font-size:.8rem;opacity:.85">
+            We may earn a commission when you use codes or links on this page &middot; <a href="/{{localePath}}disclosure">affiliate disclosure</a>
+        </div>
     </header>
 
     <main class="discount-main">
@@ -148,7 +158,7 @@
                 <li><a href="/{{localePath}}discounts/snuuzu">Snuuzu — 10% off with KLEPPE</a></li>
                 <li><a href="/{{localePath}}discounts/havnby">Havnby — 10% off with AWD</a></li>
                 <li><a href="/{{localePath}}discounts/novapads">NovaPads — 10% off with AWD</a></li>
-                <li><a href="/{{localePath}}discounts/shop4tesla">Shop4Tesla (TESMAT) — 10% off with code 10</a></li>
+                <li><a href="/{{localePath}}discounts/shop4tesla">Shop4Tesla — 10% off with code 10</a></li>
                 <li><a href="/{{localePath}}discounts/yeslak">Yeslak accessories — 20% off with DISCOUNT</a></li>
                 <li><a href="/{{localePath}}discounts/jowua">Jowua accessories — 5% off with AWD</a></li>
                 <li><a href="/{{localePath}}discounts/hansshow">Hansshow accessories — 20% off with FREDRIK</a></li>
@@ -162,7 +172,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Teslamattress. <a href="/{{localePath}}disclosure">Affiliate disclosure</a> &middot; <a href="/{{localePath}}about">About</a> &middot; <a href="/{{localePath}}methodology">How we test</a></p>
+        <p>&copy; 2026 Teslamattress. <a href="/{{localePath}}disclosure">Affiliate disclosure</a> &middot; <a href="/{{localePath}}about">About</a> &middot; <a href="/{{localePath}}methodology">How we review</a></p>
     </footer>
 </body>
 </html>

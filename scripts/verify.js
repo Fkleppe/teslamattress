@@ -13,10 +13,14 @@ const BASE_URL = 'https://teslamattress.com';
 // Parse CLI args
 const cliArgs = process.argv.slice(2);
 const localesIdx = cliArgs.indexOf('--locales');
+const LOCALE_PATHS = { en: '', de: 'de/', fr: 'fr/', no: 'no/', da: 'da/', sv: 'sv/' };
+// Default: verify whatever locales the build actually emitted (English-only since 2026-06-25)
+const builtLocales = Object.keys(LOCALE_PATHS).filter(l =>
+  fs.existsSync(path.join(DIST_DIR, LOCALE_PATHS[l], 'index.html'))
+);
 const LOCALES = (localesIdx !== -1 && cliArgs[localesIdx + 1])
   ? cliArgs[localesIdx + 1].split(',')
-  : ['en', 'de', 'fr', 'no', 'da', 'sv'];
-const LOCALE_PATHS = { en: '', de: 'de/', fr: 'fr/', no: 'no/', da: 'da/', sv: 'sv/' };
+  : builtLocales;
 const HTML_LANGS = { en: 'en', de: 'de', fr: 'fr', no: 'nb', da: 'da', sv: 'sv' };
 
 let errors = 0;
@@ -156,9 +160,16 @@ function checkHreflang() {
       const hreflangs = html.match(/hreflang="[^"]+"/g) || [];
       const hreflangValues = hreflangs.map(h => h.match(/"([^"]+)"/)[1]);
 
-      // Should have en, de, fr, nb, da, sv, x-default = 7
-      if (hreflangValues.length < 7) {
-        error(`${LOCALE_PATHS[loc]}${page.output}: only ${hreflangValues.length}/7 hreflang tags`);
+      if (LOCALES.length <= 1) {
+        // Single-locale build: pages must NOT carry hreflang tags
+        if (hreflangValues.length > 0) {
+          error(`${LOCALE_PATHS[loc]}${page.output}: ${hreflangValues.length} stale hreflang tags in single-locale build`);
+          issues++;
+        } else {
+          ok++;
+        }
+      } else if (hreflangValues.length < LOCALES.length + 1) {
+        error(`${LOCALE_PATHS[loc]}${page.output}: only ${hreflangValues.length}/${LOCALES.length + 1} hreflang tags`);
         issues++;
       } else if (!hreflangValues.includes('x-default')) {
         error(`${LOCALE_PATHS[loc]}${page.output}: missing x-default hreflang`);
@@ -189,7 +200,9 @@ function checkSitemap() {
   const localeCount = LOCALES.filter(l => fs.existsSync(
     l === 'en' ? path.join(DIST_DIR, 'index.html') : path.join(DIST_DIR, LOCALE_PATHS[l], 'index.html')
   )).length;
-  const expectedUrls = PAGES.length * localeCount;
+  // Mirrors NOINDEX_PAGES in build.js — noindex pages are excluded from the sitemap
+  const NOINDEX_PAGES = new Set(['disclosure']);
+  const expectedUrls = PAGES.filter(p => !NOINDEX_PAGES.has(p.pageKey)).length * localeCount;
 
   if (urlCount === expectedUrls) {
     pass(`Sitemap: ${urlCount} URLs (${PAGES.length} pages × ${localeCount} locales)`);
@@ -199,7 +212,14 @@ function checkSitemap() {
 
   // Check hreflang in sitemap
   const xhtmlLinks = (sitemap.match(/xhtml:link/g) || []).length;
-  if (xhtmlLinks > 0) {
+  if (LOCALES.length <= 1) {
+    // Single-locale build: sitemap must NOT carry hreflang alternates
+    if (xhtmlLinks === 0) {
+      pass('Sitemap correctly has no hreflang entries (single-locale build)');
+    } else {
+      error(`Sitemap has ${xhtmlLinks} stale hreflang xhtml:link entries in single-locale build`);
+    }
+  } else if (xhtmlLinks > 0) {
     pass(`Sitemap has ${xhtmlLinks} hreflang xhtml:link entries`);
   } else {
     error('Sitemap missing hreflang xhtml:link entries');

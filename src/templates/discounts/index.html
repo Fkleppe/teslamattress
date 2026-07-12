@@ -58,6 +58,10 @@
         .nav-links{display:flex;list-style:none;gap:2.5rem}
         .nav-links a{color:var(--cream);text-decoration:none;font-weight:500}
         .menu-toggle{display:none}
+        .feature-icon{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--forest)}
+        .feature-icon svg{display:block;width:20px;height:20px}
+        .feature-flag{display:inline-flex;align-items:center;justify-content:center;height:20px;min-width:27px;padding:0 5px;border:1.5px solid currentColor;border-radius:5px;font-size:.68rem;font-weight:700;letter-spacing:.06em;line-height:1;flex-shrink:0;color:var(--forest)}
+        .shop-btn .feature-flag{color:inherit;border-color:rgba(255,255,255,.7)}
     </style>
 
     <!-- Stylesheets -->
@@ -314,11 +318,11 @@
 
                     <div class="shop-buttons">
                         <a href="https://www.snuuzu.com?bg_ref=s7fluA5re6" target="_blank" rel="noopener sponsored" class="shop-btn eu">
-                            <span class="flag">🇪🇺</span>
+                            <span class="feature-flag" aria-hidden="true">EU</span>
                             Shop Snuuzu Europe
                         </a>
                         <a href="https://us.snuuzu.com?bg_ref=QBfsWJtiUJ" target="_blank" rel="noopener sponsored" class="shop-btn us">
-                            <span class="flag">🇺🇸</span>
+                            <span class="feature-flag" aria-hidden="true">US</span>
                             Shop Snuuzu USA
                         </a>
                     </div>
@@ -330,15 +334,15 @@
 
                     <div class="key-features">
                         <div class="feature">
-                            <span class="feature-icon">🏆</span>
+                            <span class="feature-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.6 14.2 7 22l5-3 5 3-1.6-7.8"/></svg></span>
                             <span>High-Density Foam</span>
                         </div>
                         <div class="feature">
-                            <span class="feature-icon">🇳🇱</span>
+                            <span class="feature-flag" aria-hidden="true">NL</span>
                             <span>Made in Netherlands</span>
                         </div>
                         <div class="feature">
-                            <span class="feature-icon">📦</span>
+                            <span class="feature-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></span>
                             <span>Ships Worldwide</span>
                         </div>
                     </div>
@@ -382,8 +386,8 @@
                             </button>
                         </div>
                         <div class="savings-display">
-                            <span class="save-amount">Save up to $36</span>
-                            <span class="on-price">on $359 mattress</span>
+                            <span class="save-amount">Save up to $51</span>
+                            <span class="on-price">on $509 mattress</span>
                         </div>
                     </div>
 
@@ -400,15 +404,15 @@
 
                     <div class="key-features">
                         <div class="feature">
-                            <span class="feature-icon">⚡</span>
+                            <span class="feature-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
                             <span>Self-Inflating</span>
                         </div>
                         <div class="feature">
-                            <span class="feature-icon">🛡️</span>
+                            <span class="feature-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
                             <span>5-Year Warranty</span>
                         </div>
                         <div class="feature">
-                            <span class="feature-icon">🌍</span>
+                            <span class="feature-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
                             <span>Free Shipping</span>
                         </div>
                     </div>
@@ -416,9 +420,9 @@
                     <div class="products-covered">
                         <h4>{{t.discounts_index.h4_2}}</h4>
                         <ul>
-                            <li><a href="/{{localePath}}reviews/havnby-autolevel">Havnby Autolevel Foam</a> - $359.99 → <strong>$323.99</strong></li>
-                            <li><a href="/{{localePath}}reviews/havnby-solo">Havnby Autolevel Solo</a> - $239.99 → <strong>$215.99</strong></li>
-                            <li><a href="/{{localePath}}reviews/havnby-foam">Havnby Foam Model Y/3</a> - $259 → <strong>$233</strong></li>
+                            <li><a href="/{{localePath}}reviews/havnby-autolevel">Havnby FlatCore Hybrid (ex Autolevel)</a> - $509 → <strong>$458.10</strong></li>
+                            <li><a href="/{{localePath}}reviews/havnby-solo">Havnby FlatCore Solo</a> - $379 → <strong>$341.10</strong></li>
+                            <li><a href="/{{localePath}}reviews/havnby-foam">Havnby Foam Model Y/3</a> - discontinued (see CloudCore Hybrid)</li>
                         </ul>
                     </div>
                 </div>
@@ -469,15 +473,15 @@
 
                     <div class="key-features">
                         <div class="feature">
-                            <span class="feature-icon">💰</span>
+                            <span class="feature-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01"/><path d="M18 12h.01"/></svg></span>
                             <span>Budget-Friendly</span>
                         </div>
                         <div class="feature">
-                            <span class="feature-icon">🚗</span>
+                            <span class="feature-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 17h2a1 1 0 0 0 1-1v-3a2 2 0 0 0-1.5-1.9L16 10l-2.2-2.3a2.5 2.5 0 0 0-1.8-.7H5c-.6 0-1.1.3-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4a1 1 0 0 0 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg></span>
                             <span>Y Juniper Ready</span>
                         </div>
                         <div class="feature">
-                            <span class="feature-icon">📦</span>
+                            <span class="feature-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></span>
                             <span>Ships Worldwide</span>
                         </div>
                     </div>
@@ -536,15 +540,15 @@
 
                     <div class="key-features">
                         <div class="feature">
-                            <span class="feature-icon">💰</span>
+                            <span class="feature-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01"/><path d="M18 12h.01"/></svg></span>
                             <span>20% Discount</span>
                         </div>
                         <div class="feature">
-                            <span class="feature-icon">🌍</span>
+                            <span class="feature-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
                             <span>Global Shipping</span>
                         </div>
                         <div class="feature">
-                            <span class="feature-icon">⭐</span>
+                            <span class="feature-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8-6.2-3.2L5.8 21 7 14.2 2 9.3l6.9-1L12 2z"/></svg></span>
                             <span>Quality Products</span>
                         </div>
                     </div>
@@ -604,15 +608,15 @@
 
                     <div class="key-features">
                         <div class="feature">
-                            <span class="feature-icon">🔧</span>
+                            <span class="feature-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9l-3.8 3.8z"/></svg></span>
                             <span>Tech Upgrades</span>
                         </div>
                         <div class="feature">
-                            <span class="feature-icon">💡</span>
+                            <span class="feature-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15.1 14c.2-1 .7-1.7 1.4-2.5A4.65 4.65 0 0 0 18 8a6 6 0 0 0-12 0c0 1 .2 2.2 1.5 3.5.8.8 1.2 1.5 1.4 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></span>
                             <span>Innovative Products</span>
                         </div>
                         <div class="feature">
-                            <span class="feature-icon">🌍</span>
+                            <span class="feature-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
                             <span>Global Shipping</span>
                         </div>
                     </div>
@@ -673,15 +677,15 @@
 
                     <div class="key-features">
                         <div class="feature">
-                            <span class="feature-icon">🏪</span>
+                            <span class="feature-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 8 1.2-4h13.6L20 8"/><path d="M2 8h20v2a2.5 2.5 0 0 1-5 0 2.5 2.5 0 0 1-5 0 2.5 2.5 0 0 1-5 0 2.5 2.5 0 0 1-5 0V8z"/><path d="M5 12.5V21h14v-8.5"/><path d="M10 21v-5h4v5"/></svg></span>
                             <span>Wide Selection</span>
                         </div>
                         <div class="feature">
-                            <span class="feature-icon">🇪🇺</span>
+                            <span class="feature-flag" aria-hidden="true">EU</span>
                             <span>EU Based</span>
                         </div>
                         <div class="feature">
-                            <span class="feature-icon">🚚</span>
+                            <span class="feature-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="4" width="14" height="12" rx="1"/><path d="M15 8h4l3 3v5h-7"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></span>
                             <span>Fast Shipping</span>
                         </div>
                     </div>
@@ -730,7 +734,7 @@
                     </div>
 
                     <div class="shop-buttons">
-                        <a href="https://www.jowua.com/discount/AWD" target="_blank" rel="noopener sponsored" class="shop-btn single">
+                        <a href="https://www.jowua-life.com/awd" target="_blank" rel="noopener sponsored" class="shop-btn single">
                             Shop Jowua
                         </a>
                     </div>
@@ -742,15 +746,15 @@
 
                     <div class="key-features">
                         <div class="feature">
-                            <span class="feature-icon">🎨</span>
+                            <span class="feature-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a10 10 0 0 0 0 20c.9 0 1.6-.7 1.6-1.7 0-.4-.2-.8-.4-1.1-.3-.3-.4-.7-.4-1.1 0-.9.7-1.7 1.6-1.7H16a6 6 0 0 0 6-5.6C22 6 17.5 2 12 2z"/><circle cx="7" cy="12" r=".5" fill="currentColor"/><circle cx="9" cy="7.5" r=".5" fill="currentColor"/><circle cx="14" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/></svg></span>
                             <span>Premium Design</span>
                         </div>
                         <div class="feature">
-                            <span class="feature-icon">🔋</span>
+                            <span class="feature-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="16" height="10" rx="2"/><path d="M22 11v2"/></svg></span>
                             <span>Tech Products</span>
                         </div>
                         <div class="feature">
-                            <span class="feature-icon">⭐</span>
+                            <span class="feature-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8-6.2-3.2L5.8 21 7 14.2 2 9.3l6.9-1L12 2z"/></svg></span>
                             <span>High Quality</span>
                         </div>
                     </div>
@@ -811,15 +815,15 @@
 
                     <div class="key-features">
                         <div class="feature">
-                            <span class="feature-icon">🛡️</span>
+                            <span class="feature-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
                             <span>Aluminum Build</span>
                         </div>
                         <div class="feature">
-                            <span class="feature-icon">🚗</span>
+                            <span class="feature-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 17h2a1 1 0 0 0 1-1v-3a2 2 0 0 0-1.5-1.9L16 10l-2.2-2.3a2.5 2.5 0 0 0-1.8-.7H5c-.6 0-1.1.3-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4a1 1 0 0 0 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg></span>
                             <span>Roof &amp; Cargo Boxes</span>
                         </div>
                         <div class="feature">
-                            <span class="feature-icon">🍳</span>
+                            <span class="feature-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="14" r="7"/><circle cx="10" cy="14" r="2.5"/><path d="m15 9 6-6"/></svg></span>
                             <span>Camp Kitchen Boxes</span>
                         </div>
                     </div>
@@ -880,15 +884,15 @@
 
                     <div class="key-features">
                         <div class="feature">
-                            <span class="feature-icon">🇸🇪</span>
+                            <span class="feature-flag" aria-hidden="true">SE</span>
                             <span>Swedish / EU Stock</span>
                         </div>
                         <div class="feature">
-                            <span class="feature-icon">📦</span>
+                            <span class="feature-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></span>
                             <span>Fast EU Shipping</span>
                         </div>
                         <div class="feature">
-                            <span class="feature-icon">⭐</span>
+                            <span class="feature-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8-6.2-3.2L5.8 21 7 14.2 2 9.3l6.9-1L12 2z"/></svg></span>
                             <span>Curated Catalog</span>
                         </div>
                     </div>
@@ -949,15 +953,15 @@
 
                     <div class="key-features">
                         <div class="feature">
-                            <span class="feature-icon">🏷️</span>
+                            <span class="feature-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L2 12V2h10l8.6 8.6a2 2 0 0 1 0 2.8z"/><path d="M7 7h.01"/></svg></span>
                             <span>15% Site-wide</span>
                         </div>
                         <div class="feature">
-                            <span class="feature-icon">🌍</span>
+                            <span class="feature-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
                             <span>Ships Worldwide</span>
                         </div>
                         <div class="feature">
-                            <span class="feature-icon">🧰</span>
+                            <span class="feature-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="9" width="18" height="12" rx="2"/><path d="M9 9V7a3 3 0 0 1 6 0v2"/><path d="M3 14h18"/></svg></span>
                             <span>Broad Catalog</span>
                         </div>
                     </div>

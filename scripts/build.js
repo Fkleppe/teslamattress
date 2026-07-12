@@ -4,6 +4,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 
 const ROOT = path.join(__dirname, '..');
 const TEMPLATE_DIR = path.join(ROOT, 'src', 'templates');
@@ -11,7 +12,29 @@ const LOCALE_DIR = path.join(ROOT, 'src', 'locales');
 const DIST_DIR = path.join(ROOT, 'dist');
 const PAGES = JSON.parse(fs.readFileSync(path.join(ROOT, 'src', 'pages.json'), 'utf8'));
 const BASE_URL = 'https://teslamattress.com';
-const BUILD_DATE = new Date().toISOString().slice(0, 10);
+const BUILD_DATE = process.env.BUILD_DATE_OVERRIDE || new Date().toISOString().slice(0, 10);
+
+// Honest per-page dates: {{buildDate}} / sitemap lastmod only advance when the
+// page's rendered content actually changes (tracked by content hash).
+// State is committed so dateModified survives across machines/CI.
+const LASTMOD_PATH = path.join(ROOT, 'src', 'lastmod.json');
+let lastmodState = {};
+try { lastmodState = JSON.parse(fs.readFileSync(LASTMOD_PATH, 'utf8')); } catch (e) { /* first run */ }
+
+function pageDateFor(locale, pageKey, htmlBeforeDate) {
+  const key = `${locale}:${pageKey}`;
+  const hash = crypto.createHash('sha1').update(htmlBeforeDate).digest('hex');
+  const prev = lastmodState[key];
+  if (prev && prev.hash === hash) return prev.date;
+  lastmodState[key] = { hash, date: BUILD_DATE };
+  return BUILD_DATE;
+}
+
+function saveLastmodState() {
+  const sorted = {};
+  for (const k of Object.keys(lastmodState).sort()) sorted[k] = lastmodState[k];
+  fs.writeFileSync(LASTMOD_PATH, JSON.stringify(sorted, null, 2) + '\n', 'utf8');
+}
 
 // Parse CLI args
 const args = process.argv.slice(2);
@@ -155,8 +178,8 @@ function buildPage(page, locale, localeData, fallbackData) {
   const cfg = LOCALE_CONFIG[locale];
   const pagePath = page.output.replace(/index\.html$/, '').replace(/\.html$/, '').replace(/\/$/, '');
 
-  // 1. Structural placeholders
-  html = html.replace(/\{\{buildDate\}\}/g, BUILD_DATE);
+  // 1. Structural placeholders ({{buildDate}} is resolved LAST — see step 3 —
+  // so the content hash for honest lastmod excludes date churn)
   html = html.replace(/\{\{htmlLang\}\}/g, cfg.html_lang);
   html = html.replace(/\{\{ogLocale\}\}/g, cfg.og_locale);
   html = html.replace(/\{\{localePath\}\}/g, cfg.locale_path);
@@ -177,7 +200,12 @@ function buildPage(page, locale, localeData, fallbackData) {
   // 2. Translation placeholders (JSON-escaped inside ld+json blocks)
   html = replaceTranslationsContextAware(html, localeData, page.pageKey, fallbackData);
 
-  // 3. Write output
+  // 3. Honest date: hash content with {{buildDate}} still unresolved, then
+  // stamp the page with its last-actual-change date
+  const pageDate = pageDateFor(locale, page.pageKey, html);
+  html = html.replace(/\{\{buildDate\}\}/g, pageDate);
+
+  // 4. Write output
   const outputPath = path.join(DIST_DIR, cfg.locale_path, page.output);
   fs.mkdirSync(path.dirname(outputPath), { recursive: true });
   fs.writeFileSync(outputPath, html, 'utf8');
@@ -212,24 +240,29 @@ function generateSitemap(locales) {
       // Changefreq: home/hub pages weekly, others monthly
       const changefreq = (page.pageKey === 'home' || page.output.endsWith('index.html')) ? 'weekly' : 'monthly';
 
-      // Hreflang xhtml:link entries
-      const hreflangs = ALL_LOCALES.map(l => {
-        const lCfg = LOCALE_CONFIG[l];
-        const lfp = `${lCfg.locale_path}${pagePath}`.replace(/\/$/, '');
-        const lurl = lfp ? `${BASE_URL}/${lfp}` : `${BASE_URL}/`;
-        return `      <xhtml:link rel="alternate" hreflang="${lCfg.hreflang}" href="${lurl}"/>`;
-      }).join('\n');
+      // Hreflang xhtml:link entries (omitted entirely for single-locale builds —
+      // self-referencing alternates are meaningless noise)
+      let alternates = '';
+      if (ALL_LOCALES.length > 1) {
+        const hreflangs = ALL_LOCALES.map(l => {
+          const lCfg = LOCALE_CONFIG[l];
+          const lfp = `${lCfg.locale_path}${pagePath}`.replace(/\/$/, '');
+          const lurl = lfp ? `${BASE_URL}/${lfp}` : `${BASE_URL}/`;
+          return `      <xhtml:link rel="alternate" hreflang="${lCfg.hreflang}" href="${lurl}"/>`;
+        }).join('\n');
+        const xdefFp = pagePath || '';
+        const xdefault = `      <xhtml:link rel="alternate" hreflang="x-default" href="${xdefFp ? `${BASE_URL}/${xdefFp}` : `${BASE_URL}/`}"/>`;
+        alternates = `\n${hreflangs}\n${xdefault}`;
+      }
 
-      const xdefFp = pagePath || '';
-      const xdefault = `      <xhtml:link rel="alternate" hreflang="x-default" href="${xdefFp ? `${BASE_URL}/${xdefFp}` : `${BASE_URL}/`}"/>`;
+      // Honest lastmod: the date this page's content last actually changed
+      const lastmod = (lastmodState[`${loc}:${page.pageKey}`] || {}).date || today;
 
       urls += `  <url>
     <loc>${url}</loc>
-    <lastmod>${today}</lastmod>
+    <lastmod>${lastmod}</lastmod>
     <changefreq>${changefreq}</changefreq>
-    <priority>${priority}</priority>
-${hreflangs}
-${xdefault}
+    <priority>${priority}</priority>${alternates}
   </url>\n`;
     }
   }
@@ -335,6 +368,9 @@ copyStaticFiles();
 // Generate sitemap
 console.log('  Generating sitemap.xml...');
 generateSitemap(locales);
+
+// Persist honest per-page lastmod state (committed — see LASTMOD_PATH)
+saveLastmodState();
 
 // Update robots.txt with new sitemap URL
 const robotsPath = path.join(DIST_DIR, 'robots.txt');
