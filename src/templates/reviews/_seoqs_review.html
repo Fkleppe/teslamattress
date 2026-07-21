@@ -97,7 +97,7 @@
         "itemReviewed": {
             "@type": "Product",
             "name": "{{t.PAGEKEY.product_name}}",
-            "image": "https://teslamattress.com{{t.PAGEKEY.image_path}}",
+            "image": "{{t.PAGEKEY.image_path}}",
             "brand": { "@type": "Brand", "name": "{{t.PAGEKEY.brand_name}}" },
             "offers": {
                 "@type": "Offer",
@@ -174,7 +174,10 @@
     </header>
 
     <main class="review-main">
-        <div class="review-tldr"><strong>The verdict:</strong> {{t.PAGEKEY.tldr}}</div>
+        <div class="review-tldr">
+            <strong>The verdict:</strong> {{t.PAGEKEY.tldr}}
+            <p style="margin:1rem 0 0"><a href="{{t.PAGEKEY.affiliate_url}}" rel="sponsored noopener" class="cta-button" style="display:inline-block;background:#c9a961;color:var(--forest-dark);padding:.7rem 1.6rem;border-radius:50px;text-decoration:none;font-weight:600">{{t.PAGEKEY.cta_button}}</a></p>
+        </div>
 
         {{t.PAGEKEY.body_html}}
 
