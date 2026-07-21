@@ -16,3 +16,7 @@ dist/
 node_modules/
 package-lock.json
 .vercel
+
+# Local agent context (not for the public repo)
+AGENTS.md
+CLAUDE.md
