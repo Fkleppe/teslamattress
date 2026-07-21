@@ -2,6 +2,7 @@
   "scripts": {
     "extract": "node scripts/extract.js",
     "build": "node scripts/build.js",
+    "preview": "node scripts/serve.js",
     "translate": "node scripts/translate.js",
     "verify": "node scripts/verify.js"
   },
