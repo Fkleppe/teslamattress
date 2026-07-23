@@ -735,6 +735,90 @@ function checkEditorialImageProvenance() {
 }
 
 // ============================================================
+// Check 15: Mattress reviews cover practical ownership questions
+// ============================================================
+function checkMattressReviewDepth() {
+  console.log('\n--- Mattress review depth and sourcing ---');
+
+  const reviewDepthPath = path.join(ROOT, 'src', 'review-depth.json');
+  if (!fs.existsSync(reviewDepthPath)) {
+    error('Missing src/review-depth.json');
+    return;
+  }
+
+  const reviewDepth = JSON.parse(fs.readFileSync(reviewDepthPath, 'utf8'));
+  const reviewPages = PAGES.filter(page => page.template === 'reviews/_seoqs_review.html');
+  const requiredFields = [
+    'depth_intro',
+    'packing_detail',
+    'materials_detail',
+    'pump_detail',
+    'sleep_detail',
+    'care_detail',
+    'evidence_detail',
+    'source_links_html',
+  ];
+
+  for (const page of reviewPages) {
+    const record = reviewDepth[page.pageKey];
+    if (!record) {
+      error(`${page.output}: missing practical ownership research`);
+      continue;
+    }
+    for (const field of requiredFields) {
+      if (!String(record[field] || '').trim()) {
+        error(`${page.output}: missing ${field}`);
+      }
+    }
+    const sourceLinkCount = (String(record.source_links_html).match(/<a\b/g) || []).length;
+    if (sourceLinkCount < 3) {
+      error(`${page.output}: only ${sourceLinkCount}/3 primary source links`);
+    }
+
+    const filePath = path.join(DIST_DIR, page.output);
+    if (!fs.existsSync(filePath)) continue;
+    const html = fs.readFileSync(filePath, 'utf8');
+    const main = (html.match(/<main class="review-main">([\s\S]*?)<\/main>/) || [])[1] || '';
+    const wordCount = decodeEntities(
+      main
+        .replace(/<script[\s\S]*?<\/script>/gi, ' ')
+        .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+        .replace(/<[^>]+>/g, ' ')
+    ).split(/\s+/).filter(Boolean).length;
+    const ownershipItems = (html.match(/class="ownership-number"/g) || []).length;
+
+    if (!html.includes('class="ownership-detail"')) error(`${page.output}: missing practical ownership section`);
+    if (ownershipItems !== 6) error(`${page.output}: has ${ownershipItems}/6 ownership checks`);
+    if (wordCount < 900) error(`${page.output}: only ${wordCount}/900 review words`);
+    if (!html.includes('Primary sources checked')) error(`${page.output}: missing visible primary-source disclosure`);
+  }
+
+  const unknownKeys = Object.keys(reviewDepth).filter(pageKey => !reviewPages.some(page => page.pageKey === pageKey));
+  for (const pageKey of unknownKeys) error(`review-depth.json contains unknown review page: ${pageKey}`);
+
+  pass(`${reviewPages.length} mattress reviews cover packing, materials, pump, sleep quality, care and evidence limits`);
+}
+
+// ============================================================
+// Check 16: Homepage hero is a provenance-locked real product image
+// ============================================================
+function checkHomepageHero() {
+  console.log('\n--- Homepage hero authenticity ---');
+
+  const homePath = path.join(DIST_DIR, 'index.html');
+  if (!fs.existsSync(homePath)) {
+    error('Homepage build missing');
+    return;
+  }
+  const html = fs.readFileSync(homePath, 'utf8');
+  const expectedImage = '/images/snuuzu-model-y-tesla-mattress.jpg';
+  if (!html.includes(`src="${expectedImage}"`)) error(`Homepage hero must use ${expectedImage}`);
+  if (!html.includes('Official Snuuzu product photograph')) error('Homepage hero is missing its product-photo disclosure');
+  if (html.includes('hero-model-y-adventure-v2.webp')) error('Retired composited homepage hero remains in the built homepage');
+  pass('Homepage hero uses the provenance-locked Snuuzu product photograph with visible attribution');
+}
+
+// ============================================================
 // Run all checks
 // ============================================================
 console.log('Verifying multilingual build...');
@@ -755,6 +839,8 @@ checkGeneratedArticleContent();
 checkHavnbyCatalog();
 checkEditorialMedia();
 checkEditorialImageProvenance();
+checkMattressReviewDepth();
+checkHomepageHero();
 
 console.log(`\n${'='.repeat(40)}`);
 console.log(`Results: ${errors} errors, ${warnings} warnings`);

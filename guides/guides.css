@@ -1329,7 +1329,7 @@
     padding: clamp(4rem, 8vw, 7rem) max(6vw, calc((100vw - 1180px) / 2)) 3.5rem;
     background:
         linear-gradient(90deg, rgba(17, 18, 16, .94), rgba(17, 18, 16, .72) 58%, rgba(17, 18, 16, .28)),
-        url('/images/hero-model-y-adventure-v2.webp') center 55% / cover;
+        url('/images/snuuzu-model-y-tesla-mattress.jpg') center 55% / cover;
 }
 
 .guide-hero-content {

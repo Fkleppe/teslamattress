@@ -11,6 +11,7 @@ const TEMPLATE_DIR = path.join(ROOT, 'src', 'templates');
 const LOCALE_DIR = path.join(ROOT, 'src', 'locales');
 const DIST_DIR = path.join(ROOT, 'dist');
 const PAGES = JSON.parse(fs.readFileSync(path.join(ROOT, 'src', 'pages.json'), 'utf8'));
+const REVIEW_DEPTH = JSON.parse(fs.readFileSync(path.join(ROOT, 'src', 'review-depth.json'), 'utf8'));
 const BASE_URL = 'https://teslamattress.com';
 const BUILD_DATE = process.env.BUILD_DATE_OVERRIDE || new Date().toISOString().slice(0, 10);
 const VERSIONED_SHELL_ASSETS = [
@@ -84,6 +85,14 @@ function loadLocales() {
       continue;
     }
     locales[loc] = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+    if (loc === 'en') {
+      for (const [pageKey, detail] of Object.entries(REVIEW_DEPTH)) {
+        if (!locales[loc][pageKey]) {
+          throw new Error(`Review depth references unknown locale page: ${pageKey}`);
+        }
+        Object.assign(locales[loc][pageKey], detail);
+      }
+    }
   }
 
   return locales;

@@ -27,12 +27,12 @@
     "source_urls": ["https://havnby.com/products/cloudcore-hybrid-support-mattress-for-tesla-model-s-3-x-y"],
     "sha256": "67d0ff0ee7708137e3508939dfd328171f09687571cf9fb87c2d6ae9b5a5fb34"
   },
-  "hero-model-y-adventure-v2.webp": {
+  "snuuzu-model-y-tesla-mattress.jpg": {
     "kind": "vendor_product_image",
     "synthetic": false,
-    "sources": ["/images/novapads-model-y-pro.webp"],
-    "source_urls": ["https://novapads.com/"],
-    "sha256": "be1226494e39fb4008506be4ef22c13d787f3269b52189463e75ce8631231761"
+    "sources": [],
+    "source_urls": ["https://www.snuuzu.com/products/snuuzu-model-y"],
+    "sha256": "acc0752fa04b8277b151915b7c421c7da5e88b226c39cff8e3a5231b2f9e529f"
   },
   "lightest-mattress.webp": {
     "kind": "vendor_product_image",

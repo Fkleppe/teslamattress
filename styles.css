@@ -2519,25 +2519,21 @@ body .discounts-hero {
     min-height: 590px;
     position: relative;
     display: grid;
-    grid-template-columns: minmax(300px, 48%) 1fr;
-    align-items: center;
+    grid-template-columns: minmax(340px, 46%) minmax(0, 54%);
+    align-items: stretch;
     padding: 0;
     background: var(--paper);
-    overflow: visible;
-}
-
-.home-page .hero::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg, var(--paper) 0%, rgba(245, 241, 234, 0.96) 27%, rgba(245, 241, 234, 0.62) 43%, rgba(245, 241, 234, 0) 68%);
-    pointer-events: none;
+    overflow: hidden;
 }
 
 .hero-media {
-    position: absolute;
-    inset: 0;
+    grid-column: 2;
+    position: relative;
+    min-height: 590px;
+    margin: 0;
     overflow: hidden;
+    background: #171717;
+    border-left: 1px solid var(--line);
 }
 
 .hero-media img {
@@ -2548,14 +2544,29 @@ body .discounts-hero {
     object-position: center;
 }
 
+.hero-media figcaption {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    max-width: 28rem;
+    padding: 0.55rem 0.75rem;
+    color: #f8f6f1;
+    background: rgba(20, 20, 19, 0.84);
+    font-size: 0.68rem;
+    letter-spacing: 0.03em;
+    line-height: 1.35;
+}
+
 .home-page .hero-content {
     grid-column: 1;
+    grid-row: 1;
     position: relative;
     z-index: 2;
+    align-self: center;
     align-items: flex-start;
     max-width: 650px;
     margin: 0;
-    padding: clamp(4rem, 8vw, 8rem) 0 clamp(6.5rem, 10vw, 9rem) max(5vw, 2rem);
+    padding: clamp(4rem, 7vw, 6.5rem) clamp(2rem, 4vw, 4.75rem) clamp(4rem, 7vw, 6.5rem) max(5vw, 2rem);
     color: var(--ink);
     text-align: left;
     animation: tm-enter 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
@@ -3325,10 +3336,6 @@ body .discounts-hero {
         flex-direction: column;
     }
 
-    .home-page .hero::after {
-        display: none;
-    }
-
     .home-page .hero-content {
         order: 1;
         width: 100%;
@@ -3349,11 +3356,21 @@ body .discounts-hero {
         order: 2;
         position: relative;
         width: 100%;
-        height: 310px;
+        height: 330px;
+        min-height: 0;
+        border-top: 1px solid var(--line);
+        border-left: 0;
     }
 
     .hero-media img {
-        object-position: 70% center;
+        object-position: center;
+    }
+
+    .hero-media figcaption {
+        right: 0.75rem;
+        bottom: 0.75rem;
+        left: 0.75rem;
+        max-width: none;
     }
 
     .home-page .hero-stats {
@@ -4845,6 +4862,127 @@ body .legal-page {
     text-decoration: none;
 }
 
+.ownership-detail {
+    margin: 0 0 clamp(4.5rem, 9vw, 7rem);
+}
+
+.ownership-detail-header {
+    display: grid;
+    grid-template-columns: minmax(150px, 0.58fr) minmax(0, 1.42fr);
+    gap: 0.75rem clamp(1.5rem, 5vw, 3.5rem);
+    padding: 1.15rem 0 2rem;
+    border-top: 2px solid var(--ink);
+}
+
+.ownership-kicker {
+    grid-row: 1 / span 2;
+    color: var(--accent);
+    font-size: 0.67rem;
+    font-weight: 760;
+    letter-spacing: 0.15em;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.review-main .ownership-detail-header h2 {
+    max-width: none;
+    margin: 0;
+    font-size: clamp(1.9rem, 4vw, 3rem);
+    letter-spacing: -0.045em;
+    line-height: 0.98;
+}
+
+.review-main .ownership-detail-header p {
+    max-width: 59ch;
+    margin: 0.7rem 0 0;
+    color: var(--ink-soft);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.review-main .ownership-detail-list {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--line-strong);
+    list-style: none;
+}
+
+.ownership-detail-list > li {
+    display: grid;
+    grid-template-columns: 3rem minmax(0, 1fr);
+    gap: clamp(1rem, 3vw, 2rem);
+    margin: 0;
+    padding: clamp(1.5rem, 3vw, 2.15rem) 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.ownership-number {
+    padding-top: 0.15rem;
+    color: var(--accent);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.7rem;
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.review-main .ownership-detail-list h3 {
+    margin: 0 0 0.6rem;
+    color: var(--ink);
+    font-size: clamp(1.12rem, 2vw, 1.32rem);
+    font-weight: 700;
+    letter-spacing: -0.022em;
+    line-height: 1.2;
+}
+
+.review-main .ownership-detail-list p {
+    max-width: 65ch;
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: clamp(0.98rem, 1.15vw, 1.05rem);
+    line-height: 1.76;
+}
+
+.ownership-sources {
+    margin-top: 1.75rem;
+    padding: 1.35rem 1.5rem 1.5rem;
+    background: var(--ink);
+    color: var(--surface);
+    border-top: 3px solid var(--accent);
+}
+
+.ownership-sources > strong {
+    display: block;
+    margin-bottom: 0.8rem;
+    color: var(--surface);
+    font-size: 0.7rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+}
+
+.ownership-sources > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem 1.25rem;
+}
+
+.review-main .ownership-sources a {
+    color: var(--surface);
+    font-size: 0.82rem;
+    font-weight: 650;
+    text-decoration-color: var(--accent-soft);
+    text-underline-offset: 0.25em;
+}
+
+.review-main .ownership-sources p {
+    max-width: 65ch;
+    margin: 1rem 0 0;
+    color: var(--line);
+    font-size: 0.78rem;
+    line-height: 1.55;
+}
+
 .review-main > p {
     max-width: 67ch;
     font-size: clamp(1rem, 1.2vw, 1.08rem);
@@ -5005,6 +5143,32 @@ body .legal-page {
 }
 
 @media (max-width: 680px) {
+    .ownership-detail-header {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .ownership-kicker {
+        grid-row: auto;
+        margin-bottom: 1rem;
+    }
+
+    .ownership-detail-list > li {
+        grid-template-columns: 2rem minmax(0, 1fr);
+        gap: 0.85rem;
+    }
+
+    .ownership-sources {
+        margin-right: -0.15rem;
+        margin-left: -0.15rem;
+        padding: 1.25rem 1.15rem 1.4rem;
+    }
+
+    .ownership-sources > div {
+        display: grid;
+        gap: 0.7rem;
+    }
+
     .review-main .cta-block {
         grid-template-columns: 1fr;
     }
