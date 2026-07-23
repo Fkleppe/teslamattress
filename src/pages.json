@@ -80,6 +80,11 @@
     "output": "reviews/tesmat-solo-3.html"
   },
   {
+    "template": "guides/_rockbrook_article.html",
+    "pageKey": "review_rockbrook_camping_box",
+    "output": "reviews/rockbrook-camping-box.html"
+  },
+  {
     "template": "vs/index.html",
     "pageKey": "vs_index",
     "output": "vs/index.html"
@@ -118,6 +123,11 @@
     "template": "vs/model-y-vs-model-3-mattresses.html",
     "pageKey": "vs_model_y_vs_model_3",
     "output": "vs/model-y-vs-model-3-mattresses.html"
+  },
+  {
+    "template": "guides/_rockbrook_article.html",
+    "pageKey": "vs_rockbrook_bx1024_vs_bx1025",
+    "output": "vs/rockbrook-bx1024-vs-bx1025.html"
   },
   {
     "template": "discounts/index.html",
@@ -228,6 +238,16 @@
     "template": "guides/tesla-camping-with-dogs.html",
     "pageKey": "guide_dogs",
     "output": "guides/tesla-camping-with-dogs.html"
+  },
+  {
+    "template": "guides/_rockbrook_article.html",
+    "pageKey": "guide_best_camping_box",
+    "output": "guides/best-camping-box.html"
+  },
+  {
+    "template": "guides/_rockbrook_article.html",
+    "pageKey": "guide_camping_kitchen_box",
+    "output": "guides/camping-kitchen-box.html"
   },
   {
     "template": "faq/index.html",

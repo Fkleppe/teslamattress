@@ -188,5 +188,54 @@
       "https://novapads.com/"
     ],
     "sha256": "95884a8e364fd65c6a2beae46882a2630a48e736da51cee42e658198ba7d8c0d"
+  },
+  "rockbrook-aluminum-box-campsite.webp": {
+    "kind": "vendor_product_image",
+    "synthetic": false,
+    "sources": [],
+    "source_urls": ["https://www.irockbrook.com/collections/all-products"],
+    "sha256": "d172ab7be20d59daf7cce3925a3a750e700f4e76a174b47d06a42e6dbfe8de2c"
+  },
+  "rockbrook-bx1024-kitchen-box.webp": {
+    "kind": "vendor_product_image",
+    "synthetic": false,
+    "sources": [],
+    "source_urls": ["https://www.irockbrook.com/collections/all-products/products/rockbrook-bx1024d-50l-kitchen-storage-box-with-weatherproof-lid-and-folding-stand"],
+    "sha256": "c20f2dc24c51b050a293cbff90a86d9d8d183987d94411c599ebd5e6f9d76a80"
+  },
+  "rockbrook-bx1025-kitchen-box.jpg": {
+    "kind": "vendor_product_image",
+    "synthetic": false,
+    "sources": [],
+    "source_urls": ["https://www.irockbrook.com/collections/all-products/products/rockbrook-bx1025d-50l-camping-box-with-foldable-legs-for-kitchen-storage"],
+    "sha256": "e59978f4f5b91f8a00cb14e08d95ef5d9b8e4d4f09032fd191ee537d8866deb7"
+  },
+  "rockbrook-bx1026-overland-kitchen-box.webp": {
+    "kind": "vendor_product_image",
+    "synthetic": false,
+    "sources": [],
+    "source_urls": ["https://www.irockbrook.com/products/rockbrook-30l-portable-camping-kitchen-box-with-foldable-stand-bx1026d"],
+    "sha256": "148960f98e20e2106cad1d68fb54171c68787109e95fff55df788f213256f6c9"
+  },
+  "rockbrook-bx1027-park60-camp.jpg": {
+    "kind": "vendor_product_image",
+    "synthetic": false,
+    "sources": [],
+    "source_urls": ["https://www.irockbrook.com/collections/all-products/products/rockbrook-bx1027d-60l-camping-storage-box-with-molle-system"],
+    "sha256": "67ce42f2751e2040cf086acc10a53579ac33ff48ae3f88d10e3f0d37385247b9"
+  },
+  "rockbrook-bx1031-roof-box.webp": {
+    "kind": "vendor_product_image",
+    "synthetic": false,
+    "sources": [],
+    "source_urls": ["https://www.irockbrook.com/collections/all-products/products/rockbrook-bx1031-large-roof-box-car-vehicle-top-cargo-storage"],
+    "sha256": "be03de4044eb6ec6ec7874d6d0bfa3aa693da339a4215caa7b7af93e05c2d373"
+  },
+  "rockbrook-founder-camping.webp": {
+    "kind": "vendor_product_image",
+    "synthetic": false,
+    "sources": [],
+    "source_urls": ["https://www.irockbrook.com/pages/rockbrook-story"],
+    "sha256": "0f64bfb10d277e9a036154c487621208b7e7ae64b29a9c1b35a6a18dd8f8c9d4"
   }
 }
