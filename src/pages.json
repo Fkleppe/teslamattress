@@ -125,7 +125,7 @@
     "output": "vs/model-y-vs-model-3-mattresses.html"
   },
   {
-    "template": "guides/_rockbrook_article.html",
+    "template": "vs/_rockbrook-comparison.html",
     "pageKey": "vs_rockbrook_bx1024_vs_bx1025",
     "output": "vs/rockbrook-bx1024-vs-bx1025.html"
   },
