@@ -20,6 +20,7 @@ const VERSIONED_SHELL_ASSETS = [
   '/vs/vs.css',
   '/discounts/discounts.css',
   '/discounts/brand-page.css',
+  '/analytics-events.js',
   '/mobile-nav.js',
 ];
 const SHELL_ASSET_VERSION = crypto.createHash('sha1')
@@ -202,6 +203,20 @@ function enhancePageShell(html) {
     );
   }
 
+  if (!html.includes('/_vercel/insights/script.js')) {
+    html = html.replace(
+      '</body>',
+      '    <script defer src="/_vercel/insights/script.js"></script>\n</body>'
+    );
+  }
+
+  if (!html.includes('/analytics-events.js')) {
+    html = html.replace(
+      '</body>',
+      `    <script src="/analytics-events.js?v=${SHELL_ASSET_VERSION}" defer></script>\n</body>`
+    );
+  }
+
   return html;
 }
 
@@ -345,6 +360,7 @@ function copyStaticFiles() {
     'icon-192.png',
     'icon-512.png',
     'site.webmanifest',
+    'analytics-events.js',
     'mobile-nav.js',
     'reviews/review-page.css',
     'vs/vs.css',

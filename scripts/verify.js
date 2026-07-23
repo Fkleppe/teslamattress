@@ -503,11 +503,27 @@ function checkResponsiveShell() {
       if (!/href="\/styles\.css\?v=[a-f0-9]{10}"/.test(html)) {
         error(`${LOCALE_PATHS[loc]}${page.output}: versioned global stylesheet missing`);
       }
+      if (!/<script defer src="\/_vercel\/insights\/script\.js"><\/script>/.test(html)) {
+        error(`${LOCALE_PATHS[loc]}${page.output}: Vercel Web Analytics missing`);
+      }
+      if (!/<script src="\/analytics-events\.js\?v=[a-f0-9]{10}" defer><\/script>/.test(html)) {
+        error(`${LOCALE_PATHS[loc]}${page.output}: Vercel click-event tracking missing`);
+      }
       checked++;
     }
   }
 
-  pass(`${checked} pages include the responsive viewport and shared navigation`);
+  const trackerPath = path.join(DIST_DIR, 'analytics-events.js');
+  if (!fs.existsSync(trackerPath)) {
+    error('analytics-events.js missing from deployed bundle');
+  } else {
+    const tracker = fs.readFileSync(trackerPath, 'utf8');
+    for (const eventName of ['Affiliate Click', 'Content CTA Click', 'Coupon Copy']) {
+      if (!tracker.includes(eventName)) error(`analytics-events.js missing ${eventName} event`);
+    }
+  }
+
+  pass(`${checked} pages include the responsive shell and Vercel event tracking`);
 }
 
 // ============================================================
