@@ -90,9 +90,14 @@
     "output": "vs/snuuzu-vs-tesmat.html"
   },
   {
-    "template": "vs/snuuzu-vs-havnby.html",
+    "template": "vs/_brand-comparison.html",
     "pageKey": "vs_snuuzu_vs_havnby",
     "output": "vs/snuuzu-vs-havnby.html"
+  },
+  {
+    "template": "vs/_brand-comparison.html",
+    "pageKey": "vs_snuuzu_vs_novapads",
+    "output": "vs/snuuzu-vs-novapads.html"
   },
   {
     "template": "vs/snuuzu-vs-dreamcase.html",
@@ -340,7 +345,7 @@
     "output": "vs/tesmat-vs-novapads.html"
   },
   {
-    "template": "faq/_paa.html",
+    "template": "vs/_brand-comparison.html",
     "pageKey": "vs_havnby_vs_novapads",
     "output": "vs/havnby-vs-novapads.html"
   },

@@ -52,7 +52,12 @@
     <noscript><link rel="stylesheet" href="/styles.css"></noscript>
     <link rel="stylesheet" href="/guides/guides.css">
     <noscript><link rel="stylesheet" href="/guides/guides.css"></noscript>
-    <style>.guide-hero{background:linear-gradient(90deg,rgba(17,18,16,.96),rgba(17,18,16,.76) 62%,rgba(17,18,16,.38)),url('/images/hero-bg.webp') center 48% / cover}</style>
+    <style>
+        .guide-hero{background:linear-gradient(90deg,rgba(17,18,16,.96),rgba(17,18,16,.76) 62%,rgba(17,18,16,.38)),url('/images/hero-bg.webp') center 48% / cover}
+        .model-x-product-image{margin:-.35rem 0 2rem}
+        .model-x-product-image img{aspect-ratio:16/9;object-fit:cover}
+        @media(max-width:640px){.model-x-product-image{margin:-.2rem 0 1.5rem}}
+    </style>
 
     <!-- JSON-LD: Article -->
     <script type="application/ld+json">
@@ -269,7 +274,7 @@
             </section>
 
             <figure class="guide-image">
-                <img src="/images/novapads-model-y-pro.webp" alt="NovaPads Air-Foam Pro available with a Tesla Model X vehicle option" loading="eager" fetchpriority="high" width="1200" height="800">
+                <img src="/images/snuuzu-model-y-tesla-mattress.webp" alt="Snuuzu foam-and-air mattress system that Snuuzu lists for Tesla Model X fit" loading="eager" fetchpriority="high" width="1200" height="800">
                 <figcaption>{{t.guide_model_x.img1_caption}}</figcaption>
             </figure>
 
@@ -279,11 +284,79 @@
                 <p>{{t.guide_model_x.p_compatible_intro}}</p>
                 <p>{{t.guide_model_x.p_compatible_fit_note}}</p>
 
-                <!-- NovaPads Air-Foam Pro -->
+                <!-- Snuuzu -->
                 <div class="product-pick editors-choice">
                     <div class="product-pick-header">
                         <div>
-                            <span style="font-size: 0.8rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px;">{{t.guide_model_x.pick_label_best_overall}}</span>
+                            <span style="font-size: 0.8rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px;">Premium documented fit</span>
+                            <div class="product-pick-name">Snuuzu Model Y Mattress for Model X</div>
+                        </div>
+                        <span class="product-pick-score">9.4/10*</span>
+                    </div>
+                    <div class="product-pick-meta">
+                        <span>Foam + adjustable air layer</span>
+                        <span>204 × 130 cm</span>
+                        <span>20 cm Model Y profile</span>
+                    </div>
+                    <p class="product-pick-desc">Snuuzu's official Model X fit page directs shoppers to its Model Y system. The current mattress is listed at €899/$899 with an integrated rechargeable USB-C pump, washable Tencel cover, 74 × 32 cm packed size and three-year warranty. Because seat layouts vary, confirm the exact Model X configuration with Snuuzu before ordering.</p>
+                    <ul class="product-pick-pros">
+                        <li>Official Snuuzu page explicitly discusses the Model Y mattress as its Model X fit</li>
+                        <li>Published 204 × 130 cm surface and adjustable support layer</li>
+                        <li>Integrated pump and three-year warranty</li>
+                        <li>*9.4 is our score for the current Snuuzu Model Y product, not an independent Model X fit test</li>
+                    </ul>
+                    <div class="product-pick-cta">
+                        <span class="price-tag">€899 / $899</span>
+                        <span class="discount-code-tag">{{t.shared.discount_percent_off}} <code>KLEPPE</code></span>
+                        <a href="/{{localePath}}reviews/snuuzu-model-y" class="btn-review">{{t.guide_model_x.btn_read_review}}</a>
+                        <span class="snuuzu-region-actions"><a href="https://www.snuuzu.com/products/snuuzu-model-y?bg_ref=s7fluA5re6" target="_blank" class="btn-buy" rel="noopener sponsored">Europe</a><a href="https://us.snuuzu.com/products/snuuzu-model-y?bg_ref=QBfsWJtiUJ" target="_blank" class="btn-buy" rel="noopener sponsored">USA &amp; Canada</a></span>
+                    </div>
+                </div>
+
+                <figure class="guide-image model-x-product-image">
+                    <img src="/images/snuuzu-model-y-tesla-mattress.webp" alt="Snuuzu current Model Y foam-and-air mattress product view" loading="lazy" width="1200" height="800">
+                    <figcaption>Snuuzu product image. Its Model X page points to this Model Y system; the image is not evidence of fit in every Model X seat configuration.</figcaption>
+                </figure>
+
+                <!-- Havnby CloudCore -->
+                <div class="product-pick">
+                    <div class="product-pick-header">
+                        <div>
+                            <span style="font-size: 0.8rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px;">Best specified mid-range fit</span>
+                            <div class="product-pick-name">Havnby CloudCore Foam Mattress</div>
+                        </div>
+                        <span class="product-pick-score">8.0/10</span>
+                    </div>
+                    <div class="product-pick-meta">
+                        <span>Foam + air</span>
+                        <span>193 × 132 × 11.5 cm</span>
+                        <span>Model X variant listed</span>
+                    </div>
+                    <p class="product-pick-desc">CloudCore is Havnby's current cross-model option with a selectable Model X variant. At $399 it publishes more fit data than many Model X listings: 193 × 132 × 11.5 cm, 3.95 kg, a built-in pump, 60-day trial and three-year warranty.</p>
+                    <ul class="product-pick-pros">
+                        <li>Specific Model X option in Havnby's current selector</li>
+                        <li>Published dimensions, weight and packed size</li>
+                        <li>Built-in pump with 70/85-second seller setup claims</li>
+                        <li>Vehicle year, seat layout and live return eligibility still require confirmation</li>
+                    </ul>
+                    <div class="product-pick-cta">
+                        <span class="price-tag">$399</span>
+                        <span class="discount-code-tag">{{t.shared.discount_percent_off}} <code>AWD</code></span>
+                        <a href="/{{localePath}}reviews/havnby-cloudcore" class="btn-review">{{t.guide_model_x.btn_read_review}}</a>
+                        <a href="https://havnby.com/products/cloudcore-hybrid-support-mattress-for-tesla-model-s-3-x-y?ref=discount" target="_blank" rel="noopener sponsored" class="btn-buy">{{t.guide_model_x.btn_check_price}}</a>
+                    </div>
+                </div>
+
+                <figure class="guide-image model-x-product-image">
+                    <img src="/images/havnby-cloudcore.webp" alt="Havnby CloudCore foam-and-air mattress with a current Tesla Model X variant" loading="lazy" width="1200" height="800">
+                    <figcaption>Havnby CloudCore product image supplied by Havnby. Select the Model X version and exact vehicle year in the live store.</figcaption>
+                </figure>
+
+                <!-- NovaPads Air-Foam Pro -->
+                <div class="product-pick">
+                    <div class="product-pick-header">
+                        <div>
+                            <span style="font-size: 0.8rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px;">Best lower-price full-width option</span>
                             <div class="product-pick-name">NovaPads Air-Foam Mattress Pro</div>
                         </div>
                         <span class="product-pick-score">8.8/10</span>
@@ -293,20 +366,25 @@
                         <span>4.5-inch listed profile</span>
                         <span>Model X variant listed</span>
                     </div>
-                    <p class="product-pick-desc">NovaPads listed a selectable Model X version at $272.78 when checked on 22 July 2026. The current page describes a foam-and-air structure, built-in pump and removable sheet; confirm the selected vehicle and final total in the cart.</p>
+                    <p class="product-pick-desc">NovaPads listed a selectable Model X version at $239 when checked on 23 July 2026. Its current specification set includes a 193 × 132 × 11 cm surface, 7 kg weight, built-in 6000Pa 12V pump and removable sheet. Confirm the vehicle selection and final total in the cart.</p>
                     <ul class="product-pick-pros">
                         <li>Current Model X option in the seller's vehicle selector</li>
-                        <li>$272.78 observed price; live price can change</li>
-                        <li>Built-in pump and 4.5-inch profile listed by NovaPads</li>
+                        <li>$239 observed price; live price can change</li>
+                        <li>Built-in pump and 193 × 132 × 11 cm dimensions listed by NovaPads</li>
                         <li>No independent fit, comfort or durability test was performed here</li>
                     </ul>
                     <div class="product-pick-cta">
-                        <span class="price-tag">$272.78</span>
+                        <span class="price-tag">$239</span>
                         <span class="discount-code-tag">{{t.shared.discount_percent_off}} <code>AWD</code></span>
                         <a href="/{{localePath}}reviews/tesery-novapads" class="btn-review">{{t.guide_model_x.btn_read_review}}</a>
                         <a href="https://novapads.com/?ref=AWD" target="_blank" rel="noopener sponsored nofollow" class="btn-buy">{{t.guide_model_x.btn_check_price}}</a>
                     </div>
                 </div>
+
+                <figure class="guide-image model-x-product-image">
+                    <img src="/images/novapads-model-y-pro.webp" alt="NovaPads Air-Foam Pro with a selectable Tesla Model X version" loading="lazy" width="1200" height="800">
+                    <figcaption>NovaPads Air-Foam Pro product image. Choose the Model X variant before comparing the final delivered total.</figcaption>
+                </figure>
 
                 <!-- NovaPads Auto-Leveling -->
                 <div class="product-pick">
@@ -322,15 +400,15 @@
                         <span>Dimensions not published</span>
                         <span>Model X variant listed</span>
                     </div>
-                    <p class="product-pick-desc">The newer $386.91 product also listed a Model X choice and is intended to address a sloped folded-seat surface. NovaPads had not published dimensions, packed size or pump details on the page we checked, so those points need confirmation before purchase.</p>
+                    <p class="product-pick-desc">The $369 Auto-Leveling product also lists a Model X choice and is intended to address the sloped folded-seat surface. NovaPads had not published dimensions, packed size or full pump details on the page we checked, so those points need confirmation before purchase.</p>
                     <ul class="product-pick-pros">
                         <li>Current Model X option in the seller's vehicle selector</li>
-                        <li>$386.91 observed price with $455.39 comparison price displayed</li>
+                        <li>$369 observed price with a $399 comparison price displayed</li>
                         <li>Leveling purpose is relevant to an uneven folded-seat surface</li>
                         <li>Missing dimensions and pump details limit our provisional score</li>
                     </ul>
                     <div class="product-pick-cta">
-                        <span class="price-tag">$386.91</span>
+                        <span class="price-tag">$369</span>
                         <span class="discount-code-tag">{{t.shared.discount_percent_off}} <code>AWD</code></span>
                         <a href="/{{localePath}}reviews/novapads-auto-leveling" class="btn-review">{{t.guide_model_x.btn_read_review}}</a>
                         <a href="https://novapads.com/?ref=AWD" target="_blank" rel="noopener sponsored nofollow" class="btn-buy">{{t.guide_model_x.btn_check_price}}</a>
@@ -338,7 +416,7 @@
                 </div>
 
                 <div class="guide-callout warning">
-                    <p><strong>{{t.guide_model_x.callout_fit_warning_title}}</strong> A seller dropdown is useful evidence of intended compatibility, but it is not a dimension sheet. Confirm the exact Model X year and seat configuration, especially where published measurements are missing.</p>
+                    <p><strong>{{t.guide_model_x.callout_fit_warning_title}}</strong> An official fit page or seller dropdown is useful evidence of intended compatibility, but it does not prove the same edge fit in every five-, six- or seven-seat Model X. Confirm the exact year and seat configuration, especially where measurements are missing.</p>
                 </div>
 
                 <h3>{{t.guide_model_x.h3_generic_foam_options}}</h3>
@@ -444,7 +522,7 @@
 
             <section class="guide-section" aria-labelledby="model-x-sources">
                 <h2 id="model-x-sources">Evidence and current-source checks</h2>
-                <p>Product variants and observed prices were checked against the <a href="https://novapads.com/?ref=AWD" rel="sponsored nofollow">NovaPads storefront</a> on 22 July 2026. Camp Mode behavior was checked against Tesla's <a href="https://www.tesla.com/ownersmanual/modelx/en_us/GUID-4F3599A1-20D9-4A49-B4A0-5261F957C096.html" rel="nofollow">current Model X climate-control instructions</a>. We have not performed a hands-on Model X fit, comfort or battery-consumption test.</p>
+                <p>Product fit statements, specifications and prices were checked on 23 July 2026 against Snuuzu's <a href="https://us.snuuzu.com/pages/tesla-model-x-mattress" rel="nofollow">official Model X fit page</a>, the <a href="https://havnby.com/products/cloudcore-hybrid-support-mattress-for-tesla-model-s-3-x-y" rel="nofollow">Havnby CloudCore listing</a> and the <a href="https://novapads.com/?ref=AWD" rel="sponsored nofollow">NovaPads storefront</a>. Camp Mode behavior was checked against Tesla's <a href="https://www.tesla.com/ownersmanual/modelx/en_us/GUID-4F3599A1-20D9-4A49-B4A0-5261F957C096.html" rel="nofollow">current Model X climate-control instructions</a>. We have not performed a hands-on Model X fit, comfort or battery-consumption test.</p>
             </section>
 
             <!-- FAQ -->
@@ -482,8 +560,8 @@
                 <h2>{{t.guide_model_x.cta_title}}</h2>
                 <p>{{t.guide_model_x.cta_text}}</p>
                 <div class="cta-buttons">
-                    <a href="/{{localePath}}reviews/tesery-novapads" class="btn-primary">Review the $272.78 option</a>
-                    <a href="/{{localePath}}discounts/novapads" class="btn-secondary">Check code AWD</a>
+                    <a href="#compatible-mattresses" class="btn-primary">Compare all four Model X fits</a>
+                    <a href="/{{localePath}}reviews/havnby-cloudcore" class="btn-secondary">Read the CloudCore review</a>
                 </div>
             </div>
 
@@ -506,7 +584,7 @@
             <div class="sidebar-card cta-card">
                 <h3>{{t.guide_model_x.sidebar_cta_title}}</h3>
                 <p>{{t.guide_model_x.sidebar_cta_text}}</p>
-                <a href="/{{localePath}}reviews/novapads-auto-leveling" class="btn-cta">Compare Model X options</a>
+                <a href="#compatible-mattresses" class="btn-cta">Compare four Model X options</a>
             </div>
 
             <div class="sidebar-card">
