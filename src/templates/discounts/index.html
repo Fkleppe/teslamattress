@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#2d4a3e">
+    <meta name="theme-color" content="#1f1d19">
 
     <!-- Primary Meta Tags - Optimized for "Tesla mattress discount code" searches -->
     <title>{{t.discounts_index.meta_title}}</title>
@@ -41,7 +41,6 @@
     <link rel="dns-prefetch" href="https://havnby.com">
     <link rel="dns-prefetch" href="https://us.snuuzu.com">
     <link rel="dns-prefetch" href="https://www.snuuzu.com">
-    <link rel="dns-prefetch" href="https://novapads.com">
 
     <!-- Google Fonts (non-blocking) -->
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap">
@@ -65,9 +64,9 @@
     </style>
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="/styles.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/styles.css">
     <noscript><link rel="stylesheet" href="/styles.css"></noscript>
-    <link rel="stylesheet" href="/discounts/discounts.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/discounts/discounts.css">
     <noscript><link rel="stylesheet" href="/discounts/discounts.css"></noscript>
 
     <!-- JSON-LD Structured Data for Featured Snippets -->
@@ -215,10 +214,10 @@
 <body>
     <nav class="navbar discount-nav">
         <a href="{{localeHome}}" class="logo">Teslamattress</a>
-        <button class="menu-toggle" aria-label="Toggle menu">
+        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-navigation">
             <span></span><span></span><span></span>
         </button>
-        <ul class="nav-links">
+        <ul class="nav-links" id="primary-navigation">
             <li><a href="/{{localePath}}reviews">{{t.shared.nav_reviews}}</a></li>
             <li><a href="/{{localePath}}vs">{{t.shared.nav_compare}}</a></li>
             <li><a href="/{{localePath}}guides">{{t.shared.nav_guides}}</a></li>
@@ -249,51 +248,60 @@
 
         <section class="discounts-overview">
             <div class="quick-codes">
-                <div class="quick-code-item">
+                <a class="quick-code-item" href="#snuuzu">
                     <span class="brand">Snuuzu</span>
                     <code>KLEPPE</code>
                     <span class="savings">10% OFF</span>
-                </div>
-                <div class="quick-code-item">
+                </a>
+                <a class="quick-code-item" href="#havnby">
                     <span class="brand">Havnby</span>
                     <code>AWD</code>
                     <span class="savings">10% OFF</span>
-                </div>
-                <div class="quick-code-item">
+                </a>
+                <a class="quick-code-item" href="#novapads">
                     <span class="brand">NovaPads</span>
                     <code>AWD</code>
                     <span class="savings">10% OFF</span>
-                </div>
-                <div class="quick-code-item">
-                    <span class="brand">Yeslak</span>
-                    <code>DISCOUNT</code>
-                    <span class="savings">20% OFF</span>
-                </div>
-                <div class="quick-code-item">
-                    <span class="brand">Hansshow</span>
-                    <code>FREDRIK</code>
-                    <span class="savings">20% OFF</span>
-                </div>
-                <div class="quick-code-item">
-                    <span class="brand">Shop4Tesla</span>
-                    <code>10</code>
-                    <span class="savings">10% OFF</span>
-                </div>
-                <div class="quick-code-item">
-                    <span class="brand">Jowua</span>
-                    <code>AWD</code>
-                    <span class="savings">5% OFF</span>
-                </div>
+                </a>
             </div>
+            <details class="quick-code-more">
+                <summary>Show 4 accessory discount codes</summary>
+                <div class="quick-codes quick-codes-secondary">
+                    <a class="quick-code-item" href="#yeslak">
+                        <span class="brand">Yeslak</span>
+                        <code>DISCOUNT</code>
+                        <span class="savings">20% OFF</span>
+                    </a>
+                    <a class="quick-code-item" href="#hansshow">
+                        <span class="brand">Hansshow</span>
+                        <code>FREDRIK</code>
+                        <span class="savings">20% OFF</span>
+                    </a>
+                    <a class="quick-code-item" href="#shop4tesla">
+                        <span class="brand">Shop4Tesla</span>
+                        <code>10</code>
+                        <span class="savings">10% OFF</span>
+                    </a>
+                    <a class="quick-code-item" href="#jowua">
+                        <span class="brand">Jowua</span>
+                        <code>AWD</code>
+                        <span class="savings">5% OFF</span>
+                    </a>
+                </div>
+            </details>
         </section>
 
         <!-- Snuuzu Section -->
         <section class="brand-discount-section" id="snuuzu">
             <div class="brand-discount-card">
+                <figure class="brand-discount-media">
+                    <img src="/images/snuuzu-model-y-tesla-mattress.webp" alt="Snuuzu Model Y Tesla camping mattress" loading="lazy" width="900" height="600">
+                    <figcaption>Premium foam · Model Y and Model 3</figcaption>
+                </figure>
                 <div class="brand-header">
-                    <img src="https://www.snuuzu.com/cdn/shop/files/BAG_LOGO_Black.png?v=1717409417&width=300&format=webp" alt="Snuuzu Logo" class="brand-logo-large" loading="eager" width="200" height="60">
+                    <img src="/images/snuuzu-logo.webp" alt="Snuuzu Logo" class="brand-logo-large" loading="eager" width="200" height="60">
                     <div class="brand-meta">
-                        <span class="verified-badge">Verified</span>
+                        <span class="verified-badge">Partner code</span>
                         <span class="rating">Best Overall</span>
                     </div>
                 </div>
@@ -365,10 +373,14 @@
         <!-- Havnby Section -->
         <section class="brand-discount-section" id="havnby">
             <div class="brand-discount-card">
+                <figure class="brand-discount-media">
+                    <img src="/images/havnby-cloudcore.webp" alt="Havnby CloudCore Foam Mattress" loading="lazy" width="900" height="900">
+                    <figcaption>FlatCore and CloudCore foam-and-air options · 10% off</figcaption>
+                </figure>
                 <div class="brand-header">
-                    <img src="https://havnby.com/cdn/shop/files/Havnby-logo.png?v=1760604799&width=300&format=webp" alt="Havnby Logo" class="brand-logo-large" loading="lazy" width="200" height="60">
+                    <img src="/images/havnby-logo.webp" alt="Havnby Logo" class="brand-logo-large" loading="lazy" width="200" height="60">
                     <div class="brand-meta">
-                        <span class="verified-badge">Verified</span>
+                        <span class="verified-badge">Partner code</span>
                         <span class="rating value">Best Value</span>
                     </div>
                 </div>
@@ -386,8 +398,8 @@
                             </button>
                         </div>
                         <div class="savings-display">
-                            <span class="save-amount">Save up to $51</span>
-                            <span class="on-price">on $509 mattress</span>
+                            <span class="save-amount">Save up to $60</span>
+                            <span class="on-price">on $599 mattress</span>
                         </div>
                     </div>
 
@@ -409,7 +421,7 @@
                         </div>
                         <div class="feature">
                             <span class="feature-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
-                            <span>5-Year Warranty</span>
+                            <span>3-Year Warranty</span>
                         </div>
                         <div class="feature">
                             <span class="feature-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
@@ -420,9 +432,9 @@
                     <div class="products-covered">
                         <h4>{{t.discounts_index.h4_2}}</h4>
                         <ul>
-                            <li><a href="/{{localePath}}reviews/havnby-autolevel">Havnby FlatCore Hybrid (ex Autolevel)</a> - $509 → <strong>$458.10</strong></li>
-                            <li><a href="/{{localePath}}reviews/havnby-solo">Havnby FlatCore Solo</a> - $379 → <strong>$341.10</strong></li>
-                            <li><a href="/{{localePath}}reviews/havnby-foam">Havnby Foam Model Y/3</a> - discontinued (see CloudCore Hybrid)</li>
+                            <li><a href="/{{localePath}}reviews/havnby-autolevel">Havnby FlatCore Foam Mattress</a> - $599 → <strong>$539.10</strong></li>
+                            <li><a href="/{{localePath}}reviews/havnby-solo">Havnby FlatCore Foam Mattress — Solo Edition</a> - $399 → <strong>$359.10</strong></li>
+                            <li><a href="/{{localePath}}reviews/havnby-cloudcore">Havnby CloudCore Foam Mattress</a> - $399 → <strong>$359.10</strong></li>
                         </ul>
                     </div>
                 </div>
@@ -434,10 +446,14 @@
         <!-- NovaPads Section -->
         <section class="brand-discount-section" id="novapads">
             <div class="brand-discount-card">
+                <figure class="brand-discount-media is-logo">
+                    <img src="/images/novapads-logo.webp" alt="NovaPads" loading="lazy" width="900" height="600">
+                    <figcaption>Air-Foam Pro + Auto-Leveling · code AWD</figcaption>
+                </figure>
                 <div class="brand-header">
                     <div class="brand-logo-text">NOVAPADS</div>
                     <div class="brand-meta">
-                        <span class="verified-badge">Verified</span>
+                        <span class="verified-badge">Checked 22 Jul 2026</span>
                         <span class="rating budget">Budget Pick</span>
                     </div>
                 </div>
@@ -455,13 +471,13 @@
                             </button>
                         </div>
                         <div class="savings-display">
-                            <span class="save-amount">Save $24</span>
-                            <span class="on-price">on $239 mattress</span>
+                            <span class="save-amount">10% off</span>
+                            <span class="on-price">checked on Auto-Leveling</span>
                         </div>
                     </div>
 
                     <div class="shop-buttons">
-                        <a href="https://novapads.com/products/tesla-model-y-air-foam-camping-mattress-pro-tesla-bed?ref=AWD" target="_blank" rel="noopener sponsored" class="shop-btn single">
+                        <a href="https://novapads.com/?ref=AWD" target="_blank" rel="noopener sponsored" class="shop-btn single">
                             Shop NovaPads
                         </a>
                     </div>
@@ -482,14 +498,15 @@
                         </div>
                         <div class="feature">
                             <span class="feature-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></span>
-                            <span>Ships Worldwide</span>
+                            <span>Model Y, Juniper &amp; X</span>
                         </div>
                     </div>
 
                     <div class="products-covered">
                         <h4>{{t.discounts_index.h4_3}}</h4>
                         <ul>
-                            <li><a href="/{{localePath}}reviews/tesery-novapads">NovaPads Air-Foam Pro</a> - $239 → <strong>$215</strong> with code AWD</li>
+                            <li><a href="/{{localePath}}reviews/tesery-novapads">NovaPads Air-Foam Pro</a> - $272.78 → <strong>$245.50</strong> before tax/shipping if eligible</li>
+                            <li><a href="/{{localePath}}reviews/novapads-auto-leveling">NovaPads Auto-Leveling</a> - $386.91 → <strong>$348.22</strong> before tax/shipping if eligible</li>
                         </ul>
                     </div>
                 </div>
@@ -501,10 +518,14 @@
         <!-- Yeslak Section -->
         <section class="brand-discount-section" id="yeslak">
             <div class="brand-discount-card">
+                <figure class="brand-discount-media">
+                    <img src="/images/hero-bg.webp" alt="Camping setup in a forest" loading="lazy" width="900" height="600">
+                    <figcaption>Tesla camping and storage accessories</figcaption>
+                </figure>
                 <div class="brand-header">
                     <div class="brand-logo-text">YESLAK</div>
                     <div class="brand-meta">
-                        <span class="verified-badge">Verified</span>
+                        <span class="verified-badge">Partner code</span>
                         <span class="rating value">20% OFF</span>
                     </div>
                 </div>
@@ -569,10 +590,14 @@
         <!-- Hansshow Section -->
         <section class="brand-discount-section" id="hansshow">
             <div class="brand-discount-card">
+                <figure class="brand-discount-media">
+                    <img src="/images/hero-model-y-adventure-v2.webp" alt="Tesla Model Y prepared for a road trip" loading="lazy" width="900" height="600">
+                    <figcaption>Lighting, electronics and exterior upgrades</figcaption>
+                </figure>
                 <div class="brand-header">
                     <div class="brand-logo-text">HANSSHOW</div>
                     <div class="brand-meta">
-                        <span class="verified-badge">Verified</span>
+                        <span class="verified-badge">Partner code</span>
                         <span class="rating value">20% OFF</span>
                     </div>
                 </div>
@@ -638,10 +663,14 @@
         <!-- Shop4Tesla Section -->
         <section class="brand-discount-section" id="shop4tesla">
             <div class="brand-discount-card">
+                <figure class="brand-discount-media">
+                    <img src="/images/tesmat-luxe-model-y-tesla-mattress.webp" alt="Tesla Model Y camping mattress and accessories" loading="lazy" width="900" height="600">
+                    <figcaption>European Tesla accessories · 10% off</figcaption>
+                </figure>
                 <div class="brand-header">
                     <div class="brand-logo-text">SHOP4TESLA</div>
                     <div class="brand-meta">
-                        <span class="verified-badge">Verified</span>
+                        <span class="verified-badge">Partner code</span>
                         <span class="rating">10% OFF</span>
                     </div>
                 </div>
@@ -707,10 +736,14 @@
         <!-- Jowua Section -->
         <section class="brand-discount-section" id="jowua">
             <div class="brand-discount-card">
+                <figure class="brand-discount-media">
+                    <img src="/images/tesmat-solo-model-y-tesla-mattress.webp" alt="Tesla Model Y camping setup" loading="lazy" width="900" height="600">
+                    <figcaption>Premium Tesla lifestyle accessories</figcaption>
+                </figure>
                 <div class="brand-header">
                     <div class="brand-logo-text">JOWUA</div>
                     <div class="brand-meta">
-                        <span class="verified-badge">Verified</span>
+                        <span class="verified-badge">Partner code</span>
                         <span class="rating budget">5% OFF</span>
                     </div>
                 </div>
@@ -776,10 +809,14 @@
         <!-- ROCKBROOK Section -->
         <section class="brand-discount-section" id="rockbrook">
             <div class="brand-discount-card">
+                <figure class="brand-discount-media">
+                    <img src="/images/rockbrook-aluminum-box-campsite.webp" alt="Rockbrook aluminum camping boxes at a forest campsite" loading="lazy" width="900" height="600">
+                    <figcaption>Aluminum storage and camp kitchens</figcaption>
+                </figure>
                 <div class="brand-header">
                     <div class="brand-logo-text">ROCKBROOK</div>
                     <div class="brand-meta">
-                        <span class="verified-badge">Verified</span>
+                        <span class="verified-badge">Partner code</span>
                         <span class="rating">10% OFF</span>
                     </div>
                 </div>
@@ -845,10 +882,14 @@
         <!-- HAMPHI Section -->
         <section class="brand-discount-section" id="hamphi">
             <div class="brand-discount-card">
+                <figure class="brand-discount-media">
+                    <img src="/images/hero-model-y-adventure-v2.webp" alt="Tesla Model Y set up beside a mountain lake" loading="lazy" width="900" height="600">
+                    <figcaption>EU-stocked Tesla accessories</figcaption>
+                </figure>
                 <div class="brand-header">
                     <div class="brand-logo-text">HAMPHI</div>
                     <div class="brand-meta">
-                        <span class="verified-badge">Verified</span>
+                        <span class="verified-badge">Partner code</span>
                         <span class="rating">15% OFF</span>
                     </div>
                 </div>
@@ -914,10 +955,14 @@
         <!-- TESMAG Section -->
         <section class="brand-discount-section" id="tesmag">
             <div class="brand-discount-card">
+                <figure class="brand-discount-media">
+                    <img src="/images/hero-bg.webp" alt="Camping setup in a forest" loading="lazy" width="900" height="600">
+                    <figcaption>Value-focused Tesla accessory catalog</figcaption>
+                </figure>
                 <div class="brand-header">
                     <div class="brand-logo-text">TESMAG</div>
                     <div class="brand-meta">
-                        <span class="verified-badge">Verified</span>
+                        <span class="verified-badge">Partner code</span>
                         <span class="rating">15% OFF</span>
                     </div>
                 </div>
@@ -1048,6 +1093,7 @@
             navLinks.classList.toggle('active');
             menuOverlay.classList.toggle('active');
             document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+                menuToggle.setAttribute('aria-expanded', String(navLinks.classList.contains('active')));
         }
 
         menuToggle.addEventListener('click', toggleMenu);

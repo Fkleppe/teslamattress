@@ -247,9 +247,10 @@ function checkInternalLinks() {
 
       for (const link of links) {
         const href = link.match(/"([^"]+)"/)[1];
+        const hrefPath = href.split(/[?#]/)[0];
         // Skip anchors, static assets
         if (href.includes('#')) continue;
-        if (/\.(css|js|svg|png|jpg|webp|json|xml|txt|ico|webmanifest)$/.test(href)) continue;
+        if (/\.(css|js|svg|png|jpg|webp|json|xml|txt|ico|webmanifest)$/.test(hrefPath)) continue;
         if (href.startsWith('/_vercel')) continue;
 
         // Check if the file exists
@@ -302,6 +303,186 @@ function checkNoindex() {
 }
 
 // ============================================================
+// Check 9: Every page ships the shared mobile shell
+// ============================================================
+function checkResponsiveShell() {
+  console.log('\n--- Responsive page shell ---');
+
+  let checked = 0;
+  for (const loc of LOCALES) {
+    const locPath = loc === 'en' ? DIST_DIR : path.join(DIST_DIR, LOCALE_PATHS[loc]);
+
+    for (const page of PAGES) {
+      const filePath = path.join(locPath, page.output);
+      if (!fs.existsSync(filePath)) continue;
+      const html = fs.readFileSync(filePath, 'utf8');
+
+      if (!html.includes('viewport-fit=cover')) {
+        error(`${LOCALE_PATHS[loc]}${page.output}: viewport-fit=cover missing`);
+      }
+      if (!/<script src="\/mobile-nav\.js\?v=[a-f0-9]{10}" defer><\/script>/.test(html)) {
+        error(`${LOCALE_PATHS[loc]}${page.output}: shared mobile navigation missing`);
+      }
+      if (!/href="\/styles\.css\?v=[a-f0-9]{10}"/.test(html)) {
+        error(`${LOCALE_PATHS[loc]}${page.output}: versioned global stylesheet missing`);
+      }
+      checked++;
+    }
+  }
+
+  pass(`${checked} pages include the responsive viewport and shared navigation`);
+}
+
+// ============================================================
+// Check 10: Local image references exist in the deployed bundle
+// ============================================================
+function checkLocalImages() {
+  console.log('\n--- Local image assets ---');
+
+  let checked = 0;
+  const missing = new Set();
+  for (const loc of LOCALES) {
+    const locPath = loc === 'en' ? DIST_DIR : path.join(DIST_DIR, LOCALE_PATHS[loc]);
+
+    for (const page of PAGES) {
+      const filePath = path.join(locPath, page.output);
+      if (!fs.existsSync(filePath)) continue;
+      const html = fs.readFileSync(filePath, 'utf8');
+      const refs = [...html.matchAll(/(?:src|content)="(\/images\/[^"?#]+)(?:[?#][^"]*)?"/g)];
+
+      for (const match of refs) {
+        checked++;
+        const imagePath = path.join(DIST_DIR, decodeURIComponent(match[1]).replace(/^\//, ''));
+        if (!fs.existsSync(imagePath)) missing.add(`${page.output} → ${match[1]}`);
+      }
+    }
+  }
+
+  for (const item of missing) error(`Missing image: ${item}`);
+  if (missing.size === 0) pass(`${checked} local image references resolve to deployed files`);
+}
+
+// ============================================================
+// Check 11: New answer/guide pages retain rich media and conversion paths
+// ============================================================
+function checkGeneratedArticleContent() {
+  console.log('\n--- Generated article media and CTAs ---');
+
+  const articlePages = PAGES.filter(page => page.template === 'faq/_paa.html');
+  let checked = 0;
+
+  for (const page of articlePages) {
+    const filePath = path.join(DIST_DIR, page.output);
+    if (!fs.existsSync(filePath)) continue;
+    const html = fs.readFileSync(filePath, 'utf8');
+    const imageCount = (html.match(/<img\b/g) || []).length;
+
+    if (imageCount < 4) error(`${page.output}: only ${imageCount}/4 expected article images`);
+    if (!html.includes('class="article-visual"')) error(`${page.output}: missing primary article visual`);
+    if (!html.includes('class="article-visual-guide-grid"')) error(`${page.output}: missing visual continuation cards`);
+    if (!html.includes('class="faq-cta"')) error(`${page.output}: missing decision CTA`);
+    checked++;
+  }
+
+  pass(`${checked} generated articles include a lead image, three visual cards and a decision CTA`);
+}
+
+// ============================================================
+// Check 12: Current Havnby catalog replaces the retired product everywhere
+// ============================================================
+function checkHavnbyCatalog() {
+  console.log('\n--- Current Havnby catalog ---');
+
+  const requiredPages = [
+    'reviews/havnby-autolevel.html',
+    'reviews/havnby-solo.html',
+    'reviews/havnby-cloudcore.html',
+    'vs/havnby-flatcore-vs-cloudcore.html',
+  ];
+  for (const relativePath of requiredPages) {
+    if (!fs.existsSync(path.join(DIST_DIR, relativePath))) error(`Missing current Havnby page: ${relativePath}`);
+  }
+
+  const requiredNames = [
+    'Havnby FlatCore Foam Mattress',
+    'Havnby FlatCore Foam Mattress — Solo Edition',
+    'Havnby CloudCore Foam Mattress',
+  ];
+  const keyFiles = [
+    'index.html',
+    'reviews/index.html',
+    'guides/best-tesla-mattresses.html',
+    'guides/best-model-y-mattress.html',
+    'discounts/index.html',
+  ];
+  const combined = keyFiles
+    .map(file => fs.readFileSync(path.join(DIST_DIR, file), 'utf8'))
+    .join('\n');
+  for (const name of requiredNames) {
+    if (!combined.includes(name)) error(`Current Havnby product missing from key pages: ${name}`);
+  }
+
+  const scanFiles = [];
+  const walk = dir => {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const fullPath = path.join(dir, entry.name);
+      if (entry.isDirectory()) walk(fullPath);
+      else if (/\.(?:html|xml|txt)$/.test(entry.name)) scanFiles.push(fullPath);
+    }
+  };
+  walk(DIST_DIR);
+  const banned = [
+    '/reviews/havnby-foam',
+    '/vs/havnby-autolevel-vs-foam',
+    'Havnby Foam (discontinued)',
+    'Havnby Foam Mattress (discontinued)',
+  ];
+  for (const filePath of scanFiles) {
+    const content = fs.readFileSync(filePath, 'utf8');
+    for (const phrase of banned) {
+      if (content.includes(phrase)) error(`${path.relative(DIST_DIR, filePath)}: retired Havnby reference remains (${phrase})`);
+    }
+  }
+
+  pass('FlatCore, Solo Edition and CloudCore are present; retired catalog references are absent');
+}
+
+// ============================================================
+// Check 13: Every editorial page has real media and review depth
+// ============================================================
+function checkEditorialMedia() {
+  console.log('\n--- Editorial page media coverage ---');
+
+  const editorialPrefixes = ['reviews/', 'guides/', 'faq/', 'vs/', 'discounts/'];
+  const editorialPages = PAGES.filter(page =>
+    editorialPrefixes.some(prefix => page.output.startsWith(prefix)) &&
+    !page.output.endsWith('/index.html')
+  );
+  let checked = 0;
+
+  for (const page of editorialPages) {
+    const filePath = path.join(DIST_DIR, page.output);
+    if (!fs.existsSync(filePath)) continue;
+    const html = fs.readFileSync(filePath, 'utf8');
+    const images = [...html.matchAll(/<img\b([^>]*)>/gi)];
+    const minimum = page.output.startsWith('reviews/') ? 4 : 1;
+
+    if (images.length < minimum) {
+      error(`${page.output}: only ${images.length}/${minimum} expected editorial images`);
+    }
+    for (const image of images) {
+      if (!/\balt="[^"]*"/i.test(image[1])) error(`${page.output}: image is missing an alt attribute`);
+      if (!/\bwidth="\d+"/i.test(image[1]) || !/\bheight="\d+"/i.test(image[1])) {
+        error(`${page.output}: image is missing intrinsic width/height`);
+      }
+    }
+    checked++;
+  }
+
+  pass(`${checked} editorial pages have media; every review has at least four images`);
+}
+
+// ============================================================
 // Run all checks
 // ============================================================
 console.log('Verifying multilingual build...');
@@ -314,6 +495,11 @@ checkHreflang();
 checkSitemap();
 checkInternalLinks();
 checkNoindex();
+checkResponsiveShell();
+checkLocalImages();
+checkGeneratedArticleContent();
+checkHavnbyCatalog();
+checkEditorialMedia();
 
 console.log(`\n${'='.repeat(40)}`);
 console.log(`Results: ${errors} errors, ${warnings} warnings`);

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#2d4a3e">
+    <meta name="theme-color" content="#1f1d19">
 
     <title>{{t.faq_index.meta_title}}</title>
     <meta name="description" content="{{t.faq_index.meta_description}}">
@@ -23,10 +23,12 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{t.faq_index.og_title}}">
     <meta name="twitter:description" content="{{t.faq_index.og_description}}">
+    <meta name="twitter:image" content="https://teslamattress.com/images/og-image.jpg">
 
     <link rel="icon" href="/favicon.ico" sizes="32x32">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,7 +58,7 @@
         footer a{color:var(--cream)}
     </style>
 
-    <link rel="stylesheet" href="/styles.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/styles.css">
     <noscript><link rel="stylesheet" href="/styles.css"></noscript>
 
     <script type="application/ld+json">
@@ -69,7 +71,7 @@
         "url": "{{canonicalUrl}}",
         "mainEntity": {
                 "@type": "ItemList",
-                "numberOfItems": 10,
+                "numberOfItems": 13,
                 "itemListElement": [
                         { "@type": "ListItem", "position": 1, "name": "Can You Sleep in a Tesla Overnight?", "url": "https://teslamattress.com/{{localePath}}faq/can-you-sleep-in-a-tesla-overnight" },
                         { "@type": "ListItem", "position": 2, "name": "Can Two People Sleep in a Tesla Model Y?", "url": "https://teslamattress.com/{{localePath}}faq/can-two-people-sleep-in-a-tesla-model-y" },
@@ -80,7 +82,10 @@
                         { "@type": "ListItem", "position": 7, "name": "Is Camping in a Tesla Legal?", "url": "https://teslamattress.com/{{localePath}}faq/is-camping-in-a-tesla-legal" },
                         { "@type": "ListItem", "position": 8, "name": "Do You Need a Mattress for Tesla Camping?", "url": "https://teslamattress.com/{{localePath}}faq/do-you-need-a-mattress-for-tesla-camping" },
                         { "@type": "ListItem", "position": 9, "name": "Do Tesla Camping Mattresses Need a Pump?", "url": "https://teslamattress.com/{{localePath}}faq/do-tesla-camping-mattresses-need-a-pump" },
-                        { "@type": "ListItem", "position": 10, "name": "Is Tesla Camping Good for Families with Kids?", "url": "https://teslamattress.com/{{localePath}}faq/is-tesla-camping-good-for-families-with-kids" }
+                        { "@type": "ListItem", "position": 10, "name": "Is Tesla Camping Good for Families with Kids?", "url": "https://teslamattress.com/{{localePath}}faq/is-tesla-camping-good-for-families-with-kids" },
+                        { "@type": "ListItem", "position": 11, "name": "How Do You Use Tesla Camp Mode?", "url": "https://teslamattress.com/{{localePath}}faq/how-to-use-tesla-camp-mode" },
+                        { "@type": "ListItem", "position": 12, "name": "Can You Sleep in a Tesla While Charging?", "url": "https://teslamattress.com/{{localePath}}faq/can-you-sleep-in-a-tesla-while-charging" },
+                        { "@type": "ListItem", "position": 13, "name": "How Do You Prevent Condensation While Sleeping in a Tesla?", "url": "https://teslamattress.com/{{localePath}}faq/how-to-prevent-condensation-while-sleeping-in-a-tesla" }
                 ]
         }
     }
@@ -99,8 +104,8 @@
 <body>
     <nav class="navbar">
         <a href="{{localeHome}}" class="logo">Teslamattress</a>
-        <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-        <ul class="nav-links">
+        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span><span></span></button>
+        <ul class="nav-links" id="primary-navigation">
             <li><a href="/{{localePath}}reviews">{{t.shared.nav_reviews}}</a></li>
             <li><a href="/{{localePath}}vs">{{t.shared.nav_compare}}</a></li>
             <li><a href="/{{localePath}}guides">{{t.shared.nav_guides}}</a></li>
@@ -109,50 +114,86 @@
         </ul>
         {{langSwitcher}}
     </nav>
+    <div class="menu-overlay"></div>
 
     <header class="hub-hero">
-        <h1>{{t.faq_index.h1}}</h1>
-        <p>{{t.faq_index.lead}}</p>
+        <div class="hub-hero-copy">
+            <span class="eyebrow">Tesla camping answers · Updated 2026</span>
+            <h1>{{t.faq_index.h1}}</h1>
+            <p>{{t.faq_index.lead}}</p>
+        </div>
+        <figure class="hub-hero-media">
+            <img src="/images/hero-bg.webp" alt="Tesla camping setup beside a forest" width="1400" height="933" fetchpriority="high">
+            <figcaption>Clear answers for planning the night</figcaption>
+        </figure>
     </header>
 
     <section class="hub-grid">
+        <a class="hub-card hub-card-featured" href="/{{localePath}}faq/how-to-use-tesla-camp-mode">
+            <img class="hub-card-thumb" src="/images/hero-bg.webp" alt="Sheltered overnight car-camping setup in a forest" loading="eager" width="640" height="420">
+            <span class="hub-card-kicker">Start here</span>
+            <h2>How Do You Use Tesla Camp Mode?</h2>
+            <p>Current setup steps, what stays powered, Low Power Mode limits and a practical before-sleep checklist.</p>
+        </a>
+        <a class="hub-card" href="/{{localePath}}faq/can-you-sleep-in-a-tesla-while-charging">
+            <img class="hub-card-thumb" src="/images/camp-mode-night.webp" alt="Electric vehicle at an overnight charging stop" loading="lazy" width="1376" height="768">
+            <span class="hub-card-kicker">Charging</span>
+            <h2>Can You Sleep in a Tesla While Charging?</h2>
+            <p>What Tesla confirms electrically, plus parking permission, charger etiquette and cable safety.</p>
+        </a>
+        <a class="hub-card" href="/{{localePath}}faq/how-to-prevent-condensation-while-sleeping-in-a-tesla">
+            <img class="hub-card-thumb" src="/images/condensation-control.webp" alt="Ventilated car-camping setup prepared to limit condensation" loading="lazy" width="1376" height="768">
+            <span class="hub-card-kicker">Cabin comfort</span>
+            <h2>How Do You Prevent Condensation?</h2>
+            <p>Airflow, climate control, wet-gear management and the safety limits that matter overnight.</p>
+        </a>
         <a class="hub-card" href="/{{localePath}}faq/can-you-sleep-in-a-tesla-overnight">
+            <img class="hub-card-thumb" src="/images/family-camping.webp" alt="Electric vehicle set up for overnight camping" loading="lazy" width="1376" height="768">
             <h2>Can You Sleep in a Tesla Overnight?</h2>
             <p>How Camp Mode works, what battery drain to expect, and what gear you actually need.</p>
         </a>
         <a class="hub-card" href="/{{localePath}}faq/is-tesla-camp-mode-safe">
+            <img class="hub-card-thumb" src="/images/hero-model-y-adventure-v2.webp" alt="Tesla Model Y at a campsite" loading="lazy" width="640" height="420">
             <h2>Is Tesla Camp Mode Safe?</h2>
             <p>Why Tesla engineered Camp Mode for overnight sleeping and what to do for safety.</p>
         </a>
         <a class="hub-card" href="/{{localePath}}faq/how-much-battery-does-tesla-camping-use">
+            <img class="hub-card-thumb" src="/images/camp-mode-night.webp" alt="Electric vehicle camping near a charger at night" loading="lazy" width="1376" height="768">
             <h2>How Much Battery Does Tesla Camping Use?</h2>
-            <p>Real measurements from logged camping nights at every temperature range.</p>
+            <p>Published owner reports, key variables, and a practical range for planning an overnight stay.</p>
         </a>
         <a class="hub-card" href="/{{localePath}}faq/do-you-need-a-mattress-for-tesla-camping">
+            <img class="hub-card-thumb" src="/images/snuuzu-model-y-tesla-mattress.webp" alt="Fitted mattress inside a Tesla Model Y" loading="lazy" width="640" height="420">
             <h2>Do You Need a Mattress for Tesla Camping?</h2>
             <p>Why the seat alone isn't enough — and which mattress type fits your trip.</p>
         </a>
         <a class="hub-card" href="/{{localePath}}faq/can-you-camp-in-a-tesla-in-winter">
+            <img class="hub-card-thumb" src="/images/mattress-for-cold-weather.webp" alt="Electric-car winter camping setup with insulated bedding" loading="lazy" width="1376" height="768">
             <h2>Can You Camp in a Tesla in Winter?</h2>
             <p>Heat pump load, battery range losses, and the gear that makes winter camping work.</p>
         </a>
         <a class="hub-card" href="/{{localePath}}faq/what-size-mattress-fits-a-tesla-model-y">
+            <img class="hub-card-thumb" src="/images/tesmat-luxe-model-y-tesla-mattress.webp" alt="Model Y mattress fitted in the cargo area" loading="lazy" width="640" height="420">
             <h2>What Size Mattress Fits a Tesla Model Y?</h2>
             <p>Exact dimensions, Juniper compatibility, and our top size-matched picks.</p>
         </a>
         <a class="hub-card" href="/{{localePath}}faq/is-camping-in-a-tesla-legal">
+            <img class="hub-card-thumb" src="/images/family-camping.webp" alt="Electric vehicle parked at an established campsite" loading="lazy" width="1376" height="768">
             <h2>Is Camping in a Tesla Legal?</h2>
             <p>Where you can and can't sleep — National Forest, BLM, Walmart, and city rules.</p>
         </a>
         <a class="hub-card" href="/{{localePath}}faq/can-two-people-sleep-in-a-tesla-model-y">
+            <img class="hub-card-thumb" src="/images/snuuzu-model-y-tesla-mattress.webp" alt="Wide sleeping surface in a Tesla Model Y" loading="lazy" width="640" height="420">
             <h2>Can Two People Sleep in a Model Y?</h2>
-            <p>Width, length, and the best couples mattresses tested over 100+ nights.</p>
+            <p>Width, length, and the mattress features that matter most when two people share the space.</p>
         </a>
         <a class="hub-card" href="/{{localePath}}faq/is-tesla-camping-good-for-families-with-kids">
+            <img class="hub-card-thumb" src="/images/hero-bg.webp" alt="Tesla camping setup in the forest" loading="lazy" width="640" height="420">
             <h2>Is Tesla Camping Good for Families With Kids?</h2>
             <p>Which Tesla model fits a family, and tips for kid-friendly setup.</p>
         </a>
         <a class="hub-card" href="/{{localePath}}faq/do-tesla-camping-mattresses-need-a-pump">
+            <img class="hub-card-thumb" src="/images/havnby-cloudcore-thumb.webp" alt="Havnby CloudCore mattress with built-in pump" loading="lazy" width="640" height="640">
             <h2>Do Tesla Mattresses Need a Pump?</h2>
             <p>Foam vs hybrid vs air, built-in pumps, and battery impact.</p>
         </a>
@@ -161,5 +202,24 @@
     <footer>
         <p>&copy; 2026 Teslamattress. <a href="/{{localePath}}disclosure">Affiliate disclosure</a> &middot; <a href="/{{localePath}}about">About</a> &middot; <a href="/{{localePath}}methodology">How we review</a></p>
     </footer>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const menuOverlay = document.querySelector('.menu-overlay');
+
+        function toggleMenu() {
+            const isOpen = navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active', isOpen);
+            menuOverlay.classList.toggle('active', isOpen);
+            menuToggle.setAttribute('aria-expanded', String(isOpen));
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+        menuOverlay.addEventListener('click', toggleMenu);
+        navLinks.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+            if (navLinks.classList.contains('active')) toggleMenu();
+        }));
+    </script>
 </body>
 </html>

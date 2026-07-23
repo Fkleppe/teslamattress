@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#2d4a3e">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#1f1d19">
     <title>Page Not Found | Teslamattress</title>
+    <meta name="description" content="The requested Teslamattress page could not be found. Browse current Tesla mattress reviews, comparisons, guides and discount codes.">
     <meta name="robots" content="noindex">
+    <link rel="canonical" href="https://teslamattress.com/404">
     <link rel="icon" href="/favicon.ico" sizes="32x32">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -35,17 +37,20 @@
         footer a{color:var(--copper);text-decoration:none}
         @media(max-width:768px){.nav-links{display:none}.error-box h1{font-size:3rem}}
     </style>
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
     <nav class="navbar">
         <a href="{{localeHome}}" class="logo">Teslamattress</a>
-        <ul class="nav-links">
+        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span><span></span></button>
+        <ul class="nav-links" id="primary-navigation">
             <li><a href="/reviews">Reviews</a></li>
             <li><a href="/guides">Guides</a></li>
             <li><a href="/vs">Compare</a></li>
             <li><a href="/discounts">Discounts</a></li>
         </ul>
     </nav>
+    <div class="menu-overlay"></div>
 
     <main class="error-content">
         <div class="error-box">
@@ -60,7 +65,26 @@
     </main>
 
     <footer>
-        <p>&copy; 2024-2026 Teslamattress. <a href="/about">About</a> &middot; <a href="/methodology">How We Review</a> &middot; <a href="/disclosure">Disclosure</a></p>
+        <p>&copy; 2026 Teslamattress. <a href="/about">About</a> &middot; <a href="/methodology">How We Review</a> &middot; <a href="/disclosure">Disclosure</a></p>
     </footer>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const menuOverlay = document.querySelector('.menu-overlay');
+
+        function toggleMenu() {
+            const isOpen = navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active', isOpen);
+            menuOverlay.classList.toggle('active', isOpen);
+            menuToggle.setAttribute('aria-expanded', String(isOpen));
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+        menuOverlay.addEventListener('click', toggleMenu);
+        navLinks.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+            if (navLinks.classList.contains('active')) toggleMenu();
+        }));
+    </script>
 </body>
 </html>

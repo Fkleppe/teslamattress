@@ -25,19 +25,19 @@ const GUIDE_CONFIGS = {
   },
   guide_best_mattresses: {
     title: '10 Best Tesla Camping Mattresses (2026)',
-    context: 'Listicle ranking 10 Tesla camping mattresses. Products: Snuuzu Model Y (9.4/10, €899, best overall), Havnby Autolevel (8.6/10, $359.99, best value), TESMAT Luxe Y (8.5/10, $379, best kit), Snuuzu Model 3 (9.2/10, €899), Havnby Foam (7.8/10, $169.99, budget), NovaPads (7.5/10, ~$199), TESMAT Solo Y (7.6/10, ~$249), Havnby Solo (7.4/10, $159.99), TESMAT Luxe M3 (8.3/10, $379), TESMAT Solo M3 (7.5/10, ~$249). Include comparison, buying guide section, methodology mention. Author: Fredrik Mastouri, since 2017.',
+    context: 'Listicle ranking current Tesla camping mattresses. Products include Snuuzu Model Y (9.4/10, €899/$899), Havnby FlatCore Foam Mattress (8.6/10, $599), Havnby FlatCore Foam Mattress Solo Edition (8.2/10, $399), Havnby CloudCore Foam Mattress (8.0/10, $399), NovaPads Air-Foam Pro ($272.78), TESMAT Horizon Y ($339), Snuuzu Model 3 (€899/$899), and TESMAT Model 3 products. Never reintroduce discontinued Havnby Foam. Include current source dates and evidence limits.',
   },
   guide_best_model_y: {
     title: 'Best Tesla Model Y Mattress (2025 Juniper Update)',
-    context: 'Model Y-specific mattress guide. Cover 2025 Juniper refresh compatibility. Products: Snuuzu Y (9.4, best), Havnby Autolevel (8.6, best value), TESMAT Luxe Y (8.5), NovaPads (7.5), Havnby Foam (7.8), TESMAT Solo Y (7.6), Havnby Solo (7.4). Model Y cargo: 83" long when seats folded, 41" wide, panoramic roof. Juniper has one-touch electric seat fold.',
+    context: 'Model Y-specific mattress guide. Cover Juniper compatibility. Include all current Havnby Model Y products: FlatCore Foam Mattress ($599), FlatCore Foam Mattress Solo Edition ($399), and CloudCore Foam Mattress ($399). Also compare Snuuzu, NovaPads and TESMAT using current listings. Never reintroduce discontinued Havnby Foam.',
   },
   guide_best_model_3: {
     title: 'Best Tesla Model 3 Mattress: Ranked & Reviewed',
-    context: 'Model 3-specific guide. Model 3 challenges: smaller cargo (76" long, 37" wide), not perfectly flat (hinge gap), sedan form factor. Products: Snuuzu M3 (9.2, best), TESMAT Luxe M3 (8.3), TESMAT Solo M3 (7.5), Havnby Foam (7.8, fits both). Address trunk hinge problem.',
+    context: 'Model 3-specific guide. Address the trunk hinge and sedan geometry. Current products: Snuuzu Model 3, TESMAT Horizon Model 3, TESMAT Solo Model 3 and Havnby CloudCore Foam Mattress with a Model 3 year selector. Never reintroduce discontinued Havnby Foam.',
   },
   guide_budget: {
     title: 'Budget Tesla Mattress: Best Options Under $250',
-    context: 'Budget-focused guide. Products: Havnby Foam ($169.99, best budget), Havnby Solo ($159.99, lightest), NovaPads (~$199, budget hybrid), TESMAT Solo Y (~$249, near-budget). Include cost-per-use calculations. Compare budget vs premium. When to save vs invest.',
+    context: 'Budget-focused guide using current prices only. Include TESMAT Solo ($140) and NovaPads Air-Foam Pro ($272.78). Havnby FlatCore Solo is a $399 above-budget comparison; do not include the discontinued Havnby Foam.',
   },
   guide_cybertruck: {
     title: 'Tesla Cybertruck Camping Mattress Guide',
@@ -45,7 +45,7 @@ const GUIDE_CONFIGS = {
   },
   guide_model_x: {
     title: 'Tesla Model X Camping Mattress: Best Options',
-    context: 'Model X guide. Larger cabin than Model Y, falcon wing doors. Most Model Y mattresses fit ~90% of Model X. Products: Havnby Autolevel (confirmed compatible), Havnby Foam, Snuuzu (may fit). Unique advantages: more headroom, falcon wing doors for ventilation.',
+    context: 'Model X guide. Use exact current seller compatibility rather than assuming Model Y fit. Havnby CloudCore currently has selectable Model X variants; verify exact year. Cover headroom and falcon-wing-door ventilation.',
   },
   guide_buying: {
     title: 'Tesla Mattress Buying Guide: How to Choose',
@@ -53,7 +53,7 @@ const GUIDE_CONFIGS = {
   },
   guide_tesla_vs_generic: {
     title: 'Tesla-Specific vs Generic Car Mattress: Is It Worth It?',
-    context: 'Addresses buyer objection "why not a regular air mattress?" Differences: custom fit vs gap at trunk hinge, sub-trunk storage, surface leveling. Tesla-specific: perfect fit, integrated pump, no shifting. Generic: cheaper, multi-car, easy replace. Recommendations by tier: Havnby Foam ($170 entry), TESMAT Luxe ($379 mid), Snuuzu ($899 premium).',
+    context: 'Addresses buyer objection "why not a regular air mattress?" Compare exact fit, trunk-hinge gaps, packed storage and pump design. Current examples: TESMAT Solo ($140), NovaPads ($272.78), Havnby CloudCore ($399), Havnby FlatCore ($599) and Snuuzu ($899).',
   },
   guide_getting_started: {
     title: 'Getting Started With Tesla Camping: Complete Beginner\'s Guide',
@@ -61,7 +61,7 @@ const GUIDE_CONFIGS = {
   },
   guide_dogs: {
     title: 'Tesla Camping With Dogs: Setup, Tips & Best Mattress',
-    context: 'Pet owner guide. Dog Mode vs Camp Mode (Dog Mode shows screen message, Camp Mode better overnight). Mattress for dogs: claw resistance (foam safer than air), easy clean, durability. Products: Havnby Foam ($170, no puncture), Havnby Autolevel ($360, wipe-clean), Snuuzu ($899, waterproof TPU base). Safety: temperature monitoring, never Sentry Mode only.',
+    context: 'Pet owner guide. Dog Mode vs Camp Mode, washable barriers, claw and valve risks, and cleaning. Current mattresses with air chambers must not be described as puncture-proof. Compare FlatCore, CloudCore, NovaPads, TESMAT and Snuuzu only with current evidence.',
   },
 };
 

@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#2d4a3e">
+    <meta name="theme-color" content="#1f1d19">
 
     <!-- Primary Meta Tags -->
     <title>{{t.methodology.meta_title}}</title>
@@ -55,7 +55,7 @@
         .menu-toggle{display:none}
     </style>
 
-    <link rel="stylesheet" href="/styles.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/styles.css">
     <noscript><link rel="stylesheet" href="/styles.css"></noscript>
 
     <!-- JSON-LD -->
@@ -112,10 +112,10 @@
 <body>
     <nav class="navbar">
         <a href="{{localeHome}}" class="logo">Teslamattress</a>
-        <button class="menu-toggle" aria-label="Toggle menu">
+        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-navigation">
             <span></span><span></span><span></span>
         </button>
-        <ul class="nav-links">
+        <ul class="nav-links" id="primary-navigation">
             <li><a href="/{{localePath}}reviews">{{t.shared.nav_reviews}}</a></li>
             <li><a href="/{{localePath}}vs">{{t.shared.nav_compare}}</a></li>
             <li><a href="/{{localePath}}guides">{{t.shared.nav_guides}}</a></li>
@@ -134,6 +134,11 @@
                 <a href="/{{localePath}}" style="color: var(--forest);">Home</a> / Methodology
             </div>
 
+            <figure class="about-visual methodology-visual">
+                <img src="/images/snuuzu-model-y-tesla-mattress.webp" alt="Fitted Tesla mattress used for specification and fitment research" width="1200" height="800" fetchpriority="high">
+                <figcaption>Specs, fitment and owner-report synthesis — with limitations stated clearly</figcaption>
+            </figure>
+
             <h1 style="font-family: 'Libre Baskerville', Georgia, serif; font-size: 2.5rem; color: var(--forest-dark); margin-bottom: 1.5rem;">{{t.methodology.h1}}</h1>
 
             <section style="margin-bottom: 3rem;">
@@ -148,7 +153,7 @@
                     <li style="margin-bottom: 1rem;"><strong>Spec verification:</strong> Every dimension, material, weight, pump type, and warranty term is checked against the manufacturer's published data. Where a vendor page and marketing copy disagree, we flag it.</li>
                     <li style="margin-bottom: 1rem;"><strong>Fitment analysis:</strong> Published dimensions are compared against each Tesla model's cargo measurements, including trunk hinge gaps and seat-fold slope.</li>
                     <li style="margin-bottom: 1rem;"><strong>Owner-review synthesis:</strong> We cross-reference owner reports from Tesla Motors Club, Reddit, and retailer reviews, weighting recurring patterns over one-off anecdotes.</li>
-                    <li style="margin-bottom: 1rem;"><strong>Price and code verification:</strong> Prices and discount codes are re-checked before each page update, and reviews are revised when specs, pricing, or owner sentiment change.</li>
+                    <li style="margin-bottom: 1rem;"><strong>Price and code records:</strong> Product prices are dated snapshots. Discount pages show the most recent checkout-check date in our log, and we do not move that date forward during a copy-only update.</li>
                 </ol>
             </section>
 
@@ -241,6 +246,7 @@
                 navLinks.classList.toggle('active');
                 menuOverlay.classList.toggle('active');
                 document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+                menuToggle.setAttribute('aria-expanded', String(navLinks.classList.contains('active')));
             }
             menuToggle.addEventListener('click', toggleMenu);
             menuOverlay.addEventListener('click', toggleMenu);

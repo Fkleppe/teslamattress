@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#2d4a3e">
+    <meta name="theme-color" content="#1f1d19">
 
     <!-- Primary Meta Tags -->
     <title>{{t.vs_tesmat_vs_havnby.meta_title}}</title>
@@ -27,7 +27,7 @@
     <meta property="og:locale" content="{{ogLocale}}">
     {{ogLocaleAlternates}}
     <meta property="article:published_time" content="2026-02-19">
-    <meta property="article:modified_time" content="2026-02-19">
+    <meta property="article:modified_time" content="{{buildDate}}">
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{t.vs_tesmat_vs_havnby.twitter_title}}">
@@ -46,9 +46,9 @@
         body{font-family:'Source Sans 3',-apple-system,sans-serif;line-height:1.7;color:var(--text);background:var(--warm-white)}
     </style>
 
-    <link rel="stylesheet" href="/styles.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/styles.css">
     <noscript><link rel="stylesheet" href="/styles.css"></noscript>
-    <link rel="stylesheet" href="/vs/vs.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/vs/vs.css">
     <noscript><link rel="stylesheet" href="/vs/vs.css"></noscript>
 
     <!-- JSON-LD -->
@@ -222,8 +222,8 @@
 <body>
     <nav class="navbar">
         <a href="{{localeHome}}" class="logo">Teslamattress</a>
-        <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-        <ul class="nav-links">
+        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span><span></span></button>
+        <ul class="nav-links" id="primary-navigation">
             <li><a href="/{{localePath}}reviews">{{t.shared.nav_reviews}}</a></li>
             <li><a href="/{{localePath}}vs">{{t.shared.nav_compare}}</a></li>
             <li><a href="/{{localePath}}guides">{{t.shared.nav_guides}}</a></li>
@@ -249,7 +249,7 @@
                 </div>
                 <span class="vs-hero-vs">VS</span>
                 <div class="vs-hero-brand">
-                    <img src="https://havnby.com/cdn/shop/files/Havnby-logo.png?width=200&format=webp" alt="Havnby" loading="eager" width="120" height="40">
+                    <img src="/images/havnby-logo.webp" alt="Havnby" loading="eager" width="120" height="40">
                     <span class="brand-score">8.6/10</span>
                 </div>
             </div>
@@ -264,8 +264,8 @@
                 <h2>{{t.vs_tesmat_vs_havnby.h2}}</h2>
                 <p>{{t.vs_tesmat_vs_havnby.p_2}}</p>
                 <div class="verdict-winner">
-                    <span class="winner-label">Our Pick:</span>
-                    <span>Havnby FlatCore Hybrid, formerly Autolevel (more comfort, at a higher price)</span>
+                    <span class="winner-label">Decision guide:</span>
+                    <span>Horizon for the lower-priced kit | FlatCore for the deeper shaped profile and built-in 12V pump</span>
                 </div>
             </div>
         </section>
@@ -290,12 +290,12 @@
                     <tr>
                         <td>Price</td>
                         <td class="winner">$339</td>
-                        <td>$509</td>
+                        <td>$599</td>
                     </tr>
                     <tr>
                         <td>Thickness</td>
-                        <td>~11 cm (4.5")</td>
-                        <td class="winner">19 cm (7.5")</td>
+                        <td>6 in (seller specification)</td>
+                        <td>7.9–19 cm shaped profile</td>
                     </tr>
                     <tr>
                         <td>Type</td>
@@ -314,18 +314,13 @@
                     </tr>
                     <tr>
                         <td>Warranty</td>
-                        <td>Standard</td>
-                        <td class="winner">5-year warranty</td>
+                        <td>Confirm live terms</td>
+                        <td>3-year warranty</td>
                     </tr>
                     <tr>
                         <td>Fits</td>
                         <td>Model Y or Model 3 (separate)</td>
                         <td>Model Y</td>
-                    </tr>
-                    <tr>
-                        <td>Country</td>
-                        <td>USA</td>
-                        <td>USA shipping</td>
                     </tr>
                     <tr>
                         <td>Discount Code</td>
@@ -335,7 +330,7 @@
                     <tr>
                         <td>Price After Discount</td>
                         <td class="winner">$339</td>
-                        <td>$458.10</td>
+                        <td>$539.10</td>
                     </tr>
                 </tbody>
             </table>
@@ -349,20 +344,20 @@
                     <h3>{{t.vs_tesmat_vs_havnby.h3}}</h3>
                     <ul style="margin-top: 0.5rem; padding-left: 1.2rem;">
                         <li>Complete kit with accessories</li>
-                        <li>Made in the USA</li>
+                        <li>Lower checked sale price</li>
                         <li>Available for both Model Y and Model 3</li>
-                        <li>Established brand with long track record</li>
-                        <li>Good customer support</li>
+                        <li>Fitted microfiber sheet included</li>
+                        <li>Rechargeable USB-C pump included</li>
                     </ul>
                 </div>
                 <div class="vs-category-item">
                     <h3>{{t.vs_tesmat_vs_havnby.h3_2}}</h3>
                     <ul style="margin-top: 0.5rem; padding-left: 1.2rem;">
-                        <li>Almost 2x thicker (19cm vs 11cm)</li>
+                        <li>Shaped 7.9–19 cm support profile</li>
                         <li>Built-in self-inflating pump</li>
                         <li>10% off with code AWD</li>
-                        <li>5-year warranty</li>
-                        <li>Higher comfort score</li>
+                        <li>3-year warranty</li>
+                        <li>Published 60-day trial</li>
                     </ul>
                 </div>
             </div>
@@ -376,20 +371,19 @@
                     <h3>{{t.vs_tesmat_vs_havnby.h3_3}}</h3>
                     <ul style="margin-top: 0.5rem; padding-left: 1.2rem;">
                         <li>Want a complete kit with everything included</li>
-                        <li>Prefer American-made products</li>
                         <li>Need a Model 3 version</li>
-                        <li>Are a lighter sleeper (under 80kg)</li>
-                        <li>Value brand recognition</li>
+                        <li>Prefer the lower checked price</li>
+                        <li>Want a separate rechargeable pump</li>
                     </ul>
                 </div>
                 <div class="vs-category-item">
                     <h3>{{t.vs_tesmat_vs_havnby.h3_4}}</h3>
                     <ul style="margin-top: 0.5rem; padding-left: 1.2rem;">
-                        <li>Want the most comfortable option of the two</li>
+                        <li>Want the shaped 7.9–19 cm support profile</li>
                         <li>Prefer a built-in pump (no extra piece)</li>
                         <li>Value a longer warranty</li>
-                        <li>Are a heavier or side sleeper</li>
-                        <li>Want to save more with a discount code</li>
+                        <li>Can power the pump from a 12V socket</li>
+                        <li>Want a published 60-day trial</li>
                     </ul>
                 </div>
             </div>
@@ -422,8 +416,8 @@
         <section class="vs-full-reviews">
             <h3>{{t.vs_tesmat_vs_havnby.h3_9}}</h3>
             <div class="vs-review-links">
-                <a href="/{{localePath}}reviews/tesmat-luxe-y" class="vs-review-link">TESMAT Luxe Full Review &rarr;</a>
-                <a href="/{{localePath}}reviews/havnby-autolevel" class="vs-review-link">Havnby Autolevel Full Review &rarr;</a>
+                <a href="/{{localePath}}reviews/tesmat-luxe-y" class="vs-review-link">TESMAT Horizon Full Review &rarr;</a>
+                <a href="/{{localePath}}reviews/havnby-autolevel" class="vs-review-link">Havnby FlatCore Foam Mattress Review &rarr;</a>
             </div>
         </section>
 
@@ -438,9 +432,17 @@
                 </a>
                 <a href="https://havnby.com/products/flatcore-hybrid-support-mattress-for-tesla-model-y?ref=discount" target="_blank" rel="noopener sponsored" class="vs-cta-btn">
                     <span class="btn-brand">Havnby FlatCore Hybrid</span>
-                    <span class="btn-price">$509</span>
+                    <span class="btn-price">$599</span>
                     <span class="btn-discount">Use AWD for 10% off</span>
                 </a>
+            </div>
+        </section>
+        <section class="article-visual-guides" aria-labelledby="visual-guides-title">
+            <div class="article-visual-guides-heading"><span>Continue comparing</span><h2 id="visual-guides-title">Visual guides for your final shortlist</h2></div>
+            <div class="article-visual-guide-grid">
+                <a href="/{{localePath}}guides/best-tesla-mattresses" class="article-visual-guide-card"><img src="/images/tesla-mattress-ranking.webp" alt="Editorial overview of Tesla camping mattress formats" width="1344" height="768" loading="lazy"><span>Compare all mattress options</span></a>
+                <a href="/{{localePath}}guides/best-tesla-mattress-for-couples" class="article-visual-guide-card"><img src="/images/mattress-for-couples.webp" alt="Editorial illustration of a two-person car-camping sleep setup" width="1344" height="768" loading="lazy"><span>Plan a setup for two</span></a>
+                <a href="/{{localePath}}faq/how-to-use-tesla-camp-mode" class="article-visual-guide-card"><img src="/images/camp-mode-night.webp" alt="Editorial night-time Tesla camping setup with Camp Mode" width="1344" height="768" loading="lazy"><span>Use Camp Mode overnight</span></a>
             </div>
         </section>
     </main>

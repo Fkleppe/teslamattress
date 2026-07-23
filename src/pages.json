@@ -41,8 +41,8 @@
   },
   {
     "template": "reviews/_seoqs_review.html",
-    "pageKey": "review_havnby_foam",
-    "output": "reviews/havnby-foam.html"
+    "pageKey": "review_havnby_cloudcore",
+    "output": "reviews/havnby-cloudcore.html"
   },
   {
     "template": "reviews/_seoqs_review.html",
@@ -53,6 +53,11 @@
     "template": "reviews/_seoqs_review.html",
     "pageKey": "review_tesery_novapads",
     "output": "reviews/tesery-novapads.html"
+  },
+  {
+    "template": "reviews/_seoqs_review.html",
+    "pageKey": "review_novapads_auto_leveling",
+    "output": "reviews/novapads-auto-leveling.html"
   },
   {
     "template": "reviews/_seoqs_review.html",
@@ -102,7 +107,7 @@
   {
     "template": "vs/havnby-autolevel-vs-foam.html",
     "pageKey": "vs_havnby_autolevel_vs_foam",
-    "output": "vs/havnby-autolevel-vs-foam.html"
+    "output": "vs/havnby-flatcore-vs-cloudcore.html"
   },
   {
     "template": "vs/model-y-vs-model-3-mattresses.html",
@@ -273,6 +278,21 @@
     "template": "faq/_paa.html",
     "pageKey": "paa_pump_required",
     "output": "faq/do-tesla-camping-mattresses-need-a-pump.html"
+  },
+  {
+    "template": "faq/_paa.html",
+    "pageKey": "paa_how_to_use_camp_mode",
+    "output": "faq/how-to-use-tesla-camp-mode.html"
+  },
+  {
+    "template": "faq/_paa.html",
+    "pageKey": "paa_sleep_while_charging",
+    "output": "faq/can-you-sleep-in-a-tesla-while-charging.html"
+  },
+  {
+    "template": "faq/_paa.html",
+    "pageKey": "paa_prevent_condensation",
+    "output": "faq/how-to-prevent-condensation-while-sleeping-in-a-tesla.html"
   },
   {
     "template": "faq/_paa.html",

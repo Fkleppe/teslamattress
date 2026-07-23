@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#2d4a3e">
+    <meta name="theme-color" content="#1f1d19">
     <title>{{t.guide_model_x.meta_title}}</title>
     <meta name="title" content="{{t.guide_model_x.meta_name_title}}">
     <meta name="description" content="{{t.guide_model_x.meta_description}}">    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -18,16 +18,16 @@
     <meta property="og:url" content="{{pageUrl}}">
     <meta property="og:title" content="{{t.guide_model_x.og_title}}">
     <meta property="og:description" content="{{t.guide_model_x.og_description}}">
-    <meta property="og:image" content="https://teslamattress.com/images/og-image.jpg">
+    <meta property="og:image" content="https://teslamattress.com/images/hero-bg.webp">
     <meta property="og:site_name" content="Teslamattress">
     <meta property="article:published_time" content="2026-02-19">
-    <meta property="article:modified_time" content="2026-02-19">
+    <meta property="article:modified_time" content="{{buildDate}}">
     <meta property="og:locale" content="{{ogLocale}}">
     {{ogLocaleAlternates}}
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{t.guide_model_x.twitter_title}}">
     <meta name="twitter:description" content="{{t.guide_model_x.twitter_description}}">
-    <meta name="twitter:image" content="https://teslamattress.com/images/og-image.jpg">
+    <meta name="twitter:image" content="https://teslamattress.com/images/hero-bg.webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdn.shopify.com">
@@ -48,10 +48,11 @@
         .menu-toggle span{width:24px;height:2px;background:var(--cream)}
         @media(max-width:768px){.menu-toggle{display:flex}.nav-links{display:none}}
     </style>
-    <link rel="stylesheet" href="/styles.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/styles.css">
     <noscript><link rel="stylesheet" href="/styles.css"></noscript>
-    <link rel="stylesheet" href="/guides/guides.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/guides/guides.css">
     <noscript><link rel="stylesheet" href="/guides/guides.css"></noscript>
+    <style>.guide-hero{background:linear-gradient(90deg,rgba(17,18,16,.96),rgba(17,18,16,.76) 62%,rgba(17,18,16,.38)),url('/images/hero-bg.webp') center 48% / cover}</style>
 
     <!-- JSON-LD: Article -->
     <script type="application/ld+json">
@@ -77,7 +78,7 @@
         },
         "datePublished": "2026-02-19",
         "dateModified": "{{buildDate}}",
-        "image": "https://teslamattress.com/images/og-image.jpg"
+        "image": "https://teslamattress.com/images/hero-bg.webp"
     }
     </script>
     <!-- JSON-LD: BreadcrumbList -->
@@ -159,8 +160,8 @@
 <body>
     <nav class="navbar guide-nav">
         <a href="{{localeHome}}" class="logo">Teslamattress</a>
-        <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-        <ul class="nav-links">
+        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span><span></span></button>
+        <ul class="nav-links" id="primary-navigation">
             <li><a href="/{{localePath}}reviews">{{t.shared.nav_reviews}}</a></li>
             <li><a href="/{{localePath}}vs">{{t.shared.nav_compare}}</a></li>
             <li><a href="/{{localePath}}guides">{{t.shared.nav_guides}}</a></li>
@@ -219,36 +220,31 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>{{t.guide_model_x.th_dimension}}</th>
-                                <th>Model X</th>
-                                <th>Model Y</th>
-                                <th>Model 3</th>
+                                <th>Fit check</th>
+                                <th>Why it matters</th>
+                                <th>How to verify it</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>{{t.guide_model_x.td_cargo_length}}</td>
-                                <td class="winner">~77"</td>
-                                <td>~76"</td>
-                                <td>~72"</td>
+                                <td>Usable length</td>
+                                <td>Changes with front-seat position and mattress shape</td>
+                                <td>Measure your normal driving position, then compare the product diagram</td>
                             </tr>
                             <tr>
-                                <td>{{t.guide_model_x.td_cargo_width}}</td>
-                                <td class="winner">~56"</td>
-                                <td>~54"</td>
-                                <td>~45"</td>
+                                <td>Narrowest width</td>
+                                <td>Wheel wells and interior trim limit a rectangular pad</td>
+                                <td>Measure the narrowest intended sleeping area, not the widest cargo point</td>
                             </tr>
                             <tr>
-                                <td>{{t.guide_model_x.td_cargo_height}}</td>
-                                <td class="winner">~30"</td>
-                                <td>~28"</td>
-                                <td>~24"</td>
+                                <td>Remaining headroom</td>
+                                <td>Deeper mattresses reduce sitting and turning clearance</td>
+                                <td>Measure from the inflated top surface to the roof or glass</td>
                             </tr>
                             <tr>
-                                <td>{{t.guide_model_x.td_floor_flatness}}</td>
-                                <td>{{t.guide_model_x.td_flatness_x}}</td>
-                                <td>{{t.guide_model_x.td_flatness_y}}</td>
-                                <td>{{t.guide_model_x.td_flatness_3}}</td>
+                                <td>Seat layout</td>
+                                <td>Five-, six- and seven-seat configurations can create different transitions</td>
+                                <td>Fold the actual seats and inspect every hinge and height change before ordering</td>
                             </tr>
                         </tbody>
                     </table>
@@ -273,7 +269,7 @@
             </section>
 
             <figure class="guide-image">
-                <img src="https://havnby.com/cdn/shop/files/tesla-solo-mattress-main.jpg?v=1733913261&width=1200&format=webp" alt="Havnby mattress setup in Tesla" loading="eager" fetchpriority="high" width="1200" height="800">
+                <img src="/images/novapads-model-y-pro.webp" alt="NovaPads Air-Foam Pro available with a Tesla Model X vehicle option" loading="eager" fetchpriority="high" width="1200" height="800">
                 <figcaption>{{t.guide_model_x.img1_caption}}</figcaption>
             </figure>
 
@@ -283,95 +279,66 @@
                 <p>{{t.guide_model_x.p_compatible_intro}}</p>
                 <p>{{t.guide_model_x.p_compatible_fit_note}}</p>
 
-                <!-- Havnby Autolevel -->
+                <!-- NovaPads Air-Foam Pro -->
                 <div class="product-pick editors-choice">
                     <div class="product-pick-header">
                         <div>
                             <span style="font-size: 0.8rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px;">{{t.guide_model_x.pick_label_best_overall}}</span>
-                            <div class="product-pick-name">Havnby FlatCore Hybrid Air-Foam</div>
+                            <div class="product-pick-name">NovaPads Air-Foam Mattress Pro</div>
                         </div>
-                        <span class="product-pick-score">8.6/10</span>
+                        <span class="product-pick-score">8.8/10</span>
                     </div>
                     <div class="product-pick-meta">
-                        <span>{{t.guide_model_x.pick_type_air_foam}}</span>
-                        <span>{{t.guide_model_x.pick_thickness_7_5}}</span>
-                        <span>{{t.guide_model_x.pick_fits_y_x}}</span>
+                        <span>Air + foam</span>
+                        <span>4.5-inch listed profile</span>
+                        <span>Model X variant listed</span>
                     </div>
-                    <p class="product-pick-desc">{{t.guide_model_x.pick_havnby_al_description}}</p>
+                    <p class="product-pick-desc">NovaPads listed a selectable Model X version at $272.78 when checked on 22 July 2026. The current page describes a foam-and-air structure, built-in pump and removable sheet; confirm the selected vehicle and final total in the cart.</p>
                     <ul class="product-pick-pros">
-                        <li>{{t.guide_model_x.pick_havnby_al_pro1}}</li>
-                        <li>{{t.guide_model_x.pick_havnby_al_pro2}}</li>
-                        <li>{{t.guide_model_x.pick_havnby_al_pro3}}</li>
-                        <li>{{t.guide_model_x.pick_havnby_al_pro4}}</li>
+                        <li>Current Model X option in the seller's vehicle selector</li>
+                        <li>$272.78 observed price; live price can change</li>
+                        <li>Built-in pump and 4.5-inch profile listed by NovaPads</li>
+                        <li>No independent fit, comfort or durability test was performed here</li>
                     </ul>
                     <div class="product-pick-cta">
-                        <span class="price-tag">$509</span>
+                        <span class="price-tag">$272.78</span>
                         <span class="discount-code-tag">{{t.shared.discount_percent_off}} <code>AWD</code></span>
-                        <a href="/{{localePath}}reviews/havnby-autolevel" class="btn-review">{{t.guide_model_x.btn_read_review}}</a>
-                        <a href="https://havnby.com/products/flatcore-hybrid-support-mattress-for-tesla-model-y?ref=discount" target="_blank" rel="noopener sponsored" class="btn-buy">{{t.guide_model_x.btn_check_price}}</a>
+                        <a href="/{{localePath}}reviews/tesery-novapads" class="btn-review">{{t.guide_model_x.btn_read_review}}</a>
+                        <a href="https://novapads.com/?ref=AWD" target="_blank" rel="noopener sponsored nofollow" class="btn-buy">{{t.guide_model_x.btn_check_price}}</a>
                     </div>
                 </div>
 
-                <!-- Havnby Foam -->
+                <!-- NovaPads Auto-Leveling -->
                 <div class="product-pick">
                     <div class="product-pick-header">
                         <div>
                             <span style="font-size: 0.8rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px;">{{t.guide_model_x.pick_label_budget}}</span>
-                            <div class="product-pick-name">Havnby Foam Mattress (discontinued)</div>
+                            <div class="product-pick-name">NovaPads Auto-Leveling Camping Mattress</div>
                         </div>
-                        <span class="product-pick-score">7.6/10</span>
+                        <span class="product-pick-score">8.1/10</span>
                     </div>
                     <div class="product-pick-meta">
-                        <span>{{t.guide_model_x.pick_type_foam}}</span>
-                        <span>{{t.guide_model_x.pick_thickness_4_5}}</span>
-                        <span>{{t.guide_model_x.pick_fits_y_3_x}}</span>
+                        <span>Auto-leveling design</span>
+                        <span>Dimensions not published</span>
+                        <span>Model X variant listed</span>
                     </div>
-                    <p class="product-pick-desc">{{t.guide_model_x.pick_havnby_foam_description}}</p>
+                    <p class="product-pick-desc">The newer $386.91 product also listed a Model X choice and is intended to address a sloped folded-seat surface. NovaPads had not published dimensions, packed size or pump details on the page we checked, so those points need confirmation before purchase.</p>
                     <ul class="product-pick-pros">
-                        <li>{{t.guide_model_x.pick_havnby_foam_pro1}}</li>
-                        <li>{{t.guide_model_x.pick_havnby_foam_pro2}}</li>
-                        <li>{{t.guide_model_x.pick_havnby_foam_pro3}}</li>
-                        <li>{{t.guide_model_x.pick_havnby_foam_pro4}}</li>
+                        <li>Current Model X option in the seller's vehicle selector</li>
+                        <li>$386.91 observed price with $455.39 comparison price displayed</li>
+                        <li>Leveling purpose is relevant to an uneven folded-seat surface</li>
+                        <li>Missing dimensions and pump details limit our provisional score</li>
                     </ul>
                     <div class="product-pick-cta">
-                        <span class="price-tag">Discontinued</span>
+                        <span class="price-tag">$386.91</span>
                         <span class="discount-code-tag">{{t.shared.discount_percent_off}} <code>AWD</code></span>
-                        <a href="/{{localePath}}reviews/havnby-foam" class="btn-review">{{t.guide_model_x.btn_read_review}}</a>
-                        <a href="https://havnby.com/products/tesla-model-y-3-x-foam-mattress?ref=discount" target="_blank" rel="noopener sponsored" class="btn-buy">{{t.guide_model_x.btn_check_price}}</a>
-                    </div>
-                </div>
-
-                <!-- Snuuzu -->
-                <div class="product-pick">
-                    <div class="product-pick-header">
-                        <div>
-                            <span style="font-size: 0.8rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px;">{{t.guide_model_x.pick_label_premium}}</span>
-                            <div class="product-pick-name">Snuuzu Model Y</div>
-                        </div>
-                        <span class="product-pick-score">9.4/10</span>
-                    </div>
-                    <div class="product-pick-meta">
-                        <span>{{t.guide_model_x.pick_type_multi_layer}}</span>
-                        <span>{{t.guide_model_x.pick_thickness_7_9}}</span>
-                        <span>{{t.guide_model_x.pick_designed_for_y}}</span>
-                    </div>
-                    <p class="product-pick-desc">{{t.guide_model_x.pick_snuuzu_description}}</p>
-                    <ul class="product-pick-pros">
-                        <li>{{t.guide_model_x.pick_snuuzu_pro1}}</li>
-                        <li>{{t.guide_model_x.pick_snuuzu_pro2}}</li>
-                        <li>{{t.guide_model_x.pick_snuuzu_pro3}}</li>
-                        <li>{{t.guide_model_x.pick_snuuzu_pro4}}</li>
-                    </ul>
-                    <div class="product-pick-cta">
-                        <span class="price-tag">$899</span>
-                        <span class="discount-code-tag">{{t.shared.discount_percent_off}} <code>KLEPPE</code></span>
-                        <a href="/{{localePath}}reviews/snuuzu-model-y" class="btn-review">{{t.guide_model_x.btn_read_review}}</a>
-                        <a href="https://www.snuuzu.com/products/snuuzu-model-y?bg_ref=s7fluA5re6" target="_blank" rel="noopener sponsored" class="btn-buy">{{t.guide_model_x.btn_check_price}}</a>
+                        <a href="/{{localePath}}reviews/novapads-auto-leveling" class="btn-review">{{t.guide_model_x.btn_read_review}}</a>
+                        <a href="https://novapads.com/?ref=AWD" target="_blank" rel="noopener sponsored nofollow" class="btn-buy">{{t.guide_model_x.btn_check_price}}</a>
                     </div>
                 </div>
 
                 <div class="guide-callout warning">
-                    <p><strong>{{t.guide_model_x.callout_fit_warning_title}}</strong> {{t.guide_model_x.callout_fit_warning_text}}</p>
+                    <p><strong>{{t.guide_model_x.callout_fit_warning_title}}</strong> A seller dropdown is useful evidence of intended compatibility, but it is not a dimension sheet. Confirm the exact Model X year and seat configuration, especially where published measurements are missing.</p>
                 </div>
 
                 <h3>{{t.guide_model_x.h3_generic_foam_options}}</h3>
@@ -384,7 +351,7 @@
             </section>
 
             <figure class="guide-image">
-                <img src="/images/snuuzu-model-y-tesla-mattress.webp" alt="Snuuzu mattress in Tesla rear cargo area" loading="lazy" width="1200" height="800">
+                <img src="/images/novapads-auto-leveling.webp" alt="NovaPads Auto-Leveling Camping Mattress with a current Model X option" loading="lazy" width="1000" height="1000">
                 <figcaption>{{t.guide_model_x.img2_caption}}</figcaption>
             </figure>
 
@@ -433,34 +400,12 @@
 
                 <div class="guide-comparison-table">
                     <table>
-                        <thead>
-                            <tr>
-                                <th>{{t.guide_model_x.th_condition}}</th>
-                                <th>{{t.guide_model_x.th_overnight_drain}}</th>
-                                <th>{{t.guide_model_x.th_range_impact}}</th>
-                            </tr>
-                        </thead>
+                        <thead><tr><th>Condition</th><th>What changes</th><th>Planning response</th></tr></thead>
                         <tbody>
-                            <tr>
-                                <td>{{t.guide_model_x.td_mild_weather}}</td>
-                                <td>2-5%</td>
-                                <td>~6-15 mi</td>
-                            </tr>
-                            <tr>
-                                <td>{{t.guide_model_x.td_cold_weather}}</td>
-                                <td>8-15%</td>
-                                <td>~24-45 mi</td>
-                            </tr>
-                            <tr>
-                                <td>{{t.guide_model_x.td_extreme_cold}}</td>
-                                <td>15-25%</td>
-                                <td>~45-75 mi</td>
-                            </tr>
-                            <tr>
-                                <td>{{t.guide_model_x.td_hot_ac}}</td>
-                                <td>5-10%</td>
-                                <td>~15-30 mi</td>
-                            </tr>
+                            <tr><td>Mild weather</td><td>Climate demand may be lower, but there is no guaranteed overnight percentage</td><td>Record the live estimate and retain enough charge to reach the next planned charger</td></tr>
+                            <tr><td>Cold weather</td><td>Cabin and battery heating can increase energy use</td><td>Use suitable bedding, monitor the car and keep a larger reserve</td></tr>
+                            <tr><td>Hot weather</td><td>Continuous air conditioning and sun exposure can increase demand</td><td>Park legally in shade where possible and keep cooling active when occupants need it</td></tr>
+                            <tr><td>Low state of charge</td><td>Camp Mode can become unavailable in Low Power Mode</td><td>Charge before settling in and keep a safe alternative if climate stops</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -493,9 +438,14 @@
             </section>
 
             <figure class="guide-image">
-                <img src="https://havnby.com/cdn/shop/files/autolevel-foam-tesla-mattress.jpg?v=1732611561&width=1200&format=webp" alt="Havnby inflatable mattress for Tesla" loading="lazy" width="1200" height="800">
+                <img src="/images/novapads-model-y-pro.webp" alt="NovaPads fitted air-foam camping mattress product view" loading="lazy" width="1200" height="800">
                 <figcaption>{{t.guide_model_x.img3_caption}}</figcaption>
             </figure>
+
+            <section class="guide-section" aria-labelledby="model-x-sources">
+                <h2 id="model-x-sources">Evidence and current-source checks</h2>
+                <p>Product variants and observed prices were checked against the <a href="https://novapads.com/?ref=AWD" rel="sponsored nofollow">NovaPads storefront</a> on 22 July 2026. Camp Mode behavior was checked against Tesla's <a href="https://www.tesla.com/ownersmanual/modelx/en_us/GUID-4F3599A1-20D9-4A49-B4A0-5261F957C096.html" rel="nofollow">current Model X climate-control instructions</a>. We have not performed a hands-on Model X fit, comfort or battery-consumption test.</p>
+            </section>
 
             <!-- FAQ -->
             <section class="guide-faq" id="faq">
@@ -532,8 +482,8 @@
                 <h2>{{t.guide_model_x.cta_title}}</h2>
                 <p>{{t.guide_model_x.cta_text}}</p>
                 <div class="cta-buttons">
-                    <a href="/{{localePath}}reviews" class="btn-primary">{{t.guide_model_x.cta_btn_all_reviews}}</a>
-                    <a href="/{{localePath}}discounts/havnby" class="btn-secondary">{{t.guide_model_x.cta_btn_havnby_discount}}</a>
+                    <a href="/{{localePath}}reviews/tesery-novapads" class="btn-primary">Review the $272.78 option</a>
+                    <a href="/{{localePath}}discounts/novapads" class="btn-secondary">Check code AWD</a>
                 </div>
             </div>
 
@@ -556,7 +506,7 @@
             <div class="sidebar-card cta-card">
                 <h3>{{t.guide_model_x.sidebar_cta_title}}</h3>
                 <p>{{t.guide_model_x.sidebar_cta_text}}</p>
-                <a href="/{{localePath}}discounts" class="btn-cta">{{t.guide_model_x.sidebar_cta_btn}}</a>
+                <a href="/{{localePath}}reviews/novapads-auto-leveling" class="btn-cta">Compare Model X options</a>
             </div>
 
             <div class="sidebar-card">
@@ -565,7 +515,7 @@
                     <a href="/{{localePath}}guides/tesla-mattress-buying-guide">{{t.guide_model_x.sidebar_related_buying_guide}}</a>
                     <a href="/{{localePath}}guides/cybertruck-mattress">{{t.guide_model_x.sidebar_related_cybertruck}}</a>
                     <a href="/{{localePath}}vs/model-y-vs-model-3-mattresses">{{t.guide_model_x.sidebar_related_y_vs_3}}</a>
-                    <a href="/{{localePath}}reviews/havnby-autolevel">{{t.guide_model_x.sidebar_related_havnby_review}}</a>
+                    <a href="/{{localePath}}faq/how-to-use-tesla-camp-mode">How to Use Tesla Camp Mode</a>
                 </div>
             </div>
         </aside>
@@ -597,6 +547,7 @@
                 navLinks.classList.toggle('active');
                 menuOverlay.classList.toggle('active');
                 document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+                menuToggle.setAttribute('aria-expanded', String(navLinks.classList.contains('active')));
             }
             menuToggle.addEventListener('click', toggleMenu);
             menuOverlay.addEventListener('click', toggleMenu);

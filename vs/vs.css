@@ -542,6 +542,21 @@
     text-decoration: underline;
 }
 
+.vs-hub-page > .breadcrumb {
+    width: fit-content;
+    margin: 1.15rem max(5vw, calc((100vw - 1180px) / 2));
+    padding: .55rem .8rem;
+    border: 1px solid rgba(31, 29, 25, .13);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .72);
+}
+
+.vs-hub-page > .breadcrumb a {
+    color: #1f1d19;
+    font-weight: 700;
+    text-decoration: none;
+}
+
 /* Full Reviews Section */
 .vs-full-reviews {
     max-width: 900px;
@@ -605,5 +620,388 @@
     .vs-table th,
     .vs-table td {
         padding: 0.75rem;
+    }
+}
+
+/* 2026 editorial comparisons */
+.vs-hub-page {
+    max-width: none;
+    margin: 0;
+    padding: 0 0 clamp(4rem, 8vw, 8rem);
+    background: var(--surface, #fbfaf7);
+}
+
+.vs-hub-page > .breadcrumb,
+.vs-hub-page > .vs-cards-grid,
+.vs-hub-page > .vs-guide,
+.vs-hub-page > .quick-picks {
+    width: min(1180px, 90vw);
+    max-width: 1180px;
+    margin-inline: auto;
+}
+
+.vs-hub-page > .breadcrumb {
+    padding: 1.15rem 0;
+}
+
+.vs-hub-hero {
+    position: relative;
+    min-height: 440px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 0 0 clamp(4rem, 8vw, 7rem);
+    padding: clamp(4.5rem, 9vw, 8rem) max(6vw, calc((100vw - 1180px) / 2)) 4rem;
+    overflow: hidden;
+    background:
+        linear-gradient(90deg, rgba(15, 16, 15, .95), rgba(15, 16, 15, .72) 56%, rgba(15, 16, 15, .22)),
+        url('/images/havnby-flatcore-hybrid.webp') center 52% / cover;
+    color: #fffdf8;
+    text-align: left;
+}
+
+.vs-hub-hero h1 {
+    max-width: 11ch;
+    margin: .4rem 0 1rem;
+    color: #fffdf8;
+    font-family: var(--font-sans, 'Source Sans 3', sans-serif);
+    font-size: clamp(3rem, 5.4vw, 5.5rem);
+    line-height: .98;
+    letter-spacing: -.055em;
+}
+
+.vs-hub-hero > p {
+    max-width: 55ch;
+    margin: 0;
+    color: rgba(255, 255, 255, .76);
+    font-size: 1.05rem;
+    line-height: 1.68;
+}
+
+.vs-hub-hero .vs-hub-byline {
+    margin-top: 1.35rem;
+    color: rgba(255, 255, 255, .62);
+    font-size: .76rem;
+}
+
+.vs-hub-byline a {
+    color: #fffdf8;
+}
+
+.vs-cards-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    margin-bottom: clamp(4rem, 7vw, 7rem);
+    border: 1px solid var(--line, #ddd8cf);
+    background: var(--line, #ddd8cf);
+}
+
+.vs-card,
+.vs-card.featured {
+    padding: 0 0 1.8rem;
+    overflow: hidden;
+    border: 0;
+    border-radius: 0;
+    background: var(--surface-raised, #fff);
+    box-shadow: none;
+}
+
+.vs-card:hover {
+    border: 0;
+    box-shadow: none;
+    transform: none;
+}
+
+.vs-card-media {
+    height: 230px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    margin: 0 0 1.5rem;
+    overflow: hidden;
+    background: var(--line, #ddd8cf);
+}
+
+.vs-card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(.85);
+    transition: transform .65s cubic-bezier(.2, .7, .2, 1), filter .2s;
+}
+
+.vs-card:hover .vs-card-media img {
+    transform: scale(1.02);
+    filter: saturate(1);
+}
+
+.vs-card-badge {
+    z-index: 2;
+    top: .9rem;
+    right: .9rem;
+    border-radius: 2px;
+    background: var(--ink, #1f1d19);
+    font-size: .67rem;
+    letter-spacing: .09em;
+}
+
+.vs-card-matchup,
+.vs-card h2,
+.vs-card p,
+.vs-card-meta {
+    margin-inline: clamp(1.25rem, 3vw, 2rem);
+}
+
+.vs-card-matchup {
+    justify-content: flex-start;
+    margin-bottom: 1.1rem;
+}
+
+.vs-brand {
+    align-items: flex-start;
+}
+
+.vs-divider {
+    padding: .25rem .45rem;
+    border-radius: 2px;
+    background: var(--paper, #f7f3ec);
+    font-size: .73rem;
+}
+
+.vs-score {
+    border: 1px solid var(--line, #ddd8cf);
+    border-radius: 2px;
+    background: var(--paper, #f7f3ec);
+    color: var(--ink, #1f1d19);
+    font-size: .73rem;
+}
+
+.vs-card h2 {
+    color: var(--ink, #1f1d19);
+    font-family: var(--font-sans, 'Source Sans 3', sans-serif);
+    font-size: clamp(1.35rem, 2vw, 1.75rem);
+    line-height: 1.12;
+    letter-spacing: -.03em;
+    text-align: left;
+}
+
+.vs-card p {
+    color: var(--muted, #666159);
+    text-align: left;
+}
+
+.vs-card-meta {
+    color: var(--muted, #666159);
+    border-top-color: var(--line, #ddd8cf);
+    font-size: .75rem;
+}
+
+.vs-guide {
+    display: grid;
+    grid-template-columns: minmax(220px, .55fr) minmax(0, 1.45fr);
+    column-gap: clamp(2rem, 6vw, 6rem);
+    padding: clamp(3rem, 6vw, 5.5rem) 0 !important;
+    border-top: 1px solid var(--line, #ddd8cf);
+    border-bottom: 1px solid var(--line, #ddd8cf);
+}
+
+.vs-guide > h2 {
+    grid-column: 1;
+    grid-row: 1 / span 12;
+    margin: 0 !important;
+    color: var(--ink, #1f1d19);
+    font-family: var(--font-sans, 'Source Sans 3', sans-serif) !important;
+    font-size: clamp(1.6rem, 3vw, 2.4rem) !important;
+    line-height: 1.08;
+}
+
+.vs-guide > :not(h2) {
+    grid-column: 2;
+}
+
+.vs-guide p {
+    color: var(--ink-soft, #3b3832);
+    line-height: 1.78;
+}
+
+.quick-picks {
+    padding: clamp(3rem, 6vw, 5.5rem);
+    border-radius: 3px;
+    background: var(--ink, #1f1d19);
+    color: #fffdf8;
+}
+
+.quick-picks h2 {
+    color: #fffdf8;
+    font-family: var(--font-sans, 'Source Sans 3', sans-serif);
+    font-size: clamp(2rem, 4vw, 3.6rem);
+    letter-spacing: -.04em;
+}
+
+.quick-picks-grid {
+    gap: 1px;
+    background: rgba(255, 255, 255, .17);
+}
+
+.quick-pick {
+    border-radius: 0;
+    background: var(--ink, #1f1d19);
+    color: rgba(255, 255, 255, .8);
+}
+
+.quick-pick a {
+    color: #fffdf8;
+}
+
+/* Individual comparison pages */
+.vs-page {
+    padding-top: 0;
+    background: var(--surface, #fbfaf7);
+}
+
+.vs-hero {
+    min-height: 480px;
+    padding: clamp(4rem, 8vw, 7rem) max(6vw, calc((100vw - 960px) / 2)) 3.5rem;
+    background:
+        linear-gradient(90deg, rgba(16, 17, 15, .95), rgba(16, 17, 15, .66) 62%, rgba(16, 17, 15, .3)),
+        url('/images/hero-model-y-adventure-v2.webp') center 56% / cover;
+}
+
+.vs-hero h1 {
+    max-width: 16ch;
+    margin: 0 auto 1rem;
+    color: #fffdf8;
+    font-family: var(--font-sans, 'Source Sans 3', sans-serif);
+    font-size: clamp(2.6rem, 5vw, 4.75rem);
+    line-height: 1;
+    letter-spacing: -.05em;
+}
+
+.vs-hero-matchup {
+    margin-bottom: 1.4rem;
+}
+
+.vs-hero-brand .brand-score {
+    border: 1px solid rgba(255, 255, 255, .3);
+    border-radius: 2px;
+    background: rgba(255, 255, 255, .1);
+}
+
+.quick-verdict {
+    max-width: 960px;
+    margin: -2rem auto clamp(3rem, 6vw, 5rem);
+}
+
+.verdict-box {
+    border: 1px solid var(--line, #ddd8cf);
+    border-left: 3px solid var(--accent, #8d6745);
+    border-radius: 3px;
+    box-shadow: 0 16px 45px rgba(35, 30, 23, .09);
+}
+
+.vs-comparison,
+.vs-category,
+.vs-faq,
+.vs-full-reviews {
+    max-width: 960px;
+    margin-bottom: clamp(3.5rem, 7vw, 6rem);
+}
+
+.vs-table {
+    border: 1px solid var(--line, #ddd8cf);
+    border-radius: 3px;
+    box-shadow: none;
+}
+
+.vs-category h2,
+.vs-faq h2 {
+    padding-bottom: .85rem;
+    border-bottom: 1px solid var(--line, #ddd8cf);
+    color: var(--ink, #1f1d19);
+    font-family: var(--font-sans, 'Source Sans 3', sans-serif);
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+}
+
+.vs-category-grid {
+    gap: 1px;
+    border: 1px solid var(--line, #ddd8cf);
+    background: var(--line, #ddd8cf);
+}
+
+.vs-category-item,
+.vs-faq .faq-item {
+    border-radius: 0;
+    background: var(--surface-raised, #fff);
+    box-shadow: none;
+}
+
+.vs-category-item.winner-item {
+    border: 0;
+    box-shadow: inset 0 3px 0 var(--accent, #8d6745);
+}
+
+.vs-cta {
+    padding: clamp(3.5rem, 7vw, 6rem) 5vw;
+    background: var(--paper, #f7f3ec);
+}
+
+@media (max-width: 760px) {
+    .vs-hub-hero {
+        min-height: 430px;
+        padding: 5rem 5vw 3rem;
+        background-position: 61% center;
+    }
+
+    .vs-hub-hero h1 {
+        font-size: 2.75rem;
+    }
+
+    .vs-cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .vs-card-media {
+        height: 210px;
+    }
+
+    .vs-guide {
+        grid-template-columns: 1fr;
+    }
+
+    .vs-guide > h2,
+    .vs-guide > :not(h2) {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .vs-guide > h2 {
+        margin-bottom: 1.5rem !important;
+    }
+
+    .vs-hero {
+        min-height: 500px;
+        padding: 5rem 5vw 3rem;
+        background-position: 60% center;
+    }
+
+    .vs-hero h1 {
+        font-size: 2.45rem;
+    }
+}
+
+/* Keep the directory breadcrumb as a compact navigation chip. */
+.vs-hub-page > nav.breadcrumb {
+    width: fit-content;
+    margin: 1.15rem max(5vw, calc((100vw - 1180px) / 2));
+    padding: .55rem .8rem;
+    border: 1px solid rgba(31, 29, 25, .13);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .72);
+}
+
+@media (max-width: 640px) {
+    .vs-hub-page > nav.breadcrumb {
+        margin-block: .9rem;
+        padding: .45rem .65rem;
     }
 }

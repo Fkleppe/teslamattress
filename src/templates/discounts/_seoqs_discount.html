@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#2d4a3e">
+    <meta name="theme-color" content="#1f1d19">
 
     <title>{{t.PAGEKEY.meta_title}}</title>
     <meta name="description" content="{{t.PAGEKEY.meta_description}}">
@@ -16,7 +16,7 @@
     <meta property="og:url" content="{{pageUrl}}">
     <meta property="og:title" content="{{t.PAGEKEY.og_title}}">
     <meta property="og:description" content="{{t.PAGEKEY.og_description}}">
-    <meta property="og:image" content="https://teslamattress.com/images/og-image.jpg">
+    <meta property="og:image" content="{{t.PAGEKEY.image_path}}">
     <meta property="og:site_name" content="Teslamattress">
     <meta property="og:locale" content="{{ogLocale}}">
     {{ogLocaleAlternates}}
@@ -24,6 +24,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{t.PAGEKEY.og_title}}">
     <meta name="twitter:description" content="{{t.PAGEKEY.og_description}}">
+    <meta name="twitter:image" content="{{t.PAGEKEY.image_path}}">
 
     <link rel="icon" href="/favicon.ico" sizes="32x32">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -77,7 +78,7 @@
         footer a{color:var(--cream)}
     </style>
 
-    <link rel="stylesheet" href="/styles.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/styles.css">
     <noscript><link rel="stylesheet" href="/styles.css"></noscript>
 
     <script type="application/ld+json">
@@ -87,7 +88,7 @@
         "inLanguage": "{{htmlLang}}",
         "headline": "{{t.PAGEKEY.h1}}",
         "description": "{{t.PAGEKEY.meta_description}}",
-        "image": "https://teslamattress.com/images/og-image.jpg",
+        "image": "{{t.PAGEKEY.image_path}}",
         "author": { "@type": "Person", "name": "Fredrik Mastouri", "url": "https://teslamattress.com/about" },
         "publisher": {
                 "@type": "Organization",
@@ -116,8 +117,8 @@
 <body>
     <nav class="navbar">
         <a href="{{localeHome}}" class="logo">Teslamattress</a>
-        <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-        <ul class="nav-links">
+        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span><span></span></button>
+        <ul class="nav-links" id="primary-navigation">
             <li><a href="/{{localePath}}reviews">{{t.shared.nav_reviews}}</a></li>
             <li><a href="/{{localePath}}vs">{{t.shared.nav_compare}}</a></li>
             <li><a href="/{{localePath}}guides">{{t.shared.nav_guides}}</a></li>
@@ -126,34 +127,46 @@
         </ul>
         {{langSwitcher}}
     </nav>
+    <div class="menu-overlay"></div>
 
     <header class="discount-hero">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="/{{localePath}}">Home</a> &rsaquo;
-            <a href="/{{localePath}}discounts">Discount Codes</a> &rsaquo;
-            <span>{{t.PAGEKEY.brand_name}}</span>
-        </nav>
-        <h1>{{t.PAGEKEY.h1}}</h1>
-        <div class="code-box-hero">{{t.PAGEKEY.code}}</div>
-        <p><span class="savings-pill">{{t.PAGEKEY.savings}}</span></p>
-        <a href="{{t.PAGEKEY.affiliate_url}}" rel="sponsored noopener" class="discount-cta">{{t.PAGEKEY.cta_text}} →</a>
-        <div class="discount-meta">
-            By <a href="/{{localePath}}about">Fredrik Mastouri</a> &middot; Verified {{buildDate}}
-        </div>
-        <div class="discount-meta" style="font-size:.8rem;opacity:.85">
-            We may earn a commission when you use codes or links on this page &middot; <a href="/{{localePath}}disclosure">affiliate disclosure</a>
+        <div class="discount-hero-grid">
+            <div class="discount-hero-copy">
+                <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <a href="/{{localePath}}">Home</a> &rsaquo;
+                    <a href="/{{localePath}}discounts">Discount Codes</a> &rsaquo;
+                    <span>{{t.PAGEKEY.brand_name}}</span>
+                </nav>
+                <span class="eyebrow eyebrow-on-dark">Partner discount</span>
+                <h1>{{t.PAGEKEY.h1}}</h1>
+                <div class="discount-code-row">
+                    <div class="code-box-hero" aria-label="Discount code">{{t.PAGEKEY.code}}</div>
+                    <span class="savings-pill">{{t.PAGEKEY.savings}}</span>
+                </div>
+                {{t.PAGEKEY.hero_cta_html}}
+                <div class="discount-meta">
+                    By <a href="/{{localePath}}about">Fredrik Mastouri</a> &middot; Code record: {{t.PAGEKEY.verification_date}}
+                </div>
+                <div class="discount-meta discount-disclosure">
+                    We may earn a commission when you use codes or links on this page &middot; <a href="/{{localePath}}disclosure">affiliate disclosure</a>
+                </div>
+            </div>
+            <figure class="discount-hero-media">
+                <img src="{{pageImageRelative}}" alt="{{t.PAGEKEY.image_alt}}" width="1200" height="800" fetchpriority="high">
+                <figcaption>{{t.PAGEKEY.brand_name}} · code {{t.PAGEKEY.code}}</figcaption>
+            </figure>
         </div>
     </header>
 
     <main class="discount-main">
         <div class="verified-badge">
-            <strong>Code verified active:</strong> {{t.PAGEKEY.verification_note}}
+            <strong>Latest recorded check:</strong> {{t.PAGEKEY.verification_note}}
         </div>
 
         {{t.PAGEKEY.body_html}}
 
         <div class="related-grid">
-            <h3>Other Tesla mattress discount codes</h3>
+            <h3>Other partner-code pages</h3>
             <ul>
                 <li><a href="/{{localePath}}discounts/snuuzu">Snuuzu — 10% off with KLEPPE</a></li>
                 <li><a href="/{{localePath}}discounts/havnby">Havnby — 10% off with AWD</a></li>
@@ -166,13 +179,32 @@
         </div>
 
         <p style="margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid #e5e0d3;font-size:.9rem;color:var(--text-light);font-style:italic">
-            All discount codes verified personally. We earn commission on qualifying orders at no cost to you. See our <a href="/{{localePath}}disclosure">affiliate disclosure</a>.
-            Codes verified as of {{buildDate}}.
+            Discounts can change; confirm the code is accepted before paying. We earn commission on qualifying orders at no cost to you. See our <a href="/{{localePath}}disclosure">affiliate disclosure</a>.
+            Page reviewed as of {{buildDate}}.
         </p>
     </main>
 
     <footer>
         <p>&copy; 2026 Teslamattress. <a href="/{{localePath}}disclosure">Affiliate disclosure</a> &middot; <a href="/{{localePath}}about">About</a> &middot; <a href="/{{localePath}}methodology">How we review</a></p>
     </footer>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const menuOverlay = document.querySelector('.menu-overlay');
+
+        function toggleMenu() {
+            const isOpen = navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active', isOpen);
+            menuOverlay.classList.toggle('active', isOpen);
+            menuToggle.setAttribute('aria-expanded', String(isOpen));
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+        menuOverlay.addEventListener('click', toggleMenu);
+        navLinks.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+            if (navLinks.classList.contains('active')) toggleMenu();
+        }));
+    </script>
 </body>
 </html>

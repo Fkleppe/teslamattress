@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#2d4a3e">
+    <meta name="theme-color" content="#1f1d19">
 
     <!-- Primary Meta Tags -->
     <title>{{t.about.meta_title}}</title>
@@ -55,7 +55,7 @@
         .menu-toggle{display:none}
     </style>
 
-    <link rel="stylesheet" href="/styles.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/styles.css">
     <noscript><link rel="stylesheet" href="/styles.css"></noscript>
 
     <!-- JSON-LD -->
@@ -144,10 +144,10 @@
 <body>
     <nav class="navbar">
         <a href="{{localeHome}}" class="logo">Teslamattress</a>
-        <button class="menu-toggle" aria-label="Toggle menu">
+        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-navigation">
             <span></span><span></span><span></span>
         </button>
-        <ul class="nav-links">
+        <ul class="nav-links" id="primary-navigation">
             <li><a href="/{{localePath}}reviews">{{t.shared.nav_reviews}}</a></li>
             <li><a href="/{{localePath}}vs">{{t.shared.nav_compare}}</a></li>
             <li><a href="/{{localePath}}guides">{{t.shared.nav_guides}}</a></li>
@@ -166,6 +166,11 @@
                 <a href="/{{localePath}}" style="color: var(--forest);">Home</a> / About
             </div>
 
+            <figure class="about-visual">
+                <img src="/images/hero-model-y-adventure-v2.webp" alt="Tesla Model Y on a road-trip campsite" width="1200" height="800" fetchpriority="high">
+                <figcaption>Independent research for better Tesla camping decisions</figcaption>
+            </figure>
+
             <h1 style="font-family: 'Libre Baskerville', Georgia, serif; font-size: 2.5rem; color: var(--forest-dark); margin-bottom: 1.5rem;">{{t.about.h1}}</h1>
 
             <section style="margin-bottom: 3rem;">
@@ -181,7 +186,7 @@
                     <li><strong>Spec verification:</strong> Every dimension, material, and weight is checked against the manufacturer's published data</li>
                     <li><strong>Fitment analysis:</strong> Dimensions are compared against each Tesla model's cargo measurements, hinge gaps, and slope</li>
                     <li><strong>Owner-review synthesis:</strong> We cross-reference owner reports on Trustpilot, Reddit, and Tesla forums, weighting recurring themes over one-off anecdotes</li>
-                    <li><strong>Price and code checks:</strong> Prices and discount codes are re-verified before each page update</li>
+                    <li><strong>Price and code checks:</strong> Product pages show dated price snapshots, while discount pages preserve the latest recorded checkout-check date</li>
                     <li><strong>Ongoing updates:</strong> Reviews are revised when specs, pricing, or owner sentiment change</li>
                 </ul>
                 <p>{{t.about.p_4}}</p>
@@ -202,10 +207,10 @@
                 <p style="margin-bottom: 1rem;">{{t.about.p_11}}</p>
                 <p>{{t.about.p_12}}</p>
                 <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
-                    <li>Reviewed <strong>10+ Tesla-specific mattresses</strong> in depth</li>
-                    <li>Analyzed <strong>hundreds of owner reviews</strong> across Trustpilot, Reddit, and Tesla forums</li>
-                    <li>Verified specs, fitment, and pricing for <strong>every product we cover</strong></li>
-                    <li>Maintain <strong>10 verified discount codes</strong>, re-checked before each update</li>
+                    <li>Maintain <strong>10 detailed Tesla-mattress review pages</strong></li>
+                    <li>Cross-check public owner feedback against current manufacturer listings</li>
+                    <li>Separate seller claims, owner reports and editorial conclusions</li>
+                    <li>Publish <strong>10 partner-code pages</strong> with explicit recorded check dates</li>
                 </ul>
             </section>
 
@@ -268,6 +273,7 @@
                 navLinks.classList.toggle('active');
                 menuOverlay.classList.toggle('active');
                 document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+                menuToggle.setAttribute('aria-expanded', String(navLinks.classList.contains('active')));
             }
             menuToggle.addEventListener('click', toggleMenu);
             menuOverlay.addEventListener('click', toggleMenu);
