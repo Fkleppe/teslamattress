@@ -203,6 +203,13 @@
     "source_urls": ["https://www.irockbrook.com/collections/all-products/products/rockbrook-bx1024d-50l-kitchen-storage-box-with-weatherproof-lid-and-folding-stand"],
     "sha256": "1a023a60e76a387a0563b074bad6c66ddc829f5faafb1875cbecb0de64fc4b39"
   },
+  "rockbrook-bx1024-camp.webp": {
+    "kind": "vendor_product_image",
+    "synthetic": false,
+    "sources": [],
+    "source_urls": ["https://www.irockbrook.com/collections/all-products/products/rockbrook-bx1024d-50l-kitchen-storage-box-with-weatherproof-lid-and-folding-stand"],
+    "sha256": "1a023a60e76a387a0563b074bad6c66ddc829f5faafb1875cbecb0de64fc4b39"
+  },
   "rockbrook-bx1024-open.webp": {
     "kind": "vendor_product_image",
     "synthetic": false,
