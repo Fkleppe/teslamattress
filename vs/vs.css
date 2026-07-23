@@ -1019,7 +1019,7 @@
     color: var(--comparison-ink);
 }
 
-.brand-comparison-page .skip-link {
+.skip-link {
     position: fixed;
     z-index: 1000;
     top: .75rem;
@@ -1035,7 +1035,7 @@
     transition: transform 150ms ease;
 }
 
-.brand-comparison-page .skip-link:focus-visible {
+.skip-link:focus-visible {
     transform: translateY(0);
 }
 
