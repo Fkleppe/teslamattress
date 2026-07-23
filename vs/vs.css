@@ -1019,6 +1019,26 @@
     color: var(--comparison-ink);
 }
 
+.brand-comparison-page .skip-link {
+    position: fixed;
+    z-index: 1000;
+    top: .75rem;
+    left: .75rem;
+    max-width: calc(100vw - 1.5rem);
+    padding: .75rem 1rem;
+    border-radius: .5rem;
+    background: var(--comparison-ink);
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    transform: translateY(calc(-100% - 1rem));
+    transition: transform 150ms ease;
+}
+
+.brand-comparison-page .skip-link:focus-visible {
+    transform: translateY(0);
+}
+
 .brand-comparison-breadcrumb {
     display: flex;
     align-items: center;
