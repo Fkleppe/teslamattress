@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#2d4a3e">
+    <meta name="theme-color" content="#1f1d19">
 
     <!-- Primary Meta Tags -->
     <title>{{t.guides_index.meta_title}}</title>
@@ -59,9 +59,9 @@
         @media(max-width:768px){.menu-toggle{display:flex}.nav-links{display:none}}
     </style>
 
-    <link rel="stylesheet" href="/styles.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/styles.css">
     <noscript><link rel="stylesheet" href="/styles.css"></noscript>
-    <link rel="stylesheet" href="/guides/guides.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/guides/guides.css">
     <noscript><link rel="stylesheet" href="/guides/guides.css"></noscript>
 
     <!-- JSON-LD -->
@@ -81,7 +81,7 @@
                         {
                                 "@type": "ListItem",
                                 "position": 1,
-                                "name": "10 Best Tesla Camping Mattresses (2026)",
+                                "name": "11 Best Tesla Camping Mattresses (2026)",
                                 "url": "https://teslamattress.com/{{localePath}}guides/best-tesla-mattresses"
                         },
                         {
@@ -136,10 +136,10 @@
 <body>
     <nav class="navbar">
         <a href="{{localeHome}}" class="logo">Teslamattress</a>
-        <button class="menu-toggle" aria-label="Toggle menu">
+        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-navigation">
             <span></span><span></span><span></span>
         </button>
-        <ul class="nav-links">
+        <ul class="nav-links" id="primary-navigation">
             <li><a href="/{{localePath}}reviews">{{t.shared.nav_reviews}}</a></li>
             <li><a href="/{{localePath}}vs">{{t.shared.nav_compare}}</a></li>
             <li><a href="/{{localePath}}guides">{{t.shared.nav_guides}}</a></li>
@@ -158,18 +158,31 @@
         </nav>
 
         <header class="guides-hub-hero">
-            <h1>{{t.guides_index.h1}}</h1>
-            <p>{{t.guides_index.p_hero_subtitle}}</p>
-            <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 0.5rem;">By <a href="/{{localePath}}about" style="color: var(--copper);">Fredrik Mastouri</a> · Tesla camping gear reviewer</p>
+            <div class="guides-hub-hero-copy">
+                <span class="eyebrow">Field guides · Fit, comfort and setup</span>
+                <h1>{{t.guides_index.h1}}</h1>
+                <p>{{t.guides_index.p_hero_subtitle}}</p>
+                <nav class="hub-shortcuts" aria-label="Jump to guide category">
+                    <a href="#best-mattresses">Best mattresses</a>
+                    <a href="#other-models">Other models</a>
+                    <a href="#specific-picks">Specific needs</a>
+                    <a href="#essentials">How-tos</a>
+                </nav>
+                <p class="guides-hub-byline">By <a href="/{{localePath}}about">Fredrik Mastouri</a> · Tesla camping gear reviewer</p>
+            </div>
+            <figure class="guides-hub-hero-media">
+                <img src="/images/tesmat-luxe-model-y-tesla-mattress.webp" alt="TESMAT Horizon mattress fitted inside a Tesla Model Y" width="800" height="800" fetchpriority="high">
+                <figcaption>One fitted format; the guides compare it with current alternatives</figcaption>
+            </figure>
         </header>
 
         <!-- Category: Best Mattresses -->
-        <section>
+        <section id="best-mattresses">
             <h2 class="section-label" style="font-family: 'Libre Baskerville', Georgia, serif; font-size: 1.3rem; color: var(--forest-dark); margin-bottom: 1.25rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--cream);">{{t.guides_index.h2_best_mattresses}}</h2>
             <div class="guides-grid">
                 <a href="/{{localePath}}guides/best-tesla-mattresses" class="guide-card">
                     <div class="guide-card-image">
-                        <img src="/images/og-image.jpg" alt="Tesla camping mattress overview" loading="lazy" width="680" height="400">
+                        <img src="/images/tesla-mattress-ranking.webp" alt="Tesla mattress products from Snuuzu, TESMAT, Havnby and NovaPads" loading="lazy" width="1344" height="768">
                     </div>
                     <div class="guide-card-body">
                         <span class="guide-card-badge">{{t.guides_index.badge_top_10}}</span>
@@ -177,7 +190,7 @@
                         <p>{{t.guides_index.p_card_best_tesla}}</p>
                         <div class="guide-card-meta">
                             <span>{{t.guides_index.meta_read_time_15}}</span>
-                            <span>Feb 2026</span>
+                            <span>Updated Jul 2026</span>
                         </div>
                     </div>
                 </a>
@@ -192,14 +205,14 @@
                         <p>{{t.guides_index.p_card_model_y}}</p>
                         <div class="guide-card-meta">
                             <span>{{t.guides_index.meta_read_time_12}}</span>
-                            <span>Feb 2026</span>
+                            <span>Updated Jul 2026</span>
                         </div>
                     </div>
                 </a>
 
                 <a href="/{{localePath}}guides/best-model-3-mattress" class="guide-card">
                     <div class="guide-card-image">
-                        <img src="/images/tesmat-luxe-model-3-tesla-mattress.webp" alt="Tesla Model 3 camping mattress setup" loading="lazy" width="680" height="400">
+                        <img src="/images/snuuzu-model-3-tesla-mattress.webp" alt="Snuuzu mattress fitted inside a Tesla Model 3" loading="lazy" width="680" height="400">
                     </div>
                     <div class="guide-card-body">
                         <span class="guide-card-badge">Model 3</span>
@@ -207,7 +220,7 @@
                         <p>{{t.guides_index.p_card_model_3}}</p>
                         <div class="guide-card-meta">
                             <span>{{t.guides_index.meta_read_time_10}}</span>
-                            <span>Feb 2026</span>
+                            <span>Updated Jul 2026</span>
                         </div>
                     </div>
                 </a>
@@ -216,12 +229,12 @@
         </section>
 
         <!-- Category: Other Models -->
-        <section>
+        <section id="other-models">
             <h2 class="section-label" style="font-family: 'Libre Baskerville', Georgia, serif; font-size: 1.3rem; color: var(--forest-dark); margin-bottom: 1.25rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--cream);">{{t.guides_index.h2_other_models}}</h2>
             <div class="guides-grid">
                 <a href="/{{localePath}}guides/model-x-mattress" class="guide-card">
                     <div class="guide-card-image">
-                        <img src="/images/og-image.jpg" alt="Tesla Model X camping setup" loading="lazy" width="680" height="400">
+                        <img src="/images/model-x-camping.webp" alt="Tesla mattress products from Havnby, NovaPads and Snuuzu" loading="lazy" width="1344" height="768">
                     </div>
                     <div class="guide-card-body">
                         <span class="guide-card-badge">Model X</span>
@@ -229,14 +242,14 @@
                         <p>{{t.guides_index.p_card_model_x}}</p>
                         <div class="guide-card-meta">
                             <span>{{t.guides_index.meta_read_time_8}}</span>
-                            <span>Feb 2026</span>
+                            <span>Updated Jul 2026</span>
                         </div>
                     </div>
                 </a>
 
                 <a href="/{{localePath}}guides/cybertruck-mattress" class="guide-card">
                     <div class="guide-card-image">
-                        <img src="/images/og-image.jpg" alt="Cybertruck camping mattress options" loading="lazy" width="680" height="400">
+                        <img src="/images/cybertruck-camping.webp" alt="Official Tesla Cybertruck on desert rock terrain" loading="lazy" width="1344" height="768">
                     </div>
                     <div class="guide-card-body">
                         <span class="guide-card-badge">Cybertruck</span>
@@ -244,7 +257,7 @@
                         <p>{{t.guides_index.p_card_cybertruck}}</p>
                         <div class="guide-card-meta">
                             <span>{{t.guides_index.meta_read_time_8}}</span>
-                            <span>Feb 2026</span>
+                            <span>Updated Jul 2026</span>
                         </div>
                     </div>
                 </a>
@@ -252,20 +265,44 @@
         </section>
 
         <!-- Category: Specific picks & essentials -->
-        <section>
+        <section id="specific-picks">
             <h2 class="section-label" style="font-family: 'Libre Baskerville', Georgia, serif; font-size: 1.3rem; color: var(--forest-dark); margin-bottom: 1.25rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--cream);">Find Your Fit: Specific Picks</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 0.75rem 1.5rem; margin-bottom: 2rem;">
-                <a href="/{{localePath}}guides/best-tesla-mattress-for-couples" style="color: var(--forest-dark); text-decoration: none; padding: 0.6rem 0.9rem; background: var(--cream); border-radius: 8px; font-weight: 600;">Best Tesla mattress for couples</a>
-                <a href="/{{localePath}}guides/best-tesla-mattress-for-tall-people" style="color: var(--forest-dark); text-decoration: none; padding: 0.6rem 0.9rem; background: var(--cream); border-radius: 8px; font-weight: 600;">Best Tesla mattress for tall people</a>
-                <a href="/{{localePath}}guides/best-tesla-mattress-for-side-sleepers" style="color: var(--forest-dark); text-decoration: none; padding: 0.6rem 0.9rem; background: var(--cream); border-radius: 8px; font-weight: 600;">Best Tesla mattress for side sleepers</a>
-                <a href="/{{localePath}}guides/best-tesla-mattress-for-cold-weather" style="color: var(--forest-dark); text-decoration: none; padding: 0.6rem 0.9rem; background: var(--cream); border-radius: 8px; font-weight: 600;">Best Tesla mattress for cold weather</a>
-                <a href="/{{localePath}}guides/best-tesla-mattress-under-300" style="color: var(--forest-dark); text-decoration: none; padding: 0.6rem 0.9rem; background: var(--cream); border-radius: 8px; font-weight: 600;">Best Tesla mattress under $300</a>
-                <a href="/{{localePath}}guides/best-tesla-mattress-with-built-in-pump" style="color: var(--forest-dark); text-decoration: none; padding: 0.6rem 0.9rem; background: var(--cream); border-radius: 8px; font-weight: 600;">Best Tesla mattress with built-in pump</a>
-                <a href="/{{localePath}}guides/lightest-tesla-mattress" style="color: var(--forest-dark); text-decoration: none; padding: 0.6rem 0.9rem; background: var(--cream); border-radius: 8px; font-weight: 600;">Lightest Tesla mattress</a>
-                <a href="/{{localePath}}guides/quietest-tesla-mattress" style="color: var(--forest-dark); text-decoration: none; padding: 0.6rem 0.9rem; background: var(--cream); border-radius: 8px; font-weight: 600;">Quietest Tesla mattress</a>
+            <div class="guide-topic-grid">
+                <a href="/{{localePath}}guides/best-tesla-mattress-for-couples" class="guide-topic-card">
+                    <img src="/images/mattress-for-couples.webp" alt="TESMAT and Havnby Tesla mattress product images" loading="lazy" width="1344" height="768">
+                    <span><strong>Best for couples</strong><small>Compare width, motion, headroom and luggage space.</small></span>
+                </a>
+                <a href="/{{localePath}}guides/best-tesla-mattress-for-tall-people" class="guide-topic-card">
+                    <img src="/images/mattress-for-tall-people.webp" alt="Havnby CloudCore Tesla mattress product image" loading="lazy" width="1344" height="768">
+                    <span><strong>Best for tall campers</strong><small>Turn published length into real usable sleeping room.</small></span>
+                </a>
+                <a href="/{{localePath}}guides/best-tesla-mattress-for-side-sleepers" class="guide-topic-card">
+                    <img src="/images/mattress-for-side-sleepers.webp" alt="Snuuzu Tesla mattress product image" loading="lazy" width="1344" height="768">
+                    <span><strong>Best for side sleepers</strong><small>Compare depth, firmness and shaped support honestly.</small></span>
+                </a>
+                <a href="/{{localePath}}guides/best-tesla-mattress-for-cold-weather" class="guide-topic-card">
+                    <img src="/images/mattress-for-cold-weather.webp" alt="TESMAT mattress fitted in a Tesla cargo area" loading="lazy" width="1344" height="768">
+                    <span><strong>Best for cold weather</strong><small>Plan insulation, moisture, bedding and Camp Mode together.</small></span>
+                </a>
+                <a href="/{{localePath}}guides/best-tesla-mattress-under-300" class="guide-topic-card">
+                    <img src="/images/mattress-under-300.webp" alt="NovaPads mattress fitted in a Tesla Model Y" loading="lazy" width="1344" height="768">
+                    <span><strong>Best under $300</strong><small>Current value picks with fit and checkout caveats.</small></span>
+                </a>
+                <a href="/{{localePath}}guides/best-tesla-mattress-with-built-in-pump" class="guide-topic-card">
+                    <img src="/images/mattress-with-pump.webp" alt="Havnby FlatCore Hybrid support mattress product view" loading="lazy" width="1344" height="768">
+                    <span><strong>Best built-in pump</strong><small>12V, USB-C and integrated systems compared.</small></span>
+                </a>
+                <a href="/{{localePath}}guides/lightest-tesla-mattress" class="guide-topic-card">
+                    <img src="/images/lightest-mattress.webp" alt="TESMAT Solo mattress installed in a Tesla passenger seat" loading="lazy" width="1344" height="768">
+                    <span><strong>Lightest verified options</strong><small>Separate real published weights from assumptions.</small></span>
+                </a>
+                <a href="/{{localePath}}guides/quietest-tesla-mattress" class="guide-topic-card">
+                    <img src="/images/quietest-mattress.webp" alt="Snuuzu Tesla mattress shown with a Tesla Model 3" loading="lazy" width="1344" height="768">
+                    <span><strong>Quietest construction</strong><small>What can be checked without fake decibel rankings.</small></span>
+                </a>
             </div>
-            <h2 class="section-label" style="font-family: 'Libre Baskerville', Georgia, serif; font-size: 1.3rem; color: var(--forest-dark); margin-bottom: 1.25rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--cream);">Essentials &amp; How-Tos</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 0.75rem 1.5rem;">
+            <h2 class="section-label" id="essentials" style="font-family: 'Libre Baskerville', Georgia, serif; font-size: 1.3rem; color: var(--forest-dark); margin-bottom: 1.25rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--cream);">Essentials &amp; How-Tos</h2>
+            <div class="guide-link-grid">
                 <a href="/{{localePath}}guides/tesla-mattress-buying-guide" style="color: var(--forest-dark); text-decoration: none; padding: 0.6rem 0.9rem; background: var(--cream); border-radius: 8px; font-weight: 600;">Tesla mattress buying guide</a>
                 <a href="/{{localePath}}guides/budget-tesla-mattress" style="color: var(--forest-dark); text-decoration: none; padding: 0.6rem 0.9rem; background: var(--cream); border-radius: 8px; font-weight: 600;">Budget Tesla mattress options</a>
                 <a href="/{{localePath}}guides/getting-started-tesla-camping" style="color: var(--forest-dark); text-decoration: none; padding: 0.6rem 0.9rem; background: var(--cream); border-radius: 8px; font-weight: 600;">Getting started with Tesla camping</a>
@@ -312,6 +349,7 @@
                 navLinks.classList.toggle('active');
                 menuOverlay.classList.toggle('active');
                 document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+                menuToggle.setAttribute('aria-expanded', String(navLinks.classList.contains('active')));
             }
             menuToggle.addEventListener('click', toggleMenu);
             menuOverlay.addEventListener('click', toggleMenu);

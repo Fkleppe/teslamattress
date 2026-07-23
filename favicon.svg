@@ -1,11 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#2d4a3e"/>
-      <stop offset="100%" style="stop-color:#1a2e25"/>
-    </linearGradient>
-  </defs>
-  <rect width="32" height="32" rx="6" fill="url(#bg)"/>
-  <text x="16" y="22" font-family="Georgia, serif" font-size="16" font-weight="bold" fill="#f5f1e8" text-anchor="middle">T</text>
-  <circle cx="26" cy="8" r="3" fill="#b87333"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Teslamattress TM monogram">
+  <rect width="64" height="64" rx="13" fill="#1f1d19"/>
+  <path d="M7 15h24v7h-8v27h-8V22H7z" fill="#fffaf2"/>
+  <path d="M30 15h7l7.5 12L52 15h7v34h-8V29L44.5 39 38 29v20h-8z" fill="#d6b777"/>
 </svg>

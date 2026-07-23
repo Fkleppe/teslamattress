@@ -1,45 +1,6 @@
-# Teslamattress robots.txt
-# https://teslamattress.com
-
-# Allow all crawlers
+# Teslamattress is a public editorial site. The wildcard group applies to
+# search engines and AI crawlers alike, without ambiguous per-bot overrides.
 User-agent: *
 Allow: /
 
-# Explicitly allow AI crawlers
-User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: Claude-Web
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: Anthropic-AI
-Allow: /
-
-User-agent: Applebot-Extended
-Allow: /
-
-User-agent: CCBot
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Bytespider
-Allow: /
-
-# Sitemap location
 Sitemap: https://teslamattress.com/sitemap.xml
-
-# Block common non-content paths (if they exist)
-Disallow: /admin/
-Disallow: /private/
-Disallow: /*.json$

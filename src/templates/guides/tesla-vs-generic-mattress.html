@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#2d4a3e">
+    <meta name="theme-color" content="#1f1d19">
 
     <!-- Primary Meta Tags -->
     <title>{{t.guide_tesla_vs_generic.meta_title}}</title>
@@ -25,7 +25,7 @@
     <meta property="og:image" content="https://teslamattress.com/images/og-image.jpg">
     <meta property="og:site_name" content="Teslamattress">
     <meta property="article:published_time" content="2026-02-19">
-    <meta property="article:modified_time" content="2026-02-19">
+    <meta property="article:modified_time" content="{{buildDate}}">
     <meta property="og:locale" content="{{ogLocale}}">
     {{ogLocaleAlternates}}
 
@@ -61,9 +61,9 @@
         @media(max-width:768px){.menu-toggle{display:flex}.nav-links{display:none}}
     </style>
 
-    <link rel="stylesheet" href="/styles.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/styles.css">
     <noscript><link rel="stylesheet" href="/styles.css"></noscript>
-    <link rel="stylesheet" href="/guides/guides.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/guides/guides.css">
     <noscript><link rel="stylesheet" href="/guides/guides.css"></noscript>
 
     <!-- JSON-LD: Article -->
@@ -181,8 +181,8 @@
 <body>
     <nav class="navbar guide-nav">
         <a href="{{localeHome}}" class="logo">Teslamattress</a>
-        <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-        <ul class="nav-links">
+        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span><span></span></button>
+        <ul class="nav-links" id="primary-navigation">
             <li><a href="/{{localePath}}reviews">{{t.shared.nav_reviews}}</a></li>
             <li><a href="/{{localePath}}vs">{{t.shared.nav_compare}}</a></li>
             <li><a href="/{{localePath}}guides">{{t.shared.nav_guides}}</a></li>
@@ -383,7 +383,7 @@
                 <p>{{t.guide_tesla_vs_generic.p_when_invest_math}}</p>
 
                 <figure class="guide-image">
-                    <img src="https://havnby.com/cdn/shop/files/tesla-solo-mattress-main.jpg?v=1733913261&width=1200&format=webp" alt="Tesla-specific mattress providing a level sleeping surface in Model Y" loading="lazy" width="1200" height="800">
+                    <img src="/images/havnby-flatcore-solo.webp" alt="Tesla-specific mattress providing a level sleeping surface in Model Y" loading="lazy" width="1200" height="800">
                     <figcaption>{{t.guide_tesla_vs_generic.fig_level_surface}}</figcaption>
                 </figure>
             </section>
@@ -393,32 +393,32 @@
                 <h2>{{t.guide_tesla_vs_generic.h2_recommendations}}</h2>
                 <p>{{t.guide_tesla_vs_generic.p_recommendations_intro}}</p>
 
-                <!-- Entry-Level: Havnby Foam -->
+                <!-- Current cross-model Havnby -->
                 <div class="product-pick">
                     <div class="product-pick-header">
                         <div>
-                            <span class="product-pick-name">Havnby Foam (discontinued)</span>
-                            <span style="display: block; font-size: 0.85rem; color: var(--text-light); margin-top: 0.25rem;">{{t.guide_tesla_vs_generic.pick_havnby_subtitle}}</span>
+                            <span class="product-pick-name">Havnby CloudCore Foam Mattress</span>
+                            <span style="display: block; font-size: 0.85rem; color: var(--text-light); margin-top: 0.25rem;">Current cross-model foam-and-air option</span>
                         </div>
                         <span class="product-pick-score">8.0/10</span>
                     </div>
                     <div class="product-pick-meta">
-                        <span>Discontinued</span>
-                        <span>{{t.guide_tesla_vs_generic.pick_havnby_type}}</span>
-                        <span>Tesla Model Y</span>
+                        <span>$399</span>
+                        <span>Foam + air</span>
+                        <span>Model S / 3 / X / Y</span>
                     </div>
-                    <p class="product-pick-desc">{{t.guide_tesla_vs_generic.pick_havnby_desc}}</p>
+                    <p class="product-pick-desc">CloudCore is the current Havnby choice for shoppers who need selectable variants across Tesla Model S, 3, X and Y. Its published 11.5 cm depth and built-in pump sit between a thin generic pad and Havnby's deeper Model Y-specific FlatCore.</p>
                     <ul class="product-pick-pros">
-                        <li>{{t.guide_tesla_vs_generic.pick_havnby_pro1}}</li>
-                        <li>{{t.guide_tesla_vs_generic.pick_havnby_pro2}}</li>
-                        <li>{{t.guide_tesla_vs_generic.pick_havnby_pro3}}</li>
-                        <li>{{t.guide_tesla_vs_generic.pick_havnby_pro4}}</li>
+                        <li>Current model-and-year variants for all four Tesla passenger models.</li>
+                        <li>193 × 132 × 11.5 cm published sleeping surface.</li>
+                        <li>Built-in pump and 3.95 kg listed weight.</li>
+                        <li>60-day trial and three-year warranty advertised.</li>
                     </ul>
                     <div class="product-pick-cta">
-                        <span class="price-tag">Discontinued</span>
+                        <span class="price-tag">$399</span>
                         <span class="discount-code-tag">{{t.shared.discount_percent_off}} <code>AWD</code></span>
-                        <a href="/{{localePath}}reviews/havnby-foam" class="btn-review">{{t.guide_tesla_vs_generic.btn_read_review}}</a>
-                        <a href="https://havnby.com/products/tesla-model-y-3-x-foam-mattress?ref=discount" class="btn-buy" target="_blank" rel="noopener sponsored">{{t.guide_tesla_vs_generic.btn_check_price}}</a>
+                        <a href="/{{localePath}}reviews/havnby-cloudcore" class="btn-review">{{t.guide_tesla_vs_generic.btn_read_review}}</a>
+                        <a href="https://havnby.com/products/cloudcore-hybrid-support-mattress-for-tesla-model-s-3-x-y?ref=discount" class="btn-buy" target="_blank" rel="noopener sponsored">{{t.guide_tesla_vs_generic.btn_check_price}}</a>
                     </div>
                 </div>
 
@@ -475,7 +475,7 @@
                         <span class="price-tag">$899</span>
                         <span class="discount-code-tag">{{t.shared.discount_percent_off}} <code>KLEPPE</code></span>
                         <a href="/{{localePath}}reviews/snuuzu-model-y" class="btn-review">{{t.guide_tesla_vs_generic.btn_read_review}}</a>
-                        <a href="https://www.snuuzu.com/products/snuuzu-model-y?bg_ref=s7fluA5re6" class="btn-buy" target="_blank" rel="noopener sponsored">{{t.guide_tesla_vs_generic.btn_check_price}}</a>
+                        <span class="snuuzu-region-actions"><a href="https://www.snuuzu.com/products/snuuzu-model-y?bg_ref=s7fluA5re6" class="btn-buy" target="_blank" rel="noopener sponsored">Europe</a><a href="https://us.snuuzu.com/products/snuuzu-model-y?bg_ref=QBfsWJtiUJ" class="btn-buy" target="_blank" rel="noopener sponsored">USA &amp; Canada</a></span>
                     </div>
                 </div>
 
@@ -589,6 +589,7 @@
                 navLinks.classList.toggle('active');
                 menuOverlay.classList.toggle('active');
                 document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+                menuToggle.setAttribute('aria-expanded', String(navLinks.classList.contains('active')));
             }
             menuToggle.addEventListener('click', toggleMenu);
             menuOverlay.addEventListener('click', toggleMenu);

@@ -26,6 +26,16 @@
       "permanent": true
     },
     {
+      "source": "/reviews/havnby-foam",
+      "destination": "/reviews/havnby-cloudcore",
+      "permanent": true
+    },
+    {
+      "source": "/vs/havnby-autolevel-vs-foam",
+      "destination": "/vs/havnby-flatcore-vs-cloudcore",
+      "permanent": true
+    },
+    {
       "source": "/:lang(de|fr|no|da|sv)/",
       "destination": "/",
       "permanent": true

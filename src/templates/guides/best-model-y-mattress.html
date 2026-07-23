@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#2d4a3e">
+    <meta name="theme-color" content="#1f1d19">
 
     <!-- Primary Meta Tags -->
     <title>{{t.guide_best_model_y.meta_title}}</title>
@@ -27,7 +27,7 @@
     <meta property="og:locale" content="{{ogLocale}}">
     {{ogLocaleAlternates}}
     <meta property="article:published_time" content="2026-02-19">
-    <meta property="article:modified_time" content="2026-02-19">
+    <meta property="article:modified_time" content="{{buildDate}}">
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{t.guide_best_model_y.twitter_title}}">
@@ -60,9 +60,9 @@
         @media(max-width:768px){.menu-toggle{display:flex}.nav-links{display:none}}
     </style>
 
-    <link rel="stylesheet" href="/styles.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/styles.css">
     <noscript><link rel="stylesheet" href="/styles.css"></noscript>
-    <link rel="stylesheet" href="/guides/guides.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/guides/guides.css">
     <noscript><link rel="stylesheet" href="/guides/guides.css"></noscript>
 
     <!-- JSON-LD: Article -->
@@ -180,10 +180,10 @@
 <body>
     <nav class="navbar guide-nav">
         <a href="{{localeHome}}" class="logo">Teslamattress</a>
-        <button class="menu-toggle" aria-label="Toggle menu">
+        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-navigation">
             <span></span><span></span><span></span>
         </button>
-        <ul class="nav-links">
+        <ul class="nav-links" id="primary-navigation">
             <li><a href="/{{localePath}}reviews">{{t.shared.nav_reviews}}</a></li>
             <li><a href="/{{localePath}}vs">{{t.shared.nav_compare}}</a></li>
             <li><a href="/{{localePath}}guides">{{t.shared.nav_guides}}</a></li>
@@ -238,7 +238,7 @@
             </div>
 
             <figure class="guide-image">
-                <img src="/images/snuuzu-model-y-tesla-mattress.webp" alt="Snuuzu mattress perfectly fitted in Tesla Model Y cargo area" loading="eager" fetchpriority="high" width="1200" height="800">
+                <img src="/images/snuuzu-model-y-tesla-mattress.webp" alt="Snuuzu Model Y mattress shown in a Tesla cargo area" loading="eager" fetchpriority="high" width="1200" height="800">
                 <figcaption>{{t.guide_best_model_y.figcaption_hero}}</figcaption>
             </figure>
 
@@ -311,18 +311,18 @@
                                 <td><strong><a href="/{{localePath}}reviews/snuuzu-model-y" class="table-product-link">Snuuzu Model Y</a></strong></td>
                                 <td>9.4/10</td>
                                 <td>&euro;899 / $899</td>
-                                <td>{{t.guide_best_model_y.td_type_foam}}</td>
+                                <td>Foam + air</td>
                                 <td>20 cm</td>
                                 <td>{{t.guide_best_model_y.td_yes}}</td>
                                 <td><span class="table-discount-code">{{t.shared.discount_percent_off}} <code>KLEPPE</code></span></td>
-                                <td class="table-cta-cell"><a href="https://www.snuuzu.com/products/snuuzu-model-y?bg_ref=s7fluA5re6" target="_blank" rel="noopener sponsored" class="table-buy-btn">{{t.shared.btn_buy}}</a></td>
+                                <td class="table-cta-cell"><span class="snuuzu-region-actions"><a href="https://www.snuuzu.com/products/snuuzu-model-y?bg_ref=s7fluA5re6" target="_blank" rel="noopener sponsored" class="table-buy-btn">Europe</a><a href="https://us.snuuzu.com/products/snuuzu-model-y?bg_ref=QBfsWJtiUJ" target="_blank" rel="noopener sponsored" class="table-buy-btn">USA &amp; Canada</a></span></td>
                             </tr>
                             <tr>
-                                <td><strong><a href="/{{localePath}}reviews/havnby-autolevel" class="table-product-link">Havnby FlatCore Hybrid</a></strong></td>
+                                <td><strong><a href="/{{localePath}}reviews/havnby-autolevel" class="table-product-link">Havnby FlatCore Foam Mattress</a></strong></td>
                                 <td>8.6/10</td>
                                 <td>$509</td>
-                                <td>{{t.guide_best_model_y.td_type_air}}</td>
-                                <td>15 cm</td>
+                                <td>Foam + air</td>
+                                <td>19 cm max / 7.9 cm min</td>
                                 <td>{{t.guide_best_model_y.td_yes}}</td>
                                 <td><span class="table-discount-code">{{t.shared.discount_percent_off}} <code>AWD</code></span></td>
                                 <td class="table-cta-cell"><a href="https://havnby.com/products/flatcore-hybrid-support-mattress-for-tesla-model-y?ref=discount" target="_blank" rel="noopener sponsored" class="table-buy-btn">{{t.shared.btn_buy}}</a></td>
@@ -331,48 +331,48 @@
                                 <td><strong><a href="/{{localePath}}reviews/tesmat-luxe-y" class="table-product-link">TESMAT Horizon Model Y</a></strong></td>
                                 <td>8.5/10</td>
                                 <td>$339</td>
-                                <td>{{t.guide_best_model_y.td_type_foam}}</td>
-                                <td>10 cm</td>
+                                <td>Foam + air</td>
+                                <td>6 in</td>
                                 <td>{{t.guide_best_model_y.td_yes}}</td>
                                 <td><span class="table-no-code">{{t.shared.td_no_code}}</span></td>
                                 <td class="table-cta-cell"><a href="https://www.tesmat.com/products/tesmat-luxe-for-model-y" target="_blank" rel="noopener sponsored" class="table-buy-btn">{{t.shared.btn_buy}}</a></td>
                             </tr>
                             <tr>
-                                <td><strong><a href="/{{localePath}}reviews/havnby-foam" class="table-product-link">Havnby Foam (discontinued)</a></strong></td>
-                                <td>7.6/10</td>
-                                <td>&mdash;</td>
-                                <td>{{t.guide_best_model_y.td_type_foam}}</td>
-                                <td>8 cm</td>
-                                <td>&mdash;</td>
+                                <td><strong><a href="/{{localePath}}reviews/havnby-cloudcore" class="table-product-link">Havnby CloudCore Foam Mattress</a></strong></td>
+                                <td>8.0/10</td>
+                                <td>$399</td>
+                                <td>Foam + air</td>
+                                <td>11.5 cm</td>
+                                <td>{{t.guide_best_model_y.td_yes}}</td>
                                 <td><span class="table-discount-code">{{t.shared.discount_percent_off}} <code>AWD</code></span></td>
-                                <td class="table-cta-cell"><a href="https://havnby.com/products/tesla-model-y-3-x-foam-mattress?ref=discount" target="_blank" rel="noopener sponsored" class="table-buy-btn">{{t.shared.btn_buy}}</a></td>
+                                <td class="table-cta-cell"><a href="https://havnby.com/products/cloudcore-hybrid-support-mattress-for-tesla-model-s-3-x-y?ref=discount" target="_blank" rel="noopener sponsored" class="table-buy-btn">{{t.shared.btn_buy}}</a></td>
                             </tr>
                             <tr>
                                 <td><strong><a href="/{{localePath}}reviews/tesery-novapads" class="table-product-link">NovaPads Air-Foam Pro</a></strong></td>
-                                <td>7.5/10</td>
+                                <td>8.8/10</td>
                                 <td>$239</td>
                                 <td>{{t.guide_best_model_y.td_type_hybrid}}</td>
-                                <td>12 cm</td>
+                                <td>4.5 in</td>
                                 <td>{{t.guide_best_model_y.td_yes}}</td>
                                 <td><span class="table-discount-code">{{t.shared.discount_percent_off}} <code>AWD</code></span></td>
-                                <td class="table-cta-cell"><a href="https://novapads.com/products/tesla-model-y-air-foam-camping-mattress-pro-tesla-bed?ref=AWD" target="_blank" rel="noopener sponsored" class="table-buy-btn">{{t.shared.btn_buy}}</a></td>
+                                <td class="table-cta-cell"><a href="https://novapads.com/?ref=AWD" target="_blank" rel="noopener sponsored" class="table-buy-btn">{{t.shared.btn_buy}}</a></td>
                             </tr>
                             <tr>
                                 <td><strong><a href="/{{localePath}}reviews/tesmat-solo-y" class="table-product-link">TESMAT Solo Model Y</a></strong></td>
-                                <td>7.6/10</td>
-                                <td>$139.99</td>
+                                <td>7.5/10</td>
+                                <td>$140</td>
                                 <td>{{t.guide_best_model_y.td_type_foam}}</td>
-                                <td>8 cm</td>
-                                <td>Not confirmed</td>
+                                <td>3 in</td>
+                                <td>Confirm</td>
                                 <td><span class="table-no-code">{{t.shared.td_no_code}}</span></td>
                                 <td class="table-cta-cell"><a href="https://www.tesmat.com/products/tesmat-solo-for-model-y" target="_blank" rel="noopener sponsored" class="table-buy-btn">{{t.shared.btn_buy}}</a></td>
                             </tr>
                             <tr>
-                                <td><strong><a href="/{{localePath}}reviews/havnby-solo" class="table-product-link">Havnby FlatCore Solo</a></strong></td>
-                                <td>7.4/10</td>
+                                <td><strong><a href="/{{localePath}}reviews/havnby-solo" class="table-product-link">Havnby FlatCore Foam Mattress — Solo Edition</a></strong></td>
+                                <td>8.2/10</td>
                                 <td>$379</td>
-                                <td>{{t.guide_best_model_y.td_type_air}}</td>
-                                <td>10 cm</td>
+                                <td>Foam + air</td>
+                                <td>17 cm</td>
                                 <td>{{t.guide_best_model_y.td_yes}}</td>
                                 <td><span class="table-discount-code">{{t.shared.discount_percent_off}} <code>AWD</code></span></td>
                                 <td class="table-cta-cell"><a href="https://havnby.com/products/flatcore-hybrid-support-mattress-for-tesla-model-y-solo-edition?ref=discount" target="_blank" rel="noopener sponsored" class="table-buy-btn">{{t.shared.btn_buy}}</a></td>
@@ -380,6 +380,7 @@
                         </tbody>
                     </table>
                 </div>
+                <p class="price-source-note">* NovaPads listed Air-Foam Pro at $239 when checked on 23 July 2026. Confirm your country, selected vehicle and final cart total.</p>
             </section>
 
             <!-- #1 Snuuzu Model Y -->
@@ -409,7 +410,7 @@
                         <span class="price-tag">&euro;899 / $899</span>
                         <span class="discount-code-tag">{{t.shared.discount_percent_off}} <code>KLEPPE</code></span>
                         <a href="/{{localePath}}reviews/snuuzu-model-y" class="btn-review">{{t.guide_best_model_y.btn_read_review}}</a>
-                        <a href="https://www.snuuzu.com/products/snuuzu-model-y?bg_ref=s7fluA5re6" target="_blank" class="btn-buy" rel="noopener sponsored">{{t.guide_best_model_y.btn_check_price}}</a>
+                        <span class="snuuzu-region-actions"><a href="https://www.snuuzu.com/products/snuuzu-model-y?bg_ref=s7fluA5re6" target="_blank" class="btn-buy" rel="noopener sponsored">Europe</a><a href="https://us.snuuzu.com/products/snuuzu-model-y?bg_ref=QBfsWJtiUJ" target="_blank" class="btn-buy" rel="noopener sponsored">USA &amp; Canada</a></span>
                     </div>
                 </div>
             </section>
@@ -420,7 +421,7 @@
                 <div class="product-pick">
                     <div class="product-pick-header">
                         <div>
-                            <div class="product-pick-name">Havnby FlatCore Hybrid</div>
+                            <div class="product-pick-name">Havnby FlatCore Foam Mattress</div>
                             <div class="product-pick-meta">
                                 <span>{{t.guide_best_model_y.meta_best_value}}</span>
                                 <span>{{t.guide_best_model_y.td_type_air}}</span>
@@ -447,7 +448,7 @@
             </section>
 
             <figure class="guide-image">
-                <img src="https://havnby.com/cdn/shop/files/tesla-solo-mattress-main.jpg?v=1733913261&width=1200&format=webp" alt="Havnby FlatCore Hybrid inflatable mattress inside Tesla Model Y" loading="lazy" width="1200" height="800">
+                <img src="/images/havnby-flatcore-solo.webp" alt="Havnby FlatCore Solo mattress inside Tesla Model Y" loading="lazy" width="1200" height="800">
                 <figcaption>{{t.guide_best_model_y.figcaption_havnby_auto}}</figcaption>
             </figure>
 
@@ -508,44 +509,49 @@
                         <span class="price-tag">$239</span>
                         <span class="discount-code-tag">{{t.shared.discount_percent_off}} <code>AWD</code></span>
                         <a href="/{{localePath}}reviews/tesery-novapads" class="btn-review">{{t.guide_best_model_y.btn_read_review}}</a>
-                        <a href="https://novapads.com/products/tesla-model-y-air-foam-camping-mattress-pro-tesla-bed?ref=AWD" target="_blank" class="btn-buy" rel="noopener sponsored">{{t.guide_best_model_y.btn_check_price}}</a>
+                        <a href="https://novapads.com/?ref=AWD" target="_blank" class="btn-buy" rel="noopener sponsored">{{t.guide_best_model_y.btn_check_price}}</a>
                     </div>
                 </div>
             </section>
 
-            <!-- #5 Havnby Foam -->
-            <section class="guide-section" id="havnby-foam">
-                <h2>{{t.guide_best_model_y.h2_pick_havnby_foam}}</h2>
+            <!-- Havnby CloudCore -->
+            <section class="guide-section" id="havnby-cloudcore">
+                <h2>Havnby CloudCore Foam Mattress (8.0/10) — Best Cross-Model Havnby</h2>
                 <div class="product-pick">
                     <div class="product-pick-header">
                         <div>
-                            <div class="product-pick-name">Havnby Foam (discontinued)</div>
+                            <div class="product-pick-name">Havnby CloudCore Foam Mattress</div>
                             <div class="product-pick-meta">
-                                <span>{{t.guide_best_model_y.meta_best_budget}}</span>
-                                <span>{{t.guide_best_model_y.td_type_foam}}</span>
-                                <span>8 cm</span>
+                                <span>Best cross-model Havnby</span>
+                                <span>Foam + air</span>
+                                <span>11.5 cm</span>
                             </div>
                         </div>
-                        <span class="product-pick-score">7.6</span>
+                        <span class="product-pick-score">8.0</span>
                     </div>
-                    <p class="product-pick-desc">{{t.guide_best_model_y.p_havnby_foam_desc}}</p>
+                    <p class="product-pick-desc">CloudCore is a current $399 Havnby mattress offered for Model S, 3, X and Y. Havnby publishes a 193 × 132 × 11.5 cm sleeping size, 3.95 kg weight, built-in pump, 60-day trial and three-year warranty. Select the exact car and year before ordering.</p>
                     <ul class="product-pick-pros">
-                        <li>{{t.guide_best_model_y.li_havnby_foam_pro_1}}</li>
-                        <li>{{t.guide_best_model_y.li_havnby_foam_pro_2}}</li>
-                        <li>{{t.guide_best_model_y.li_havnby_foam_pro_3}}</li>
-                        <li>{{t.guide_best_model_y.li_havnby_foam_pro_4}}</li>
+                        <li>Current vehicle variants for Model S, 3, X and Y.</li>
+                        <li>Lower and lighter than the full-width FlatCore.</li>
+                        <li>Built-in pump with a claimed 70-second inflation time.</li>
+                        <li>Current Havnby trial and warranty terms apply.</li>
                     </ul>
                     <div class="product-pick-cta">
-                        <span class="price-tag">Discontinued</span>
+                        <span class="price-tag">$399</span>
                         <span class="discount-code-tag">{{t.shared.discount_percent_off}} <code>AWD</code></span>
-                        <a href="/{{localePath}}reviews/havnby-foam" class="btn-review">{{t.guide_best_model_y.btn_read_review}}</a>
-                        <a href="https://havnby.com/products/tesla-model-y-3-x-foam-mattress?ref=discount" target="_blank" class="btn-buy" rel="noopener sponsored">{{t.guide_best_model_y.btn_check_price}}</a>
+                        <a href="/{{localePath}}reviews/havnby-cloudcore" class="btn-review">{{t.guide_best_model_y.btn_read_review}}</a>
+                        <a href="https://havnby.com/products/cloudcore-hybrid-support-mattress-for-tesla-model-s-3-x-y?ref=discount" target="_blank" class="btn-buy" rel="noopener sponsored">{{t.guide_best_model_y.btn_check_price}}</a>
                     </div>
                 </div>
             </section>
 
             <figure class="guide-image">
-                <img src="https://havnby.com/cdn/shop/files/autolevel-foam-tesla-mattress.jpg?v=1732611561&width=1200&format=webp" alt="Havnby mattress product lineup for Tesla Model Y" loading="lazy" width="1200" height="800">
+                <img src="/images/havnby-cloudcore.webp" alt="Havnby CloudCore Foam Mattress for Tesla Model Y" loading="lazy" width="1200" height="1200">
+                <figcaption>CloudCore is the current lower-profile Havnby option that also has listed variants for Model S, 3 and X. Product image supplied by Havnby.</figcaption>
+            </figure>
+
+            <figure class="guide-image">
+                <img src="/images/havnby-flatcore-hybrid.webp" alt="Havnby mattress product lineup for Tesla Model Y" loading="lazy" width="1200" height="800">
                 <figcaption>{{t.guide_best_model_y.figcaption_havnby_lineup}}</figcaption>
             </figure>
 
@@ -572,7 +578,7 @@
                         <li>{{t.guide_best_model_y.li_tesmat_solo_pro_4}}</li>
                     </ul>
                     <div class="product-pick-cta">
-                        <span class="price-tag">$139.99</span>
+                        <span class="price-tag">$140</span>
                         <a href="/{{localePath}}reviews/tesmat-solo-y" class="btn-review">{{t.guide_best_model_y.btn_read_review}}</a>
                         <a href="https://www.tesmat.com/products/tesmat-solo-for-model-y" target="_blank" class="btn-buy" rel="noopener sponsored">{{t.guide_best_model_y.btn_check_price}}</a>
                     </div>
@@ -585,7 +591,7 @@
                 <div class="product-pick">
                     <div class="product-pick-header">
                         <div>
-                            <div class="product-pick-name">Havnby FlatCore Solo</div>
+                            <div class="product-pick-name">Havnby FlatCore Foam Mattress — Solo Edition</div>
                             <div class="product-pick-meta">
                                 <span>{{t.guide_best_model_y.meta_lightest}}</span>
                                 <span>{{t.guide_best_model_y.td_type_air}}</span>
@@ -694,12 +700,12 @@
                     <li><a href="#what-to-look-for">{{t.guide_best_model_y.toc_what_to_look_for}}</a></li>
                     <li><a href="#comparison">{{t.guide_best_model_y.toc_comparison}}</a></li>
                     <li><a href="#snuuzu-y">1. Snuuzu Model Y</a></li>
-                    <li><a href="#havnby-auto">2. Havnby FlatCore Hybrid</a></li>
+                    <li><a href="#havnby-auto">2. Havnby FlatCore Foam Mattress</a></li>
                     <li><a href="#tesmat-luxe">3. TESMAT Horizon Y</a></li>
                     <li><a href="#novapads">4. NovaPads</a></li>
-                    <li><a href="#havnby-foam">5. Havnby Foam (discontinued)</a></li>
+                    <li><a href="#havnby-cloudcore">5. Havnby CloudCore Foam Mattress</a></li>
                     <li><a href="#tesmat-solo">6. TESMAT Solo Y</a></li>
-                    <li><a href="#havnby-solo">7. Havnby FlatCore Solo</a></li>
+                    <li><a href="#havnby-solo">7. Havnby FlatCore Foam Mattress — Solo Edition</a></li>
                     <li><a href="#foam-vs-air">{{t.guide_best_model_y.toc_foam_vs_air}}</a></li>
                     <li><a href="#setup-tips">{{t.guide_best_model_y.toc_setup_tips}}</a></li>
                     <li><a href="#faq">FAQ</a></li>
@@ -751,6 +757,7 @@
                 navLinks.classList.toggle('active');
                 menuOverlay.classList.toggle('active');
                 document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+                menuToggle.setAttribute('aria-expanded', String(navLinks.classList.contains('active')));
             }
             menuToggle.addEventListener('click', toggleMenu);
             menuOverlay.addEventListener('click', toggleMenu);

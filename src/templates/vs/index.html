@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#2d4a3e">
+    <meta name="theme-color" content="#1f1d19">
 
     <!-- Primary Meta Tags -->
     <title>{{t.vs_index.meta_title}}</title>
@@ -53,9 +53,9 @@
         @media(max-width:768px){.menu-toggle{display:flex}.nav-links{display:none}}
     </style>
 
-    <link rel="stylesheet" href="/styles.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/styles.css">
     <noscript><link rel="stylesheet" href="/styles.css"></noscript>
-    <link rel="stylesheet" href="/vs/vs.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/vs/vs.css">
     <noscript><link rel="stylesheet" href="/vs/vs.css"></noscript>
 
     <!-- JSON-LD -->
@@ -70,7 +70,7 @@
         "mainEntity": {
                 "@type": "ItemList",
                 "name": "{{t.vs_index.jsonld_1_name_3}}",
-                "numberOfItems": 6,
+                "numberOfItems": 8,
                 "itemListElement": [
                         {
                                 "@type": "ListItem",
@@ -87,24 +87,36 @@
                         {
                                 "@type": "ListItem",
                                 "position": 3,
+                                "name": "Snuuzu vs NovaPads",
+                                "url": "https://teslamattress.com/{{localePath}}vs/snuuzu-vs-novapads"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 4,
+                                "name": "Havnby vs NovaPads",
+                                "url": "https://teslamattress.com/{{localePath}}vs/havnby-vs-novapads"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 5,
                                 "name": "{{t.vs_index.jsonld_1_name_6}}",
                                 "url": "https://teslamattress.com/{{localePath}}vs/tesmat-vs-havnby"
                         },
                         {
                                 "@type": "ListItem",
-                                "position": 4,
+                                "position": 6,
                                 "name": "{{t.vs_index.jsonld_1_name_7}}",
-                                "url": "https://teslamattress.com/{{localePath}}vs/havnby-autolevel-vs-foam"
+                                "url": "https://teslamattress.com/{{localePath}}vs/havnby-flatcore-vs-cloudcore"
                         },
                         {
                                 "@type": "ListItem",
-                                "position": 5,
+                                "position": 7,
                                 "name": "Snuuzu vs Dreamcase",
                                 "url": "https://teslamattress.com/{{localePath}}vs/snuuzu-vs-dreamcase"
                         },
                         {
                                 "@type": "ListItem",
-                                "position": 6,
+                                "position": 8,
                                 "name": "Model Y vs Model 3 Mattresses",
                                 "url": "https://teslamattress.com/{{localePath}}vs/model-y-vs-model-3-mattresses"
                         }
@@ -136,10 +148,10 @@
 <body>
     <nav class="navbar">
         <a href="{{localeHome}}" class="logo">Teslamattress</a>
-        <button class="menu-toggle" aria-label="Toggle menu">
+        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-navigation">
             <span></span><span></span><span></span>
         </button>
-        <ul class="nav-links">
+        <ul class="nav-links" id="primary-navigation">
             <li><a href="/{{localePath}}reviews">{{t.shared.nav_reviews}}</a></li>
             <li><a href="/{{localePath}}vs">{{t.shared.nav_compare}}</a></li>
             <li><a href="/{{localePath}}guides">{{t.shared.nav_guides}}</a></li>
@@ -158,17 +170,22 @@
         </nav>
 
         <header class="vs-hub-hero">
+            <span class="eyebrow">Side-by-side research · Updated 2026</span>
             <h1>{{t.vs_index.h1}}</h1>
             <p>{{t.vs_index.p}}</p>
-            <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 0.5rem;">By <a href="/{{localePath}}about" style="color: var(--copper);">Fredrik Mastouri</a> · Tesla camping gear reviewer</p>
+            <p class="vs-hub-byline">By <a href="/{{localePath}}about">Fredrik Mastouri</a> · Tesla camping gear reviewer</p>
         </header>
 
         <section class="vs-cards-grid">
             <a href="/{{localePath}}vs/snuuzu-vs-tesmat" class="vs-card featured">
+                <figure class="vs-card-media">
+                    <img src="/images/snuuzu-model-y-tesla-mattress.webp" alt="Snuuzu mattress for Tesla Model Y" loading="lazy" width="640" height="420">
+                    <img src="/images/tesmat-luxe-model-y-tesla-mattress.webp" alt="TESMAT mattress for Tesla Model Y" loading="lazy" width="640" height="420">
+                </figure>
                 <div class="vs-card-badge">Most Popular</div>
                 <div class="vs-card-matchup">
                     <div class="vs-brand">
-                        <img src="https://www.snuuzu.com/cdn/shop/files/BAG_LOGO_Black.png?width=150&format=webp" alt="Snuuzu" loading="lazy" width="120" height="40">
+                        <img src="/images/snuuzu-logo.webp" alt="Snuuzu" loading="lazy" width="120" height="40">
                         <span class="vs-score">9.4</span>
                     </div>
                     <span class="vs-divider">VS</span>
@@ -186,26 +203,82 @@
             </a>
 
             <a href="/{{localePath}}vs/snuuzu-vs-havnby" class="vs-card">
+                <figure class="vs-card-media">
+                    <img src="/images/snuuzu-model-y-tesla-mattress.webp" alt="Snuuzu Tesla mattress" loading="lazy" width="640" height="420">
+                    <img src="/images/havnby-flatcore-hybrid.webp" alt="Havnby FlatCore Foam Mattress" loading="lazy" width="640" height="640">
+                </figure>
                 <div class="vs-card-matchup">
                     <div class="vs-brand">
-                        <img src="https://www.snuuzu.com/cdn/shop/files/BAG_LOGO_Black.png?width=150&format=webp" alt="Snuuzu" loading="lazy" width="120" height="40">
+                        <img src="/images/snuuzu-logo.webp" alt="Snuuzu" loading="lazy" width="120" height="40">
                         <span class="vs-score">9.4</span>
                     </div>
                     <span class="vs-divider">VS</span>
                     <div class="vs-brand">
-                        <img src="https://havnby.com/cdn/shop/files/Havnby-logo.png?width=150&format=webp" alt="Havnby" loading="lazy" width="120" height="40">
+                        <img src="/images/havnby-logo.webp" alt="Havnby" loading="lazy" width="120" height="40">
                         <span class="vs-score">8.6</span>
                     </div>
                 </div>
                 <h2>{{t.vs_index.h2_2}}</h2>
                 <p>{{t.vs_index.p_3}}</p>
                 <div class="vs-card-meta">
-                    <span>€899 vs $509</span>
+                    <span>€899/$899 vs $509</span>
+                    <span>Read Comparison &rarr;</span>
+                </div>
+            </a>
+
+            <a href="/{{localePath}}vs/snuuzu-vs-novapads" class="vs-card">
+                <figure class="vs-card-media">
+                    <img src="/images/snuuzu-model-y-tesla-mattress.webp" alt="Snuuzu Model Y mattress" loading="lazy" width="640" height="420">
+                    <img src="/images/novapads-model-y-pro.webp" alt="NovaPads Air-Foam Pro mattress" loading="lazy" width="640" height="420">
+                </figure>
+                <div class="vs-card-matchup">
+                    <div class="vs-brand">
+                        <img src="/images/snuuzu-logo.webp" alt="Snuuzu" loading="lazy" width="120" height="40">
+                        <span class="vs-score">9.4</span>
+                    </div>
+                    <span class="vs-divider">VS</span>
+                    <div class="vs-brand">
+                        <img src="/images/novapads-logo.webp" alt="NovaPads" loading="lazy" width="120" height="40">
+                        <span class="vs-score">8.8</span>
+                    </div>
+                </div>
+                <h2>Snuuzu vs NovaPads</h2>
+                <p>Premium layered comfort versus the $239 Air-Foam Pro: compare fit, depth, pump, warranty and the real price gap.</p>
+                <div class="vs-card-meta">
+                    <span>€899/$899 vs $239</span>
+                    <span>Read Comparison &rarr;</span>
+                </div>
+            </a>
+
+            <a href="/{{localePath}}vs/havnby-vs-novapads" class="vs-card">
+                <figure class="vs-card-media">
+                    <img src="/images/havnby-flatcore-hybrid.webp" alt="Havnby FlatCore Foam Mattress" loading="lazy" width="640" height="640">
+                    <img src="/images/novapads-model-y-pro.webp" alt="NovaPads Air-Foam Pro mattress" loading="lazy" width="640" height="420">
+                </figure>
+                <div class="vs-card-matchup">
+                    <div class="vs-brand">
+                        <img src="/images/havnby-logo.webp" alt="Havnby" loading="lazy" width="120" height="40">
+                        <span class="vs-score">8.6</span>
+                    </div>
+                    <span class="vs-divider">VS</span>
+                    <div class="vs-brand">
+                        <img src="/images/novapads-logo.webp" alt="NovaPads" loading="lazy" width="120" height="40">
+                        <span class="vs-score">8.8</span>
+                    </div>
+                </div>
+                <h2>Havnby vs NovaPads</h2>
+                <p>Shaped Model Y support versus a lower-cost cross-model option, with current dimensions, pump systems and terms.</p>
+                <div class="vs-card-meta">
+                    <span>$509 vs $239</span>
                     <span>Read Comparison &rarr;</span>
                 </div>
             </a>
 
             <a href="/{{localePath}}vs/tesmat-vs-havnby" class="vs-card">
+                <figure class="vs-card-media">
+                    <img src="/images/tesmat-luxe-model-y-tesla-mattress.webp" alt="TESMAT Tesla mattress" loading="lazy" width="640" height="420">
+                    <img src="/images/havnby-flatcore-hybrid.webp" alt="Havnby FlatCore Foam Mattress" loading="lazy" width="640" height="640">
+                </figure>
                 <div class="vs-card-matchup">
                     <div class="vs-brand">
                         <span class="vs-brand-text">TESMAT</span>
@@ -213,7 +286,7 @@
                     </div>
                     <span class="vs-divider">VS</span>
                     <div class="vs-brand">
-                        <img src="https://havnby.com/cdn/shop/files/Havnby-logo.png?width=150&format=webp" alt="Havnby" loading="lazy" width="120" height="40">
+                        <img src="/images/havnby-logo.webp" alt="Havnby" loading="lazy" width="120" height="40">
                         <span class="vs-score">8.6</span>
                     </div>
                 </div>
@@ -225,30 +298,38 @@
                 </div>
             </a>
 
-            <a href="/{{localePath}}vs/havnby-autolevel-vs-foam" class="vs-card">
+            <a href="/{{localePath}}vs/havnby-flatcore-vs-cloudcore" class="vs-card">
+                <figure class="vs-card-media">
+                    <img src="/images/havnby-flatcore-hybrid.webp" alt="Havnby FlatCore Foam Mattress" loading="lazy" width="640" height="640">
+                    <img src="/images/havnby-cloudcore-thumb.webp" alt="Havnby CloudCore Foam Mattress" loading="lazy" width="640" height="640">
+                </figure>
                 <div class="vs-card-matchup">
                     <div class="vs-brand">
-                        <span class="vs-brand-text">Autolevel</span>
+                        <span class="vs-brand-text">FlatCore</span>
                         <span class="vs-score">8.6</span>
                     </div>
                     <span class="vs-divider">VS</span>
                     <div class="vs-brand">
-                        <span class="vs-brand-text">Foam</span>
-                        <span class="vs-score">7.6</span>
+                        <span class="vs-brand-text">CloudCore</span>
+                        <span class="vs-score">8.0</span>
                     </div>
                 </div>
                 <h2>{{t.vs_index.h2_4}}</h2>
                 <p>{{t.vs_index.p_5}}</p>
                 <div class="vs-card-meta">
-                    <span>$509 vs discontinued Foam</span>
+                    <span>$509 vs $399</span>
                     <span>Read Comparison &rarr;</span>
                 </div>
             </a>
 
             <a href="/{{localePath}}vs/snuuzu-vs-dreamcase" class="vs-card">
+                <figure class="vs-card-media">
+                    <img src="/images/snuuzu-model-y-tesla-mattress.webp" alt="Snuuzu Tesla mattress" loading="lazy" width="640" height="420">
+                    <img src="/images/hero-model-y-adventure-v2.webp" alt="NovaPads mattress fitted in a Tesla Model Y" loading="lazy" width="1344" height="768">
+                </figure>
                 <div class="vs-card-matchup">
                     <div class="vs-brand">
-                        <img src="https://www.snuuzu.com/cdn/shop/files/BAG_LOGO_Black.png?width=150&format=webp" alt="Snuuzu" loading="lazy" width="120" height="40">
+                        <img src="/images/snuuzu-logo.webp" alt="Snuuzu" loading="lazy" width="120" height="40">
                         <span class="vs-score">9.4</span>
                     </div>
                     <span class="vs-divider">VS</span>
@@ -260,12 +341,16 @@
                 <h2>{{t.vs_index.h2_5}}</h2>
                 <p>{{t.vs_index.p_6}}</p>
                 <div class="vs-card-meta">
-                    <span>€899 vs €699</span>
+                    <span>€899 vs custom quote</span>
                     <span>Read Comparison &rarr;</span>
                 </div>
             </a>
 
             <a href="/{{localePath}}vs/model-y-vs-model-3-mattresses" class="vs-card">
+                <figure class="vs-card-media">
+                    <img src="/images/tesmat-luxe-model-y-tesla-mattress.webp" alt="Tesla Model Y camping mattress" loading="lazy" width="640" height="420">
+                    <img src="/images/tesmat-luxe-model-3-tesla-mattress.webp" alt="Tesla Model 3 camping mattress" loading="lazy" width="640" height="420">
+                </figure>
                 <div class="vs-card-matchup">
                     <div class="vs-brand">
                         <span class="vs-brand-text">Model Y</span>
@@ -291,12 +376,16 @@
             <p style="margin-bottom: 1rem;">Choosing the right Tesla camping mattress depends on three things: <strong>how often you camp</strong>, <strong>your budget</strong>, and <strong>which Tesla you drive</strong>. Our side-by-side comparisons above break down the differences in comfort, build quality, setup ease, and value so you can make an informed decision.</p>
 
             <h3 style="font-size: 1.15rem; margin: 1.5rem 0 0.5rem;">Price vs. Comfort Tradeoff</h3>
-            <p style="margin-bottom: 1rem;">Tesla mattresses range from $139.99 (TESMAT Solo) to €899 (Snuuzu). The premium options use multi-layer foam or air-foam hybrids that level the seat fold, while budget mattresses are single-layer foam pads. If you camp more than 5 nights per year, the mid-range options like the TESMAT Horizon ($339) or the Havnby FlatCore Hybrid ($509) offer the best balance of comfort and value. For serious road-trippers doing 10+ nights, the Snuuzu is worth the investment.</p>
+            <p style="margin-bottom: 1rem;">Observed prices range from $140 for TESMAT Solo to €899/$899 for Snuuzu. Construction varies from simple foam pads to shaped foam-and-air systems. Compare exact vehicle fit, published dimensions, packed size, pump power, warranty, trial and delivered price; trip frequency alone cannot prove which product is the best value.</p>
 
             <h3 style="font-size: 1.15rem; margin: 1.5rem 0 0.5rem;">Air vs. Foam vs. Hybrid</h3>
-            <p style="margin-bottom: 1rem;">Pure foam mattresses (TESMAT Solo, plus the now-discontinued Havnby Foam) are the simplest — unroll, sleep, done. Air-foam hybrids (Havnby FlatCore, NovaPads) use an air chamber to level the slope and foam on top for comfort. Pure foam with leveling tech (Snuuzu) uses layered foam densities instead of air. Each approach has tradeoffs: air chambers can deflate, pure foam is heavier, and hybrids offer the best of both worlds at a moderate price.</p>
+            <p style="margin-bottom: 1rem;">Foam-only mattresses such as TESMAT Solo are the simplest — unroll, sleep, done. Foam-and-air systems including Havnby FlatCore, NovaPads and the current Snuuzu combine cushioning with an inflatable support layer and compact storage. Each approach has tradeoffs in weight, setup, firmness and packed size.</p>
 
             <p style="margin-bottom: 1rem;">Not sure where to start? Our most popular comparison is <a href="/{{localePath}}vs/snuuzu-vs-tesmat" style="color: var(--forest); font-weight: 600;">Snuuzu vs TESMAT</a>, which covers the premium vs. mid-range decision most buyers face.</p>
+
+            <p style="margin-bottom: 1rem;">To compare the three most searched brands directly, read <a href="/{{localePath}}vs/snuuzu-vs-havnby" style="color: var(--forest); font-weight: 600;">Snuuzu vs Havnby</a>, <a href="/{{localePath}}vs/snuuzu-vs-novapads" style="color: var(--forest); font-weight: 600;">Snuuzu vs NovaPads</a> and <a href="/{{localePath}}vs/havnby-vs-novapads" style="color: var(--forest); font-weight: 600;">Havnby vs NovaPads</a>. Each page separates verified seller specifications from our editorial judgment.</p>
+
+            <p style="margin-bottom: 1rem;">Shoppers comparing lower-priced systems can also use our <a href="/{{localePath}}vs/tesmat-vs-novapads" style="color: var(--forest); font-weight: 600;">TESMAT Horizon vs NovaPads</a> breakdown.</p>
 
             <h3 style="font-size: 1.15rem; margin: 1.5rem 0 0.5rem;">Still Deciding Whether You Need a Tesla-Specific Mattress?</h3>
             <p style="margin-bottom: 1rem;">Two shorter comparisons answer the most common pre-purchase questions: <a href="/{{localePath}}vs/tesla-mattress-vs-air-mattress" style="color: var(--forest); font-weight: 600;">Tesla mattress vs regular air mattress</a> and <a href="/{{localePath}}vs/tesla-mattress-vs-sleeping-bag" style="color: var(--forest); font-weight: 600;">Tesla mattress vs sleeping bag</a>.</p>

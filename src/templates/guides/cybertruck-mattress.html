@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#2d4a3e">
+    <meta name="theme-color" content="#1f1d19">
     <title>{{t.guide_cybertruck.meta_title}}</title>
     <meta name="title" content="{{t.guide_cybertruck.meta_name_title}}">
     <meta name="description" content="{{t.guide_cybertruck.meta_description}}">    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -18,16 +18,16 @@
     <meta property="og:url" content="{{pageUrl}}">
     <meta property="og:title" content="{{t.guide_cybertruck.og_title}}">
     <meta property="og:description" content="{{t.guide_cybertruck.og_description}}">
-    <meta property="og:image" content="https://teslamattress.com/images/og-image.jpg">
+    <meta property="og:image" content="https://teslamattress.com/images/hero-bg.webp">
     <meta property="og:site_name" content="Teslamattress">
     <meta property="article:published_time" content="2026-02-19">
-    <meta property="article:modified_time" content="2026-02-19">
+    <meta property="article:modified_time" content="{{buildDate}}">
     <meta property="og:locale" content="{{ogLocale}}">
     {{ogLocaleAlternates}}
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{t.guide_cybertruck.twitter_title}}">
     <meta name="twitter:description" content="{{t.guide_cybertruck.twitter_description}}">
-    <meta name="twitter:image" content="https://teslamattress.com/images/og-image.jpg">
+    <meta name="twitter:image" content="https://teslamattress.com/images/hero-bg.webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdn.shopify.com">
@@ -47,10 +47,11 @@
         .menu-toggle span{width:24px;height:2px;background:var(--cream)}
         @media(max-width:768px){.menu-toggle{display:flex}.nav-links{display:none}}
     </style>
-    <link rel="stylesheet" href="/styles.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/styles.css">
     <noscript><link rel="stylesheet" href="/styles.css"></noscript>
-    <link rel="stylesheet" href="/guides/guides.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/guides/guides.css">
     <noscript><link rel="stylesheet" href="/guides/guides.css"></noscript>
+    <style>.guide-hero{background:linear-gradient(90deg,rgba(17,18,16,.96),rgba(17,18,16,.76) 62%,rgba(17,18,16,.38)),url('/images/hero-bg.webp') center 48% / cover}</style>
 
     <!-- JSON-LD: Article -->
     <script type="application/ld+json">
@@ -76,7 +77,7 @@
         },
         "datePublished": "2026-02-19",
         "dateModified": "{{buildDate}}",
-        "image": "https://teslamattress.com/images/og-image.jpg"
+        "image": "https://teslamattress.com/images/hero-bg.webp"
     }
     </script>
     <!-- JSON-LD: BreadcrumbList -->
@@ -158,8 +159,8 @@
 <body>
     <nav class="navbar guide-nav">
         <a href="{{localeHome}}" class="logo">Teslamattress</a>
-        <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-        <ul class="nav-links">
+        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span><span></span></button>
+        <ul class="nav-links" id="primary-navigation">
             <li><a href="/{{localePath}}reviews">{{t.shared.nav_reviews}}</a></li>
             <li><a href="/{{localePath}}vs">{{t.shared.nav_compare}}</a></li>
             <li><a href="/{{localePath}}guides">{{t.shared.nav_guides}}</a></li>
@@ -205,6 +206,11 @@
                 </ul>
             </div>
 
+            <figure class="guide-image">
+                <img src="/images/cybertruck-camping.webp" alt="Official Tesla Cybertruck on desert rock terrain" width="1344" height="768" loading="eager" fetchpriority="high">
+                <figcaption>Official Tesla Cybertruck image. Use the published bed dimensions as a starting point, then measure around your own tonneau and storage setup.</figcaption>
+            </figure>
+
             <!-- Section: Cybertruck Camping Overview -->
             <section class="guide-section" id="overview">
                 <h2>{{t.guide_cybertruck.h2_overview}}</h2>
@@ -226,46 +232,36 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>{{t.guide_cybertruck.th_feature}}</th>
+                                <th>Fit check</th>
                                 <th>{{t.guide_cybertruck.th_truck_bed}}</th>
                                 <th>{{t.guide_cybertruck.th_rear_cabin}}</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>{{t.guide_cybertruck.td_sleep_area}}</td>
-                                <td class="winner">~72" x 54"</td>
-                                <td>~68" x 48"</td>
+                                <td>Floor length</td>
+                                <td>71.84 in / 1,824.6 mm in Tesla's current specification</td>
+                                <td>Not published as a sleeping surface; measure the actual seat position</td>
                             </tr>
                             <tr>
-                                <td>{{t.guide_cybertruck.td_headroom}}</td>
-                                <td>{{t.guide_cybertruck.td_headroom_bed}}</td>
-                                <td>{{t.guide_cybertruck.td_headroom_cabin}}</td>
+                                <td>Floor width</td>
+                                <td>51.00 in / 1,295.4 mm</td>
+                                <td>Measure the narrowest supported area and door clearance</td>
                             </tr>
                             <tr>
-                                <td>{{t.guide_cybertruck.td_climate_control}}</td>
-                                <td>{{t.guide_cybertruck.td_climate_bed}}</td>
-                                <td class="winner">{{t.guide_cybertruck.td_climate_cabin}}</td>
+                                <td>Maximum bed height</td>
+                                <td>Varies front to rear and by configuration; see the linked Tesla diagram</td>
+                                <td>Measure from the intended mattress top, not the bare floor</td>
                             </tr>
                             <tr>
-                                <td>{{t.guide_cybertruck.td_privacy}}</td>
-                                <td class="winner">{{t.guide_cybertruck.td_privacy_bed}}</td>
-                                <td>{{t.guide_cybertruck.td_privacy_cabin}}</td>
+                                <td>Climate and enclosure</td>
+                                <td>Use only a purpose-designed shelter and its ventilation instructions</td>
+                                <td>Camp Mode can maintain cabin climate while parked</td>
                             </tr>
                             <tr>
-                                <td>{{t.guide_cybertruck.td_setup_effort}}</td>
-                                <td>{{t.guide_cybertruck.td_setup_bed}}</td>
-                                <td class="winner">{{t.guide_cybertruck.td_setup_cabin}}</td>
-                            </tr>
-                            <tr>
-                                <td>{{t.guide_cybertruck.td_weather_protection}}</td>
-                                <td>{{t.guide_cybertruck.td_weather_bed}}</td>
-                                <td class="winner">{{t.guide_cybertruck.td_weather_cabin}}</td>
-                            </tr>
-                            <tr>
-                                <td>{{t.guide_cybertruck.td_best_for}}</td>
-                                <td>{{t.guide_cybertruck.td_best_for_bed}}</td>
-                                <td>{{t.guide_cybertruck.td_best_for_cabin}}</td>
+                                <td>Emergency exit</td>
+                                <td>Never treat a closed powered tonneau as a habitable enclosure</td>
+                                <td>Keep doors, controls and at least one exit unobstructed</td>
                             </tr>
                         </tbody>
                     </table>
@@ -294,39 +290,34 @@
                 </ol>
             </section>
 
-            <figure class="guide-image">
-                <img src="/images/og-image.jpg" alt="Tesla camping setup at scenic location" loading="eager" fetchpriority="high" width="1200" height="630">
-                <figcaption>{{t.guide_cybertruck.img1_caption}}</figcaption>
-            </figure>
-
             <!-- Section: Available Mattresses -->
             <section class="guide-section" id="available-mattresses">
                 <h2>{{t.guide_cybertruck.h2_available_mattresses}}</h2>
                 <p>{{t.guide_cybertruck.p_available_intro}}</p>
 
-                <!-- Tesery Cybertruck Mattress -->
+                <!-- Current market status -->
                 <div class="product-pick">
                     <div class="product-pick-header">
                         <div>
-                            <span style="font-size: 0.8rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px;">{{t.guide_cybertruck.pick_label_truck_bed}}</span>
-                            <div class="product-pick-name">Tesery Cybertruck Bed Mattress</div>
+                            <span style="font-size: 0.8rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px;">Current market status</span>
+                            <div class="product-pick-name">No scored Cybertruck mattress yet</div>
                         </div>
-                        <span class="product-pick-score">N/R</span>
+                        <span class="product-pick-score">Fit first</span>
                     </div>
                     <div class="product-pick-meta">
-                        <span>{{t.guide_cybertruck.pick_type_foam}}</span>
-                        <span>{{t.guide_cybertruck.pick_fits_ct_bed}}</span>
+                        <span>71.84 × 51 in official bed floor</span>
+                        <span>Bed and cabin are separate use cases</span>
                     </div>
-                    <p class="product-pick-desc">{{t.guide_cybertruck.pick_tesery_ct_description}}</p>
+                    <p class="product-pick-desc">We did not find enough current manufacturer evidence to award a Cybertruck product score in this update. A legitimate shortlist needs a live product page, exact bed-or-cabin fit diagram, material details, return terms and evidence that the listing is available now.</p>
                     <ul class="product-pick-pros">
-                        <li>{{t.guide_cybertruck.pick_tesery_ct_pro1}}</li>
-                        <li>{{t.guide_cybertruck.pick_tesery_ct_pro2}}</li>
-                        <li>{{t.guide_cybertruck.pick_tesery_ct_pro3}}</li>
-                        <li>{{t.guide_cybertruck.pick_tesery_ct_pro4}}</li>
+                        <li>Confirm whether the product is for the truck bed or rear cabin</li>
+                        <li>Match the current seller diagram to Tesla's official vehicle dimensions</li>
+                        <li>Check packed size, support method, ventilation and emergency exit</li>
+                        <li>Do not treat a lifestyle image or marketplace title as proof of fit</li>
                     </ul>
                     <div class="product-pick-cta">
-                        <a href="#" target="_blank" rel="noopener sponsored" class="btn-buy">{{t.guide_cybertruck.btn_check_price}}</a>
-                        <a href="/{{localePath}}discounts/novapads" class="btn-review">{{t.guide_cybertruck.btn_view_discount}}</a>
+                        <a href="/{{localePath}}guides/tesla-mattress-buying-guide" class="btn-buy">Use the fit checklist</a>
+                        <a href="https://www.tesla.com/ownersmanual/cybertruck/en_us/GUID-12A976DD-EB60-431B-AFF1-5A37E95006DB.html" target="_blank" rel="noopener nofollow" class="btn-review">Official dimensions</a>
                     </div>
                 </div>
 
@@ -369,11 +360,6 @@
                 <p>{{t.guide_cybertruck.p_v2l_battery_impact}}</p>
             </section>
 
-            <figure class="guide-image">
-                <img src="/images/snuuzu-model-y-tesla-mattress.webp" alt="Tesla camping mattress outdoor setup" loading="lazy" width="1200" height="800">
-                <figcaption>{{t.guide_cybertruck.img2_caption}}</figcaption>
-            </figure>
-
             <!-- Section: Cybertruck Camp Mode -->
             <section class="guide-section" id="camp-mode">
                 <h2>{{t.guide_cybertruck.h2_camp_mode}}</h2>
@@ -393,34 +379,12 @@
 
                 <div class="guide-comparison-table">
                     <table>
-                        <thead>
-                            <tr>
-                                <th>{{t.guide_cybertruck.th_scenario}}</th>
-                                <th>{{t.guide_cybertruck.th_estimated_drain}}</th>
-                                <th>{{t.guide_cybertruck.th_range_impact}}</th>
-                            </tr>
-                        </thead>
+                        <thead><tr><th>Condition</th><th>What changes</th><th>Planning response</th></tr></thead>
                         <tbody>
-                            <tr>
-                                <td>{{t.guide_cybertruck.td_mild_night}}</td>
-                                <td>2-4%</td>
-                                <td>~6-12 mi</td>
-                            </tr>
-                            <tr>
-                                <td>{{t.guide_cybertruck.td_cold_night}}</td>
-                                <td>8-15%</td>
-                                <td>~25-45 mi</td>
-                            </tr>
-                            <tr>
-                                <td>{{t.guide_cybertruck.td_freezing_night}}</td>
-                                <td>15-25%</td>
-                                <td>~45-75 mi</td>
-                            </tr>
-                            <tr>
-                                <td>{{t.guide_cybertruck.td_hot_night_ac}}</td>
-                                <td>5-10%</td>
-                                <td>~15-30 mi</td>
-                            </tr>
+                            <tr><td>Mild weather</td><td>Climate demand may be lower, but Tesla gives no guaranteed overnight percentage</td><td>Record the live estimate and retain a route reserve</td></tr>
+                            <tr><td>Cold weather</td><td>Cabin and battery heating can increase consumption</td><td>Use suitable bedding, monitor the vehicle and preserve a larger reserve</td></tr>
+                            <tr><td>Hot weather</td><td>Continuous cooling and sun exposure can increase consumption</td><td>Park legally in shade where possible and keep monitoring active</td></tr>
+                            <tr><td>Low Power Mode</td><td>Camp Mode and outlets become unavailable</td><td>Charge before settling in and keep a safe backup plan</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -454,10 +418,10 @@
                 </ul>
             </section>
 
-            <figure class="guide-image">
-                <img src="/images/tesmat-luxe-model-3-tesla-mattress.webp" alt="Mattress setup in back of Tesla vehicle" loading="lazy" width="1200" height="800">
-                <figcaption>{{t.guide_cybertruck.img3_caption}}</figcaption>
-            </figure>
+            <section class="guide-section" aria-labelledby="cybertruck-sources">
+                <h2 id="cybertruck-sources">Primary sources and evidence limits</h2>
+                <p>Bed dimensions come from Tesla's <a href="https://www.tesla.com/ownersmanual/cybertruck/en_us/GUID-12A976DD-EB60-431B-AFF1-5A37E95006DB.html" rel="nofollow">current Cybertruck dimensions table</a>. Outlet ratings, GFCI behavior, Keep Outlets On limits and CyberTent Mode come from Tesla's <a href="https://www.tesla.com/ownersmanual/cybertruck/en_us/GUID-DA020526-B42E-4C0E-AE1E-BB22072D48B6.html" rel="nofollow">cargo-bed outlet instructions</a>. We have not conducted a hands-on sleep, fit or energy-consumption test and therefore do not publish a winning Cybertruck mattress or universal overnight percentage.</p>
+            </section>
 
             <!-- FAQ -->
             <section class="guide-faq" id="faq">
@@ -494,11 +458,19 @@
                 <h2>{{t.guide_cybertruck.cta_title}}</h2>
                 <p>{{t.guide_cybertruck.cta_text}}</p>
                 <div class="cta-buttons">
-                    <a href="/{{localePath}}discounts/novapads" class="btn-primary">{{t.guide_cybertruck.cta_btn_tesery_discount}}</a>
-                    <a href="/{{localePath}}guides" class="btn-secondary">{{t.guide_cybertruck.cta_btn_all_guides}}</a>
+                    <a href="/{{localePath}}guides/tesla-mattress-buying-guide" class="btn-primary">Build your fit checklist</a>
+                    <a href="https://www.tesla.com/ownersmanual/cybertruck/en_us/GUID-12A976DD-EB60-431B-AFF1-5A37E95006DB.html" target="_blank" rel="noopener nofollow" class="btn-secondary">Open official dimensions</a>
                 </div>
             </div>
 
+            <section class="article-visual-guides" aria-labelledby="visual-guides-title">
+                <div class="article-visual-guides-heading"><span>Keep planning</span><h2 id="visual-guides-title">Visual guides for the rest of the setup</h2></div>
+                <div class="article-visual-guide-grid">
+                    <a href="/{{localePath}}guides/best-tesla-mattresses" class="article-visual-guide-card"><img src="/images/tesla-mattress-ranking.webp" alt="Tesla mattress products from Snuuzu, TESMAT, Havnby and NovaPads" width="1344" height="768" loading="lazy"><span>Compare mattress formats</span></a>
+                    <a href="/{{localePath}}faq/how-to-use-tesla-camp-mode" class="article-visual-guide-card"><img src="/images/camp-mode-night.webp" alt="TESMAT mattress fitted inside a Tesla for overnight camping" width="1344" height="768" loading="lazy"><span>Use Camp Mode overnight</span></a>
+                    <a href="/{{localePath}}faq/how-to-prevent-condensation-while-sleeping-in-a-tesla" class="article-visual-guide-card"><img src="/images/condensation-control.webp" alt="TESMAT Solo mattress and storage bag for Tesla camping" width="1344" height="768" loading="lazy"><span>Control condensation</span></a>
+                </div>
+            </section>
         </main>
 
         <!-- Sidebar -->
@@ -519,7 +491,7 @@
             <div class="sidebar-card cta-card">
                 <h3>{{t.guide_cybertruck.sidebar_cta_title}}</h3>
                 <p>{{t.guide_cybertruck.sidebar_cta_text}}</p>
-                <a href="/{{localePath}}discounts" class="btn-cta">{{t.guide_cybertruck.sidebar_cta_btn}}</a>
+                <a href="#available-mattresses" class="btn-cta">See the verification standard</a>
             </div>
 
             <div class="sidebar-card">
@@ -560,6 +532,7 @@
                 navLinks.classList.toggle('active');
                 menuOverlay.classList.toggle('active');
                 document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+                menuToggle.setAttribute('aria-expanded', String(navLinks.classList.contains('active')));
             }
             menuToggle.addEventListener('click', toggleMenu);
             menuOverlay.addEventListener('click', toggleMenu);

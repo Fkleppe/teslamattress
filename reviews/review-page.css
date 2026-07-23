@@ -300,7 +300,7 @@
 }
 
 .tldr-box h2::before {
-    content: '⚡';
+    content: '+';
 }
 
 .tldr-content {
@@ -456,7 +456,7 @@
 }
 
 .pros-card h3::before {
-    content: '👍';
+    content: '+';
 }
 
 .cons-card h3 {
@@ -464,7 +464,7 @@
 }
 
 .cons-card h3::before {
-    content: '👎';
+    content: '–';
 }
 
 .pros-card ul, .cons-card ul {

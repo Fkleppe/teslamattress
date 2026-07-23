@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#2d4a3e">
+    <meta name="theme-color" content="#1f1d19">
     <title>{{t.guide_buying.meta_title}}</title>
     <meta name="title" content="{{t.guide_buying.meta_name_title}}">
     <meta name="description" content="{{t.guide_buying.meta_description}}">    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -21,7 +21,7 @@
     <meta property="og:image" content="https://teslamattress.com/images/og-image.jpg">
     <meta property="og:site_name" content="Teslamattress">
     <meta property="article:published_time" content="2026-02-19">
-    <meta property="article:modified_time" content="2026-02-19">
+    <meta property="article:modified_time" content="{{buildDate}}">
     <meta property="og:locale" content="{{ogLocale}}">
     {{ogLocaleAlternates}}
     <meta name="twitter:card" content="summary_large_image">
@@ -48,9 +48,9 @@
         .menu-toggle span{width:24px;height:2px;background:var(--cream)}
         @media(max-width:768px){.menu-toggle{display:flex}.nav-links{display:none}}
     </style>
-    <link rel="stylesheet" href="/styles.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/styles.css">
     <noscript><link rel="stylesheet" href="/styles.css"></noscript>
-    <link rel="stylesheet" href="/guides/guides.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/guides/guides.css">
     <noscript><link rel="stylesheet" href="/guides/guides.css"></noscript>
 
     <!-- JSON-LD: Article -->
@@ -168,8 +168,8 @@
 <body>
     <nav class="navbar guide-nav">
         <a href="{{localeHome}}" class="logo">Teslamattress</a>
-        <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-        <ul class="nav-links">
+        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span><span></span></button>
+        <ul class="nav-links" id="primary-navigation">
             <li><a href="/{{localePath}}reviews">{{t.shared.nav_reviews}}</a></li>
             <li><a href="/{{localePath}}vs">{{t.shared.nav_compare}}</a></li>
             <li><a href="/{{localePath}}guides">{{t.shared.nav_guides}}</a></li>
@@ -457,7 +457,7 @@
             </section>
 
             <figure class="guide-image">
-                <img src="https://havnby.com/cdn/shop/files/tesla-solo-mattress-main.jpg?v=1733913261&width=1200&format=webp" alt="Havnby auto-level mattress inflated in Tesla" loading="lazy" width="1200" height="800">
+                <img src="/images/havnby-flatcore-solo.webp" alt="Havnby FlatCore Solo mattress inflated in Tesla" loading="lazy" width="1200" height="800">
                 <figcaption>{{t.guide_buying.img2_caption}}</figcaption>
             </figure>
 
@@ -556,7 +556,7 @@
             </section>
 
             <figure class="guide-image">
-                <img src="https://havnby.com/cdn/shop/files/autolevel-foam-tesla-mattress.jpg?v=1732611561&width=1200&format=webp" alt="Havnby mattress product for Tesla camping" loading="lazy" width="1200" height="800">
+                <img src="/images/havnby-flatcore-hybrid.webp" alt="Havnby mattress product for Tesla camping" loading="lazy" width="1200" height="800">
                 <figcaption>{{t.guide_buying.img3_caption}}</figcaption>
             </figure>
 
@@ -660,6 +660,7 @@
                 navLinks.classList.toggle('active');
                 menuOverlay.classList.toggle('active');
                 document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+                menuToggle.setAttribute('aria-expanded', String(navLinks.classList.contains('active')));
             }
             menuToggle.addEventListener('click', toggleMenu);
             menuOverlay.addEventListener('click', toggleMenu);

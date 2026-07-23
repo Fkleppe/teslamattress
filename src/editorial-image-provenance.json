@@ -1,0 +1,192 @@
+{
+  "camp-mode-night.webp": {
+    "kind": "vendor_product_image",
+    "synthetic": false,
+    "sources": ["/images/tesmat-luxe-model-y-tesla-mattress.webp"],
+    "source_urls": ["https://www.tesmat.com/collections/all"],
+    "sha256": "cc8afd9b8d3b6c19b66d71cf96622cc4e83f27ffff3969c41eda707edc4e77d3"
+  },
+  "condensation-control.webp": {
+    "kind": "vendor_product_image",
+    "synthetic": false,
+    "sources": ["/images/tesmat-solo-model-y-tesla-mattress.webp"],
+    "source_urls": ["https://www.tesmat.com/collections/all"],
+    "sha256": "57ca2c5eae1c65c67f008e482fabe2f220998f04f7e9426d78a419e2e96d667d"
+  },
+  "cybertruck-camping.webp": {
+    "kind": "official_tesla_asset",
+    "synthetic": false,
+    "sources": [],
+    "source_urls": ["https://digitalassets.tesla.com/tesla-contents/image/upload/Cybertruck-Hero-Desktop-NA-SA-APAC.png"],
+    "sha256": "650e2a201f8b7e5d6eda3bf4484519900297f199afe0570d0a571d766899a2bd"
+  },
+  "family-camping.webp": {
+    "kind": "vendor_product_image",
+    "synthetic": false,
+    "sources": ["/images/havnby-cloudcore-model-y.webp"],
+    "source_urls": ["https://havnby.com/products/cloudcore-hybrid-support-mattress-for-tesla-model-s-3-x-y"],
+    "sha256": "67d0ff0ee7708137e3508939dfd328171f09687571cf9fb87c2d6ae9b5a5fb34"
+  },
+  "hero-model-y-adventure-v2.webp": {
+    "kind": "vendor_product_image",
+    "synthetic": false,
+    "sources": ["/images/novapads-model-y-pro.webp"],
+    "source_urls": ["https://novapads.com/"],
+    "sha256": "be1226494e39fb4008506be4ef22c13d787f3269b52189463e75ce8631231761"
+  },
+  "lightest-mattress.webp": {
+    "kind": "vendor_product_image",
+    "synthetic": false,
+    "sources": ["/images/tesmat-solo-model-3-tesla-mattress.webp"],
+    "source_urls": ["https://www.tesmat.com/collections/all"],
+    "sha256": "5aefd3854a0a6a27e09accdf117755f8db9e02b062a406f681520fd728572f1c"
+  },
+  "mattress-for-cold-weather.webp": {
+    "kind": "vendor_product_image",
+    "synthetic": false,
+    "sources": ["/images/tesmat-luxe-model-3-tesla-mattress.webp"],
+    "source_urls": ["https://www.tesmat.com/collections/all"],
+    "sha256": "ebf59e63c967b5297ba1cea4d45ce3bc6cff12581472f68c309a7d656b2549e5"
+  },
+  "mattress-for-couples.webp": {
+    "kind": "vendor_product_image",
+    "synthetic": false,
+    "sources": [
+      "/images/tesmat-luxe-model-y-tesla-mattress.webp",
+      "/images/havnby-cloudcore-model-y.webp"
+    ],
+    "source_urls": [
+      "https://www.tesmat.com/collections/all",
+      "https://havnby.com/products/cloudcore-hybrid-support-mattress-for-tesla-model-s-3-x-y"
+    ],
+    "sha256": "fe6520ff76e549152cecc29b4d60e2ba915c0bfb2e4ec65e934553b3e83036f3"
+  },
+  "mattress-for-side-sleepers.webp": {
+    "kind": "vendor_product_image",
+    "synthetic": false,
+    "sources": ["/images/snuuzu-model-y-tesla-mattress.webp"],
+    "source_urls": ["https://www.snuuzu.com/products/snuuzu-model-y"],
+    "sha256": "d6b4d6185e9a00e26777eed90f2483e71e261c7e8ad22d6d73833253f9ca1062"
+  },
+  "mattress-for-tall-people.webp": {
+    "kind": "vendor_product_image",
+    "synthetic": false,
+    "sources": ["/images/havnby-cloudcore.webp"],
+    "source_urls": ["https://havnby.com/products/cloudcore-hybrid-support-mattress-for-tesla-model-s-3-x-y"],
+    "sha256": "fcb373a79ab8bb23a0723b6737f2298559e04d06782a7202b4fe50603d693980"
+  },
+  "mattress-under-300.webp": {
+    "kind": "vendor_product_image",
+    "synthetic": false,
+    "sources": ["/images/novapads-auto-leveling.webp"],
+    "source_urls": ["https://novapads.com/"],
+    "sha256": "527ebda4b91e9a695fe3ad8abbca7dc7bfb0f0480b74178168ac587e64f6291d"
+  },
+  "mattress-with-pump.webp": {
+    "kind": "vendor_product_image",
+    "synthetic": false,
+    "sources": ["/images/havnby-flatcore-hybrid.webp"],
+    "source_urls": ["https://havnby.com/products/flatcore-hybrid-support-mattress-for-tesla-model-y"],
+    "sha256": "28a93634f49fe18c61d7f667484963f23409238b8b69f57dd25636b5d24f7237"
+  },
+  "model-x-camping.webp": {
+    "kind": "vendor_product_image",
+    "synthetic": false,
+    "sources": [
+      "/images/havnby-cloudcore.webp",
+      "/images/novapads-auto-leveling.webp",
+      "/images/snuuzu-model-y-tesla-mattress.webp"
+    ],
+    "source_urls": [
+      "https://havnby.com/products/cloudcore-hybrid-support-mattress-for-tesla-model-s-3-x-y",
+      "https://novapads.com/",
+      "https://www.snuuzu.com/products/snuuzu-model-y"
+    ],
+    "sha256": "057263304ea3be58258e31aee8805db8a361ef4c0e3addbd7a3de2e5da0f481b"
+  },
+  "quietest-mattress.webp": {
+    "kind": "vendor_product_image",
+    "synthetic": false,
+    "sources": ["/images/snuuzu-model-3-tesla-mattress.webp"],
+    "source_urls": ["https://www.snuuzu.com/products/snuuzu-model-3"],
+    "sha256": "2b04b248dfdd9acb581b03abf568a0054851c89870d20d246f7f936ab0a9b566"
+  },
+  "tesla-mattress-ranking.webp": {
+    "kind": "vendor_product_image",
+    "synthetic": false,
+    "sources": [
+      "/images/snuuzu-model-y-tesla-mattress.webp",
+      "/images/tesmat-luxe-model-y-tesla-mattress.webp",
+      "/images/havnby-cloudcore-model-y.webp",
+      "/images/novapads-model-y-pro.webp"
+    ],
+    "source_urls": [
+      "https://www.snuuzu.com/products/snuuzu-model-y",
+      "https://www.tesmat.com/collections/all",
+      "https://havnby.com/products/cloudcore-hybrid-support-mattress-for-tesla-model-s-3-x-y",
+      "https://novapads.com/"
+    ],
+    "sha256": "d1b00b8b298222bf7543d6cb5db8c2d605e472ad9ef33853b0a4e94d34804e8f"
+  },
+  "havnby-vs-novapads-editorial-v2.webp": {
+    "kind": "vendor_product_image",
+    "synthetic": false,
+    "sources": [
+      "/images/havnby-flatcore-hybrid.webp",
+      "/images/novapads-model-y-pro.webp"
+    ],
+    "source_urls": [
+      "https://havnby.com/products/flatcore-hybrid-support-mattress-for-tesla-model-y",
+      "https://novapads.com/"
+    ],
+    "sha256": "2b67acbe7cc1982bcdc97155206613c7ba102ddbfb708398afd14c30ce2e1809"
+  },
+  "snuuzu-vs-havnby-editorial-v2.webp": {
+    "kind": "vendor_product_image",
+    "synthetic": false,
+    "sources": [
+      "/images/snuuzu-model-y-tesla-mattress.webp",
+      "/images/havnby-flatcore-hybrid.webp"
+    ],
+    "source_urls": [
+      "https://www.snuuzu.com/products/snuuzu-model-y",
+      "https://havnby.com/products/flatcore-hybrid-support-mattress-for-tesla-model-y"
+    ],
+    "sha256": "7394d0ffe2049e71efb294a84d51f03824d401cdc5100ca25316d1e4996e978f"
+  },
+  "snuuzu-vs-novapads-editorial-v2.webp": {
+    "kind": "vendor_product_image",
+    "synthetic": false,
+    "sources": [
+      "/images/snuuzu-model-y-tesla-mattress.webp",
+      "/images/novapads-model-y-pro.webp"
+    ],
+    "source_urls": [
+      "https://www.snuuzu.com/products/snuuzu-model-y",
+      "https://novapads.com/"
+    ],
+    "sha256": "bf03a9a663abe3b7d3979b9dc6d8cef50f6ce3b6ef8b1f8e00027b5e103b630f"
+  },
+  "hero-bg.webp": {
+    "kind": "vendor_product_image",
+    "synthetic": false,
+    "sources": ["/images/novapads-model-y-pro.webp"],
+    "source_urls": ["https://novapads.com/"],
+    "sha256": "b73ff40efafa9bad58b3daacda13592d2a1c241579459300584604d5f0e31712"
+  },
+  "og-image.jpg": {
+    "kind": "vendor_product_image",
+    "synthetic": false,
+    "sources": [
+      "/images/snuuzu-model-y-tesla-mattress.webp",
+      "/images/tesmat-luxe-model-y-tesla-mattress.webp",
+      "/images/novapads-model-y-pro.webp"
+    ],
+    "source_urls": [
+      "https://www.snuuzu.com/products/snuuzu-model-y",
+      "https://www.tesmat.com/collections/all",
+      "https://novapads.com/"
+    ],
+    "sha256": "95884a8e364fd65c6a2beae46882a2630a48e736da51cee42e658198ba7d8c0d"
+  }
+}

@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#2d4a3e">
+    <meta name="theme-color" content="#1f1d19">
 
     <!-- Primary Meta Tags -->
     <title>{{t.vs_havnby_autolevel_vs_foam.meta_title}}</title>
@@ -22,17 +22,17 @@
     <meta property="og:url" content="{{pageUrl}}">
     <meta property="og:title" content="{{t.vs_havnby_autolevel_vs_foam.og_title}}">
     <meta property="og:description" content="{{t.vs_havnby_autolevel_vs_foam.og_description}}">
-    <meta property="og:image" content="https://teslamattress.com/images/havnby-foam-tesla-mattress.jpg">
+    <meta property="og:image" content="https://teslamattress.com/images/havnby-cloudcore.webp">
     <meta property="og:site_name" content="Teslamattress">
     <meta property="og:locale" content="{{ogLocale}}">
     {{ogLocaleAlternates}}
     <meta property="article:published_time" content="2026-02-19">
-    <meta property="article:modified_time" content="2026-02-19">
+    <meta property="article:modified_time" content="{{buildDate}}">
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{t.vs_havnby_autolevel_vs_foam.twitter_title}}">
     <meta name="twitter:description" content="{{t.vs_havnby_autolevel_vs_foam.twitter_description}}">
-    <meta name="twitter:image" content="https://teslamattress.com/images/havnby-foam-tesla-mattress.jpg">
+    <meta name="twitter:image" content="https://teslamattress.com/images/havnby-cloudcore.webp">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,9 +45,9 @@
         body{font-family:'Source Sans 3',-apple-system,sans-serif;line-height:1.7;color:var(--text);background:var(--warm-white)}
     </style>
 
-    <link rel="stylesheet" href="/styles.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/styles.css">
     <noscript><link rel="stylesheet" href="/styles.css"></noscript>
-    <link rel="stylesheet" href="/vs/vs.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/vs/vs.css">
     <noscript><link rel="stylesheet" href="/vs/vs.css"></noscript>
 
     <!-- JSON-LD -->
@@ -61,7 +61,7 @@
         "image": "https://teslamattress.com/images/og-image.jpg",
         "mainEntityOfPage": {
                 "@type": "WebPage",
-                "@id": "https://teslamattress.com/vs/havnby-autolevel-vs-foam"
+                "@id": "https://teslamattress.com/vs/havnby-flatcore-vs-cloudcore"
         },
         "author": {
                 "@type": "Person",
@@ -106,8 +106,8 @@
                 {
                         "@type": "ListItem",
                         "position": 3,
-                        "name": "Havnby Autolevel vs Foam",
-                        "item": "https://teslamattress.com/{{localePath}}vs/havnby-autolevel-vs-foam"
+                        "name": "Havnby FlatCore vs CloudCore",
+                        "item": "https://teslamattress.com/{{localePath}}vs/havnby-flatcore-vs-cloudcore"
                 }
         ]
 }
@@ -126,7 +126,7 @@
                         "item": {
                                 "@type": "Product",
                                 "name": "{{t.vs_havnby_autolevel_vs_foam.jsonld_3_name_3}}",
-                                "image": "https://havnby.com/cdn/shop/files/autolevel-foam-tesla-mattress.jpg",
+                                "image": "https://teslamattress.com/images/havnby-flatcore-hybrid.webp",
                                 "brand": {
                                         "@type": "Brand",
                                         "name": "Havnby"
@@ -153,7 +153,7 @@
                         "item": {
                                 "@type": "Product",
                                 "name": "{{t.vs_havnby_autolevel_vs_foam.jsonld_3_name_4}}",
-                                "image": "https://teslamattress.com/images/havnby-foam-tesla-mattress.jpg",
+                                "image": "https://teslamattress.com/images/havnby-cloudcore.webp",
                                 "brand": {
                                         "@type": "Brand",
                                         "name": "Havnby"
@@ -162,7 +162,7 @@
                                         "@type": "Review",
                                         "reviewRating": {
                                                 "@type": "Rating",
-                                                "ratingValue": 7.6,
+                                                "ratingValue": 8.0,
                                                 "bestRating": 10,
                                                 "worstRating": 1
                                         },
@@ -221,8 +221,8 @@
 <body>
     <nav class="navbar">
         <a href="{{localeHome}}" class="logo">Teslamattress</a>
-        <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-        <ul class="nav-links">
+        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span><span></span></button>
+        <ul class="nav-links" id="primary-navigation">
             <li><a href="/{{localePath}}reviews">{{t.shared.nav_reviews}}</a></li>
             <li><a href="/{{localePath}}vs">{{t.shared.nav_compare}}</a></li>
             <li><a href="/{{localePath}}guides">{{t.shared.nav_guides}}</a></li>
@@ -239,17 +239,17 @@
             <nav class="breadcrumb" aria-label="Breadcrumb" style="color: rgba(255,255,255,0.7);">
                 <a href="/{{localePath}}" style="color: rgba(255,255,255,0.8);">Home</a> &rsaquo;
                 <a href="/{{localePath}}vs" style="color: rgba(255,255,255,0.8);">Comparisons</a> &rsaquo;
-                <span>Havnby Autolevel vs Foam</span>
+                <span>Havnby FlatCore vs CloudCore</span>
             </nav>
             <div class="vs-hero-matchup">
                 <div class="vs-hero-brand">
-                    <span class="brand-name">Autolevel</span>
+                    <span class="brand-name">FlatCore</span>
                     <span class="brand-score">8.6/10</span>
                 </div>
                 <span class="vs-hero-vs">VS</span>
                 <div class="vs-hero-brand">
-                    <span class="brand-name">Foam</span>
-                    <span class="brand-score">7.6/10</span>
+                    <span class="brand-name">CloudCore</span>
+                    <span class="brand-score">8.0/10</span>
                 </div>
             </div>
             <h1>{{t.vs_havnby_autolevel_vs_foam.h1}}</h1>
@@ -263,8 +263,8 @@
                 <h2>{{t.vs_havnby_autolevel_vs_foam.h2}}</h2>
                 <p>{{t.vs_havnby_autolevel_vs_foam.p_2}}</p>
                 <div class="verdict-winner">
-                    <span class="winner-label">Our Pick:</span>
-                    <span>Autolevel, now the FlatCore Hybrid, for comfort (the Foam is discontinued)</span>
+                    <span class="winner-label">Choose by vehicle and profile:</span>
+                    <span>FlatCore is the deeper Model Y specialist; CloudCore is the lighter S/3/X/Y option</span>
                 </div>
             </div>
         </section>
@@ -276,60 +276,60 @@
                 <thead>
                     <tr>
                         <th>{{t.shared.th_feature}}</th>
-                        <th>{{t.shared.th_havnby_autolevel}}</th>
-                        <th>{{t.shared.th_havnby_foam}}</th>
+                        <th>Havnby FlatCore Foam Mattress</th>
+                        <th>Havnby CloudCore Foam Mattress</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Our Score</td>
                         <td class="winner">8.6/10</td>
-                        <td>7.6/10</td>
+                        <td>8.0/10</td>
                     </tr>
                     <tr>
                         <td>Price</td>
                         <td>$509</td>
-                        <td>Discontinued (was $259)</td>
+                        <td>$399</td>
                     </tr>
                     <tr>
                         <td>Type</td>
                         <td>Air-foam hybrid</td>
-                        <td>Pure foam</td>
+                        <td>Foam + air</td>
                     </tr>
                     <tr>
                         <td>Thickness</td>
-                        <td class="winner">19 cm (7.5")</td>
-                        <td>11.4 cm (4.5")</td>
+                        <td>7.9–19 cm shaped profile</td>
+                        <td>11.5 cm</td>
                     </tr>
                     <tr>
                         <td>Self-Inflating</td>
                         <td class="winner">Yes (built-in pump)</td>
-                        <td>No pump needed</td>
+                        <td>Yes (built-in pump)</td>
                     </tr>
                     <tr>
                         <td>Surface Leveling</td>
-                        <td class="winner">Wedge design</td>
-                        <td>Standard</td>
+                        <td>Shaped support profile</td>
+                        <td>Lower-profile cross-model support</td>
                     </tr>
                     <tr>
                         <td>Compatibility</td>
                         <td>Model Y only</td>
-                        <td class="winner">Model Y + Model 3</td>
+                        <td>Model S, 3, X and Y; select year</td>
                     </tr>
                     <tr>
                         <td>Weight</td>
-                        <td>Heavier</td>
-                        <td class="winner">Lighter (~8 lbs)</td>
+                        <td>5.08 kg (seller specification)</td>
+                        <td>3.95 kg (seller specification)</td>
                     </tr>
                     <tr>
                         <td>Setup Complexity</td>
-                        <td>Press button, wait 2-3 min</td>
-                        <td class="winner">Unroll and use</td>
+                        <td>About 80 sec inflate (seller claim)</td>
+                        <td>About 70 sec inflate (seller claim)</td>
                     </tr>
                     <tr>
                         <td>Warranty</td>
-                        <td>5-year</td>
-                        <td>5-year</td>
+                        <td>3-year current warranty</td>
+                        <td>3-year current warranty</td>
                     </tr>
                     <tr>
                         <td>Discount Code</td>
@@ -339,7 +339,7 @@
                     <tr>
                         <td>Price After Discount</td>
                         <td>$458.10</td>
-                        <td>&mdash;</td>
+                        <td>$359.10</td>
                     </tr>
                 </tbody>
             </table>
@@ -352,23 +352,20 @@
                 <div class="vs-category-item">
                     <h3>{{t.vs_havnby_autolevel_vs_foam.h3}}</h3>
                     <ul style="margin-top: 0.5rem; padding-left: 1.2rem;">
-                        <li>67% thicker (19cm vs 11.4cm)</li>
-                        <li>Self-inflating - no effort required</li>
-                        <li>Wedge design levels the sleeping surface</li>
-                        <li>Better for side sleepers</li>
-                        <li>More comfortable for multi-night trips</li>
+                        <li>Current product with published warranty and trial</li>
+                        <li>Built-in 12V pump</li>
+                        <li>Shaped 7.9–19 cm profile</li>
+                        <li>Current Model Y year-range selections</li>
                         <li>Adjustable firmness via air</li>
                     </ul>
                 </div>
                 <div class="vs-category-item">
                     <h3>{{t.vs_havnby_autolevel_vs_foam.h3_2}}</h3>
                     <ul style="margin-top: 0.5rem; padding-left: 1.2rem;">
-                        <li>Cost $250 less while it was available ($259 vs $509)</li>
-                        <li>No pump or electronics to fail</li>
-                        <li>Works with Model Y AND Model 3</li>
-                        <li>Simpler - just unroll and use</li>
-                        <li>Lighter and easier to carry</li>
-                        <li>Good enough for occasional camping</li>
+                        <li>Current variants for Model S, 3, X and Y</li>
+                        <li>Lower 11.5 cm published profile</li>
+                        <li>Lighter 3.95 kg seller-specified weight</li>
+                        <li>Lower $399 observed list price</li>
                     </ul>
                 </div>
             </div>
@@ -382,22 +379,20 @@
                     <h3>{{t.vs_havnby_autolevel_vs_foam.h3_3}}</h3>
                     <ul style="margin-top: 0.5rem; padding-left: 1.2rem;">
                         <li>Have a Tesla Model Y</li>
-                        <li>Camp 5+ nights per year</li>
-                        <li>Want maximum comfort at mid-range price</li>
-                        <li>Are a side sleeper</li>
+                        <li>Want a product with current seller support</li>
+                        <li>Prefer a built-in 12V pump</li>
                         <li>Prefer adjustable firmness</li>
-                        <li>Don't mind a slightly heavier mattress</li>
+                        <li>Have checked the live warranty and trial terms</li>
                     </ul>
                 </div>
                 <div class="vs-category-item">
                     <h3>{{t.vs_havnby_autolevel_vs_foam.h3_4}}</h3>
                     <ul style="margin-top: 0.5rem; padding-left: 1.2rem;">
-                        <li>Have a Tesla Model 3 (or Y)</li>
-                        <li>Camp occasionally (1-5 nights/year)</li>
-                        <li>Can find remaining stock secondhand (Havnby has discontinued it)</li>
-                        <li>Prefer no-fuss simplicity</li>
-                        <li>Are a back sleeper</li>
-                        <li>Want the lightest option possible</li>
+                        <li>Have a Model S, 3, X or Y</li>
+                        <li>Want a lower and lighter current Havnby</li>
+                        <li>Prefer broader model coverage</li>
+                        <li>Can select the exact vehicle and year</li>
+                        <li>Want to spend less than FlatCore's $509</li>
                     </ul>
                 </div>
             </div>
@@ -430,8 +425,8 @@
         <section class="vs-full-reviews">
             <h3>{{t.vs_havnby_autolevel_vs_foam.h3_9}}</h3>
             <div class="vs-review-links">
-                <a href="/{{localePath}}reviews/havnby-autolevel" class="vs-review-link">Havnby Autolevel Full Review &rarr;</a>
-                <a href="/{{localePath}}reviews/havnby-foam" class="vs-review-link">Havnby Foam Full Review &rarr;</a>
+                <a href="/{{localePath}}reviews/havnby-autolevel" class="vs-review-link">Havnby FlatCore Full Review &rarr;</a>
+                <a href="/{{localePath}}reviews/havnby-cloudcore" class="vs-review-link">Havnby CloudCore Full Review &rarr;</a>
             </div>
         </section>
 
@@ -440,15 +435,23 @@
             <h2>{{t.vs_havnby_autolevel_vs_foam.h2_6}}</h2>
             <div class="vs-cta-buttons">
                 <a href="https://havnby.com/products/flatcore-hybrid-support-mattress-for-tesla-model-y?ref=discount" target="_blank" rel="noopener sponsored" class="vs-cta-btn">
-                    <span class="btn-brand">Havnby FlatCore Hybrid</span>
+                    <span class="btn-brand">Havnby FlatCore Foam Mattress</span>
                     <span class="btn-price">$509</span>
                     <span class="btn-discount">Use AWD for 10% off</span>
                 </a>
-                <a href="https://havnby.com/products/cloudcore-hybrid?ref=discount" target="_blank" rel="noopener sponsored" class="vs-cta-btn">
-                    <span class="btn-brand">Havnby CloudCore Hybrid</span>
+                <a href="https://havnby.com/products/cloudcore-hybrid-support-mattress-for-tesla-model-s-3-x-y?ref=discount" target="_blank" rel="noopener sponsored" class="vs-cta-btn">
+                    <span class="btn-brand">Havnby CloudCore Foam Mattress</span>
                     <span class="btn-price">$399</span>
-                    <span class="btn-discount">Closest current model to the discontinued Foam. Use AWD for 10% off</span>
+                    <span class="btn-discount">Current S/3/X/Y option. Use AWD for 10% off</span>
                 </a>
+            </div>
+        </section>
+        <section class="article-visual-guides" aria-labelledby="visual-guides-title">
+            <div class="article-visual-guides-heading"><span>Continue comparing</span><h2 id="visual-guides-title">Visual guides for your final shortlist</h2></div>
+            <div class="article-visual-guide-grid">
+                <a href="/{{localePath}}guides/best-tesla-mattresses" class="article-visual-guide-card"><img src="/images/tesla-mattress-ranking.webp" alt="Tesla mattress products from Snuuzu, TESMAT, Havnby and NovaPads" width="1344" height="768" loading="lazy"><span>Compare all mattress options</span></a>
+                <a href="/{{localePath}}guides/best-tesla-mattress-for-couples" class="article-visual-guide-card"><img src="/images/mattress-for-couples.webp" alt="TESMAT and Havnby Tesla mattress product images" width="1344" height="768" loading="lazy"><span>Plan a setup for two</span></a>
+                <a href="/{{localePath}}faq/how-to-use-tesla-camp-mode" class="article-visual-guide-card"><img src="/images/camp-mode-night.webp" alt="TESMAT mattress fitted inside a Tesla for overnight camping" width="1344" height="768" loading="lazy"><span>Use Camp Mode overnight</span></a>
             </div>
         </section>
     </main>

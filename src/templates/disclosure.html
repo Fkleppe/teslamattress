@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#2d4a3e">
+    <meta name="theme-color" content="#1f1d19">
     <title>{{t.disclosure.meta_title}}</title>
     <meta name="description" content="{{t.disclosure.meta_description}}">
     <meta name="robots" content="noindex, follow">
@@ -26,6 +26,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="{{t.disclosure.twitter_title}}">
     <meta name="twitter:description" content="{{t.disclosure.twitter_description}}">
+    <meta name="twitter:image" content="https://teslamattress.com/images/og-image.jpg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,7 +49,7 @@
     </style>
 
     <!-- Stylesheet (deferred) -->
-    <link rel="stylesheet" href="/styles.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/styles.css">
     <noscript><link rel="stylesheet" href="/styles.css"></noscript>
 
     <!-- JSON-LD -->
@@ -91,10 +92,10 @@
 <body>
     <nav class="navbar">
         <a href="{{localeHome}}" class="logo">Teslamattress</a>
-        <button class="menu-toggle" aria-label="Toggle menu">
+        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-navigation">
             <span></span><span></span><span></span>
         </button>
-        <ul class="nav-links">
+        <ul class="nav-links" id="primary-navigation">
             <li><a href="/{{localePath}}reviews">{{t.shared.nav_reviews}}</a></li>
             <li><a href="/{{localePath}}vs">{{t.shared.nav_compare}}</a></li>
             <li><a href="/{{localePath}}guides">{{t.shared.nav_guides}}</a></li>
@@ -106,7 +107,11 @@
     </nav>
     <div class="menu-overlay"></div>
 
-    <main style="max-width: 800px; margin: 0 auto; padding: 6rem 2rem 4rem;">
+    <main class="legal-page" style="max-width: 800px; margin: 0 auto; padding: 6rem 2rem 4rem;">
+        <figure class="legal-visual">
+            <img src="/images/hero-bg.webp" alt="Tesla camping setup in a forest" width="1200" height="800" fetchpriority="high">
+            <figcaption>How this independent site is funded</figcaption>
+        </figure>
         <h1 style="font-family: 'Libre Baskerville', Georgia, serif; margin-bottom: 2rem;">{{t.disclosure.h1}}</h1>
 
         <p style="line-height: 1.8; margin-bottom: 1.5rem;">
@@ -125,19 +130,19 @@
         <ul style="line-height: 1.8; margin-bottom: 1.5rem; padding-left: 1.5rem;">
             <li>Snuuzu (snuuzu.com, us.snuuzu.com)</li>
             <li>Havnby (havnby.com)</li>
-            <li>NovaPads (novapads.com)</li>
+            <li>NovaPads (via its current Shopify storefront)</li>
             <li>TESMAT (tesmat.com)</li>
             <li>Other partner brands mentioned on this site</li>
         </ul>
 
         <h2 style="font-size: 1.3rem; margin: 2rem 0 1rem;">{{t.disclosure.h2_3}}</h2>
         <p style="line-height: 1.8; margin-bottom: 1.5rem;">
-            The discount codes we share (KLEPPE, AWD, 123, etc.) are negotiated partnerships with these brands. When you use our codes, you get a discount and we may receive a commission. This is how we keep the site running and continue testing products.
+            The discount codes we share (including KLEPPE and AWD) are partner codes. When you use our codes, you get the stated discount and we may receive a commission. This helps fund ongoing product research, price checks, and site updates.
         </p>
 
         <h2 style="font-size: 1.3rem; margin: 2rem 0 1rem;">{{t.disclosure.h2_4}}</h2>
         <p style="line-height: 1.8; margin-bottom: 1.5rem;">
-            Our reviews and ratings are based on our own testing and opinions. Affiliate relationships do not influence our scores or recommendations. We have given low scores to products from affiliate partners when warranted.
+            Our reviews and ratings are based on manufacturer specifications, fitment analysis, price checks, and a synthesis of published owner feedback. We do not claim hands-on sleep testing. Affiliate relationships do not determine our scores or recommendations, and our methodology explains the evidence and limitations behind them.
         </p>
 
         <h2 style="font-size: 1.3rem; margin: 2rem 0 1rem;">{{t.disclosure.h2_5}}</h2>
@@ -182,6 +187,7 @@
                 navLinks.classList.toggle('active');
                 menuOverlay.classList.toggle('active');
                 document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+                menuToggle.setAttribute('aria-expanded', String(navLinks.classList.contains('active')));
             }
             menuToggle.addEventListener('click', toggleMenu);
             menuOverlay.addEventListener('click', toggleMenu);

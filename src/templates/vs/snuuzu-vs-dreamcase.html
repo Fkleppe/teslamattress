@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#2d4a3e">
+    <meta name="theme-color" content="#1f1d19">
 
     <!-- Primary Meta Tags -->
     <title>{{t.vs_snuuzu_vs_dreamcase.meta_title}}</title>
@@ -27,7 +27,7 @@
     <meta property="og:locale" content="{{ogLocale}}">
     {{ogLocaleAlternates}}
     <meta property="article:published_time" content="2026-02-19">
-    <meta property="article:modified_time" content="2026-02-19">
+    <meta property="article:modified_time" content="{{buildDate}}">
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{t.vs_snuuzu_vs_dreamcase.twitter_title}}">
@@ -46,9 +46,9 @@
         body{font-family:'Source Sans 3',-apple-system,sans-serif;line-height:1.7;color:var(--text);background:var(--warm-white)}
     </style>
 
-    <link rel="stylesheet" href="/styles.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/styles.css">
     <noscript><link rel="stylesheet" href="/styles.css"></noscript>
-    <link rel="stylesheet" href="/vs/vs.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/vs/vs.css">
     <noscript><link rel="stylesheet" href="/vs/vs.css"></noscript>
 
     <!-- JSON-LD -->
@@ -221,8 +221,8 @@
 <body>
     <nav class="navbar">
         <a href="{{localeHome}}" class="logo">Teslamattress</a>
-        <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-        <ul class="nav-links">
+        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span><span></span></button>
+        <ul class="nav-links" id="primary-navigation">
             <li><a href="/{{localePath}}reviews">{{t.shared.nav_reviews}}</a></li>
             <li><a href="/{{localePath}}vs">{{t.shared.nav_compare}}</a></li>
             <li><a href="/{{localePath}}guides">{{t.shared.nav_guides}}</a></li>
@@ -243,7 +243,7 @@
             </nav>
             <div class="vs-hero-matchup">
                 <div class="vs-hero-brand">
-                    <img src="https://www.snuuzu.com/cdn/shop/files/BAG_LOGO_Black.png?width=200&format=webp" alt="Snuuzu" loading="eager" width="120" height="40">
+                    <img src="/images/snuuzu-logo.webp" alt="Snuuzu" loading="eager" width="120" height="40">
                     <span class="brand-score">9.4/10</span>
                 </div>
                 <span class="vs-hero-vs">VS</span>
@@ -263,8 +263,8 @@
                 <h2>{{t.vs_snuuzu_vs_dreamcase.h2}}</h2>
                 <p>{{t.vs_snuuzu_vs_dreamcase.p_2}}</p>
                 <div class="verdict-winner">
-                    <span class="winner-label">Our Pick:</span>
-                    <span>Snuuzu (clear winner in the premium segment)</span>
+                    <span class="winner-label">Decision guide:</span>
+                    <span>Snuuzu for an adjustable air layer | Dreamcase for a pump-free modular bed</span>
                 </div>
             </div>
         </section>
@@ -289,22 +289,17 @@
                     <tr>
                         <td>Price</td>
                         <td>€899</td>
-                        <td class="winner">€699+</td>
-                    </tr>
-                    <tr>
-                        <td>Country</td>
-                        <td>Netherlands</td>
-                        <td>Germany</td>
+                        <td>Custom order; request current quote</td>
                     </tr>
                     <tr>
                         <td>Thickness</td>
-                        <td class="winner">20 cm (7.9")</td>
-                        <td>~15 cm (6")</td>
+                        <td>20 cm (seller specification)</td>
+                        <td>60 mm foam + 60 mm suspension base</td>
                     </tr>
                     <tr>
                         <td>Type</td>
-                        <td class="winner">Multi-layer foam + air</td>
-                        <td>Foam only</td>
+                        <td>Foam + adjustable air layer</td>
+                        <td>Dual memory foam + suspension base</td>
                     </tr>
                     <tr>
                         <td>Pump</td>
@@ -313,8 +308,8 @@
                     </tr>
                     <tr>
                         <td>Top Material</td>
-                        <td class="winner">Organic Lyocell</td>
-                        <td>Standard fabric</td>
+                        <td>Washable Tencel cover</td>
+                        <td>Check current cover specification</td>
                     </tr>
                     <tr>
                         <td>Adjustable Firmness</td>
@@ -323,18 +318,13 @@
                     </tr>
                     <tr>
                         <td>Surface Leveling</td>
-                        <td class="winner">Patent-pending tech</td>
-                        <td>Basic</td>
+                        <td>Adjustable air leveling layer</td>
+                        <td>Integrated suspension base</td>
                     </tr>
                     <tr>
                         <td>Packed Size</td>
-                        <td>Sub-trunk</td>
-                        <td>Bulky</td>
-                    </tr>
-                    <tr>
-                        <td>Trustpilot Rating</td>
-                        <td class="winner">4.7/5</td>
-                        <td>4.3/5</td>
+                        <td>74 × 32 cm (seller specification)</td>
+                        <td>Confirm for current configuration</td>
                     </tr>
                     <tr>
                         <td>Discount Code</td>
@@ -349,8 +339,8 @@
         <section class="vs-category">
             <h2>{{t.vs_snuuzu_vs_dreamcase.h2_3}}</h2>
             <div style="background: white; padding: 2rem; border-radius: 12px; margin-bottom: 2rem;">
-                <p style="line-height: 1.8;">On paper and in owner feedback, the Snuuzu compares favorably on thickness (20cm vs 15cm), adjustable firmness, and setup convenience, since its integrated rechargeable pump removes the manual inflation step. Public review scores point the same way: Snuuzu holds a 4.7/5 Trustpilot rating against 4.3/5 for the Dreamcase.</p>
-                <p style="margin-top: 1rem; line-height: 1.8;">Feedback from owners who upgraded from a Dreamcase follows a consistent pattern, with comfort, fit, and overall build quality the most cited reasons for preferring the Snuuzu. The Dreamcase keeps two practical advantages: a lower price and no electronics to charge.</p>
+                <p style="line-height: 1.8;">Snuuzu publishes a 20 cm foam-and-air system with an integrated rechargeable pump. Dreamcase publishes a modular bed with 60 mm of dual memory foam and a 60 mm suspension base. Those are different constructions, not a controlled comfort result.</p>
+                <p style="margin-top: 1rem; line-height: 1.8;">Dreamcase's current Model Y page routed buyers to a custom order and did not show a standard price when checked. Request a quote, exact configuration, delivery estimate and return terms before making a value comparison.</p>
             </div>
         </section>
 
@@ -361,8 +351,8 @@
                 <div class="vs-category-item">
                     <h3>{{t.vs_snuuzu_vs_dreamcase.h3}}</h3>
                     <ul style="margin-top: 0.5rem; padding-left: 1.2rem;">
-                        <li>Patent-pending asymmetrical air chambers create a truly flat surface</li>
-                        <li>Multi-layer construction (Lyocell + foam + air + waterproof base)</li>
+                        <li>Published 20 cm foam-and-air system</li>
+                        <li>Washable Tencel cover and adjustable air layer</li>
                         <li>Integrated rechargeable pump vs no pump on Dreamcase</li>
                         <li>Adjustable firmness via air pressure control</li>
                     </ul>
@@ -370,10 +360,10 @@
                 <div class="vs-category-item">
                     <h3>{{t.vs_snuuzu_vs_dreamcase.h3_2}}</h3>
                     <ul style="margin-top: 0.5rem; padding-left: 1.2rem;">
-                        <li>33% thicker (20cm vs 15cm)</li>
-                        <li>Organic Lyocell top layer is more breathable</li>
-                        <li>Better pressure relief for side sleepers</li>
-                        <li>Higher Trustpilot rating (4.7 vs 4.3)</li>
+                        <li>60 mm dual memory-foam mattress</li>
+                        <li>Separate 60 mm suspension base</li>
+                        <li>Pump-free modular setup</li>
+                        <li>Current page lists Model Y five- and seven-seat fit</li>
                     </ul>
                 </div>
             </div>
@@ -385,9 +375,9 @@
             <div style="background: white; padding: 2rem; border-radius: 12px;">
                 <p>{{t.vs_snuuzu_vs_dreamcase.p_4}}</p>
                 <ul style="margin-top: 1rem; padding-left: 1.5rem;">
-                    <li>You want to save €200 and are okay with "good enough" comfort</li>
-                    <li>You prefer no electronics (pure foam, no pump)</li>
-                    <li>You already own a Dreamcase and are considering an upgrade (yes, upgrade to Snuuzu)</li>
+                    <li>You prefer a pump-free modular foam and suspension system</li>
+                    <li>The seller confirms fit for your exact Model Y configuration</li>
+                    <li>The current quote, delivery estimate and return terms meet your needs</li>
                 </ul>
                 <p style="margin-top: 1rem;">{{t.vs_snuuzu_vs_dreamcase.p_5}}</p>
             </div>
@@ -428,16 +418,20 @@
         <section class="vs-cta">
             <h2>{{t.vs_snuuzu_vs_dreamcase.h2_7}}</h2>
             <div class="vs-cta-buttons">
-                <a href="https://www.snuuzu.com?bg_ref=s7fluA5re6" target="_blank" rel="noopener sponsored" class="vs-cta-btn">
-                    <span class="btn-brand">Snuuzu</span>
-                    <span class="btn-price">€899 / $899</span>
-                    <span class="btn-discount">Use KLEPPE for 10% off</span>
-                </a>
+                <span class="snuuzu-region-actions"><a href="https://www.snuuzu.com?bg_ref=s7fluA5re6" target="_blank" rel="noopener sponsored" class="vs-cta-btn">Snuuzu Europe</a><a href="https://us.snuuzu.com?bg_ref=QBfsWJtiUJ" target="_blank" rel="noopener sponsored" class="vs-cta-btn">Snuuzu USA &amp; Canada</a></span>
                 <a href="/{{localePath}}reviews/snuuzu-model-y" class="vs-cta-btn" style="background: var(--cream);">
                     <span class="btn-brand" style="color: var(--forest-dark);">Read Full Review</span>
                     <span class="btn-price" style="color: #666;">Snuuzu Model Y</span>
                     <span class="btn-discount" style="background: var(--forest-dark);">9.4/10 Score</span>
                 </a>
+            </div>
+        </section>
+        <section class="article-visual-guides" aria-labelledby="visual-guides-title">
+            <div class="article-visual-guides-heading"><span>Continue comparing</span><h2 id="visual-guides-title">Visual guides for your final shortlist</h2></div>
+            <div class="article-visual-guide-grid">
+                <a href="/{{localePath}}guides/best-tesla-mattresses" class="article-visual-guide-card"><img src="/images/tesla-mattress-ranking.webp" alt="Tesla mattress products from Snuuzu, TESMAT, Havnby and NovaPads" width="1344" height="768" loading="lazy"><span>Compare all mattress options</span></a>
+                <a href="/{{localePath}}guides/best-tesla-mattress-for-couples" class="article-visual-guide-card"><img src="/images/mattress-for-couples.webp" alt="TESMAT and Havnby Tesla mattress product images" width="1344" height="768" loading="lazy"><span>Plan a setup for two</span></a>
+                <a href="/{{localePath}}faq/how-to-use-tesla-camp-mode" class="article-visual-guide-card"><img src="/images/camp-mode-night.webp" alt="TESMAT mattress fitted inside a Tesla for overnight camping" width="1344" height="768" loading="lazy"><span>Use Camp Mode overnight</span></a>
             </div>
         </section>
     </main>

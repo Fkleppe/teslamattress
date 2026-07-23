@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#2d4a3e">
+    <meta name="theme-color" content="#1f1d19">
 
     <title>{{t.PAGEKEY.meta_title}}</title>
     <meta name="description" content="{{t.PAGEKEY.meta_description}}">
@@ -16,7 +16,7 @@
     <meta property="og:url" content="{{pageUrl}}">
     <meta property="og:title" content="{{t.PAGEKEY.og_title}}">
     <meta property="og:description" content="{{t.PAGEKEY.og_description}}">
-    <meta property="og:image" content="https://teslamattress.com/images/og-image.jpg">
+    <meta property="og:image" content="https://teslamattress.com{{t.PAGEKEY.inline_image}}">
     <meta property="og:site_name" content="Teslamattress">
     <meta property="og:locale" content="{{ogLocale}}">
     {{ogLocaleAlternates}}
@@ -24,7 +24,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{t.PAGEKEY.og_title}}">
     <meta name="twitter:description" content="{{t.PAGEKEY.og_description}}">
-    <meta name="twitter:image" content="https://teslamattress.com/images/og-image.jpg">
+    <meta name="twitter:image" content="https://teslamattress.com{{t.PAGEKEY.inline_image}}">
 
     <link rel="icon" href="/favicon.ico" sizes="32x32">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -70,30 +70,30 @@
         footer a{color:var(--cream)}
     </style>
 
-    <link rel="stylesheet" href="/styles.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/styles.css">
     <noscript><link rel="stylesheet" href="/styles.css"></noscript>
 
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "QAPage",
+        "@type": "Article",
         "inLanguage": "{{htmlLang}}",
-        "mainEntity": {
-            "@type": "Question",
-            "name": "{{t.PAGEKEY.question}}",
-            "answerCount": 1,
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "{{t.PAGEKEY.answer_short}}",
-                "author": {
-                    "@type": "Person",
-                    "name": "Fredrik Mastouri",
-                    "url": "https://teslamattress.com/about"
-                }
-            }
-        },
+        "headline": "{{t.PAGEKEY.question}}",
+        "description": "{{t.PAGEKEY.answer_short}}",
         "datePublished": "{{t.PAGEKEY.date_published}}",
-        "dateModified": "{{buildDate}}"
+        "dateModified": "{{buildDate}}",
+        "mainEntityOfPage": "{{canonicalUrl}}",
+        "image": "https://teslamattress.com{{t.PAGEKEY.inline_image}}",
+        "author": {
+            "@type": "Person",
+            "name": "Fredrik Mastouri",
+            "url": "https://teslamattress.com/about"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Teslamattress",
+            "url": "https://teslamattress.com/"
+        }
     }
     </script>
     <script type="application/ld+json">
@@ -111,8 +111,8 @@
 <body>
     <nav class="navbar">
         <a href="{{localeHome}}" class="logo">Teslamattress</a>
-        <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-        <ul class="nav-links">
+        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span><span></span></button>
+        <ul class="nav-links" id="primary-navigation">
             <li><a href="/{{localePath}}reviews">{{t.shared.nav_reviews}}</a></li>
             <li><a href="/{{localePath}}vs">{{t.shared.nav_compare}}</a></li>
             <li><a href="/{{localePath}}guides">{{t.shared.nav_guides}}</a></li>
@@ -122,6 +122,7 @@
         </ul>
         {{langSwitcher}}
     </nav>
+    <div class="menu-overlay"></div>
 
     <header class="faq-hero">
         <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -131,27 +132,53 @@
         </nav>
         <h1>{{t.PAGEKEY.h1}}</h1>
         <div class="faq-meta">
-            By <a href="/{{localePath}}about">Fredrik Mastouri</a> &middot; Updated {{buildDate}}
+            By <a href="/{{localePath}}about">Fredrik Mastouri</a> &middot; Updated {{buildDateHuman}}
         </div>
     </header>
 
     <main class="faq-main">
         <div class="faq-tldr"><strong>Short answer:</strong> {{t.PAGEKEY.answer_short}}</div>
 
+        <figure class="article-visual">
+            <img src="{{t.PAGEKEY.inline_image}}" alt="{{t.PAGEKEY.inline_alt}}" width="1376" height="768" loading="eager" fetchpriority="high">
+            <figcaption>{{t.PAGEKEY.inline_caption}}</figcaption>
+        </figure>
+
         {{t.PAGEKEY.body_html}}
+
+        {{t.PAGEKEY.cta_html}}
+
+        <section class="article-visual-guides" aria-labelledby="visual-guides-title">
+            <div class="article-visual-guides-heading">
+                <span>Continue with a visual guide</span>
+                <h2 id="visual-guides-title">Plan the whole Tesla sleep setup</h2>
+            </div>
+            <div class="article-visual-guide-grid">
+                <a href="/{{localePath}}guides/best-tesla-mattresses" class="article-visual-guide-card">
+                    <img src="/images/tesla-mattress-ranking.webp" alt="Tesla mattress products from Snuuzu, TESMAT, Havnby and NovaPads" width="1344" height="768" loading="lazy">
+                    <span>Compare mattress formats</span>
+                </a>
+                <a href="/{{localePath}}faq/how-to-use-tesla-camp-mode" class="article-visual-guide-card">
+                    <img src="/images/camp-mode-night.webp" alt="TESMAT mattress fitted inside a Tesla for overnight camping" width="1344" height="768" loading="lazy">
+                    <span>Use Camp Mode overnight</span>
+                </a>
+                <a href="/{{localePath}}faq/how-to-prevent-condensation-while-sleeping-in-a-tesla" class="article-visual-guide-card">
+                    <img src="/images/condensation-control.webp" alt="TESMAT Solo mattress and storage bag for Tesla camping" width="1344" height="768" loading="lazy">
+                    <span>Control condensation</span>
+                </a>
+            </div>
+        </section>
 
         <div class="faq-related">
             <h3>Related guides &amp; reviews</h3>
             <ul>
-                <li><a href="/{{localePath}}guides/best-tesla-mattresses">10 Best Tesla Camping Mattresses (2026)</a></li>
-                <li><a href="/{{localePath}}guides/getting-started-tesla-camping">Getting Started With Tesla Camping</a></li>
-                <li><a href="/{{localePath}}guides/tesla-mattress-buying-guide">Tesla Mattress Buying Guide</a></li>
-                <li><a href="/{{localePath}}reviews">All Tesla mattress reviews</a></li>
+                {{t.PAGEKEY.related_links_html}}
             </ul>
         </div>
 
         <div class="faq-related">
-            <h3>Active Tesla mattress discount codes (verified July 2026)</h3>
+            <h3>Tesla mattress partner-code pages</h3>
+            <p>Each page shows its own recorded check date. Always confirm the saving in the live cart before paying.</p>
             <ul>
                 <li><a href="/{{localePath}}discounts/snuuzu">Snuuzu — code KLEPPE (10% off Model Y/3)</a></li>
                 <li><a href="/{{localePath}}discounts/havnby">Havnby — code AWD (10% off the FlatCore line)</a></li>
@@ -164,13 +191,39 @@
         </div>
 
         <div class="faq-cta">
-            <p>Ready to upgrade your Tesla camping setup?</p>
-            <a href="/{{localePath}}guides/best-tesla-mattresses">See our top 10 picks &rarr;</a>
+            <div class="faq-cta-copy">
+                <span class="faq-cta-kicker">Turn the answer into a shortlist</span>
+                <h2>Compare the products we currently track</h2>
+                <p>Check exact fit, observed price, pump type, warranty and the evidence limits before you buy.</p>
+            </div>
+            <div class="faq-cta-actions">
+                <a href="/{{localePath}}guides/best-tesla-mattresses" class="faq-cta-primary">Compare 11 options</a>
+                <a href="/{{localePath}}reviews" class="faq-cta-secondary">Browse full reviews</a>
+            </div>
         </div>
     </main>
 
     <footer>
         <p>&copy; 2026 Teslamattress. <a href="/{{localePath}}disclosure">Affiliate disclosure</a> &middot; <a href="/{{localePath}}about">About</a> &middot; <a href="/{{localePath}}methodology">How we review</a></p>
     </footer>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const menuOverlay = document.querySelector('.menu-overlay');
+
+        function toggleMenu() {
+            const isOpen = navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active', isOpen);
+            menuOverlay.classList.toggle('active', isOpen);
+            menuToggle.setAttribute('aria-expanded', String(isOpen));
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+        menuOverlay.addEventListener('click', toggleMenu);
+        navLinks.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+            if (navLinks.classList.contains('active')) toggleMenu();
+        }));
+    </script>
 </body>
 </html>

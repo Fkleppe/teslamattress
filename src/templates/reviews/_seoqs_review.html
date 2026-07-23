@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#2d4a3e">
+    <meta name="theme-color" content="#1f1d19">
 
     <title>{{t.PAGEKEY.meta_title}}</title>
     <meta name="description" content="{{t.PAGEKEY.meta_description}}">
@@ -16,7 +16,7 @@
     <meta property="og:url" content="{{pageUrl}}">
     <meta property="og:title" content="{{t.PAGEKEY.og_title}}">
     <meta property="og:description" content="{{t.PAGEKEY.og_description}}">
-    <meta property="og:image" content="https://teslamattress.com/images/og-image.jpg">
+    <meta property="og:image" content="{{t.PAGEKEY.image_path}}">
     <meta property="og:site_name" content="Teslamattress">
     <meta property="og:locale" content="{{ogLocale}}">
     {{ogLocaleAlternates}}
@@ -24,7 +24,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{t.PAGEKEY.og_title}}">
     <meta name="twitter:description" content="{{t.PAGEKEY.og_description}}">
-    <meta name="twitter:image" content="https://teslamattress.com/images/og-image.jpg">
+    <meta name="twitter:image" content="{{t.PAGEKEY.image_path}}">
 
     <link rel="icon" href="/favicon.ico" sizes="32x32">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -86,7 +86,7 @@
         footer a{color:var(--cream)}
     </style>
 
-    <link rel="stylesheet" href="/styles.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/styles.css">
     <noscript><link rel="stylesheet" href="/styles.css"></noscript>
 
     <script type="application/ld+json">
@@ -98,14 +98,7 @@
             "@type": "Product",
             "name": "{{t.PAGEKEY.product_name}}",
             "image": "{{t.PAGEKEY.image_path}}",
-            "brand": { "@type": "Brand", "name": "{{t.PAGEKEY.brand_name}}" },
-            "offers": {
-                "@type": "Offer",
-                "price": "{{t.PAGEKEY.price_value}}",
-                "priceCurrency": "{{t.PAGEKEY.price_currency}}",
-                "availability": "https://schema.org/InStock",
-                "url": "{{t.PAGEKEY.product_url}}"
-            }
+            "brand": { "@type": "Brand", "name": "{{t.PAGEKEY.brand_name}}" }
         },
         "reviewRating": {
             "@type": "Rating",
@@ -126,7 +119,19 @@
         },
         "datePublished": "{{t.PAGEKEY.date_published}}",
         "dateModified": "{{buildDate}}",
-        "reviewBody": "{{t.PAGEKEY.review_body_summary}}"
+        "reviewBody": "{{t.PAGEKEY.review_body_summary}}",
+        "positiveNotes": {
+            "@type": "ItemList",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "{{t.PAGEKEY.positive_notes}}" }
+            ]
+        },
+        "negativeNotes": {
+            "@type": "ItemList",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "{{t.PAGEKEY.negative_notes}}" }
+            ]
+        }
     }
     </script>
     <script type="application/ld+json">
@@ -144,8 +149,8 @@
 <body>
     <nav class="navbar">
         <a href="{{localeHome}}" class="logo">Teslamattress</a>
-        <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-        <ul class="nav-links">
+        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span><span></span></button>
+        <ul class="nav-links" id="primary-navigation">
             <li><a href="/{{localePath}}reviews">{{t.shared.nav_reviews}}</a></li>
             <li><a href="/{{localePath}}vs">{{t.shared.nav_compare}}</a></li>
             <li><a href="/{{localePath}}guides">{{t.shared.nav_guides}}</a></li>
@@ -154,68 +159,112 @@
         </ul>
         {{langSwitcher}}
     </nav>
+    <div class="menu-overlay"></div>
 
     <header class="review-hero">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="/{{localePath}}">Home</a> &rsaquo;
-            <a href="/{{localePath}}reviews">Reviews</a> &rsaquo;
-            <span>{{t.PAGEKEY.product_name}}</span>
-        </nav>
-        <h1>{{t.PAGEKEY.h1}}</h1>
-        <div class="review-meta-bar">
-            <span class="score-badge">{{t.PAGEKEY.score}}/10</span>
-            <span>By <a href="/{{localePath}}about">Fredrik Mastouri</a></span>
-            <span>Updated {{buildDate}}</span>
-            <span><a href="/{{localePath}}methodology">How we review</a></span>
-        </div>
-        <div style="font-size:.8rem;opacity:.8;margin-top:.5rem">
-            We may earn a commission through links on this page &middot; <a href="/{{localePath}}disclosure" style="color:inherit">affiliate disclosure</a>
+        <div class="review-hero-grid">
+            <div class="review-hero-copy">
+                <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <a href="/{{localePath}}">Home</a> &rsaquo;
+                    <a href="/{{localePath}}reviews">Reviews</a> &rsaquo;
+                    <span>{{t.PAGEKEY.product_name}}</span>
+                </nav>
+                <span class="eyebrow eyebrow-on-dark">Independent editorial review</span>
+                <h1>{{t.PAGEKEY.h1}}</h1>
+                <div class="review-meta-bar">
+                    <span class="score-badge">{{t.PAGEKEY.score}}/10</span>
+                    <span>By <a href="/{{localePath}}about">Fredrik Mastouri</a></span>
+                    <span>Updated {{buildDateHuman}}</span>
+                    <span><a href="/{{localePath}}methodology">How we review</a></span>
+                </div>
+                <div class="review-disclosure">
+                    We may earn a commission through links on this page &middot; <a href="/{{localePath}}disclosure">affiliate disclosure</a>
+                </div>
+            </div>
+            <figure class="review-hero-media">
+                <img src="{{pageImageRelative}}" alt="{{t.PAGEKEY.product_name}} Tesla camping mattress" width="1200" height="800" fetchpriority="high">
+                <figcaption>{{t.PAGEKEY.brand_name}} · {{t.PAGEKEY.score}}/10 editorial score</figcaption>
+            </figure>
         </div>
     </header>
 
     <main class="review-main">
         <div class="review-tldr">
-            <strong>The verdict:</strong> {{t.PAGEKEY.tldr}}
-            <p style="margin:1rem 0 0"><a href="{{t.PAGEKEY.affiliate_url}}" rel="sponsored noopener" class="cta-button" style="display:inline-block;background:#c9a961;color:var(--forest-dark);padding:.7rem 1.6rem;border-radius:50px;text-decoration:none;font-weight:600">{{t.PAGEKEY.cta_button}}</a></p>
+            <div class="review-tldr-meta">
+                <span>Quick take</span>
+                <span>{{t.PAGEKEY.score}} / 10</span>
+            </div>
+            <p class="review-tldr-copy">{{t.PAGEKEY.tldr}}</p>
+            <a href="{{t.PAGEKEY.affiliate_url}}" rel="sponsored noopener" class="review-tldr-link">{{t.PAGEKEY.cta_button}}</a>
         </div>
 
         {{t.PAGEKEY.body_html}}
 
         <div class="cta-block">
-            <h3>{{t.PAGEKEY.cta_heading}}</h3>
-            <p>{{t.PAGEKEY.cta_text}}</p>
-            <a href="{{t.PAGEKEY.affiliate_url}}" rel="sponsored noopener" class="cta-button">{{t.PAGEKEY.cta_button}}</a>
+            <div class="cta-block-copy">
+                <span class="cta-block-label">Seller listing checked {{buildDateHuman}}</span>
+                <h3>{{t.PAGEKEY.cta_heading}}</h3>
+                <p>{{t.PAGEKEY.cta_text}}</p>
+            </div>
+            <div class="cta-block-actions">
+                <a href="{{t.PAGEKEY.affiliate_url}}" rel="sponsored noopener" class="cta-button">{{t.PAGEKEY.cta_button}}</a>
+                <a href="/{{localePath}}methodology" class="cta-text-link">How we reached this verdict</a>
+            </div>
         </div>
+
+        <section class="article-visual-guides" aria-labelledby="visual-guides-title">
+            <div class="article-visual-guides-heading">
+                <span>Build the complete setup</span>
+                <h2 id="visual-guides-title">Three visual guides to read next</h2>
+            </div>
+            <div class="article-visual-guide-grid">
+                <a href="/{{localePath}}guides/best-tesla-mattresses" class="article-visual-guide-card">
+                    <img src="/images/tesla-mattress-ranking.webp" alt="Tesla mattress products from Snuuzu, TESMAT, Havnby and NovaPads" width="1344" height="768" loading="lazy">
+                    <span>Compare all mattress options</span>
+                </a>
+                <a href="/{{localePath}}guides/best-tesla-mattress-for-couples" class="article-visual-guide-card">
+                    <img src="/images/mattress-for-couples.webp" alt="TESMAT and Havnby Tesla mattress product images" width="1344" height="768" loading="lazy">
+                    <span>Plan a setup for two</span>
+                </a>
+                <a href="/{{localePath}}faq/how-to-prevent-condensation-while-sleeping-in-a-tesla" class="article-visual-guide-card">
+                    <img src="/images/condensation-control.webp" alt="TESMAT Solo mattress and storage bag for Tesla camping" width="1344" height="768" loading="lazy">
+                    <span>Control condensation</span>
+                </a>
+            </div>
+        </section>
 
         <div class="related-grid">
             <h3>Compare with other Tesla mattresses we've reviewed</h3>
             <ul>
-                <li><a href="/{{localePath}}reviews/snuuzu-model-y">Snuuzu Model Y (9.4/10) — Premium foam pick</a></li>
-                <li><a href="/{{localePath}}reviews/havnby-autolevel">Havnby FlatCore Hybrid (8.6/10) — Self-leveling, premium build</a></li>
-                <li><a href="/{{localePath}}reviews/tesery-novapads">NovaPads Air-Foam Pro (8.8/10) — 60-second built-in pump setup</a></li>
+                <li><a href="/{{localePath}}reviews/snuuzu-model-y">Snuuzu Model Y (9.4/10) — Premium foam-and-air system</a></li>
+                <li><a href="/{{localePath}}reviews/havnby-autolevel">Havnby FlatCore Foam Mattress (8.6/10) — Full-width Model Y leveling support</a></li>
+                <li><a href="/{{localePath}}reviews/havnby-solo">Havnby FlatCore Solo Edition (8.2/10) — One-person Model Y setup</a></li>
+                <li><a href="/{{localePath}}reviews/havnby-cloudcore">Havnby CloudCore Foam Mattress (8.0/10) — Current S/3/X/Y option</a></li>
+                <li><a href="/{{localePath}}reviews/tesery-novapads">NovaPads Air-Foam Pro (8.8/10) — Value-focused air-foam option</a></li>
+                <li><a href="/{{localePath}}reviews/novapads-auto-leveling">NovaPads Auto-Leveling (8.1/10) — New slope-correcting option</a></li>
                 <li><a href="/{{localePath}}reviews/tesmat-luxe-y">TESMAT Horizon Y (8.5/10) — Complete kit</a></li>
-                <li><a href="/{{localePath}}guides/best-tesla-mattresses">See the full top-10 ranking →</a></li>
+                <li><a href="/{{localePath}}guides/best-tesla-mattresses">See all current and tracked mattress options →</a></li>
             </ul>
         </div>
 
         <div class="related-grid">
-            <h3>All active Tesla mattress discount codes</h3>
+            <h3>Current partner-code pages</h3>
             <ul>
                 <li><a href="/{{localePath}}discounts/snuuzu"><strong>Snuuzu</strong> — code KLEPPE saves 10% (€90 off Model Y)</a></li>
-                <li><a href="/{{localePath}}discounts/havnby"><strong>Havnby</strong> — code AWD saves 10% on the FlatCore line</a></li>
+                <li><a href="/{{localePath}}discounts/havnby"><strong>Havnby</strong> — code AWD saves 10% on FlatCore and CloudCore</a></li>
                 <li><a href="/{{localePath}}discounts/novapads"><strong>NovaPads</strong> — code AWD saves 10% ($24 off Air-Foam Pro)</a></li>
                 <li><a href="/{{localePath}}discounts/shop4tesla"><strong>Shop4Tesla</strong> — code 10 saves 10% on Tesla accessories</a></li>
                 <li><a href="/{{localePath}}discounts/yeslak"><strong>Yeslak</strong> — code DISCOUNT saves 20% on accessories</a></li>
                 <li><a href="/{{localePath}}discounts/jowua"><strong>Jowua</strong> — code AWD saves 5% on accessories</a></li>
                 <li><a href="/{{localePath}}discounts/hansshow"><strong>Hansshow</strong> — code FREDRIK saves 20% on accessories</a></li>
-                <li><a href="/{{localePath}}discounts">See all verified Tesla discount codes →</a></li>
+                <li><a href="/{{localePath}}discounts">See every partner-code page and its check date →</a></li>
             </ul>
         </div>
 
         <p class="review-byline">
-            Researched by Fredrik Mastouri &middot; specs verified against manufacturer listings and owner reports.
+            Researched by Fredrik Mastouri &middot; current specifications checked against the linked manufacturer sources; owner-feedback claims are attributed where used.
             Methodology: <a href="/{{localePath}}methodology">how we review Tesla mattresses</a>.
-            Prices verified as of {{buildDate}}.
+            Page revised {{buildDate}}; live prices, stock and terms can change.
             See our <a href="/{{localePath}}disclosure">affiliate disclosure</a>.
         </p>
     </main>
@@ -223,5 +272,24 @@
     <footer>
         <p>&copy; 2026 Teslamattress. <a href="/{{localePath}}disclosure">Affiliate disclosure</a> &middot; <a href="/{{localePath}}about">About</a> &middot; <a href="/{{localePath}}methodology">How we review</a></p>
     </footer>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const menuOverlay = document.querySelector('.menu-overlay');
+
+        function toggleMenu() {
+            const isOpen = navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active', isOpen);
+            menuOverlay.classList.toggle('active', isOpen);
+            menuToggle.setAttribute('aria-expanded', String(isOpen));
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+        menuOverlay.addEventListener('click', toggleMenu);
+        navLinks.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+            if (navLinks.classList.contains('active')) toggleMenu();
+        }));
+    </script>
 </body>
 </html>

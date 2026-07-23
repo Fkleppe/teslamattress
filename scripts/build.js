@@ -13,6 +13,22 @@ const DIST_DIR = path.join(ROOT, 'dist');
 const PAGES = JSON.parse(fs.readFileSync(path.join(ROOT, 'src', 'pages.json'), 'utf8'));
 const BASE_URL = 'https://teslamattress.com';
 const BUILD_DATE = process.env.BUILD_DATE_OVERRIDE || new Date().toISOString().slice(0, 10);
+const VERSIONED_SHELL_ASSETS = [
+  '/styles.css',
+  '/guides/guides.css',
+  '/reviews/review-page.css',
+  '/vs/vs.css',
+  '/discounts/discounts.css',
+  '/discounts/brand-page.css',
+  '/mobile-nav.js',
+];
+const SHELL_ASSET_VERSION = crypto.createHash('sha1')
+  .update(VERSIONED_SHELL_ASSETS.map(asset => {
+    const filePath = path.join(ROOT, asset.replace(/^\//, ''));
+    return fs.existsSync(filePath) ? fs.readFileSync(filePath) : '';
+  }).join('\0'))
+  .digest('hex')
+  .slice(0, 10);
 
 // Honest per-page dates: {{buildDate}} / sitemap lastmod only advance when the
 // page's rendered content actually changes (tracked by content hash).
@@ -166,6 +182,29 @@ function replaceTranslationsContextAware(html, localeData, pageKey, fallbackData
   return replaceTranslations(html, localeData, pageKey, fallbackData, false);
 }
 
+// Keep the responsive shell consistent across every template. Several older
+// templates predate notched phones and each carried its own menu script; the
+// shared controller below progressively upgrades those pages after parsing.
+function enhancePageShell(html) {
+  html = html.replace(
+    /<meta name="viewport" content="width=device-width, initial-scale=1\.0">/,
+    '<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">'
+  );
+
+  for (const asset of VERSIONED_SHELL_ASSETS.filter(item => item.endsWith('.css'))) {
+    html = html.replaceAll(`"${asset}"`, `"${asset}?v=${SHELL_ASSET_VERSION}"`);
+  }
+
+  if (!html.includes('/mobile-nav.js')) {
+    html = html.replace(
+      '</body>',
+      `    <script src="/mobile-nav.js?v=${SHELL_ASSET_VERSION}" defer></script>\n</body>`
+    );
+  }
+
+  return html;
+}
+
 // Build a single page for a single locale
 function buildPage(page, locale, localeData, fallbackData) {
   const templatePath = path.join(TEMPLATE_DIR, page.template);
@@ -190,6 +229,14 @@ function buildPage(page, locale, localeData, fallbackData) {
   const fullUrl = fullPath ? `${BASE_URL}/${fullPath}` : `${BASE_URL}/`;
   html = html.replace(/\{\{canonicalUrl\}\}/g, fullUrl);
   html = html.replace(/\{\{pageUrl\}\}/g, fullUrl);
+  // Content data stores absolute image URLs for metadata/JSON-LD. Derive the
+  // same-origin root-relative path for visible <img> elements so preview and
+  // production do not hotlink the deployed site back to itself.
+  const pageImage = localeData[page.pageKey] && localeData[page.pageKey].image_path;
+  const pageImageRelative = typeof pageImage === 'string' && pageImage.startsWith(BASE_URL)
+    ? pageImage.slice(BASE_URL.length)
+    : (pageImage || '');
+  html = html.replace(/\{\{pageImageRelative\}\}/g, pageImageRelative);
   html = html.replace(/\{\{hreflangTags\}\}/g, generateHreflangTags(pagePath));
   html = html.replace(/\{\{ogLocaleAlternates\}\}/g, generateOgLocaleAlternates(locale));
   html = html.replace(/\{\{langSwitcher\}\}/g, generateLangSwitcher(pagePath, locale));
@@ -200,9 +247,19 @@ function buildPage(page, locale, localeData, fallbackData) {
   // 2. Translation placeholders (JSON-escaped inside ld+json blocks)
   html = replaceTranslationsContextAware(html, localeData, page.pageKey, fallbackData);
 
+  // 2b. Shared responsive viewport and accessible mobile navigation.
+  html = enhancePageShell(html);
+
   // 3. Honest date: hash content with {{buildDate}} still unresolved, then
   // stamp the page with its last-actual-change date
   const pageDate = pageDateFor(locale, page.pageKey, html);
+  const buildDateHuman = new Intl.DateTimeFormat(cfg.html_lang, {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    timeZone: 'UTC'
+  }).format(new Date(`${pageDate}T12:00:00Z`));
+  html = html.replace(/\{\{buildDateHuman\}\}/g, buildDateHuman);
   html = html.replace(/\{\{buildDate\}\}/g, pageDate);
 
   // 4. Write output
@@ -214,44 +271,45 @@ function buildPage(page, locale, localeData, fallbackData) {
 // Pages to exclude from sitemap (noindex)
 const NOINDEX_PAGES = new Set(['disclosure']);
 
+function escapeXml(value) {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+}
+
 // Generate sitemap.xml
 function generateSitemap(locales) {
   let urls = '';
   const today = new Date().toISOString().split('T')[0];
+  const sitemapLocales = Object.keys(locales);
+  const hasAlternates = sitemapLocales.length > 1;
 
   for (const page of PAGES) {
     if (NOINDEX_PAGES.has(page.pageKey)) continue;
     const pagePath = page.output.replace(/index\.html$/, '').replace(/\.html$/, '').replace(/\/$/, '');
 
-    for (const loc of Object.keys(locales)) {
+    for (const loc of sitemapLocales) {
       const cfg = LOCALE_CONFIG[loc];
       // Build URL, strip trailing slash (except root /)
       const fp = `${cfg.locale_path}${pagePath}`.replace(/\/$/, '');
       const url = fp ? `${BASE_URL}/${fp}` : `${BASE_URL}/`;
 
-      // Priority: home=1.0, index pages=0.8, others=0.6
-      let priority = '0.6';
-      if (page.pageKey === 'home') priority = '1.0';
-      else if (page.output.endsWith('index.html')) priority = '0.8';
-
-      // Skip disclosure from high priority
-      if (page.pageKey === 'disclosure') priority = '0.3';
-
-      // Changefreq: home/hub pages weekly, others monthly
-      const changefreq = (page.pageKey === 'home' || page.output.endsWith('index.html')) ? 'weekly' : 'monthly';
-
       // Hreflang xhtml:link entries (omitted entirely for single-locale builds —
       // self-referencing alternates are meaningless noise)
       let alternates = '';
-      if (ALL_LOCALES.length > 1) {
-        const hreflangs = ALL_LOCALES.map(l => {
+      if (hasAlternates) {
+        const hreflangs = sitemapLocales.map(l => {
           const lCfg = LOCALE_CONFIG[l];
           const lfp = `${lCfg.locale_path}${pagePath}`.replace(/\/$/, '');
           const lurl = lfp ? `${BASE_URL}/${lfp}` : `${BASE_URL}/`;
-          return `      <xhtml:link rel="alternate" hreflang="${lCfg.hreflang}" href="${lurl}"/>`;
+          return `      <xhtml:link rel="alternate" hreflang="${lCfg.hreflang}" href="${escapeXml(lurl)}"/>`;
         }).join('\n');
         const xdefFp = pagePath || '';
-        const xdefault = `      <xhtml:link rel="alternate" hreflang="x-default" href="${xdefFp ? `${BASE_URL}/${xdefFp}` : `${BASE_URL}/`}"/>`;
+        const xdefaultUrl = xdefFp ? `${BASE_URL}/${xdefFp}` : `${BASE_URL}/`;
+        const xdefault = `      <xhtml:link rel="alternate" hreflang="x-default" href="${escapeXml(xdefaultUrl)}"/>`;
         alternates = `\n${hreflangs}\n${xdefault}`;
       }
 
@@ -259,17 +317,17 @@ function generateSitemap(locales) {
       const lastmod = (lastmodState[`${loc}:${page.pageKey}`] || {}).date || today;
 
       urls += `  <url>
-    <loc>${url}</loc>
-    <lastmod>${lastmod}</lastmod>
-    <changefreq>${changefreq}</changefreq>
-    <priority>${priority}</priority>${alternates}
+    <loc>${escapeXml(url)}</loc>
+    <lastmod>${lastmod}</lastmod>${alternates}
   </url>\n`;
     }
   }
 
+  const xhtmlNamespace = hasAlternates
+    ? '\n        xmlns:xhtml="http://www.w3.org/1999/xhtml"'
+    : '';
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"${xhtmlNamespace}>
 ${urls}</urlset>`;
 
   fs.writeFileSync(path.join(DIST_DIR, 'sitemap.xml'), sitemap, 'utf8');
@@ -287,6 +345,7 @@ function copyStaticFiles() {
     'icon-192.png',
     'icon-512.png',
     'site.webmanifest',
+    'mobile-nav.js',
     'reviews/review-page.css',
     'vs/vs.css',
     'discounts/discounts.css',
@@ -320,6 +379,7 @@ function copyStaticFiles() {
   if (fs.existsSync(src404)) {
     let html404 = fs.readFileSync(src404, 'utf8');
     html404 = html404.replace(/\{\{localeHome\}\}/g, '/');
+    html404 = enhancePageShell(html404);
     fs.writeFileSync(path.join(DIST_DIR, '404.html'), html404);
   }
 

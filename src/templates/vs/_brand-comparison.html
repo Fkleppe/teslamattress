@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="{{htmlLang}}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#1f1d19">
+
+    <title>{{t.PAGEKEY.meta_title}}</title>
+    <meta name="title" content="{{t.PAGEKEY.meta_title}}">
+    <meta name="description" content="{{t.PAGEKEY.meta_description}}">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="author" content="Fredrik Mastouri">
+    <link rel="canonical" href="{{canonicalUrl}}">
+    {{hreflangTags}}
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{pageUrl}}">
+    <meta property="og:title" content="{{t.PAGEKEY.og_title}}">
+    <meta property="og:description" content="{{t.PAGEKEY.og_description}}">
+    <meta property="og:image" content="https://teslamattress.com{{t.PAGEKEY.hero_image}}">
+    <meta property="og:image:width" content="1600">
+    <meta property="og:image:height" content="900">
+    <meta property="og:site_name" content="Teslamattress">
+    <meta property="og:locale" content="{{ogLocale}}">
+    {{ogLocaleAlternates}}
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{t.PAGEKEY.og_title}}">
+    <meta name="twitter:description" content="{{t.PAGEKEY.og_description}}">
+    <meta name="twitter:image" content="https://teslamattress.com{{t.PAGEKEY.hero_image}}">
+
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap"></noscript>
+
+    <style>
+        *{box-sizing:border-box}
+        body{margin:0;background:#faf8f3;color:#292722;font-family:'Source Sans 3',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.65}
+    </style>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/vs/vs.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "inLanguage": "{{htmlLang}}",
+        "headline": "{{t.PAGEKEY.h1}}",
+        "description": "{{t.PAGEKEY.meta_description}}",
+        "image": "https://teslamattress.com{{t.PAGEKEY.hero_image}}",
+        "datePublished": "{{t.PAGEKEY.date_published}}",
+        "dateModified": "{{buildDate}}",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "{{canonicalUrl}}"
+        },
+        "author": {
+            "@type": "Person",
+            "@id": "https://teslamattress.com/#person",
+            "name": "Fredrik Mastouri",
+            "url": "https://teslamattress.com/about",
+            "jobTitle": "Editor"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "@id": "https://teslamattress.com/#organization",
+            "name": "Teslamattress",
+            "url": "https://teslamattress.com"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://teslamattress.com/{{localePath}}" },
+            { "@type": "ListItem", "position": 2, "name": "Comparisons", "item": "https://teslamattress.com/{{localePath}}vs" },
+            { "@type": "ListItem", "position": 3, "name": "{{t.PAGEKEY.breadcrumb}}", "item": "{{canonicalUrl}}" }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "{{t.PAGEKEY.h1}}",
+        "numberOfItems": 2,
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@type": "Product",
+                    "name": "{{t.PAGEKEY.product_1_name}}",
+                    "image": "https://teslamattress.com{{t.PAGEKEY.product_1_image}}",
+                    "brand": { "@type": "Brand", "name": "{{t.PAGEKEY.brand_1}}" },
+                    "review": {
+                        "@type": "Review",
+                        "reviewRating": { "@type": "Rating", "ratingValue": "{{t.PAGEKEY.score_1}}", "bestRating": "10", "worstRating": "1" },
+                        "author": { "@type": "Person", "@id": "https://teslamattress.com/#person", "name": "Fredrik Mastouri" }
+                    }
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@type": "Product",
+                    "name": "{{t.PAGEKEY.product_2_name}}",
+                    "image": "https://teslamattress.com{{t.PAGEKEY.product_2_image}}",
+                    "brand": { "@type": "Brand", "name": "{{t.PAGEKEY.brand_2}}" },
+                    "review": {
+                        "@type": "Review",
+                        "reviewRating": { "@type": "Rating", "ratingValue": "{{t.PAGEKEY.score_2}}", "bestRating": "10", "worstRating": "1" },
+                        "author": { "@type": "Person", "@id": "https://teslamattress.com/#person", "name": "Fredrik Mastouri" }
+                    }
+                }
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            { "@type": "Question", "name": "{{t.PAGEKEY.faq_q1}}", "acceptedAnswer": { "@type": "Answer", "text": "{{t.PAGEKEY.faq_a1}}" } },
+            { "@type": "Question", "name": "{{t.PAGEKEY.faq_q2}}", "acceptedAnswer": { "@type": "Answer", "text": "{{t.PAGEKEY.faq_a2}}" } },
+            { "@type": "Question", "name": "{{t.PAGEKEY.faq_q3}}", "acceptedAnswer": { "@type": "Answer", "text": "{{t.PAGEKEY.faq_a3}}" } },
+            { "@type": "Question", "name": "{{t.PAGEKEY.faq_q4}}", "acceptedAnswer": { "@type": "Answer", "text": "{{t.PAGEKEY.faq_a4}}" } },
+            { "@type": "Question", "name": "{{t.PAGEKEY.faq_q5}}", "acceptedAnswer": { "@type": "Answer", "text": "{{t.PAGEKEY.faq_a5}}" } }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to comparison</a>
+    <nav class="navbar">
+        <a href="{{localeHome}}" class="logo">Teslamattress</a>
+        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-navigation">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="primary-navigation">
+            <li><a href="/{{localePath}}reviews">{{t.shared.nav_reviews}}</a></li>
+            <li><a href="/{{localePath}}vs">{{t.shared.nav_compare}}</a></li>
+            <li><a href="/{{localePath}}guides">{{t.shared.nav_guides}}</a></li>
+            <li><a href="/{{localePath}}faq">FAQ</a></li>
+            <li><a href="/{{localePath}}discounts">{{t.shared.nav_discounts}}</a></li>
+            <li><a href="/{{localePath}}about">{{t.shared.nav_about}}</a></li>
+        </ul>
+        {{langSwitcher}}
+    </nav>
+    <div class="menu-overlay"></div>
+
+    <main id="main-content" class="brand-comparison-page">
+        <nav class="brand-comparison-breadcrumb" aria-label="Breadcrumb">
+            <a href="/{{localePath}}">Home</a>
+            <span aria-hidden="true">/</span>
+            <a href="/{{localePath}}vs">Comparisons</a>
+            <span aria-hidden="true">/</span>
+            <span>{{t.PAGEKEY.breadcrumb}}</span>
+        </nav>
+
+        <header class="brand-comparison-hero">
+            <div class="brand-comparison-hero-copy">
+                <span class="brand-comparison-eyebrow">{{t.PAGEKEY.eyebrow}}</span>
+                <div class="brand-comparison-matchup" aria-label="{{t.PAGEKEY.brand_1}} compared with {{t.PAGEKEY.brand_2}}">
+                    <span>{{t.PAGEKEY.brand_1}}</span>
+                    <b>vs</b>
+                    <span>{{t.PAGEKEY.brand_2}}</span>
+                </div>
+                <h1>{{t.PAGEKEY.h1}}</h1>
+                <p>{{t.PAGEKEY.hero_lede}}</p>
+                <div class="brand-comparison-byline">
+                    <span>By <a href="/{{localePath}}about">Fredrik Mastouri</a></span>
+                    <span>Updated {{buildDateHuman}}</span>
+                    <span>{{t.PAGEKEY.read_time}}</span>
+                </div>
+            </div>
+            <figure class="brand-comparison-hero-media">
+                <img src="{{t.PAGEKEY.hero_image}}" alt="{{t.PAGEKEY.hero_alt}}" width="1600" height="900" loading="eager" fetchpriority="high">
+                <figcaption>{{t.PAGEKEY.hero_caption}}</figcaption>
+            </figure>
+        </header>
+
+        <div class="brand-comparison-trustbar" aria-label="Research notes">
+            <span>Prices checked 23 July 2026</span>
+            <span>Manufacturer specifications</span>
+            <span>No fabricated hands-on test</span>
+            <a href="/{{localePath}}disclosure">Affiliate disclosure</a>
+        </div>
+
+        <div class="brand-comparison-layout">
+            <article class="brand-comparison-article">
+                <section class="brand-comparison-verdict">
+                    <div>
+                        <span class="brand-comparison-section-label">Quick verdict</span>
+                        <h2>{{t.PAGEKEY.verdict_title}}</h2>
+                    </div>
+                    <p>{{t.PAGEKEY.verdict_text}}</p>
+                </section>
+
+                {{t.PAGEKEY.body_html}}
+
+                {{t.PAGEKEY.cta_html}}
+
+                <section class="brand-comparison-faq" id="faq">
+                    <div class="brand-comparison-section-heading">
+                        <span>Before you choose</span>
+                        <h2>Frequently asked questions</h2>
+                    </div>
+                    <details open>
+                        <summary>{{t.PAGEKEY.faq_q1}}</summary>
+                        <p>{{t.PAGEKEY.faq_a1}}</p>
+                    </details>
+                    <details>
+                        <summary>{{t.PAGEKEY.faq_q2}}</summary>
+                        <p>{{t.PAGEKEY.faq_a2}}</p>
+                    </details>
+                    <details>
+                        <summary>{{t.PAGEKEY.faq_q3}}</summary>
+                        <p>{{t.PAGEKEY.faq_a3}}</p>
+                    </details>
+                    <details>
+                        <summary>{{t.PAGEKEY.faq_q4}}</summary>
+                        <p>{{t.PAGEKEY.faq_a4}}</p>
+                    </details>
+                    <details>
+                        <summary>{{t.PAGEKEY.faq_q5}}</summary>
+                        <p>{{t.PAGEKEY.faq_a5}}</p>
+                    </details>
+                </section>
+
+                <section class="brand-comparison-related">
+                    <div class="brand-comparison-section-heading">
+                        <span>Keep researching</span>
+                        <h2>Use the full evidence trail</h2>
+                    </div>
+                    <div class="brand-comparison-related-grid">
+                        {{t.PAGEKEY.related_links_html}}
+                    </div>
+                </section>
+            </article>
+
+            <aside class="brand-comparison-sidebar" aria-label="Comparison summary">
+                <div class="brand-comparison-sidebar-inner">
+                    <span class="brand-comparison-section-label">At a glance</span>
+                    <h2>{{t.PAGEKEY.sidebar_title}}</h2>
+                    {{t.PAGEKEY.sidebar_html}}
+                    <a href="#decision" class="brand-comparison-jump">Jump to the decision</a>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">Teslamattress</div>
+            <nav class="footer-hub-links" aria-label="Site sections">
+                <a href="/{{localePath}}reviews">{{t.shared.nav_reviews}}</a>
+                <a href="/{{localePath}}vs">{{t.shared.nav_compare}}</a>
+                <a href="/{{localePath}}guides">{{t.shared.nav_guides}}</a>
+                <a href="/{{localePath}}discounts">{{t.shared.nav_discounts}}</a>
+                <a href="/{{localePath}}about">{{t.shared.nav_about}}</a>
+            </nav>
+            <div class="footer-text">
+                <p>&copy; 2026 Teslamattress. <a href="/{{localePath}}methodology">How we review</a> · <a href="/{{localePath}}disclosure">Affiliate disclosure</a></p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
