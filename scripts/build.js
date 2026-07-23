@@ -271,44 +271,45 @@ function buildPage(page, locale, localeData, fallbackData) {
 // Pages to exclude from sitemap (noindex)
 const NOINDEX_PAGES = new Set(['disclosure']);
 
+function escapeXml(value) {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+}
+
 // Generate sitemap.xml
 function generateSitemap(locales) {
   let urls = '';
   const today = new Date().toISOString().split('T')[0];
+  const sitemapLocales = Object.keys(locales);
+  const hasAlternates = sitemapLocales.length > 1;
 
   for (const page of PAGES) {
     if (NOINDEX_PAGES.has(page.pageKey)) continue;
     const pagePath = page.output.replace(/index\.html$/, '').replace(/\.html$/, '').replace(/\/$/, '');
 
-    for (const loc of Object.keys(locales)) {
+    for (const loc of sitemapLocales) {
       const cfg = LOCALE_CONFIG[loc];
       // Build URL, strip trailing slash (except root /)
       const fp = `${cfg.locale_path}${pagePath}`.replace(/\/$/, '');
       const url = fp ? `${BASE_URL}/${fp}` : `${BASE_URL}/`;
 
-      // Priority: home=1.0, index pages=0.8, others=0.6
-      let priority = '0.6';
-      if (page.pageKey === 'home') priority = '1.0';
-      else if (page.output.endsWith('index.html')) priority = '0.8';
-
-      // Skip disclosure from high priority
-      if (page.pageKey === 'disclosure') priority = '0.3';
-
-      // Changefreq: home/hub pages weekly, others monthly
-      const changefreq = (page.pageKey === 'home' || page.output.endsWith('index.html')) ? 'weekly' : 'monthly';
-
       // Hreflang xhtml:link entries (omitted entirely for single-locale builds —
       // self-referencing alternates are meaningless noise)
       let alternates = '';
-      if (ALL_LOCALES.length > 1) {
-        const hreflangs = ALL_LOCALES.map(l => {
+      if (hasAlternates) {
+        const hreflangs = sitemapLocales.map(l => {
           const lCfg = LOCALE_CONFIG[l];
           const lfp = `${lCfg.locale_path}${pagePath}`.replace(/\/$/, '');
           const lurl = lfp ? `${BASE_URL}/${lfp}` : `${BASE_URL}/`;
-          return `      <xhtml:link rel="alternate" hreflang="${lCfg.hreflang}" href="${lurl}"/>`;
+          return `      <xhtml:link rel="alternate" hreflang="${lCfg.hreflang}" href="${escapeXml(lurl)}"/>`;
         }).join('\n');
         const xdefFp = pagePath || '';
-        const xdefault = `      <xhtml:link rel="alternate" hreflang="x-default" href="${xdefFp ? `${BASE_URL}/${xdefFp}` : `${BASE_URL}/`}"/>`;
+        const xdefaultUrl = xdefFp ? `${BASE_URL}/${xdefFp}` : `${BASE_URL}/`;
+        const xdefault = `      <xhtml:link rel="alternate" hreflang="x-default" href="${escapeXml(xdefaultUrl)}"/>`;
         alternates = `\n${hreflangs}\n${xdefault}`;
       }
 
@@ -316,17 +317,17 @@ function generateSitemap(locales) {
       const lastmod = (lastmodState[`${loc}:${page.pageKey}`] || {}).date || today;
 
       urls += `  <url>
-    <loc>${url}</loc>
-    <lastmod>${lastmod}</lastmod>
-    <changefreq>${changefreq}</changefreq>
-    <priority>${priority}</priority>${alternates}
+    <loc>${escapeXml(url)}</loc>
+    <lastmod>${lastmod}</lastmod>${alternates}
   </url>\n`;
     }
   }
 
+  const xhtmlNamespace = hasAlternates
+    ? '\n        xmlns:xhtml="http://www.w3.org/1999/xhtml"'
+    : '';
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"${xhtmlNamespace}>
 ${urls}</urlset>`;
 
   fs.writeFileSync(path.join(DIST_DIR, 'sitemap.xml'), sitemap, 'utf8');

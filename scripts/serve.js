@@ -89,7 +89,7 @@ if (!fs.existsSync(DIST_DIR)) {
   process.exit(1);
 }
 
-server.listen(PORT, () => {
+server.listen(PORT, '127.0.0.1', () => {
   const pageCount = fs
     .readdirSync(DIST_DIR, { recursive: true })
     .filter((f) => String(f).endsWith('.html')).length;
